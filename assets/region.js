@@ -121,7 +121,7 @@
   }
 
   // «He visto un error»: el correo se monta al pulsar, a partir de trozos, para que los robots no lo lean en el HTML
-  const CORREO = { u: [99,111,114,114,101,111], d: [100,105,101,122,99,108,97,118,101,115], t: "com" }; // cambia u (usuario) y d (dominio) por códigos de carácter
+  const CORREO = { u: [104,111,108,97], d: [100,105,101,122,99,108,97,118,101,115], t: "com" }; // cambia u (usuario) y d (dominio) por códigos de carácter
   function correo(){ const s = a => String.fromCharCode.apply(null, a); return s(CORREO.u) + "@" + s(CORREO.d) + "." + CORREO.t; }
   function montarError(){
     const foot = document.querySelector("footer"); if (!foot) return;

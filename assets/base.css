@@ -94,3 +94,5 @@ ol.claves ul{margin-top:6px}
 .legal ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;max-width:65ch}
 .pend{background:#fff3d6;color:#5a3a00;padding:0 4px;border-radius:4px}
 @media (prefers-color-scheme: dark){ .pend{background:#4a3410;color:#ffd58a} }
+ol.claves ol{list-style:decimal;margin-top:6px;max-width:62ch}
+code{font:500 .92em ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:1px 5px;overflow-wrap:anywhere}
