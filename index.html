@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Diez Claves: herramientas gratuitas de seguridad digital en español, para cualquier persona. Generador y medidor de contraseñas que funcionan en tu navegador, sin registro y sin enviar nada.">
 <link rel="canonical" href="https://diezclaves.com/">
@@ -23,6 +23,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/assets/manifest.webmanifest">
 <link rel="stylesheet" href="/assets/base.css">
+<script src="/assets/region.js" defer></script>
 <title>Diez Claves · Seguridad digital en español para cualquiera</title>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"Diez Claves","url":"https://diezclaves.com/","inLanguage":"es","description":"Herramientas de seguridad digital en español, para cualquier persona."},{"@type":"Organization","name":"Diez Claves","url":"https://diezclaves.com/","logo":"https://diezclaves.com/assets/icon-512.png","parentOrganization":{"@type":"Organization","name":"Gofio Design","url":"https://gofiodesign.eu"}}]}</script>
 <style>
@@ -74,12 +75,14 @@
   </main>
 
   <section class="stack" aria-labelledby="h-art">
-    <h2 id="h-art">Artículos</h2>
+    <h2 id="h-art">Artículos, en diez claves</h2>
     <ul class="tools">
-      <li><a class="t" href="/articulos/claves-de-dispositivos.html">Claves de dispositivos: el PIN manda, la huella solo abre</a><p>Qué contraseña protege de verdad tu móvil, tu ordenador, tu router, la SIM y los aparatos de casa.</p></li>
-      <li><a class="t" href="/articulos/identificadores-y-contrasenas.html">Tu correo es la mitad de la contraseña</a><p>Filtraciones, relleno de credenciales, el correo como llave maestra y los botones de «iniciar sesión con».</p></li>
-      <li><a class="t" href="/articulos/de-la-contrasena-a-la-passkey.html">De la contraseña a la passkey</a><p>Sesenta años de sistemas de acceso: qué fallo arregla cada uno y cuál activar en cada cuenta.</p></li>
+      <li><a class="t" href="/articulos/ene-y-tildes-en-contrasenas.html">Diez claves sobre la ñ y las tildes en las contraseñas</a><p>¿Se puede poner la ñ? Sí, y conviene: por qué protege más, cuándo da problemas y cómo probarla.</p></li>
+      <li><a class="t" href="/articulos/si-te-roban-el-movil.html">Diez claves si te roban el móvil</a><p>Qué hacer en las primeras dos horas, por orden, y qué dejar hecho hoy para que el próximo sea solo un susto.</p></li>
+      <li><a class="t" href="/articulos/clave-certificado-digital-dnie.html">Diez claves para conseguir tu certificado digital</a><p>Con el móvil, con NFC o con el DNI electrónico. Certificado FNMT, DNIe y Cl@ve explicados. También en <a href="/articulos/clave-certificado-digital-canarias.html">versión para Canarias</a>.</p></li>
+      <li><a class="t" href="/articulos/elegir-gestor-de-contrasenas.html">Diez claves para elegir gestor de contraseñas</a><p>Clave maestra, doble factor, el del navegador, Bitwarden, KeePassXC, Proton Pass o 1Password.</p></li>
     </ul>
+    <p><a href="/articulos/">Todos los artículos →</a></p>
   </section>
 
   <section class="slab" aria-labelledby="h-como">
@@ -95,6 +98,8 @@
     <span>Diez Claves · 2026</span>
     <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
     <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
+    <a href="/aviso-legal.html">Aviso legal</a>
+    <a href="/privacidad.html">Privacidad</a>
   </footer>
 </div>
 </body>

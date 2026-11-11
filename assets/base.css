@@ -59,3 +59,33 @@ article th{font-weight:600;color:var(--muted);font-size:13px;letter-spacing:.04e
 .meta{font-size:14px;color:var(--muted)}
 .rel{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:16px}
 @media (prefers-reduced-motion: reduce){ *{transition:none!important;animation:none!important} }
+/* región y tienda */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.region-btn{font:600 13px var(--body);color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px;min-height:36px;cursor:pointer;margin-left:auto}
+.region-btn:hover{color:var(--ink)}
+.region-link{font:inherit;color:var(--accent);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.region-card{position:fixed;left:max(16px,env(safe-area-inset-left,0px));right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));max-width:480px;margin:0 auto;background:var(--slab);color:var(--slab-ink);border-radius:14px;padding:18px 20px;box-shadow:0 12px 40px rgba(0,0,0,.35);display:flex;flex-direction:column;gap:10px;z-index:20}
+.region-t{font:700 18px var(--display);color:var(--slab-ink)}
+.region-sel select{width:100%;font:500 16px var(--body);color:var(--slab-ink);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.3);border-radius:10px;padding:10px 12px;min-height:44px}
+.region-x{font-size:13px;color:var(--slab-muted)}
+.region-b{display:flex;flex-wrap:wrap;gap:8px}
+/* bloque de productos */
+.prods{border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;gap:12px;background:var(--surface)}
+.prods h2{font-size:19px}
+.prods ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+.prods li{display:flex;flex-direction:column;gap:2px}
+.prods li a{font:700 17px var(--display)}
+.prods li p{font-size:15px;color:var(--muted)}
+.prods .aviso{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+/* artículos de diez claves */
+ol.claves{list-style:none;padding:0;margin:8px 0 0;counter-reset:clave;display:flex;flex-direction:column;gap:22px;max-width:none}
+ol.claves>li{display:grid;grid-template-columns:52px 1fr;gap:4px 14px;counter-increment:clave}
+ol.claves>li::before{content:counter(clave);grid-row:1/span 2;font:700 44px/1 var(--display);color:var(--accent);letter-spacing:-.03em;font-variant-numeric:tabular-nums;padding-top:2px}
+ol.claves h2{font-size:20px;margin:0;align-self:end}
+ol.claves p,ol.claves ul{max-width:62ch}
+ol.claves ul{margin-top:6px}
+.cierre{border-top:1px solid var(--line);padding-top:16px}
+.legal h2{margin-top:14px}
+.legal ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;max-width:65ch}
+.pend{background:#fff3d6;color:#5a3a00;padding:0 4px;border-radius:4px}
+@media (prefers-color-scheme: dark){ .pend{background:#4a3410;color:#ffd58a} }

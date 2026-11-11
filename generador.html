@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Generador de contraseñas y frases seguras en español, con ñ y tildes. Gratis, sin registro y sin enviar nada: todo ocurre en tu navegador.">
 <link rel="canonical" href="https://diezclaves.com/generador.html">
@@ -22,6 +22,7 @@
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/assets/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/base.css">
 <title>Generador de contraseñas en español · Diez Claves</title>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Generador de contraseñas en español","url":"https://diezclaves.com/generador.html","description":"Genera contraseñas y frases de palabras en español, con ñ y tildes, sin enviar nada fuera del navegador.","applicationCategory":"SecurityApplication","operatingSystem":"Cualquiera, en el navegador","inLanguage":"es","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"Diez Claves","url":"https://diezclaves.com/"}}</script>
 <style>
@@ -135,12 +136,15 @@ select{font:500 15px var(--body);color:var(--ink);background:var(--surface);bord
 .notes h2{font:700 18px var(--display);color:var(--ink);margin:0}
 .notes ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;max-width:65ch}
 .notes strong{color:var(--ink)}
+footer{font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 18px;border-top:1px solid var(--line);padding-top:16px}
+footer a{color:var(--accent)}
 .notes a{color:var(--accent)}
 @media (prefers-reduced-motion: reduce){ .bar div{transition:none} }
 </style>
 </head>
 <body style="margin:0">
 <script src="/assets/diccionario.js"></script>
+<script src="/assets/region.js" defer></script>
 
 
 
@@ -316,6 +320,13 @@ select{font:500 15px var(--body);color:var(--ink);background:var(--surface);bord
     
     </ul>
   </details>
+  <footer>
+    <span>Diez Claves · 2026</span>
+    <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
+    <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
+    <a href="/aviso-legal.html">Aviso legal</a>
+    <a href="/privacidad.html">Privacidad</a>
+  </footer>
 </div>
 
 <script>
