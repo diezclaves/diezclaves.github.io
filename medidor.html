@@ -46,6 +46,7 @@
 .checks li[data-k="ojo"]::before{content:"!";color:var(--accent-on-slab)}
 .checks code{font-family:var(--mono);background:rgba(255,255,255,.1);padding:1px 6px;border-radius:5px}
 .tabla{overflow-x:auto}
+.tabla:focus-visible{outline:3px solid var(--accent-on-slab);outline-offset:2px}
 table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
 th,td{text-align:left;padding:8px 10px;border-bottom:1px solid rgba(255,255,255,.12);white-space:nowrap}
 th{font-weight:600;color:var(--slab-muted);font-size:12px;letter-spacing:.04em;text-transform:uppercase}
@@ -58,14 +59,15 @@ td small{display:block;color:var(--slab-muted);font-size:12px}
 </style>
 </head>
 <body>
-<a class="skip" href="#clave">Saltar al medidor</a>
+<a class="skip" href="#contenido">Saltar al medidor</a>
 <div class="wrap">
   <header class="stack">
     <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="/generador.html">Generador</a><a href="/medidor.html" aria-current="page">Medidor</a><a href="/articulos/">Artículos</a></nav>
     <h1>Medidor de contraseñas: <span>¿cuánto aguanta la tuya?</span></h1>
   </header>
 
-  <main class="slab" aria-labelledby="h-med">
+  <main id="contenido" class="stack">
+  <section class="slab" aria-labelledby="h-med">
     <h2 class="sr" id="h-med" hidden>Analizar una contraseña</h2>
     <div class="field">
       <label for="clave">Escribe una contraseña</label>
@@ -83,7 +85,7 @@ td small{display:block;color:var(--slab-muted);font-size:12px}
         <span><strong id="bits">0</strong> bits · <span class="nivel" id="nivel"></span></span>
       </div>
       <ul class="checks" id="checks"></ul>
-      <div class="tabla">
+      <div class="tabla" tabindex="0" role="region" aria-label="Tabla de tiempos, se puede desplazar">
         <table>
           <caption class="hint" style="text-align:left;padding-bottom:8px">Cuánto tardarían en romperla, según quién ataca y cómo la guarda el servicio</caption>
           <thead><tr><th scope="col">Situación</th><th scope="col">Tiempo</th></tr></thead>
@@ -92,7 +94,7 @@ td small{display:block;color:var(--slab-muted);font-size:12px}
       </div>
       <p class="hint" id="live" aria-live="polite"></p>
     </div>
-  </main>
+  </section>
 
   <section class="stack">
     <h2>Qué mira el medidor</h2>
@@ -116,6 +118,7 @@ td small{display:block;color:var(--slab-muted);font-size:12px}
       <li>Palabras de otros idiomas o nombres propios poco comunes: el medidor conoce el español y una lista corta de nombres y contraseñas habituales.</li>
     </ul>
   </section>
+  </main>
 
   <footer>
     <span>Diez Claves · 2026</span>

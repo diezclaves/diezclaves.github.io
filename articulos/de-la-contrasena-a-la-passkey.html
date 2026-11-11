@@ -32,7 +32,8 @@
   <header class="stack">
     <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="/generador.html">Generador</a><a href="/medidor.html">Medidor</a><a href="/articulos/" aria-current="page">Artículos</a></nav>
   </header>
-  <article id="contenido">
+  <main id="contenido">
+  <article>
     <header>
       <p class="meta">Diez claves · 11 de noviembre de 2026 · 9 min de lectura</p>
       <h1>Diez claves para entender <span>cómo entramos hoy en las cuentas</span></h1>
@@ -50,7 +51,7 @@
       <li><h2>2014-2019: la llave física que no se deja engañar</h2><p>Las llaves FIDO (YubiKey, Nitrokey) firman el inicio de sesión con una clave que nunca sale de ellas, y en la firma va el nombre del sitio. Si estás en una web que imita a tu banco, la firma no sirve aunque no hayas notado la diferencia. Es la primera defensa que vence al phishing por diseño, no por atención del usuario. El estándar empezó como U2F en 2014 y los navegadores lo adoptaron como WebAuthn en 2019.</p></li>
       <li><h2>2022: la passkey, la llave está en tu móvil</h2><p>Es lo mismo que la llave física, pero guardada en el teléfono, el ordenador o el gestor, y protegida por el bloqueo del aparato. No hay nada que teclear ni recordar, no se puede filtrar porque el servicio solo guarda la parte pública, y no funciona en una web falsa. Apple, Google y Microsoft las adoptaron a la vez en 2022. Sus límites: no todos los servicios las ofrecen aún y, si pierdes todos tus aparatos, necesitas otra vía de entrada.</p></li>
       <li><h2>El otro camino: que una sola cuenta responda por ti</h2><p>El inicio de sesión único: «Iniciar sesión con Google / Apple», sobre estándares abiertos (OAuth, OpenID Connect). En España, Cl@ve, el certificado digital y el DNI electrónico son la versión pública para todas las administraciones. Menos contraseñas y una cuenta central mejor vigilada, a cambio de un único punto de fallo que hay que proteger con lo mejor que haya.</p></li>
-      <li><h2>Qué protege cada uno, en una tabla</h2><div class="scroll"><table>
+      <li><h2>Qué protege cada uno, en una tabla</h2><div class="scroll" tabindex="0" role="region" aria-label="Tabla, se puede desplazar"><table>
       <thead><tr><th scope="col">Sistema</th><th scope="col">Contraseña filtrada</th><th scope="col">Web falsa</th><th scope="col">Duplicado de SIM</th><th scope="col">Pierdes el aparato</th></tr></thead>
       <tbody>
         <tr><td>Solo contraseña</td><td>No</td><td>No</td><td>No le afecta</td><td>No le afecta</td></tr>
@@ -80,6 +81,7 @@
       <a href="/articulos/identificadores-y-contrasenas.html">Diez claves sobre tu correo y tu usuario</a><a href="/articulos/clave-certificado-digital-dnie.html">Diez claves para usar Cl@ve, el certificado digital y el DNIe</a><a href="/medidor.html">Medidor de contraseñas</a>
     </nav>
   </article>
+  </main>
   <footer>
     <span>Diez Claves · 2026</span>
     <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
