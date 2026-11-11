@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Diez Claves: herramientas de seguridad digital en español, para cualquier persona. Funcionan en tu navegador, sin ninguna conexión.">
+<title>Diez Claves · Seguridad digital para cualquiera</title>
+<style>
+/* Portada: una columna; el nombre arriba, las herramientas como filas planas, los principios al final. */
+:root{
+  --bg:#f3f5f9; --surface:#ffffff; --ink:#131a2b; --muted:#56607a; --line:#d5dae6;
+  --slab:#131a2b; --slab-ink:#f3f5f9; --slab-muted:#9aa5c0;
+  --accent:#8f5200; --accent-on-slab:#ffb84a;
+  --display:"Avenir Next","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
+  --body:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,"Cascadia Mono","SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root{
+  --bg:#0e1320; --surface:#161d2e; --ink:#e9edf6; --muted:#9aa5c0; --line:#2a3349;
+  --slab:#1d2740; --accent:#ffb84a; color-scheme:dark } }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+.wrap{max-width:720px;margin:0 auto;padding:40px 16px 56px;display:flex;flex-direction:column;gap:36px}
+a{color:var(--accent)}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:16px;top:12px;background:var(--surface);padding:8px 12px;border-radius:8px}
+header{display:flex;flex-direction:column;gap:12px}
+.by{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(46px,13vw,84px);line-height:.95;letter-spacing:-.03em;margin:0}
+h1 span{color:var(--accent)}
+.lede{margin:0;font-size:clamp(19px,4.6vw,23px);line-height:1.4;max-width:30ch;text-wrap:balance}
+.sub{margin:0;color:var(--muted);max-width:58ch}
+h2{font:700 20px var(--display);margin:0 0 4px}
+.tools{list-style:none;margin:0;padding:0}
+.tools li{border-top:1px solid var(--line);padding:18px 0;display:flex;flex-direction:column;gap:4px}
+.tools li:last-child{border-bottom:1px solid var(--line)}
+.tools a{font:700 22px var(--display);text-decoration:none;display:inline-flex;align-items:baseline;gap:10px;min-height:44px}
+.tools a::after{content:"→";font-family:var(--mono);font-weight:400}
+.tools a:hover{text-decoration:underline}
+.tools b{font:700 19px var(--display)}
+.tools p{margin:0;color:var(--muted);max-width:58ch}
+.tag{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.slab{background:var(--slab);color:var(--slab-ink);border-radius:14px;padding:24px 20px}
+.slab h2{color:var(--slab-ink)}
+.slab dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px 24px;margin:14px 0 0}
+.slab dt{font:700 16px var(--display);color:var(--accent-on-slab)}
+.slab dd{margin:4px 0 0;font-size:15px;color:var(--slab-muted)}
+.slab a{color:var(--accent-on-slab)}
+footer{font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 18px}
+</style>
+</head>
+<body>
+<a class="skip" href="#herramientas">Saltar a las herramientas</a>
+<div class="wrap">
+  <header>
+    <p class="by">Un proyecto de Gofio Design</p>
+    <h1><span>Diez</span> Claves</h1>
+    <p class="lede">Seguridad digital en español, para cualquier persona.</p>
+    <p class="sub">Herramientas gratuitas que funcionan dentro de tu navegador. No hay que registrarse y lo que escribes no sale de tu dispositivo.</p>
+  </header>
+
+  <main id="herramientas">
+    <h2>Herramientas</h2>
+    <ul class="tools">
+      <li>
+        <a href="generador.html">Generador de claves</a>
+        <p>Frases de palabras y contraseñas con ñ, tildes y diéresis. Te dice cuánto protege cada una y cuánto tardarían en romperla.</p>
+      </li>
+      <li>
+        <span class="tag">En preparación</span>
+        <b>Comprobador de fuerza</b>
+        <p>Para saber cuánto aguanta una contraseña que ya usas.</p>
+      </li>
+      <li>
+        <span class="tag">En preparación</span>
+        <b>¿Es una estafa este SMS?</b>
+        <p>Señales para reconocer un mensaje o un enlace sospechoso antes de pulsar.</p>
+      </li>
+    </ul>
+  </main>
+
+  <section class="slab" aria-labelledby="h-como">
+    <h2 id="h-como">Cómo trabajamos</h2>
+    <dl>
+      <div><dt>Sin conexiones</dt><dd>Las páginas no cargan nada de fuera: ni analítica, ni fuentes, ni anuncios. Puedes cortar la red y siguen funcionando.</dd></div>
+      <div><dt>Para cualquiera</dt><dd>Lenguaje llano, letra grande, y todo se puede usar con teclado y con lector de pantalla.</dd></div>
+      <div><dt>Código a la vista</dt><dd>Todo lo que hace esta web se puede leer en <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">su repositorio</a>.</dd></div>
+    </dl>
+  </section>
+
+  <footer>
+    <span>Diez Claves · 2026</span>
+    <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
+    <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
+  </footer>
+</div>
+</body>
+</html>
