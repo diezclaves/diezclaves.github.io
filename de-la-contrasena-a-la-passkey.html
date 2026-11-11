@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Contraseña, SMS, apps de códigos, llaves físicas, passkeys e inicio de sesión único: de dónde viene cada sistema, qué fallo arregla y cuál activar en cada cuenta.">
+<link rel="canonical" href="https://diezclaves.com/de-la-contrasena-a-la-passkey.html">
+<meta name="theme-color" content="#131a2b">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://diezclaves.com/de-la-contrasena-a-la-passkey.html">
+<meta property="og:site_name" content="Diez Claves">
+<meta property="og:title" content="De la contraseña a la passkey: cómo han evolucionado los sistemas de acceso">
+<meta property="og:description" content="Contraseña, SMS, apps de códigos, llaves físicas, passkeys e inicio de sesión único: de dónde viene cada sistema, qué fallo arregla y cuál activar en cada cuenta.">
+<meta property="og:image" content="https://diezclaves.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="base.css">
+<title>De la contraseña a la passkey: cómo han evolucionado los sistemas de acceso · Diez Claves</title>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "De la contraseña a la passkey: cómo han evolucionado los sistemas de acceso", "description": "Contraseña, SMS, apps de códigos, llaves físicas, passkeys e inicio de sesión único: de dónde viene cada sistema, qué fallo arregla y cuál activar en cada cuenta.", "inLanguage": "es", "datePublished": "2026-11-11", "dateModified": "2026-11-11", "author": {"@type": "Organization", "name": "Diez Claves", "url": "https://diezclaves.com/"}, "publisher": {"@type": "Organization", "name": "Diez Claves", "logo": {"@type": "ImageObject", "url": "https://diezclaves.com/icon-512.png"}}, "mainEntityOfPage": "https://diezclaves.com/de-la-contrasena-a-la-passkey.html", "image": "https://diezclaves.com/og.png"}</script>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="wrap">
+  <header class="stack">
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="./"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="generador.html">Generador</a><a href="medidor.html">Medidor</a><a href="articulos.html" aria-current="page">Artículos</a></nav>
+  </header>
+  <article id="contenido">
+    <header>
+      <p class="meta">Artículo · 11 de noviembre de 2026 · 9 min de lectura</p>
+      <h1>De la contraseña a la passkey: <span>sesenta años</span> tapando agujeros</h1>
+      <p class="lede muted">Contraseña, SMS, apps de códigos, llaves físicas, passkeys e inicio de sesión único: de dónde viene cada sistema, qué fallo arregla y cuál activar en cada cuenta.</p>
+    </header>
+
+    <p>Las contraseñas tienen más de sesenta años y siguen aquí, pero ya no están solas. Códigos por SMS, apps que generan números, llaves USB, huellas, «iniciar sesión con Google», passkeys. Cada capa nueva apareció para tapar un fallo de la anterior. Entender ese recorrido es la mejor forma de saber qué activar en cada cuenta y por qué.</p>
+
+    <h2>1961: algo que sabes</h2>
+    <p>Las primeras contraseñas informáticas se usaron en un ordenador compartido del MIT para que cada persona tuviera sus propios archivos. Y el primer robo llegó enseguida: un usuario imprimió el archivo donde estaban todas. Desde entonces el problema es el mismo: la contraseña se guarda en algún sitio, y ese sitio se puede robar.</p>
+    <p>La respuesta, en los años setenta, fue no guardar la contraseña sino una <strong>huella matemática</strong> de ella (un <em>hash</em>), de la que no se puede volver atrás, y añadirle una <strong>sal</strong>, un dato aleatorio por usuario, para que dos contraseñas iguales no se parezcan en la base de datos. Hoy los algoritmos buenos (bcrypt, Argon2) son además lentos a propósito, para que probar millones de candidatos cueste. El <a href="medidor.html">medidor</a> de esta web muestra la diferencia: la misma contraseña aguanta siglos o segundos según cómo la guarde el servicio.</p>
+    <p>Lo que ningún hash arregla es que la contraseña se adivine, se repita en varios sitios o se entregue a una web falsa. Para eso hizo falta una segunda cosa.</p>
+
+    <h2>Años 2000: algo que tienes</h2>
+    <p>El <strong>doble factor</strong> añade a lo que sabes (la contraseña) algo que tienes (un aparato). Las empresas usaban desde los ochenta llaveros que mostraban un número cambiante; la versión para todos llegó con el <strong>código por SMS</strong>. Funciona, pero el SMS viaja por una red pensada en los años noventa, se puede desviar con un duplicado de SIM y se puede pedir a la víctima con un simple «dinos el código que te acaba de llegar».</p>
+    <p>El siguiente paso fueron las <strong>apps de códigos</strong> (Google Authenticator, Aegis, Ente Auth y otras), basadas en un estándar abierto de 2011 llamado TOTP: la app y el servicio comparten un secreto y generan el mismo número de seis cifras cada 30 segundos, sin red. Ya no se puede desviar, pero sigue siendo un número que una persona puede teclear en una web falsa.</p>
+    <p>Después vinieron las <strong>notificaciones</strong> («¿Estás intentando entrar? Sí / No»). Más cómodas, y con un fallo propio: si te llegan veinte seguidas a las tres de la mañana, acabas pulsando «sí» para que paren. Se llama fatiga de notificaciones y se ha usado en ataques reales.</p>
+
+    <h2>2014-2019: la llave que no se deja engañar</h2>
+    <p>Todo lo anterior comparte un agujero: el código se puede copiar a mano en el sitio equivocado. Las <strong>llaves físicas</strong> (YubiKey, Nitrokey y similares) lo cierran de otra manera. La llave firma el inicio de sesión con una clave privada que nunca sale de ella, y en la firma va incluido el nombre del sitio web. Si estás en <code>banco-seguro.ejemplo</code> en lugar de en tu banco, la firma no sirve, aunque tú no hayas notado la diferencia. Es la primera defensa que vence al phishing por diseño, no por atención del usuario.</p>
+    <p>El estándar empezó como U2F en 2014 y se convirtió en <strong>FIDO2/WebAuthn</strong> en 2019, cuando los navegadores lo incorporaron. A partir de ahí, la «llave» ya no tenía por qué ser un USB.</p>
+
+    <h2>2022: passkeys, la llave está en tu móvil</h2>
+    <p>Una <strong>passkey</strong> (llave de acceso) es lo mismo que la llave física, pero guardada en el teléfono, el ordenador o el gestor de contraseñas, y protegida por el bloqueo del aparato: huella, cara o PIN. No hay nada que teclear ni que recordar, no se puede filtrar en una base de datos porque el servicio solo guarda la parte pública, y no funciona en una web que imite a la real. Apple, Google y Microsoft las adoptaron a la vez en 2022 y desde entonces van apareciendo en bancos, redes y tiendas.</p>
+    <p>Sus límites, hoy: no todos los servicios las ofrecen, la copia entre dispositivos depende de la nube de Apple, Google o del gestor, y si pierdes todos tus aparatos necesitas haber dejado otra vía de entrada. Por eso lo normal es que convivan con una contraseña de respaldo durante años.</p>
+
+    <h2>El otro camino: delegar la identidad</h2>
+    <p>En paralelo creció otra idea: que no cada web compruebe quién eres, sino que lo haga una sola y las demás se fíen. Es el <strong>inicio de sesión único</strong> (SSO). En las empresas lleva décadas (el directorio de usuarios, la misma cuenta para todo); en internet llegó con los botones «Iniciar sesión con Google / Apple / Facebook», construidos sobre estándares abiertos (OAuth y OpenID Connect). En España, <strong>Cl@ve</strong>, el certificado digital y el DNI electrónico son la versión pública: una identidad verificada que sirve para todas las administraciones.</p>
+    <p>Ventaja: menos contraseñas y una cuenta central mejor vigilada. Riesgo: esa cuenta central lo es todo. Se gana comodidad a cambio de un único punto de fallo, que hay que proteger con lo mejor que haya: llave física o passkey.</p>
+
+    <h2>Qué protege cada sistema</h2>
+    <div class="scroll"><table>
+      <thead><tr><th scope="col">Sistema</th><th scope="col">Contraseña adivinada o filtrada</th><th scope="col">Web falsa (phishing)</th><th scope="col">Duplicado de SIM</th><th scope="col">Pierdes el aparato</th></tr></thead>
+      <tbody>
+        <tr><td>Solo contraseña</td><td>No protege</td><td>No protege</td><td>No le afecta</td><td>No le afecta</td></tr>
+        <tr><td>Contraseña + SMS</td><td>Protege</td><td>No protege</td><td>No protege</td><td>Recuperable con la SIM</td></tr>
+        <tr><td>Contraseña + app de códigos</td><td>Protege</td><td>No protege</td><td>Protege</td><td>Necesitas copia o códigos de recuperación</td></tr>
+        <tr><td>Contraseña + notificación</td><td>Protege</td><td>A medias (fatiga)</td><td>Protege</td><td>Necesitas otra vía</td></tr>
+        <tr><td>Llave física</td><td>Protege</td><td>Protege</td><td>Protege</td><td>Necesitas una segunda llave</td></tr>
+        <tr><td>Passkey</td><td>Protege</td><td>Protege</td><td>Protege</td><td>Copia en la nube o en el gestor</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Entonces, ¿qué activo?</h2>
+    <div class="box"><ol>
+      <li><strong>Correo, banco y la cuenta de Google o Apple:</strong> passkey o llave física si lo ofrecen; si no, app de códigos. Nunca solo SMS si hay alternativa.</li>
+      <li><strong>Todo lo demás:</strong> contraseña única guardada en un gestor, y el doble factor que ofrezcan.</li>
+      <li><strong>Siempre:</strong> guarda en papel los códigos de recuperación, y ten una segunda vía (segunda llave, otro dispositivo con la passkey) antes de que haga falta.</li>
+    </ol></div>
+    <p class="muted">Las fechas son las de publicación de cada estándar o anuncio; la adopción real fue, en todos los casos, años después. Qué métodos ofrece cada servicio cambia con frecuencia: conviene mirar los ajustes de seguridad de cada cuenta de vez en cuando.</p>
+
+    <nav class="rel" aria-label="Relacionado">
+      <span class="tag">Sigue leyendo</span>
+      <a href="identificadores-y-contrasenas.html">Tu correo es la mitad de la contraseña</a><a href="claves-de-dispositivos.html">Claves de dispositivos</a><a href="generador.html">Generador de contraseñas</a>
+    </nav>
+  </article>
+  <footer>
+    <span>Diez Claves · 2026</span>
+    <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
+    <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
+  </footer>
+</div>
+</body>
+</html>

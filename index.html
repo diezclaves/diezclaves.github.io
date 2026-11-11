@@ -3,15 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
-<meta name="description" content="Diez Claves: herramientas gratuitas de seguridad digital en español, para cualquier persona. Funcionan en tu navegador, sin registro y sin enviar nada.">
-<meta name="theme-color" content="#131a2b">
+<meta name="description" content="Diez Claves: herramientas gratuitas de seguridad digital en español, para cualquier persona. Generador y medidor de contraseñas que funcionan en tu navegador, sin registro y sin enviar nada.">
 <link rel="canonical" href="https://diezclaves.com/">
+<meta name="theme-color" content="#131a2b">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://diezclaves.com/">
 <meta property="og:site_name" content="Diez Claves">
-<meta name="twitter:card" content="summary_large_image">
 <meta property="og:title" content="Diez Claves · Seguridad digital para cualquiera">
 <meta property="og:description" content="Herramientas de seguridad digital en español. Funcionan en tu navegador, sin registro y sin enviar nada.">
 <meta property="og:image" content="https://diezclaves.com/og.png">
@@ -19,79 +18,52 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Diez Claves: contraseñas con ñ y con tilde, para cualquier persona.">
 <meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="base.css">
 <title>Diez Claves · Seguridad digital en español para cualquiera</title>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"Diez Claves","url":"https://diezclaves.com/","inLanguage":"es","description":"Herramientas de seguridad digital en español, para cualquier persona."},{"@type":"Organization","name":"Diez Claves","url":"https://diezclaves.com/","logo":"https://diezclaves.com/icon-512.png","parentOrganization":{"@type":"Organization","name":"Gofio Design","url":"https://gofiodesign.eu"}}]}</script>
 <style>
-/* Portada: una columna; el nombre arriba, las herramientas como filas planas, los principios al final. */
-:root{
-  --bg:#f3f5f9; --surface:#ffffff; --ink:#131a2b; --muted:#56607a; --line:#d5dae6;
-  --slab:#131a2b; --slab-ink:#f3f5f9; --slab-muted:#9aa5c0;
-  --accent:#8f5200; --accent-on-slab:#ffb84a;
-  --display:"Avenir Next","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
-  --body:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --mono:ui-monospace,"Cascadia Mono","SF Mono",Menlo,Consolas,monospace;
-}
-@media (prefers-color-scheme: dark){ :root{
-  --bg:#0e1320; --surface:#161d2e; --ink:#e9edf6; --muted:#9aa5c0; --line:#2a3349;
-  --slab:#1d2740; --accent:#ffb84a; color-scheme:dark } }
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
-.wrap{max-width:720px;margin:0 auto;padding:40px 16px 56px;display:flex;flex-direction:column;gap:36px}
-a{color:var(--accent)}
-a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
-.skip{position:absolute;left:-999px}
-.skip:focus{left:16px;top:12px;background:var(--surface);padding:8px 12px;border-radius:8px}
-header{display:flex;flex-direction:column;gap:12px}
+.hero{display:flex;flex-direction:column;gap:10px}
+.hero h1{font-size:clamp(44px,12vw,76px);line-height:.95;letter-spacing:-.03em}
 .mark{border-radius:14px;box-shadow:0 0 0 1px var(--line)}
-.by{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0}
-h1{font-family:var(--display);font-weight:700;font-size:clamp(46px,13vw,84px);line-height:.95;letter-spacing:-.03em;margin:0}
-h1 span{color:var(--accent)}
-.lede{margin:0;font-size:clamp(19px,4.6vw,23px);line-height:1.4;max-width:30ch;text-wrap:balance}
-.sub{margin:0;color:var(--muted);max-width:58ch}
-h2{font:700 20px var(--display);margin:0 0 4px}
-.tools{list-style:none;margin:0;padding:0}
-.tools li{border-top:1px solid var(--line);padding:18px 0;display:flex;flex-direction:column;gap:4px}
-.tools li:last-child{border-bottom:1px solid var(--line)}
-.tools a{font:700 22px var(--display);text-decoration:none;display:inline-flex;align-items:baseline;gap:10px;min-height:44px}
-.tools a::after{content:"→";font-family:var(--mono);font-weight:400}
-.tools a:hover{text-decoration:underline}
-.tools b{font:700 19px var(--display)}
-.tools p{margin:0;color:var(--muted);max-width:58ch}
-.tag{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.slab{background:var(--slab);color:var(--slab-ink);border-radius:14px;padding:24px 20px}
-.slab h2{color:var(--slab-ink)}
-.slab dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px 24px;margin:14px 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.cta a{font:600 16px var(--body);text-decoration:none;border-radius:10px;padding:12px 18px;min-height:44px;display:inline-flex;align-items:center;gap:8px}
+.cta .p{background:var(--slab);color:var(--slab-ink)}
+.cta .s{border:1px solid var(--line);color:var(--ink)}
+.slab dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px 24px;margin:0}
 .slab dt{font:700 16px var(--display);color:var(--accent-on-slab)}
 .slab dd{margin:4px 0 0;font-size:15px;color:var(--slab-muted)}
-.slab a{color:var(--accent-on-slab)}
-footer{font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 18px}
 </style>
 </head>
 <body>
 <a class="skip" href="#herramientas">Saltar a las herramientas</a>
 <div class="wrap">
-  <header>
-    <svg class="mark" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Icono de Diez Claves: una llave"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>
-    <p class="by">Un proyecto de Gofio Design</p>
-    <h1><span>Diez</span> Claves</h1>
-    <p class="lede">Seguridad digital en español, para cualquier persona.</p>
-    <p class="sub">Herramientas gratuitas que funcionan dentro de tu navegador. No hay que registrarse y lo que escribes no sale de tu dispositivo.</p>
+  <header class="stack">
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="./" aria-current="page"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="generador.html">Generador</a><a href="medidor.html">Medidor</a><a href="articulos.html">Artículos</a></nav>
+    <div class="hero">
+      <h1><span>Diez</span> Claves</h1>
+      <p class="lede">Seguridad digital en español, para cualquier persona.</p>
+      <p class="muted">Herramientas gratuitas que funcionan dentro de tu navegador. No hay que registrarse y lo que escribes no sale de tu dispositivo.</p>
+      <div class="cta">
+        <a class="p" href="generador.html">Generar una contraseña →</a>
+        <a class="s" href="medidor.html">Medir la mía</a>
+      </div>
+    </div>
   </header>
 
-  <main id="herramientas">
+  <main id="herramientas" class="stack">
     <h2>Herramientas</h2>
     <ul class="tools">
       <li>
-        <a href="generador.html">Generador de contraseñas</a>
+        <a class="t" href="generador.html">Generador de contraseñas</a>
         <p>Frases de palabras y contraseñas con ñ, tildes y diéresis. Te dice cuánto protege cada una y cuánto tardarían en romperla. Guárdalo en favoritos para tenerlo a mano.</p>
       </li>
       <li>
-        <span class="tag">En preparación</span>
-        <b>Comprobador de fuerza</b>
-        <p>Para saber cuánto aguanta una contraseña que ya usas.</p>
+        <a class="t" href="medidor.html">Medidor de contraseñas</a>
+        <p>Escribe una y verás sus bits, sus fallos (palabras, años, secuencias) y cuánto aguantaría según quién ataque y cómo la guarde el servicio.</p>
       </li>
       <li>
         <span class="tag">En preparación</span>
@@ -101,10 +73,19 @@ footer{font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 18p
     </ul>
   </main>
 
+  <section class="stack" aria-labelledby="h-art">
+    <h2 id="h-art">Artículos</h2>
+    <ul class="tools">
+      <li><a class="t" href="claves-de-dispositivos.html">Claves de dispositivos: el PIN manda, la huella solo abre</a><p>Qué contraseña protege de verdad tu móvil, tu ordenador, tu router, la SIM y los aparatos de casa.</p></li>
+      <li><a class="t" href="identificadores-y-contrasenas.html">Tu correo es la mitad de la contraseña</a><p>Filtraciones, relleno de credenciales, el correo como llave maestra y los botones de «iniciar sesión con».</p></li>
+      <li><a class="t" href="de-la-contrasena-a-la-passkey.html">De la contraseña a la passkey</a><p>Sesenta años de sistemas de acceso: qué fallo arregla cada uno y cuál activar en cada cuenta.</p></li>
+    </ul>
+  </section>
+
   <section class="slab" aria-labelledby="h-como">
     <h2 id="h-como">Cómo trabajamos</h2>
     <dl>
-      <div><dt>Sin conexiones</dt><dd>Las páginas no cargan nada de fuera: ni analítica, ni fuentes, ni anuncios. Puedes cortar la red y siguen funcionando.</dd></div>
+      <div><dt>Sin terceros</dt><dd>Las páginas no cargan nada de fuera: ni analítica, ni fuentes, ni anuncios. Lo que escribes se queda en tu navegador.</dd></div>
       <div><dt>Para cualquiera</dt><dd>Lenguaje llano, letra grande, y todo se puede usar con teclado y con lector de pantalla.</dd></div>
       <div><dt>Código a la vista</dt><dd>Todo lo que hace esta web se puede leer en <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">su repositorio</a>.</dd></div>
     </dl>

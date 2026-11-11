@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Medidor de contraseñas en español: cuántos bits tiene, qué fallos tiene y cuánto tardarían en romperla según el atacante y cómo la guarde el servicio. Sin enviar nada.">
+<link rel="canonical" href="https://diezclaves.com/medidor.html">
+<meta name="theme-color" content="#131a2b">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://diezclaves.com/medidor.html">
+<meta property="og:site_name" content="Diez Claves">
+<meta property="og:title" content="Medidor de contraseñas · Diez Claves">
+<meta property="og:description" content="¿Cuánto aguanta tu contraseña? Bits, fallos y tiempo de ruptura por tipo de atacante. Todo en tu navegador.">
+<meta property="og:image" content="https://diezclaves.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="base.css">
+<title>Medidor de contraseñas · ¿Cuánto aguanta la tuya? · Diez Claves</title>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Medidor de contraseñas","url":"https://diezclaves.com/medidor.html","description":"Analiza una contraseña en el navegador: bits de entropía, fallos habituales y tiempo de ruptura según el atacante y el almacenamiento.","applicationCategory":"SecurityApplication","operatingSystem":"Cualquiera, en el navegador","inLanguage":"es","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"Diez Claves","url":"https://diezclaves.com/"}}</script>
+<style>
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{font-weight:600}
+.in{display:flex;gap:8px;align-items:stretch}
+.in input{flex:1;min-width:0;font:18px var(--mono);padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.06);color:var(--slab-ink)}
+.in input::placeholder{color:var(--slab-muted)}
+.in button{flex:none}
+.hint{font-size:14px;color:var(--slab-muted)}
+.res{display:flex;flex-direction:column;gap:14px}
+.meter{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:14px;color:var(--slab-muted)}
+.bar{flex:1 1 160px;height:8px;border-radius:4px;background:rgba(255,255,255,.14);overflow:hidden}
+.bar div{height:100%;width:0;background:var(--accent-on-slab);border-radius:4px;transition:width .2s}
+.meter strong{color:var(--slab-ink);font-size:22px;font-family:var(--display);font-variant-numeric:tabular-nums}
+.nivel{font-weight:700;color:var(--slab-ink)}
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:15px}
+.checks li{display:flex;gap:10px;align-items:flex-start}
+.checks li::before{content:"✓";font-family:var(--mono);font-weight:700;color:var(--ok);flex:none;width:1.2em}
+.checks li[data-k="mal"]::before{content:"✕";color:#ff8a80}
+.checks li[data-k="ojo"]::before{content:"!";color:var(--accent-on-slab)}
+.checks code{font-family:var(--mono);background:rgba(255,255,255,.1);padding:1px 6px;border-radius:5px}
+.tabla{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid rgba(255,255,255,.12);white-space:nowrap}
+th{font-weight:600;color:var(--slab-muted);font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+td:first-child{white-space:normal;min-width:160px}
+td small{display:block;color:var(--slab-muted);font-size:12px}
+.notes{display:flex;flex-direction:column;gap:10px;font-size:15px;color:var(--muted)}
+.notes h2{color:var(--ink)}
+.notes ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;max-width:65ch}
+.notes strong{color:var(--ink)}
+</style>
+</head>
+<body>
+<a class="skip" href="#clave">Saltar al medidor</a>
+<div class="wrap">
+  <header class="stack">
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="./"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="generador.html">Generador</a><a href="medidor.html" aria-current="page">Medidor</a><a href="articulos.html">Artículos</a></nav>
+    <h1>Medidor de contraseñas: <span>¿cuánto aguanta la tuya?</span></h1>
+  </header>
+
+  <main class="slab" aria-labelledby="h-med">
+    <h2 class="sr" id="h-med" hidden>Analizar una contraseña</h2>
+    <div class="field">
+      <label for="clave">Escribe una contraseña</label>
+      <div class="in">
+        <input id="clave" type="password" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Escribe aquí…" aria-describedby="hint">
+        <button class="btn ghost" id="ver" type="button" aria-pressed="false">Mostrar</button>
+        <button class="btn ghost" id="borrar" type="button">Borrar</button>
+      </div>
+      <p class="hint" id="hint">No sale de tu navegador: no se envía ni se guarda. Si prefieres no escribir la real, prueba con una parecida (misma longitud y tipo de caracteres).</p>
+    </div>
+
+    <div class="res" id="res" hidden>
+      <div class="meter">
+        <div class="bar" id="bar" role="meter" aria-label="Fuerza de la contraseña" aria-valuemin="0" aria-valuemax="128" aria-valuenow="0"><div id="barfill"></div></div>
+        <span><strong id="bits">0</strong> bits · <span class="nivel" id="nivel"></span></span>
+      </div>
+      <ul class="checks" id="checks"></ul>
+      <div class="tabla">
+        <table>
+          <caption class="hint" style="text-align:left;padding-bottom:8px">Cuánto tardarían en romperla, según quién ataca y cómo la guarda el servicio</caption>
+          <thead><tr><th scope="col">Situación</th><th scope="col">Tiempo</th></tr></thead>
+          <tbody id="tiempos"></tbody>
+        </table>
+      </div>
+      <p class="hint" id="live" aria-live="polite"></p>
+    </div>
+  </main>
+
+  <section class="stack">
+    <h2>Qué mira el medidor</h2>
+    <p class="muted">No basta con contar caracteres. El medidor busca lo mismo que buscaría un atacante: palabras del diccionario (en español, con y sin tilde), nombres, años, secuencias de teclado, repeticiones, sustituciones tipo <code>a→4</code> y las contraseñas más usadas. Cada trozo reconocible cuenta menos que si fuera aleatorio.</p>
+    <p class="muted">¿Sale floja? El <a href="generador.html">generador</a> te hace una nueva, con ñ y con tilde.</p>
+  </section>
+
+  <section class="notes" aria-labelledby="h-como">
+    <h2 id="h-como">Cómo se calculan los tiempos</h2>
+    <ul>
+      <li><strong>Por internet, con límite de intentos:</strong> 10 intentos por segundo. Es el caso real de casi todos los servicios, que bloquean la cuenta o frenan tras unos fallos. Aquí hasta una contraseña mediana aguanta siglos; el peligro es otro: que la adivinen a la primera porque es común, o que la saquen de una filtración.</li>
+      <li><strong>Robo de la base de datos:</strong> el atacante tiene la copia cifrada de las contraseñas y prueba sin límite. Lo que importa entonces es cómo las guardó el servicio. Con un algoritmo rápido (MD5, SHA-256 sin más) una gráfica de gama alta prueba decenas de miles de millones por segundo. Con uno lento a propósito (bcrypt, Argon2), unas pocas decenas de miles. Los valores son órdenes de magnitud, no cifras exactas.</li>
+      <li><strong>Granja de gráficas:</strong> lo mismo, con cien tarjetas. Es el presupuesto de un grupo organizado, no de un aficionado.</li>
+      <li><strong>Ordenador cuántico:</strong> hoy no existe ninguno capaz de esto. La estimación aplica el algoritmo de Grover (los bits efectivos se reducen a la mitad) a un millón de pasos por segundo, una cifra generosa con el atacante.</li>
+      <li><strong>Todos suponen que acierta a mitad del recorrido</strong> y que no hay otra pista. Si la contraseña se ha filtrado alguna vez, el tiempo es cero: está en las listas que se prueban primero.</li>
+    </ul>
+    <h2>Lo que este medidor no puede saber</h2>
+    <ul>
+      <li>Si tu contraseña aparece en alguna filtración. Comprobarlo exige consultar un servicio externo y esta página no se conecta a ninguno. Puedes hacerlo tú en <a href="https://haveibeenpwned.com/Passwords" rel="noopener">Have I Been Pwned</a>, que usa un método que no envía la contraseña entera.</li>
+      <li>Si la reutilizas en otros sitios. Esa es la debilidad más común y ningún medidor la ve.</li>
+      <li>Palabras de otros idiomas o nombres propios poco comunes: el medidor conoce el español y una lista corta de nombres y contraseñas habituales.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>Diez Claves · 2026</span>
+    <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
+    <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
+  </footer>
+</div>
+<script src="diccionario.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const sinTilde = w => w.normalize("NFD").replace(/[̀-ͯ]/g, "").normalize("NFC");
+const WORDS = (typeof DIEZCLAVES_WORDS === "string" ? DIEZCLAVES_WORDS : "").split(" ").filter(Boolean);
+const DIC = new Set(WORDS); const DIC_ASCII = new Set(WORDS.map(sinTilde));
+const COMUNES = "123456 123456789 12345678 1234567 12345 1234 123 password contraseña contrasena qwerty qwertyuiop abc123 111111 000000 123123 654321 666666 121212 112233 1q2w3e4r 1qaz2wsx iloveyou letmein welcome admin administrador root toor hola hola123 holahola teamo teamomucho tequiero princesa princess futbol football barcelona realmadrid espana españa mexico argentina colombia madrid sevilla valencia alejandro alejandra daniel carlos andres andrea maria jose juan luis pablo pedro jorge miguel antonio manuel david javier sergio fernando ricardo roberto francisco cristina laura marta ana paula sara lucia carmen sofia elena patricia dragon master monkey shadow sunshine superman batman pokemon naruto minecraft fortnite computadora ordenador telefono internet secreto secret amor dios jesus familia estrella diosesamor pepito chocolate mariposa flores casa perro gato".split(" ");
+const COMUNES_SET = new Set(COMUNES.map(sinTilde));
+const SEQ = ["abcdefghijklmnopqrstuvwxyz","qwertyuiop","asdfghjklñ","zxcvbnm","0123456789","1234567890","qwertzuiop"];
+const LEET = { "4":"a", "@":"a", "3":"e", "1":"i", "!":"i", "0":"o", "5":"s", "$":"s", "7":"t" };
+const PC_RATE = 1e10, Q_RATE = 1e6;
+const NIVELES = [[28,"muy débil"],[40,"débil"],[60,"aceptable"],[80,"fuerte"],[Infinity,"muy fuerte"]];
+function nivel(b){ for (const [lim, n] of NIVELES) if (b < lim) return n; }
+
+function poolBits(s){ // bits por carácter si fuera aleatoria, según los tipos de carácter que usa
+  let n = 0;
+  if (/[a-z]/.test(s)) n += 26; if (/[A-Z]/.test(s)) n += 26; if (/\d/.test(s)) n += 10;
+  if (/[ñÑ]/.test(s)) n += 2; if (/[áéíóúüÁÉÍÓÚÜ]/.test(s)) n += 12;
+  if (/[^a-zA-Z\dñÑáéíóúüÁÉÍÓÚÜ]/.test(s)) n += 33;
+  return Math.log2(Math.max(n, 2));
+}
+function palabraEn(s){ // devuelve el diccionario donde aparece s (en minúsculas, con o sin tilde, con o sin leet), o null
+  const l = s.toLocaleLowerCase("es"), a = sinTilde(l);
+  if (COMUNES_SET.has(a)) return "comun";
+  if (DIC.has(l) || DIC_ASCII.has(a)) return "dic";
+  const d = Array.from(a, ch => LEET[ch] || ch).join("");
+  if (d !== a && (DIC_ASCII.has(d) || COMUNES_SET.has(d))) return "leet";
+  return null;
+}
+function analizar(p){
+  const n = [...p].length, chars = [...p];
+  const hall = []; // {tipo, texto, bits}
+  let i = 0;
+  while (i < n){
+    let best = null;
+    // palabra de diccionario o común (la más larga posible, 3 letras como mínimo)
+    for (let j = Math.min(n, i + 24); j - i >= 3; j--){
+      const s = chars.slice(i, j).join(""); if (!/^[\p{L}\d@!$]+$/u.test(s)) continue;
+      const k = palabraEn(s);
+      if (k){ let bits = k === "comun" ? 4 : k === "leet" ? Math.log2(WORDS.length) + 2 : Math.log2(WORDS.length);
+        if (/[A-ZÁÉÍÓÚÜÑ]/.test(s)) bits += 1; best = { tipo: k, texto: s, bits, fin: j }; break; }
+    }
+    if (!best){ // año, secuencia, repetición
+      const resto = chars.slice(i).join("");
+      let m;
+      if ((m = /^(19|20)\d\d/.exec(resto))) best = { tipo: "año", texto: m[0], bits: 7, fin: i + 4 };
+      else if ((m = /^(.)\1{2,}/u.exec(resto))) best = { tipo: "rep", texto: m[0], bits: poolBits(m[1]) + Math.log2(m[0].length), fin: i + [...m[0]].length };
+      else {
+        const low = resto.toLowerCase();
+        for (const seq of SEQ){ const rev = [...seq].reverse().join("");
+          for (const base of [seq, rev]){
+            let len = 0; const pos = base.indexOf(low[0]);
+            if (pos >= 0){ while (len < low.length && base[(pos + len) % base.length] === low[len]) len++; }
+            if (len >= 3 && (!best || len > best.fin - i)) best = { tipo: "seq", texto: resto.slice(0, len), bits: Math.log2(base.length) + Math.log2(len) + 1, fin: i + len };
+          } }
+      }
+    }
+    if (best){ hall.push(best); i = best.fin; }
+    else { hall.push({ tipo: "car", texto: chars[i], bits: poolBits(p), fin: i + 1 }); i++; }
+  }
+  // un separador repetido entre palabras es predecible: cuenta poco
+  const esPal = h => h && (h.tipo === "dic" || h.tipo === "comun" || h.tipo === "leet");
+  const vistos = new Set();
+  hall.forEach((h, k) => { if (h.tipo === "car" && /[^\p{L}\d]/u.test(h.texto) && esPal(hall[k-1]) && (esPal(hall[k+1]) || hall[k+1]?.tipo === "año")){ h.tipo = "sep"; h.bits = vistos.has(h.texto) ? 1 : 3; vistos.add(h.texto); } });
+  let bits = hall.reduce((s, h) => s + h.bits, 0);
+  bits = Math.min(bits, n * poolBits(p)); // nunca más que la fuerza bruta pura
+  if (COMUNES_SET.has(sinTilde(p.toLowerCase()))) bits = Math.min(bits, 4);
+  return { bits, hall, n };
+}
+const tClasico = (b, rate) => Math.pow(2, b - 1) / rate;
+const tCuantico = b => Math.PI / 4 * Math.pow(2, b / 2) / Q_RATE;
+function dur(s){
+  const u = (v, one, many) => { const r = Math.round(v); return r.toLocaleString("es") + " " + (r === 1 ? one : many); };
+  if (s < 1) return "al instante";
+  if (s < 60) return u(s, "segundo", "segundos");
+  if (s < 3600) return u(s / 60, "minuto", "minutos");
+  if (s < 86400) return u(s / 3600, "hora", "horas");
+  const y = s / 31557600;
+  if (y < 1) return u(s / 86400, "día", "días");
+  if (y < 1e4) return u(y, "año", "años");
+  if (y < 1e6) return u(y / 1e3, "mil años", "mil años").replace(/^1 mil/, "mil");
+  if (y < 1e9) return u(y / 1e6, "millón de años", "millones de años");
+  if (y < 1.38e10) return u(y / 1e9, "mil millones de años", "mil millones de años").replace(/^1 mil/, "mil");
+  return "más que la edad del universo";
+}
+const ESCENARIOS = [
+  ["Por internet, con límite de intentos", "lo normal al entrar en una web o una app", 10],
+  ["Base de datos robada, guardada mal", "MD5 o SHA-256 sin más, una gráfica potente", PC_RATE],
+  ["Base de datos robada, guardada bien", "bcrypt o Argon2, la misma gráfica", 2e4],
+  ["Granja de cien gráficas, guardada mal", "", PC_RATE * 100],
+  ["Granja de cien gráficas, guardada bien", "", 2e6],
+];
+function li(k, html){ const el = document.createElement("li"); el.dataset.k = k; const s = document.createElement("span"); s.innerHTML = html; el.appendChild(s); return el; }
+const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+function render(){
+  const p = $("clave").value;
+  $("res").hidden = !p; if (!p) return;
+  const r = analizar(p), b = Math.round(r.bits), nv = nivel(r.bits);
+  $("bits").textContent = b; $("nivel").textContent = nv;
+  $("barfill").style.width = Math.min(100, r.bits / 128 * 100) + "%";
+  $("bar").setAttribute("aria-valuenow", Math.min(128, b)); $("bar").setAttribute("aria-valuetext", b + " bits, " + nv);
+  const c = $("checks"); c.textContent = "";
+  if (COMUNES_SET.has(sinTilde(p.toLowerCase()))) c.appendChild(li("mal", "Está entre las contraseñas más usadas. Se prueba de las primeras en cualquier ataque."));
+  if (r.n < 8) c.appendChild(li("mal", "Muy corta: " + r.n + " caracteres. A partir de 12 empieza a contar; una frase de 4 palabras, mejor."));
+  else if (r.n < 12) c.appendChild(li("ojo", r.n + " caracteres. Vale, pero con 12 o más iría mucho más tranquila."));
+  else c.appendChild(li("bien", r.n + " caracteres de longitud."));
+  const dic = r.hall.filter(h => h.tipo === "dic" || h.tipo === "comun" || h.tipo === "leet");
+  if (dic.length){ const pal = dic.map(h => "<code>" + esc(h.texto) + "</code>").join(" ");
+    c.appendChild(li(dic.length >= 3 ? "ojo" : "mal", (dic.length >= 3 ? "Varias palabras del diccionario: " : "Palabra reconocible: ") + pal + ". " + (dic.length >= 3 ? "Una frase de palabras al azar es buena idea; cuantas más, mejor." : "Una palabra sola, aunque lleve números detrás, cae enseguida."))); }
+  if (r.hall.some(h => h.tipo === "leet")) c.appendChild(li("ojo", "Cambiar letras por números (<code>a→4</code>, <code>e→3</code>) ya no engaña a nadie: los programas lo prueban de serie."));
+  if (r.hall.some(h => h.tipo === "año")) c.appendChild(li("mal", "Lleva un año (<code>" + esc(r.hall.find(h => h.tipo === "año").texto) + "</code>). Las fechas son de lo primero que se prueba."));
+  if (r.hall.some(h => h.tipo === "seq")) c.appendChild(li("mal", "Secuencia de teclado o de números: <code>" + esc(r.hall.find(h => h.tipo === "seq").texto) + "</code>."));
+  if (r.hall.some(h => h.tipo === "rep")) c.appendChild(li("mal", "Caracteres repetidos: <code>" + esc(r.hall.find(h => h.tipo === "rep").texto) + "</code>."));
+  if (/^\d+$/.test(p)) c.appendChild(li("mal", "Solo números. Diez dígitos son menos combinaciones que seis letras y signos."));
+  if (/[ñÑáéíóúüÁÉÍÓÚÜ¿¡]/.test(p)) c.appendChild(li("bien", "Lleva ñ, tildes o signos españoles: amplía el alfabeto y la mayoría de los programas de ataque no los prueban de serie. Comprueba que el servicio la acepta."));
+  const tipos = [/[a-z]/, /[A-Z]/, /\d/, /[^a-zA-Z\d]/].filter(re => re.test(p)).length;
+  if (tipos <= 1 && r.n < 16) c.appendChild(li("ojo", "Un solo tipo de carácter. Mezclar o, mejor, alargar."));
+  const tb = $("tiempos"); tb.textContent = "";
+  for (const [nom, det, rate] of ESCENARIOS){ const tr = document.createElement("tr");
+    const td1 = document.createElement("td"); td1.textContent = nom; if (det){ const s = document.createElement("small"); s.textContent = det; td1.appendChild(s); }
+    const td2 = document.createElement("td"); td2.textContent = dur(tClasico(r.bits, rate)); tr.append(td1, td2); tb.appendChild(tr); }
+  const trq = document.createElement("tr"); const q1 = document.createElement("td"); q1.textContent = "Ordenador cuántico hipotético"; const q2 = document.createElement("td"); q2.textContent = dur(tCuantico(r.bits)); trq.append(q1, q2); tb.appendChild(trq);
+  $("live").textContent = "Análisis actualizado: " + b + " bits, " + nv + ".";
+}
+$("clave").addEventListener("input", render);
+$("ver").addEventListener("click", () => { const on = $("ver").getAttribute("aria-pressed") !== "true"; $("ver").setAttribute("aria-pressed", on); $("ver").textContent = on ? "Ocultar" : "Mostrar"; $("clave").type = on ? "text" : "password"; $("clave").focus(); });
+$("borrar").addEventListener("click", () => { $("clave").value = ""; render(); $("clave").focus(); });
+window.addEventListener("pagehide", () => { $("clave").value = ""; });
+</script>
+</body>
+</html>
