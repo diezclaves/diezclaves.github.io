@@ -217,6 +217,7 @@ select{font:500 15px var(--body);color:var(--ink);background:var(--surface);bord
     <div class="row"><label for="l-num">Números<small>0–9</small></label><input type="checkbox" id="l-num" checked></div>
     <div class="row"><label for="l-sym">Símbolos estándar<small id="sym-list"></small></label><input type="checkbox" id="l-sym" checked></div>
     <div class="row"><label for="l-amb">Evitar caracteres que se confunden<small>Quita l, I, 1, O y 0.</small></label><input type="checkbox" id="l-amb"></div>
+    <div class="row"><label for="l-ascii">Sin tildes ni ñ<small>Usa solo caracteres estándar y desactiva los propios del español.</small></label><input type="checkbox" id="l-ascii"></div>
   </section>
 
   <section class="opts" id="opts-gamberro" hidden>
@@ -224,6 +225,7 @@ select{font:500 15px var(--body);color:var(--ink);background:var(--surface);bord
       <label for="g-n">Número de palabrotas<small>Solo palabras malsonantes, insultos de andar por casa y algún canarismo: <span id="g-total"></span> en total. Sin insultos contra colectivos.</small></label>
       <div class="ctl"><input type="range" id="g-n" min="4" max="16" value="12"><output id="g-n-o">12</output></div>
     </div>
+    <div class="row"><label for="g-ascii">Sin tildes ni ñ<small>Escribe las palabras solo con letras estándar.</small></label><input type="checkbox" id="g-ascii"></div>
     <p class="aviso">Va con mayúscula inicial, guiones, un número y un símbolo. Como la lista es corta, cada palabra protege menos que en los otros modos y hacen falta más. Piénsatelo antes de usarla donde tengas que dictarla o enseñarla.</p>
   </section>
 
@@ -311,10 +313,13 @@ function genFrase(n, ascii){ // n palabras al azar, de 4 a 10 letras
   const pool = poolFrase(ascii);
   return { words: Array.from({length:n}, () => pick(pool)), bits: n * Math.log2(pool.length) };
 }
-function genGamberro(n){
-  const parts = Array.from({length:n}, () => { const w = pick(GAMB); return w[0].toLocaleUpperCase("es") + w.slice(1); });
-  parts.push(String(randInt(100)).padStart(2,"0") + pick(SYMBOLS));
-  return { text: parts.join("-"), bits: n * Math.log2(GAMB.length) + EXTRA_G };
+let _gamb = null;
+function poolG(ascii){ return ascii ? (_gamb || (_gamb = [...new Set(GAMB.map(sinTilde))])) : GAMB; }
+function genGamberro(n, ascii){
+  const G = poolG(ascii);
+  const parts = Array.from({length:n}, () => { const w = pick(G); return w[0].toLocaleUpperCase("es") + w.slice(1); });
+  parts.push(String(randInt(100)).padStart(2,"0") + pick(symSet(ascii)));
+  return { text: parts.join("-"), bits: n * Math.log2(G.length) + extraG(ascii) };
 }
 function poolPalabras(o){
   return base(o.ascii).filter(w => w.length >= o.lmin && w.length <= o.lmax);
@@ -338,7 +343,7 @@ function genPalabras(o){
   }
   const extra = [];
   if (o.num){ extra.push(String(randInt(100)).padStart(2,"0")); bits += Math.log2(100); }
-  if (o.sym){ extra.push(pick(SYMBOLS)); bits += Math.log2(SYMBOLS.length); }
+  if (o.sym){ const S = symSet(o.ascii); extra.push(pick(S)); bits += Math.log2(S.length); }
   return { text: parts.concat(extra.length ? [extra.join("")] : []).join(o.sep), bits };
 }
 function log2comb(n,k){ let s = 0; for (let i=1;i<=k;i++) s += Math.log2((n-k+i)/i); return s; }
@@ -363,7 +368,8 @@ function bitsLetras(o){
   const m = o.n - k;
   return log2comb(o.n,k) + k*Math.log2(ESP.length) + (m ? m*Math.log2(A) : 0);
 }
-const EXTRA_G = Math.log2(100) + Math.log2(SYMBOLS.length);
+const symSet = ascii => ascii ? SETS.sym : SYMBOLS; // sin tildes ni ñ: tampoco ¿ ¡ € º ª
+const extraG = ascii => Math.log2(100) + Math.log2(symSet(ascii).length);
 const NIVEL = { fuerte: 70, muy: 100 };
 const PC_RATE = 1e10, Q_RATE = 1e6; // intentos por segundo (clásico) y pasos de Grover por segundo (hipotético)
 const tClasico = b => Math.pow(2, b-1) / PC_RATE;
@@ -409,7 +415,7 @@ function generate(){
   } else {
     const r = mode === "palabras"
       ? genPalabras(optsPalabras())
-      : mode === "gamberro" ? genGamberro(+$("g-n").value) : genLetras(optsLetras());
+      : mode === "gamberro" ? genGamberro(+$("g-n").value, $("g-ascii").checked) : genLetras(optsLetras());
     bits = r.bits; current = r.text;
     if (mode === "palabras") $("p-pool").textContent = poolPalabras(optsPalabras()).length;
     if (current) mark($("out"), current);
@@ -437,15 +443,15 @@ function setMode(m){
 }
 document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => setMode(b.dataset.mode)));
 function optsLetras(){
-  return { n:+$("l-n").value, esp:+$("l-esp").value, min:$("l-min").checked, may:$("l-may").checked, num:$("l-num").checked, sym:$("l-sym").checked, amb:$("l-amb").checked };
+  return { n:+$("l-n").value, esp:$("l-ascii").checked ? 0 : +$("l-esp").value, min:$("l-min").checked, may:$("l-may").checked, num:$("l-num").checked, sym:$("l-sym").checked, amb:$("l-amb").checked };
 }
 function ajustar(nivel){
   const t = NIVEL[nivel], clamp = (el, v) => { el.value = Math.max(+el.min, Math.min(+el.max, v)); };
   if (mode === "frase") clamp($("f-n"), nPalabrasPara(t, poolFrase($("f-ascii").checked).length, 0));
   else if (mode === "palabras"){
     const o = optsPalabras(), pool = poolPalabras(o).length;
-    if (pool >= 2) clamp($("p-n"), nPalabrasPara(t, pool, (o.num ? Math.log2(100) : 0) + (o.sym ? Math.log2(SYMBOLS.length) : 0)));
-  } else if (mode === "gamberro") clamp($("g-n"), nPalabrasPara(t, GAMB.length, EXTRA_G));
+    if (pool >= 2) clamp($("p-n"), nPalabrasPara(t, pool, (o.num ? Math.log2(100) : 0) + (o.sym ? Math.log2(symSet(o.ascii).length) : 0)));
+  } else if (mode === "gamberro") clamp($("g-n"), nPalabrasPara(t, poolG($("g-ascii").checked).length, extraG($("g-ascii").checked)));
   else {
     const o = optsLetras(), el = $("l-n"); let n = +el.min;
     while (n < +el.max && bitsLetras({ ...o, n }) < t) n++;
@@ -464,9 +470,9 @@ function syncRanges(changed){
   ["f-n","p-n","p-min","p-max","l-n","l-esp","g-n"].forEach(id => $(id+"-o").textContent = $(id).value);
 }
 ["f-n","p-n","p-min","p-max","l-n","l-esp","g-n"].forEach(id => $(id).addEventListener("input", () => { syncRanges(id); generate(); }));
-["p-sep","p-leet","p-cap","p-num","p-sym","l-min","l-may","l-num","l-sym","l-amb","f-ascii","p-ascii"].forEach(id => $(id).addEventListener("change", generate));
+["p-sep","p-leet","p-cap","p-num","p-sym","l-min","l-may","l-num","l-sym","l-amb","f-ascii","p-ascii","l-ascii","g-ascii"].forEach(id => $(id).addEventListener("change", generate));
 // ---------- recomendaciones junto a cada control ----------
-["f-n","p-n","p-min","p-max","p-sep","p-cap","p-num","p-sym","p-leet","l-n","l-esp","l-min","l-may","l-num","l-sym","l-amb","f-ascii","p-ascii","g-n"].forEach(id => {
+["f-n","p-n","p-min","p-max","p-sep","p-cap","p-num","p-sym","p-leet","l-n","l-esp","l-min","l-may","l-num","l-sym","l-amb","f-ascii","p-ascii","g-n","l-ascii","g-ascii"].forEach(id => {
   // la recomendación va fuera de la etiqueta y enlazada al control, para que el lector de pantalla la lea como descripción
   const lab = document.querySelector('label[for="' + id + '"]'), box = document.createElement("div"), s = document.createElement("span");
   box.className = "lab"; s.className = "rec"; s.id = "r-" + id;
@@ -485,7 +491,7 @@ function recomendar(){
   rec("f-n", +$("f-n").value >= nf, "Llega a muy fuerte.", nf + " palabras o más para llegar a muy fuerte.");
   // contraseña de palabras
   const o = optsPalabras(), pool = poolPalabras(o).length;
-  const extra = (o.num ? Math.log2(100) : 0) + (o.sym ? Math.log2(SYMBOLS.length) : 0);
+  const extra = (o.num ? Math.log2(100) : 0) + (o.sym ? Math.log2(symSet(o.ascii).length) : 0);
   const need = pool >= 2 ? nPalabrasPara(T, pool, extra) : Infinity;
   rec("p-n", o.n >= need, "Llega a muy fuerte con estas opciones.",
     need <= +$("p-n").max ? need + " o más para llegar a muy fuerte con estas opciones." : "amplía el rango de letras; con este sorteo no llega a muy fuerte.");
@@ -507,8 +513,11 @@ function recomendar(){
     rec(id, l[k], "Amplía el sorteo de cada carácter.", v + "; cada tipo amplía el sorteo de cada carácter."));
   rec("l-amb", null, "Resta muy poca fuerza. Útil si vas a copiarla a mano o a dictarla.");
   const sinT = "Resta muy poca fuerza. Útil con un teclado extranjero o si el servicio no acepta ñ ni tildes.";
-  rec("f-ascii", null, sinT); rec("p-ascii", null, sinT);
-  const ng = nPalabrasPara(T, GAMB.length, EXTRA_G);
+  rec("f-ascii", null, sinT); rec("p-ascii", null, sinT); rec("g-ascii", null, sinT);
+  rec("l-ascii", null, "Útil con un teclado extranjero o si el servicio no acepta ñ ni tildes.");
+  $("l-esp").disabled = $("l-ascii").checked;
+  if ($("l-ascii").checked) rec("l-esp", null, "Desactivado por la casilla «Sin tildes ni ñ».");
+  const ng = nPalabrasPara(T, poolG($("g-ascii").checked).length, extraG($("g-ascii").checked));
   rec("g-n", +$("g-n").value >= ng, "Llega a muy fuerte.", ng + " o más para llegar a muy fuerte.");
 }
 $("regen").addEventListener("click", generate);
