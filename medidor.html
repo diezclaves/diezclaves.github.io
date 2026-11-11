@@ -13,15 +13,15 @@
 <meta property="og:site_name" content="Diez Claves">
 <meta property="og:title" content="Medidor de contraseñas · Diez Claves">
 <meta property="og:description" content="¿Cuánto aguanta tu contraseña? Bits, fallos y tiempo de ruptura por tipo de atacante. Todo en tu navegador.">
-<meta property="og:image" content="https://diezclaves.com/og.png">
+<meta property="og:image" content="https://diezclaves.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="stylesheet" href="base.css">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/assets/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/base.css">
 <title>Medidor de contraseñas · ¿Cuánto aguanta la tuya? · Diez Claves</title>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Medidor de contraseñas","url":"https://diezclaves.com/medidor.html","description":"Analiza una contraseña en el navegador: bits de entropía, fallos habituales y tiempo de ruptura según el atacante y el almacenamiento.","applicationCategory":"SecurityApplication","operatingSystem":"Cualquiera, en el navegador","inLanguage":"es","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"Diez Claves","url":"https://diezclaves.com/"}}</script>
 <style>
@@ -60,7 +60,7 @@ td small{display:block;color:var(--slab-muted);font-size:12px}
 <a class="skip" href="#clave">Saltar al medidor</a>
 <div class="wrap">
   <header class="stack">
-    <nav class="by" aria-label="Diez Claves"><a class="brand" href="./"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="generador.html">Generador</a><a href="medidor.html" aria-current="page">Medidor</a><a href="articulos.html">Artículos</a></nav>
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="/generador.html">Generador</a><a href="/medidor.html" aria-current="page">Medidor</a><a href="/articulos/">Artículos</a></nav>
     <h1>Medidor de contraseñas: <span>¿cuánto aguanta la tuya?</span></h1>
   </header>
 
@@ -96,7 +96,7 @@ td small{display:block;color:var(--slab-muted);font-size:12px}
   <section class="stack">
     <h2>Qué mira el medidor</h2>
     <p class="muted">No basta con contar caracteres. El medidor busca lo mismo que buscaría un atacante: palabras del diccionario (en español, con y sin tilde), nombres, años, secuencias de teclado, repeticiones, sustituciones tipo <code>a→4</code> y las contraseñas más usadas. Cada trozo reconocible cuenta menos que si fuera aleatorio.</p>
-    <p class="muted">¿Sale floja? El <a href="generador.html">generador</a> te hace una nueva, con ñ y con tilde.</p>
+    <p class="muted">¿Sale floja? El <a href="/generador.html">generador</a> te hace una nueva, con ñ y con tilde.</p>
   </section>
 
   <section class="notes" aria-labelledby="h-como">
@@ -122,7 +122,7 @@ td small{display:block;color:var(--slab-muted);font-size:12px}
     <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
   </footer>
 </div>
-<script src="diccionario.js"></script>
+<script src="/assets/diccionario.js"></script>
 <script>
 const $ = id => document.getElementById(id);
 const sinTilde = w => w.normalize("NFD").replace(/[̀-ͯ]/g, "").normalize("NFC");

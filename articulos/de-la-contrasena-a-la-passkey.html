@@ -6,30 +6,30 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Contraseña, SMS, apps de códigos, llaves físicas, passkeys e inicio de sesión único: de dónde viene cada sistema, qué fallo arregla y cuál activar en cada cuenta.">
-<link rel="canonical" href="https://diezclaves.com/de-la-contrasena-a-la-passkey.html">
+<link rel="canonical" href="https://diezclaves.com/articulos/de-la-contrasena-a-la-passkey.html">
 <meta name="theme-color" content="#131a2b">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://diezclaves.com/de-la-contrasena-a-la-passkey.html">
+<meta property="og:url" content="https://diezclaves.com/articulos/de-la-contrasena-a-la-passkey.html">
 <meta property="og:site_name" content="Diez Claves">
 <meta property="og:title" content="De la contraseña a la passkey: cómo han evolucionado los sistemas de acceso">
 <meta property="og:description" content="Contraseña, SMS, apps de códigos, llaves físicas, passkeys e inicio de sesión único: de dónde viene cada sistema, qué fallo arregla y cuál activar en cada cuenta.">
-<meta property="og:image" content="https://diezclaves.com/og.png">
+<meta property="og:image" content="https://diezclaves.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="stylesheet" href="base.css">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/assets/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/base.css">
 <title>De la contraseña a la passkey: cómo han evolucionado los sistemas de acceso · Diez Claves</title>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "De la contraseña a la passkey: cómo han evolucionado los sistemas de acceso", "description": "Contraseña, SMS, apps de códigos, llaves físicas, passkeys e inicio de sesión único: de dónde viene cada sistema, qué fallo arregla y cuál activar en cada cuenta.", "inLanguage": "es", "datePublished": "2026-11-11", "dateModified": "2026-11-11", "author": {"@type": "Organization", "name": "Diez Claves", "url": "https://diezclaves.com/"}, "publisher": {"@type": "Organization", "name": "Diez Claves", "logo": {"@type": "ImageObject", "url": "https://diezclaves.com/icon-512.png"}}, "mainEntityOfPage": "https://diezclaves.com/de-la-contrasena-a-la-passkey.html", "image": "https://diezclaves.com/og.png"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "De la contraseña a la passkey: cómo han evolucionado los sistemas de acceso", "description": "Contraseña, SMS, apps de códigos, llaves físicas, passkeys e inicio de sesión único: de dónde viene cada sistema, qué fallo arregla y cuál activar en cada cuenta.", "inLanguage": "es", "datePublished": "2026-11-11", "dateModified": "2026-11-11", "author": {"@type": "Organization", "name": "Diez Claves", "url": "https://diezclaves.com/"}, "publisher": {"@type": "Organization", "name": "Diez Claves", "logo": {"@type": "ImageObject", "url": "https://diezclaves.com/assets/icon-512.png"}}, "mainEntityOfPage": "https://diezclaves.com/articulos/de-la-contrasena-a-la-passkey.html", "image": "https://diezclaves.com/assets/og.png"}</script>
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <div class="wrap">
   <header class="stack">
-    <nav class="by" aria-label="Diez Claves"><a class="brand" href="./"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="generador.html">Generador</a><a href="medidor.html">Medidor</a><a href="articulos.html" aria-current="page">Artículos</a></nav>
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="/generador.html">Generador</a><a href="/medidor.html">Medidor</a><a href="/articulos/" aria-current="page">Artículos</a></nav>
   </header>
   <article id="contenido">
     <header>
@@ -42,7 +42,7 @@
 
     <h2>1961: algo que sabes</h2>
     <p>Las primeras contraseñas informáticas se usaron en un ordenador compartido del MIT para que cada persona tuviera sus propios archivos. Y el primer robo llegó enseguida: un usuario imprimió el archivo donde estaban todas. Desde entonces el problema es el mismo: la contraseña se guarda en algún sitio, y ese sitio se puede robar.</p>
-    <p>La respuesta, en los años setenta, fue no guardar la contraseña sino una <strong>huella matemática</strong> de ella (un <em>hash</em>), de la que no se puede volver atrás, y añadirle una <strong>sal</strong>, un dato aleatorio por usuario, para que dos contraseñas iguales no se parezcan en la base de datos. Hoy los algoritmos buenos (bcrypt, Argon2) son además lentos a propósito, para que probar millones de candidatos cueste. El <a href="medidor.html">medidor</a> de esta web muestra la diferencia: la misma contraseña aguanta siglos o segundos según cómo la guarde el servicio.</p>
+    <p>La respuesta, en los años setenta, fue no guardar la contraseña sino una <strong>huella matemática</strong> de ella (un <em>hash</em>), de la que no se puede volver atrás, y añadirle una <strong>sal</strong>, un dato aleatorio por usuario, para que dos contraseñas iguales no se parezcan en la base de datos. Hoy los algoritmos buenos (bcrypt, Argon2) son además lentos a propósito, para que probar millones de candidatos cueste. El <a href="/medidor.html">medidor</a> de esta web muestra la diferencia: la misma contraseña aguanta siglos o segundos según cómo la guarde el servicio.</p>
     <p>Lo que ningún hash arregla es que la contraseña se adivine, se repita en varios sitios o se entregue a una web falsa. Para eso hizo falta una segunda cosa.</p>
 
     <h2>Años 2000: algo que tienes</h2>
@@ -85,7 +85,7 @@
 
     <nav class="rel" aria-label="Relacionado">
       <span class="tag">Sigue leyendo</span>
-      <a href="identificadores-y-contrasenas.html">Tu correo es la mitad de la contraseña</a><a href="claves-de-dispositivos.html">Claves de dispositivos</a><a href="generador.html">Generador de contraseñas</a>
+      <a href="/articulos/identificadores-y-contrasenas.html">Tu correo es la mitad de la contraseña</a><a href="/articulos/claves-de-dispositivos.html">Claves de dispositivos</a><a href="/generador.html">Generador de contraseñas</a>
     </nav>
   </article>
   <footer>
