@@ -7,6 +7,7 @@
     mx: { nombre: "México", tienda: "mx", corto: "México" },
     cl: { nombre: "Chile", tienda: "cl", corto: "Chile" },
     ar: { nombre: "Argentina", tienda: "ar", corto: "Argentina" },
+    uy: { nombre: "Uruguay", tienda: "uy", corto: "Uruguay" },
     us: { nombre: "Estados Unidos", tienda: "us", corto: "EE. UU." }
   };
   const TIENDAS = {
@@ -14,7 +15,8 @@
     mx: { nombre: "Amazon México", url: t => "https://www.amazon.com.mx/s?k=" + t, tag: "" },
     us: { nombre: "Amazon (Estados Unidos)", url: t => "https://www.amazon.com/s?k=" + t, tag: "" },
     cl: { nombre: "Mercado Libre Chile", url: t => "https://listado.mercadolibre.cl/" + t.replace(/\+/g, "-"), tag: "" },
-    ar: { nombre: "Mercado Libre Argentina", url: t => "https://listado.mercadolibre.com.ar/" + t.replace(/\+/g, "-"), tag: "" }
+    ar: { nombre: "Mercado Libre Argentina", url: t => "https://listado.mercadolibre.com.ar/" + t.replace(/\+/g, "-"), tag: "" },
+    uy: { nombre: "Mercado Libre Uruguay", url: t => "https://listado.mercadolibre.com.uy/" + t.replace(/\+/g, "-"), tag: "" }
   };
   const KEY = "dc:region";
   const html = document.documentElement;
@@ -29,9 +31,10 @@
     if (/^America\/(Mexico|Cancun|Merida|Monterrey|Chihuahua|Tijuana|Hermosillo|Mazatlan|Matamoros|Ojinaga|Bahia_Banderas)/.test(tz)) return "mx";
     if (/^America\/(Santiago|Punta_Arenas)|^Pacific\/Easter/.test(tz)) return "cl";
     if (/^America\/(Argentina|Buenos_Aires|Cordoba|Mendoza)/.test(tz)) return "ar";
+    if (tz === "America/Montevideo") return "uy";
     if (/^(Europe\/Madrid|Africa\/Ceuta)/.test(tz)) return "es";
     for (const l of langs){
-      if (l === "es-mx") return "mx"; if (l === "es-cl") return "cl"; if (l === "es-ar") return "ar";
+      if (l === "es-mx") return "mx"; if (l === "es-cl") return "cl"; if (l === "es-ar") return "ar"; if (l === "es-uy") return "uy";
       if (l === "es-es") return "es"; if (l === "es-us" || l === "en-us") return "us";
     }
     if (/^America\//.test(tz) && langs.some(l => l.startsWith("es"))) return "us";
