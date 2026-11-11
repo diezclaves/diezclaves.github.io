@@ -3,10 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Generador de frases y contraseñas en español, con ñ y tildes. Todo ocurre en tu navegador, sin ninguna conexión.">
-<title>Generador de claves en español · Diez Claves</title>
+<meta name="theme-color" content="#131a2b">
+<meta property="og:title" content="Diez Claves · Generador de claves en español">
+<meta property="og:description" content="Frases y contraseñas con ñ y tildes, generadas en tu navegador. Sin registro y sin enviar nada.">
+<meta property="og:image" content="https://diezclaves.com/icon-512.png">
+<meta property="og:locale" content="es_ES">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Diez Claves · Generador de claves</title>
 <style>
 /* Layout: una columna de herramienta; la clave generada es el único bloque con fondo propio, los ajustes van debajo en filas planas. */
 :root{
@@ -38,11 +46,15 @@ body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16p
   display:flex;flex-direction:column;gap:22px}
 header{display:flex;flex-direction:column;gap:6px}
 .by a{color:inherit;text-underline-offset:3px}
-.by{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.by{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
 h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,8vw,52px);line-height:1;margin:0;letter-spacing:-.02em;text-wrap:balance}
 h1 b{color:var(--accent);font-weight:700}
 .lede{margin:0;color:var(--muted);max-width:60ch}
 
+.fav{margin:4px 0 0;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14px;color:var(--muted)}
+.fav span{flex:1 1 220px;min-width:0}
+.favbtn{font:600 14px var(--body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 16px;min-height:44px;cursor:pointer}
+.favbtn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 .tabs{display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--line)}
 .tabs button{font:600 15px var(--body);color:var(--muted);background:none;border:0;border-bottom:3px solid transparent;
   padding:10px 12px;min-height:44px;margin-bottom:-1px;cursor:pointer}
@@ -118,9 +130,10 @@ select{font:500 15px var(--body);color:var(--ink);background:var(--surface);bord
 
 <div class="wrap">
   <header>
-    <div class="by"><a href="./">Diez Claves</a> · un proyecto de Gofio Design</div>
+    <div class="by"><svg viewBox="0 0 64 64" width="22" height="22" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg><span><a href="./">Diez Claves</a> · un proyecto de Gofio Design</span></div>
     <h1>Generador de claves, con <b>ñ</b> y con <b>tilde</b></h1>
-    <p class="lede">Frases de palabras y contraseñas en español, generadas en tu navegador. La página no hace ninguna conexión: ni servidor, ni fuentes, ni analítica.</p>
+    <p class="lede">Frases de palabras y contraseñas en español, generadas en tu navegador. Nada de lo que hagas aquí se envía: no hay analítica, ni fuentes externas, ni terceros.</p>
+    <p class="fav" id="favbox" hidden><button class="favbtn" id="fav" type="button">☆ Guardar en favoritos</button><span id="favtip" role="status"></span></p>
   </header>
 
   <div class="tabs" role="tablist" aria-label="Tipo de clave">
@@ -536,11 +549,24 @@ $("ver").addEventListener("click", () => {
   ["out","grid"].forEach(id => { $(id).classList.toggle("velada", on); $(id).setAttribute("aria-hidden", on); });
 });
 document.documentElement.lang = "es";
+// invitación a guardar la página en favoritos (solo cuando se abre como página propia, no incrustada)
+const esPropia = (() => { try { return window.top === window; } catch(e){ return false; } })();
+function favTxt(){
+  const ua = navigator.userAgent || "";
+  if (/Android|iPhone|iPad|iPod/i.test(ua)) return "Abre el menú del navegador y elige «Añadir a pantalla de inicio» o «Añadir a favoritos».";
+  return "Pulsa " + (/Mac/i.test(navigator.platform || ua) ? "⌘ + D" : "Ctrl + D") + " para guardarla en favoritos y tenerla siempre a mano.";
+}
+function favVista(v){ try { if (v) localStorage.setItem("pc:fav", "1"); return localStorage.getItem("pc:fav") === "1"; } catch(e){ return false; } }
+function sugerirFav(){ if (!esPropia || favVista()) return; $("favtip").textContent = "¿Te ha servido? " + favTxt(); favVista(true); }
+if (esPropia){
+  $("favbox").hidden = false;
+  $("fav").addEventListener("click", () => { $("favtip").textContent = favTxt(); favVista(true); });
+}
 $("copy").addEventListener("click", () => {
   if (!current) return;
   const fallback = () => { const el = mode === "frase" ? $("grid") : $("out"); const r = document.createRange(); r.selectNodeContents(el);
     const s = getSelection(); s.removeAllRanges(); s.addRange(r); $("said").textContent = "Seleccionada: cópiala con Ctrl o Cmd + C"; };
-  try { navigator.clipboard.writeText(current).then(() => { $("said").textContent = "Copiada. Pégala y después copia otra cosa para no dejarla en el portapapeles."; }, fallback); } catch(e){ fallback(); }
+  try { navigator.clipboard.writeText(current).then(() => { $("said").textContent = "Copiada. Pégala y después copia otra cosa para no dejarla en el portapapeles."; sugerirFav(); }, fallback); } catch(e){ fallback(); }
 });
 $("dic-n").textContent = poolFrase(false).length.toLocaleString("es");
 $("dic-n2").textContent = WORDS.length.toLocaleString("es");
