@@ -43,3 +43,7 @@ Secciones previstas, que se crean al publicar su primer artículo:
 ## País de entrada
 
 Cualquier URL admite `?pais=<código>`, por ejemplo `?pais=mx`. Al entrar, `region.js` guarda ese país, quita el parámetro de la barra de direcciones y aplica la tienda y el código de afiliado de ese país en todas las páginas de la visita. Las URL de los artículos no cambian, así que no hay contenido duplicado. Los códigos son los de `REGIONES` en `assets/region.js`: `es`, `ic`, `mx`, `ar`, `us`…
+
+## Portada, índice y secciones
+
+La portada, el índice de artículos, las páginas de sección y el bloque «Siguiente en esta sección» de cada artículo se generan a partir de la lista de secciones. Después de publicar artículos nuevos, hay que volver a generarlos para que aparezcan en todas partes.
