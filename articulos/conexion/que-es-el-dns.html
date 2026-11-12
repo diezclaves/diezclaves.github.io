@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="El DNS encuentra las páginas que visitas. Cómo funciona, quién responde a tus consultas y qué tiene que ver con tu privacidad.">
+<link rel="canonical" href="https://diezclaves.com/articulos/conexion/que-es-el-dns.html">
+<meta name="theme-color" content="#131a2b">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://diezclaves.com/articulos/conexion/que-es-el-dns.html">
+<meta property="og:site_name" content="Diez Claves">
+<meta property="og:title" content="Diez claves para entender qué es el DNS">
+<meta property="og:description" content="El DNS encuentra las páginas que visitas. Cómo funciona, quién responde a tus consultas y qué tiene que ver con tu privacidad.">
+<meta property="og:image" content="https://diezclaves.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/assets/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/base.css">
+<script src="/assets/region.js" defer></script>
+<title>Diez claves para entender qué es el DNS · Diez Claves</title>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Diez claves para entender qué es el DNS", "description": "El DNS encuentra las páginas que visitas. Cómo funciona, quién responde a tus consultas y qué tiene que ver con tu privacidad.", "inLanguage": "es", "datePublished": "2026-11-11", "dateModified": "2026-11-11", "author": {"@type": "Organization", "name": "Diez Claves", "url": "https://diezclaves.com/"}, "publisher": {"@type": "Organization", "name": "Diez Claves", "logo": {"@type": "ImageObject", "url": "https://diezclaves.com/assets/icon-512.png"}}, "mainEntityOfPage": "https://diezclaves.com/articulos/conexion/que-es-el-dns.html", "image": "https://diezclaves.com/assets/og.png"}, {"@type": "ItemList", "name": "Diez claves para entender qué es el DNS", "numberOfItems": 10, "itemListOrder": "https://schema.org/ItemListOrderAscending", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Sistema de nombres de dominio"}, {"@type": "ListItem", "position": 2, "name": "Tu dispositivo pregunta dónde está cada página"}, {"@type": "ListItem", "position": 3, "name": "Normalmente usas el DNS de tu operador"}, {"@type": "ListItem", "position": 4, "name": "Las consultas DNS revelan tus intereses"}, {"@type": "ListItem", "position": 5, "name": "Un DNS distinto no te vuelve anónimo"}, {"@type": "ListItem", "position": 6, "name": "Se pueden cifrar las consultas"}, {"@type": "ListItem", "position": 7, "name": "Algunos servidores DNS también bloquean dominios"}, {"@type": "ListItem", "position": 8, "name": "Puedes cambiar de DNS sin cambiar de operador"}, {"@type": "ListItem", "position": 9, "name": "Elegir proveedor también es confiar"}, {"@type": "ListItem", "position": 10, "name": "Decide si necesitas cambiarlo"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="wrap">
+  <header class="stack">
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="/generador.html">Generador</a><a href="/medidor.html">Medidor</a><a href="/articulos/" aria-current="page">Artículos</a></nav>
+  </header>
+  <main id="contenido">
+  <article>
+    <header>
+      <p class="meta"><a href="/articulos/conexion/">Conexión: DNS, VPN y Tor</a> · 11 de noviembre de 2026 · 7 min de lectura</p>
+      <h1>Diez claves para entender <span>qué es el DNS</span></h1>
+      <p class="lede muted">El DNS encuentra las páginas que visitas. Cómo funciona, quién responde a tus consultas y qué tiene que ver con tu privacidad.</p>
+    </header>
+    <p>Cuando escribes <code>diezclaves.com</code>, tu dispositivo necesita averiguar dónde está el servidor que aloja esta página. De eso se encarga el DNS. Lo usas casi constantemente, aunque probablemente nunca lo hayas configurado. Entenderlo ayuda a ver cómo funciona Internet y por qué algunas decisiones sobre tu conexión afectan a tu privacidad.</p>
+    <ol class="claves">
+      <li><h2>Sistema de nombres de dominio</h2><p>DNS son las siglas de <em>Domain Name System</em>. Su función más conocida es relacionar nombres fáciles de recordar con las direcciones IP que usan los dispositivos para comunicarse. Imagínalo como una agenda: buscas un nombre y obtienes la dirección para llamar. No almacena las páginas ni transporta su contenido; ayuda a encontrar los destinos y otros datos que necesitan distintos servicios de Internet.</p></li>
+      <li><h2>Tu dispositivo pregunta dónde está cada página</h2><p>Al escribir una dirección, el dispositivo mira primero lo que ya tiene guardado. Si no encuentra una respuesta válida, pregunta a un servidor DNS, el <em>resolvedor</em>, que busca o recupera la información y devuelve la dirección. Entonces el navegador intenta conectarse. Hay varios servidores y cachés por medio, pero lo esencial es esto: alguien tiene que traducir el nombre que escribes en algo útil para conectarte.</p></li>
+      <li><h2>Normalmente usas el DNS de tu operador</h2><p>Al contratar la conexión, el operador configura el DNS automáticamente; en casa, el router dice a tus dispositivos qué servidor usar y a veces hace de intermediario. Es decir, usas un servicio DNS sin haberlo elegido. No es necesariamente un problema, pero ese servidor recibe peticiones sobre los dominios que visitas, así que tiene sentido preguntarse quién lo gestiona y qué hace con esa información.</p></li>
+      <li><h2>Las consultas DNS revelan tus intereses</h2><p>Al visitar una página, el dispositivo consulta su dominio y los de los servicios relacionados. Esas peticiones muestran algunos destinos que intentas localizar: no es un historial completo, pero aporta información sobre tus actividades. Y las consultas DNS tradicionales van sin cifrar, de modo que ciertos observadores de la red pueden verlas. Por eso el DNS también es un asunto de privacidad.</p></li>
+      <li><h2>Un DNS distinto no te vuelve anónimo</h2><p>Cambiar de servidor DNS no cambia tu IP pública ni oculta tu identidad a las páginas, ni evita que un servicio te reconozca cuando inicias sesión. Lo que haces es cambiar quién recibe y responde tus consultas; con DNS cifrado, además, las proteges durante el camino. El resto de tu conexión puede seguir revelando a dónde vas. Desconfía de quien presente un cambio de DNS como anonimato completo.</p></li>
+      <li><h2>Se pueden cifrar las consultas</h2><p>Dos tecnologías habituales: DNS sobre HTTPS (DoH) y DNS sobre TLS (DoT). Protegen las consultas mientras viajan entre tu dispositivo y un servidor compatible, de modo que alguien en ese tramo no puede leerlas ni modificarlas. Pero el proveedor que las recibe tiene que procesarlas: cifrar el DNS no elimina la necesidad de confiar en quien lo gestiona, ni sustituye al HTTPS de las páginas.</p></li>
+      <li><h2>Algunos servidores DNS también bloquean dominios</h2><p>Hay servicios DNS que, además de responder, filtran: impiden resolver dominios usados para distribuir programas maliciosos o asociados a rastreadores, y los hay orientados al control parental. Ayudan, con límites: no analizan el contenido de una página ni detectan cualquier fraude, y un dominio bloqueado puede dejar sin funcionar servicios legítimos. Conviene saber qué listas usa el proveedor y si deja revisar sus reglas.</p></li>
+      <li><h2>Puedes cambiar de DNS sin cambiar de operador</h2><p>No hace falta otra conexión. Según el dispositivo, el DNS se configura en el sistema operativo, en el navegador o en el router. En el router afecta a todos los dispositivos que usen sus ajustes; en el navegador, solo a ese navegador. Y hay aplicaciones que gestionan sus consultas por su cuenta. Configurar un DNS en un sitio no garantiza que todas las aplicaciones lo usen. Cómo hacerlo, paso a paso: <a href="/articulos/conexion/cambiar-dns.html">diez claves para cambiar tu DNS con privacidad</a>.</p></li>
+      <li><h2>Elegir proveedor también es confiar</h2><p>No mires solo la velocidad. Revisa quién lo administra, qué registra, cuánto tiempo lo conserva, qué compromisos de privacidad publica, si admite consultas cifradas y si aplica filtros. Una política de privacidad publicada es útil, pero no es prueba independiente de cumplimiento. Ningún proveedor es fiable automáticamente por ser gratuito, comercial, comunitario o de un país determinado.</p></li>
+      <li><h2>Decide si necesitas cambiarlo</h2><div class="scroll" tabindex="0" role="region" aria-label="Tabla, se puede desplazar"><table><thead><tr><th scope="col">Qué necesitas</th><th scope="col">Qué hacer</th></tr></thead><tbody><tr><td>Entender tu configuración actual</td><td>Consultar los ajustes de red</td></tr><tr><td>Cifrar las consultas</td><td>Activar DNS sobre HTTPS o TLS</td></tr><tr><td>Bloquear ciertos dominios</td><td>Evaluar un DNS con filtros</td></tr><tr><td>Red administrada (trabajo, centro educativo)</td><td>Consultar antes con su responsable</td></tr><tr><td>Más anonimato</td><td>Investigar Tor; cambiar el DNS no basta</td></tr></tbody></table></div><p>Si tu conexión funciona y ya usa un DNS cifrado adecuado, quizá no necesites tocar nada. El objetivo no es cambiar por cambiar, sino saber qué servicio usas y por qué.</p></li>
+    </ol>
+    <div class="cierre stack">
+      <h2>Por dónde empezar</h2>
+      <p>Mira qué servidor DNS usa tu dispositivo y si tus consultas van cifradas. Después decide si tienes un motivo concreto para cambiar de proveedor. No hace falta comprar nada.</p>
+      <p class="muted">Revisado el 11 de noviembre de 2026.  Fuentes: <a href="https://www.icann.org/" rel="noopener">ICANN</a> · <a href="https://developers.cloudflare.com/1.1.1.1/" rel="noopener">Cloudflare, documentación de 1.1.1.1</a> · <a href="https://learn.microsoft.com/en-us/windows-server/networking/dns/dns-encryption-dns-over-https" rel="noopener">Microsoft, DNS sobre HTTPS</a> · <a href="https://support.google.com/chrome/answer/10468685" rel="noopener">Google Chrome, DNS seguro</a>.</p>
+    </div>
+    <nav class="rel" aria-label="Relacionado">
+      <span class="tag">Sigue leyendo</span>
+      <a href="/articulos/conexion/cambiar-dns.html">Diez claves para cambiar tu DNS con privacidad</a><a href="/articulos/privacidad/navegar-con-privacidad.html">Diez claves para navegar con más privacidad</a><a href="/articulos/conexion/vpn.html">Diez claves para entender y usar una VPN</a>
+    </nav>
+    <nav class="sig" aria-label="Siguiente en esta sección"><span class="tag">Siguiente en Conexión: DNS, VPN y Tor · 1 de 18</span><a class="s" href="/articulos/conexion/cambiar-dns.html">Diez claves para cambiar tu DNS con privacidad</a><p>Cómo configurar DNS cifrado en Android, Windows, iPhone, Chrome y el router, comprobar que funciona y saber qué sigue siendo visible. <a href="/articulos/conexion/">Ver las 18 guías</a>.</p></nav>
+  </article>
+  </main>
+  <footer>
+    <span>Diez Claves · 2026</span>
+    <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
+    <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
+    <a href="/aviso-legal.html">Aviso legal</a>
+    <a href="/privacidad.html">Privacidad</a>
+  </footer>
+</div>
+</body>
+</html>

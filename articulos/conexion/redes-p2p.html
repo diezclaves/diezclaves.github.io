@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="En una red entre pares tu equipo puede recibir y compartir archivos. Entiende qué intercambia, cómo revisar el origen y cuándo detener la subida.">
+<link rel="canonical" href="https://diezclaves.com/articulos/conexion/redes-p2p.html">
+<meta name="theme-color" content="#131a2b">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://diezclaves.com/articulos/conexion/redes-p2p.html">
+<meta property="og:site_name" content="Diez Claves">
+<meta property="og:title" content="Diez claves para entender las redes P2P">
+<meta property="og:description" content="En una red entre pares tu equipo puede recibir y compartir archivos. Entiende qué intercambia, cómo revisar el origen y cuándo detener la subida.">
+<meta property="og:image" content="https://diezclaves.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/assets/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/base.css">
+<script src="/assets/region.js" defer></script>
+<title>Diez claves para entender las redes P2P · Diez Claves</title>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Diez claves para entender las redes P2P", "description": "En una red entre pares tu equipo puede recibir y compartir archivos. Entiende qué intercambia, cómo revisar el origen y cuándo detener la subida.", "inLanguage": "es", "datePublished": "2026-11-12", "dateModified": "2026-11-12", "author": {"@type": "Organization", "name": "Diez Claves", "url": "https://diezclaves.com/"}, "publisher": {"@type": "Organization", "name": "Diez Claves", "logo": {"@type": "ImageObject", "url": "https://diezclaves.com/assets/icon-512.png"}}, "mainEntityOfPage": "https://diezclaves.com/articulos/conexion/redes-p2p.html", "image": "https://diezclaves.com/assets/og.png"}, {"@type": "ItemList", "name": "Diez claves para entender las redes P2P", "numberOfItems": 10, "itemListOrder": "https://schema.org/ItemListOrderAscending", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Los pares intercambian entre sí"}, {"@type": "ListItem", "position": 2, "name": "BitTorrent es un ejemplo concreto"}, {"@type": "ListItem", "position": 3, "name": "Recibir puede implicar enviar partes"}, {"@type": "ListItem", "position": 4, "name": "Revisa qué archivos has seleccionado"}, {"@type": "ListItem", "position": 5, "name": "El nombre no demuestra la procedencia"}, {"@type": "ListItem", "position": 6, "name": "Distingue integridad de origen auténtico"}, {"@type": "ListItem", "position": 7, "name": "Los participantes necesitan encontrarse"}, {"@type": "ListItem", "position": 8, "name": "Pon límites que entiendas y mantengas"}, {"@type": "ListItem", "position": 9, "name": "El contenido conserva sus propios riesgos"}, {"@type": "ListItem", "position": 10, "name": "Revisa antes de dejarlo compartiendo"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="wrap">
+  <header class="stack">
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="/generador.html">Generador</a><a href="/medidor.html">Medidor</a><a href="/articulos/" aria-current="page">Artículos</a></nav>
+  </header>
+  <main id="contenido">
+  <article>
+    <header>
+      <p class="meta"><a href="/articulos/conexion/">Conexión: DNS, VPN y Tor</a> · 12 de noviembre de 2026 · 5 min de lectura</p>
+      <h1>Diez claves <span>para entender las redes P2P</span></h1>
+      <p class="lede muted">En una red entre pares tu equipo puede recibir y compartir archivos. Entiende qué intercambia, cómo revisar el origen y cuándo detener la subida.</p>
+    </header>
+    <p>Imagina que descargas una imagen oficial de Ubuntu mediante BitTorrent. Al terminar puedes seguir enviando partes a otras personas. Este ejemplo hipotético ayuda a entender qué significa participar en una red entre pares.</p>
+    <ol class="claves">
+      <li><h2>Los pares intercambian entre sí</h2><p>P2P viene de peer to peer, que significa entre pares. Describe una forma de organizar intercambios en la que los equipos participantes pueden aportar recursos, en lugar de recibirlo todo de un único servidor. Hay diseños diferentes y algunos utilizan servicios centrales para ciertas funciones. No traduzcas P2P como ausencia total de intermediarios: para saber qué comparte un programa necesitas revisar el protocolo y la aplicación concretos que utiliza.</p></li>
+      <li><h2>BitTorrent es un ejemplo concreto</h2><p>BitTorrent permite distribuir archivos entre participantes y tiene una especificación pública. Ubuntu ofrece enlaces oficiales para utilizarlo como una de sus formas de descarga. Eso muestra un uso legítimo de la tecnología sin convertir todos los archivos de una red en fiables. La arquitectura explica cómo circulan los datos; la procedencia y los derechos del contenido se comprueban aparte. También puedes elegir una descarga directa oficial si responde mejor a tu necesidad.</p></li>
+      <li><h2>Recibir puede implicar enviar partes</h2><p>En BitTorrent, los participantes intercambian partes de los archivos. El programa puede seguir compartiendo después de completar la descarga, según su configuración. Revisa la ayuda del cliente para saber qué ocurre al terminar y cómo detener la actividad. Cerrar la ventana no siempre equivale a salir del programa. Comprueba su estado antes de dejar el equipo funcionando, especialmente si utilizas una conexión con límites de datos o necesitas reservar recursos.</p></li>
+      <li><h2>Revisa qué archivos has seleccionado</h2><p>Mira la lista de contenido de la tarea y la carpeta de destino antes de iniciarla. No supongas que cualquier cliente comparte todo tu disco, pero tampoco ignores las selecciones que has aceptado. La configuración y permisos determinan qué puede hacer cada programa. Si utilizas una función para crear o publicar contenido propio, consulta su documentación antes de confirmar y evita incluir carpetas personales por comodidad o por una selección demasiado amplia.</p></li>
+      <li><h2>El nombre no demuestra la procedencia</h2><p>Un archivo puede usar el nombre de un programa conocido sin pertenecer a su proyecto. Busca el enlace de distribución en la web oficial, como en el ejemplo de Ubuntu, y evita sustituirlo por un resultado de un catálogo desconocido. Las valoraciones de otras personas no acreditan la identidad del autor. Antes de ejecutar una descarga, comprueba también qué tipo de archivo es y qué instrucciones publica su responsable para verificarla.</p></li>
+      <li><h2>Distingue integridad de origen auténtico</h2><p>Una suma de comprobación permite comparar si un archivo coincide con un valor esperado. Para confiar en esa comparación también necesitas una referencia fiable. Si archivo y suma vienen del mismo lugar dudoso, ambos podrían haber sido sustituidos. Ubuntu documenta cómo verificar integridad y autenticidad con sumas y firmas. Sigue la guía del proyecto para su descarga concreta y no interpretes una comprobación interna del intercambio como certificación de quien publicó el contenido.</p></li>
+      <li><h2>Los participantes necesitan encontrarse</h2><p>Los protocolos entre pares necesitan información para conectar participantes. En BitTorrent, esa comunicación no debe confundirse con anonimato: otros participantes pueden conocer datos de conexión necesarios para intercambiar. Los detalles dependen del protocolo y de la configuración. No generalices esa explicación a todas las tecnologías P2P ni prometas que una VPN vuelve invisible cualquier actividad. Si la privacidad de red es decisiva para ti, estudia esa necesidad antes de participar.</p></li>
+      <li><h2>Pon límites que entiendas y mantengas</h2><p>Consulta los ajustes de subida, descarga, inicio automático y almacenamiento del cliente que elijas. Decide según tu conexión y las otras tareas del equipo, sin copiar cifras universales. Una descarga grande puede ocupar espacio aunque no esté completa, según el programa. Revisa el resultado después de aplicar un límite y aprende a detener una tarea. Así puedes contribuir cuando quieras sin descubrir más tarde que el programa siguió consumiendo datos en segundo plano.</p></li>
+      <li><h2>El contenido conserva sus propios riesgos</h2><p>Distribuir un archivo mediante pares no lo hace seguro para ejecutarlo ni elimina las condiciones de uso o distribución de su contenido. Comprueba permisos y fuentes sin asumir reglas legales iguales en todos los países. Tampoco una VPN concede autorización para compartir. Si solo necesitas un documento o un programa oficial, empieza por el canal de su responsable y evita instalar componentes adicionales que un catálogo desconocido declare imprescindibles para abrirlo.</p></li>
+      <li><h2>Revisa antes de dejarlo compartiendo</h2><p>Comprueba origen, archivos seleccionados, actividad de subida y límites antes de apartarte del equipo. La tabla organiza estas decisiones y permite elegir una descarga directa cuando no necesitas participar en la distribución. Si no puedes explicar qué seguirá enviando el cliente al terminar, consulta su ayuda o detén la tarea. El objetivo es decidir cuánto compartes y durante cuánto tiempo, con una comprensión suficiente del programa concreto que utilizas.</p><div class="scroll" tabindex="0" role="region" aria-label="Tabla, se puede desplazar"><table><thead><tr><th scope="col">Qué necesitas</th><th scope="col">Dónde empezar</th></tr></thead><tbody><tr><td>Archivo auténtico</td><td>Enlace y verificación del proyecto</td></tr><tr><td>Saber qué compartes</td><td>Lista de archivos del cliente</td></tr><tr><td>Limitar consumo</td><td>Subida, descarga e inicio automático</td></tr><tr><td>Evitar participación</td><td>Descarga directa oficial</td></tr></tbody></table></div></li>
+    </ol>
+    <div class="cierre stack">
+      <h2>Por dónde empezar</h2>
+      <p>Revisa una tarea antes de iniciarla y comprueba qué hará al terminar. Usa la descarga directa oficial si no necesitas compartir mediante pares.</p><p class="muted">Revisado el 12 de noviembre de 2026. Las funciones y rutas pueden cambiar; consulta la documentación vigente antes de aplicar cambios. Fuentes: <a href="https://ubuntu.com/download/alternative-downloads" rel="noopener">Ubuntu, descargas alternativas</a> · <a href="https://www.bittorrent.org/beps/bep_0003.html" rel="noopener">BitTorrent, especificación</a> · <a href="https://ubuntu.com/tutorials/how-to-verify-ubuntu" rel="noopener">Ubuntu, verificar descargas</a>.</p>
+    </div>
+    <section class="prods" aria-labelledby="h-prods">
+      <h2 id="h-prods">Para ponerlo en práctica</h2>
+      <p>La descarga directa oficial puede evitar instalar otro programa.</p>
+      <ul>
+      <li><b>Cliente P2P mantenido</b><p>Tiene sentido para intercambios que hayas elegido; existen opciones gratuitas y debes revisar su documentación, origen y actualizaciones.</p></li>
+      </ul>
+      <p class="aviso">En esta guía no hay enlaces a tiendas. Diez Claves no tiene por ahora acuerdo de afiliación con ninguna tienda; cuando lo tenga, lo dirá aquí. Las alternativas gratuitas van siempre junto a las de pago.</p>
+    </section>
+    <nav class="rel" aria-label="Relacionado">
+      <span class="tag">Sigue leyendo</span>
+      <a href="/articulos/dispositivos/claves-de-dispositivos.html">Protege tus dispositivos</a><a href="/articulos/privacidad/proteger-tu-identidad.html">Protege tu identidad</a><a href="/articulos/privacidad/navegar-con-privacidad.html">Navega con más privacidad</a><a href="/generador.html">Generador de contraseñas</a>
+    </nav>
+    <nav class="sig" aria-label="Siguiente en esta sección"><span class="tag">Siguiente en Conexión: DNS, VPN y Tor · 15 de 18</span><a class="s" href="/articulos/conexion/vpn-en-casa.html">Diez claves para usar una VPN en casa</a><p>Una VPN en casa puede servir para salir por otra red o entrar a la tuya desde fuera. Decide qué necesitas y qué ajustes conviene revisar antes. <a href="/articulos/conexion/">Ver las 18 guías</a>.</p></nav>
+  </article>
+  </main>
+  <footer>
+    <span>Diez Claves · 2026</span>
+    <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
+    <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
+    <a href="/aviso-legal.html">Aviso legal</a>
+    <a href="/privacidad.html">Privacidad</a>
+  </footer>
+</div>
+</body>
+</html>
