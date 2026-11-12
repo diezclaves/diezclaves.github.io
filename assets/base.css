@@ -79,7 +79,7 @@ article th{font-weight:600;color:var(--muted);font-size:13px;letter-spacing:.04e
 .prods h2{font-size:19px}
 .prods ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
 .prods li{display:flex;flex-direction:column;gap:2px}
-.prods li a{font:700 17px var(--display)}
+.prods li a,.prods li b{font:700 17px var(--display)}
 .prods li p{font-size:15px;color:var(--muted)}
 .prods .aviso{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
 /* artículos de diez claves */
@@ -87,6 +87,7 @@ ol.claves{list-style:none;padding:0;margin:8px 0 0;counter-reset:clave;display:f
 ol.claves>li{display:grid;grid-template-columns:52px 1fr;gap:4px 14px;counter-increment:clave}
 ol.claves>li::before{content:counter(clave);grid-row:1/span 2;font:700 44px/1 var(--display);color:var(--accent);letter-spacing:-.03em;font-variant-numeric:tabular-nums;padding-top:2px}
 ol.claves h2{font-size:20px;margin:0;align-self:end}
+.claves>li>*{grid-column:2}
 ol.claves p,ol.claves ul{max-width:62ch}
 ol.claves ul{margin-top:6px}
 .cierre{border-top:1px solid var(--line);padding-top:16px}
