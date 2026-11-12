@@ -1,0 +1,30 @@
+# Diez Claves · configuración de Jekyll
+# La web se construye con GitHub Actions (.github/workflows/static.yml) y se publica en GitHub Pages.
+title: Diez Claves
+url: https://diezclaves.com
+lang: es
+
+# Los artículos son Markdown con el mismo formato que los borradores. Ver docs/editar-y-publicar.md.
+markdown: kramdown
+kramdown:
+  input: kramdown
+  auto_ids: false
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+  entity_output: as_char
+
+defaults:
+  - scope: { path: "articulos/*/*.md", type: pages }
+    values:
+      layout: articulo
+      render_with_liquid: false
+
+# Lo que no se publica
+exclude:
+  - README.md
+  - docs/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - herramientas/
+  - .github/
+  - .chats/

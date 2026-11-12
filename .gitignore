@@ -1,2 +1,6 @@
 # Registros de conversación: se guardan en local, no se publican
 .chats/
+_site/
+.jekyll-cache/
+.bundle/
+vendor/

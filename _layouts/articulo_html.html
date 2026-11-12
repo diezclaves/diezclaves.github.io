@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+{%- comment -%} Página de artículo escrita directamente en HTML (por ejemplo, «Dónde pedir ayuda»). {%- endcomment -%}
+{% include head.html titulo=page.titulo_pagina descripcion=page.descripcion og_tipo="article" og_titulo=page.h1 %}
+{%- assign canon = site.url | append: page.url %}
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": {{ page.h1 | jsonify }}, "description": {{ page.descripcion | jsonify }}, "inLanguage": "es", "datePublished": "{{ page.fecha }}", "dateModified": "{{ page.actualizado }}", "mainEntityOfPage": "{{ canon }}"}</script>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="wrap">
+{% include cabecera.html actual="articulos" %}
+  <main id="contenido">
+  <article>
+    <header>
+      <p class="meta"><a href="/articulos/{{ page.seccion }}/">{{ page.seccion_nombre | default: page.seccion }}</a> · {{ page.fecha_texto }}</p>
+      {%- assign esc_titular = page.h1 | escape %}
+      {%- assign esc_dest = page.destacado | escape %}
+      {%- assign span_dest = esc_dest | prepend: "<span>" | append: "</span>" %}
+      <h1>{{ esc_titular | replace_first: esc_dest, span_dest }}</h1>
+      <p class="lede muted">{{ page.descripcion | escape }}</p>
+    </header>
+{{ content }}
+{%- include siguiente.html %}
+  </article>
+  </main>
+{% include pie.html %}</div>
+</body>
+</html>

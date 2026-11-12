@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+{%- assign d = page.dc %}
+{%- assign titular = page.h1 %}
+{%- assign compartir = page.titulo_compartir | default: titular %}
+{% include head.html titulo=page.titulo_pagina descripcion=page.descripcion og_tipo="article" og_titulo=compartir %}
+{%- capture claves_ld %}{% for c in d.claves %}{"@type": "ListItem", "position": {{ forloop.index }}, "name": {{ c.texto | jsonify }}}{% unless forloop.last %}, {% endunless %}{% endfor %}{% endcapture %}
+{%- assign canon = site.url | append: page.url %}
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": {{ compartir | jsonify }}, "description": {{ page.descripcion | jsonify }}, "inLanguage": "es", "datePublished": "{{ page.fecha }}", "dateModified": "{{ page.actualizado }}", "author": {"@type": "Organization", "name": "Diez Claves", "url": "https://diezclaves.com/"}, "publisher": {"@type": "Organization", "name": "Diez Claves", "logo": {"@type": "ImageObject", "url": "https://diezclaves.com/assets/icon-512.png"}}, "mainEntityOfPage": "{{ canon }}", "image": "{{ site.url }}{{ page.imagen | default: '/assets/og.png' }}"}, {"@type": "ItemList", "name": {{ compartir | jsonify }}, "numberOfItems": {{ d.claves.size }}, "itemListOrder": "https://schema.org/ItemListOrderAscending", "itemListElement": [{{ claves_ld }}]}]}</script>
+</head>
+<body{% if page.variantes_json %} data-variantes='{{ page.variantes_json }}'{% endif %}>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="wrap">
+{% include cabecera.html actual="articulos" %}
+  <main id="contenido">
+  <article>
+    <header>
+      <p class="meta"><a href="/articulos/{{ page.seccion }}/">{{ page.seccion_nombre | default: page.seccion }}</a> · {{ page.fecha_texto }} · {{ page.minutos | default: d.minutos_calc }} min de lectura</p>
+      {%- assign esc_titular = titular | escape %}
+      {%- assign destacado = page.destacado | default: "" %}
+      {%- if destacado == "" %}{% assign destacado = titular | remove_first: "Diez claves " %}{% endif %}
+      {%- assign esc_dest = destacado | escape %}
+      {%- assign span_dest = esc_dest | prepend: "<span>" | append: "</span>" %}
+      <h1>{{ esc_titular | replace_first: esc_dest, span_dest }}</h1>
+      <p class="lede muted">{{ d.lede }}</p>
+      {%- if page.variantes_lista %}
+      <p class="meta">Versión para {{ page.pais_nombre }}. También: {% for v in page.variantes_lista %}<a href="{{ v.url }}">{{ v.nombre }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}.</p>
+      {%- endif %}
+    </header>
+    {{ d.intro }}
+    <ol class="claves">
+{%- for c in d.claves %}
+      <li><h2>{{ c.titulo }}</h2>{{ c.html }}</li>
+{%- endfor %}
+    </ol>
+{%- if d.cierre %}
+    <div class="cierre stack">
+      <h2>{{ d.cierre.titulo }}</h2>
+      {{ d.cierre.html }}
+    </div>
+{%- endif %}
+{%- if d.prods %}
+    <section class="prods" aria-labelledby="h-prods">
+      <h2 id="h-prods">Para ponerlo en práctica</h2>
+      {{ d.prods.intro }}
+      <ul>{{ d.prods.items }}</ul>
+      <p class="aviso">{{ d.prods.aviso }}</p>
+    </section>
+{%- endif %}
+{%- if d.rel %}
+    <nav class="rel" aria-label="Relacionado">
+      <span class="tag">Sigue leyendo</span>
+      {{ d.rel }}
+    </nav>
+{%- endif %}
+{% include siguiente.html %}
+  </article>
+  </main>
+{% include pie.html %}</div>
+</body>
+</html>

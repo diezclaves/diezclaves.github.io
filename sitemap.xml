@@ -1,113 +1,25 @@
+---
+layout: null
+# Se genera solo: páginas fijas, secciones y todos los artículos.
+# Si cambias una página fija (generador, medidor…), actualiza aquí su fecha.
+fijas:
+  - { url: /generador.html, lastmod: 2026-11-11 }
+  - { url: /medidor.html, lastmod: 2026-11-11 }
+  - { url: /aviso-legal.html, lastmod: 2026-11-11 }
+  - { url: /privacidad.html, lastmod: 2026-11-11 }
+---
+{%- assign dc = site.data.dc -%}
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://diezclaves.com/</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/generador.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/medidor.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/contrasenas/ene-y-tildes-en-contrasenas.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/si-te-roban-el-movil.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/clave-certificado-digital-dnie.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/contrasenas/elegir-gestor-de-contrasenas.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/contrasenas/cuanto-tarda-descifrar-contrasena.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/claves-de-dispositivos.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/contrasenas/identificadores-y-contrasenas.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/contrasenas/de-la-contrasena-a-la-passkey.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/clave-certificado-digital-canarias.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/aviso-legal.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/privacidad.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/identidad-digital-mexico.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/identidad-digital-chile.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/identidad-digital-uruguay.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/identidad-digital-estados-unidos.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/identidad-digital-argentina.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/identidad-digital-colombia.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/identidad-digital-costa-rica.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/identidad-digital-panama.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/identidad-digital-puerto-rico.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/identidad-digital-republica-dominicana.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/identidad-digital-paraguay.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/identidad-digital-peru.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/identidad-digital-ecuador.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/identidad-digital-guatemala.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/identidad-digital-el-salvador.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/identidad-digital-bolivia.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/identidad-digital-nicaragua.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/identidad-digital-honduras.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/identidad-digital-cuba.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/filtros-de-pantalla.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/conexion/vpn.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/conexion/vpn-wifi-publico.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/conexion/vpn-teletrabajo.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/conexion/vpn-de-viaje.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/privacidad/navegar-con-privacidad.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/privacidad/modo-incognito.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/conexion/que-es-el-dns.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/conexion/cambiar-dns.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/conexion/tor-browser.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/conexion/sitios-onion.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/conexion/tails-usb.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/conexion/vpn-tor-tails.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/privacidad/proteger-tu-identidad.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/privacidad/elegir-navegador-privado.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/privacidad/cookies-y-rastreadores.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/privacidad/huella-digital-navegador.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/conexion/dns-bloqueo-rastreadores.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/rastros-en-tu-ordenador.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/proteger-tu-movil.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/permisos-aplicaciones-movil.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/proteger-ubicacion-movil.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/limitar-rastreo-publicitario-movil.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/proteger-fotos-archivos-movil.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/privacidad/navegar-privacidad-movil.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/proteger-mensajes-llamadas.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/movil-segundo-plano.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/instalar-aplicaciones-seguridad.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/rastreadores-aplicaciones-movil.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/conexion/dns-privado-movil.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/conexion/vpn-movil.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/conexion/tor-android.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/copias-seguridad-privadas.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/reducir-dependencia-google.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/entender-degoogling.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/vivir-sin-servicios-google.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/elegir-aplicaciones-codigo-abierto.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/entender-grapheneos.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/instalar-grapheneos.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/movil-compatible-grapheneos.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/comparar-sistemas-android-alternativos.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/amenazas/virus-programas-maliciosos.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/amenazas/troyanos-falsas-aplicaciones.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/amenazas/ransomware-secuestro-archivos.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/amenazas/capturadores-teclado.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/amenazas/botnets-equipos-controlados.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/amenazas/mineria-no-autorizada.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/conexion/redes-p2p.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/amenazas/honeypots.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/contrasenas/</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/dispositivos/</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/privacidad/</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/conexion/</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/amenazas/</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/conexion/vpn-en-casa.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/conexion/elegir-vpn-privada.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/conexion/intermediario-malicioso-mitm.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/amenazas/gusanos-informaticos.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/fraudes/</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/fraudes/reconocer-phishing.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/fraudes/vishing-llamadas-fraudulentas.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/fraudes/smishing-mensajes-fraudulentos.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/fraudes/quishing-codigos-qr.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/fraudes/ingenieria-social.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/redes-sociales/</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/redes-sociales/algoritmos-redes-sociales.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/redes-sociales/granjas-bots-redes-sociales.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/fraudes/suplantacion-identidad.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/acoso/</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/acoso/donde-pedir-ayuda.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/acoso/abusos-en-internet.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/acoso/abuso-sexual-infantil-red.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/acoso/ciberacoso-escolar.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/acoso/incitacion-odio-internet.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/acoso/racismo-en-internet.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>{{ site.url }}/</loc><lastmod>{{ dc.ultima }}</lastmod></url>
+{%- for f in page.fijas %}
+  <url><loc>{{ site.url }}{{ f.url }}</loc><lastmod>{{ f.lastmod }}</lastmod></url>
+{%- endfor %}
+  <url><loc>{{ site.url }}/articulos/</loc><lastmod>{{ dc.ultima }}</lastmod></url>
+{%- for s in dc.secciones %}
+  <url><loc>{{ site.url }}{{ s.url }}</loc><lastmod>{{ dc.ultima }}</lastmod></url>
+{%- for a in s.articulos %}
+  <url><loc>{{ site.url }}{{ a.url }}</loc><lastmod>{{ a.actualizado }}</lastmod></url>
+{%- endfor %}
+{%- endfor %}
 </urlset>
