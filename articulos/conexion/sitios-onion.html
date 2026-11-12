@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Las direcciones .onion dan acceso a servicios dentro de Tor sin revelar dónde están sus servidores. Cómo funcionan, cómo verificarlas y qué precauciones tomar.">
+<link rel="canonical" href="https://diezclaves.com/articulos/conexion/sitios-onion.html">
+<meta name="theme-color" content="#131a2b">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://diezclaves.com/articulos/conexion/sitios-onion.html">
+<meta property="og:site_name" content="Diez Claves">
+<meta property="og:title" content="Diez claves para entender los sitios .onion">
+<meta property="og:description" content="Las direcciones .onion dan acceso a servicios dentro de Tor sin revelar dónde están sus servidores. Cómo funcionan, cómo verificarlas y qué precauciones tomar.">
+<meta property="og:image" content="https://diezclaves.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/assets/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/base.css">
+<script src="/assets/region.js" defer></script>
+<title>Diez claves para entender los sitios .onion · Diez Claves</title>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Diez claves para entender los sitios .onion", "description": "Las direcciones .onion dan acceso a servicios dentro de Tor sin revelar dónde están sus servidores. Cómo funcionan, cómo verificarlas y qué precauciones tomar.", "inLanguage": "es", "datePublished": "2026-11-11", "dateModified": "2026-11-11", "author": {"@type": "Organization", "name": "Diez Claves", "url": "https://diezclaves.com/"}, "publisher": {"@type": "Organization", "name": "Diez Claves", "logo": {"@type": "ImageObject", "url": "https://diezclaves.com/assets/icon-512.png"}}, "mainEntityOfPage": "https://diezclaves.com/articulos/conexion/sitios-onion.html", "image": "https://diezclaves.com/assets/og.png"}, {"@type": "ItemList", "name": "Diez claves para entender los sitios .onion", "numberOfItems": 10, "itemListOrder": "https://schema.org/ItemListOrderAscending", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Onion significa cebolla"}, {"@type": "ListItem", "position": 2, "name": "Una dirección .onion no funciona como una normal"}, {"@type": "ListItem", "position": 3, "name": "Necesitas Tor para entrar"}, {"@type": "ListItem", "position": 4, "name": "La dirección autentica el servicio"}, {"@type": "ListItem", "position": 5, "name": "Onion no es sinónimo de delincuencia"}, {"@type": "ListItem", "position": 6, "name": "Algunas organizaciones publican su versión onion"}, {"@type": "ListItem", "position": 7, "name": "Desconfía de los directorios desconocidos"}, {"@type": "ListItem", "position": 8, "name": "Las páginas onion también tienen riesgos"}, {"@type": "ListItem", "position": 9, "name": "Onion no es anonimato absoluto"}, {"@type": "ListItem", "position": 10, "name": "Cómo usar una dirección onion"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="wrap">
+  <header class="stack">
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="/generador.html">Generador</a><a href="/medidor.html">Medidor</a><a href="/articulos/" aria-current="page">Artículos</a></nav>
+  </header>
+  <main id="contenido">
+  <article>
+    <header>
+      <p class="meta"><a href="/articulos/conexion/">Conexión: DNS, VPN y Tor</a> · 11 de noviembre de 2026 · 7 min de lectura</p>
+      <h1>Diez claves para entender <span>los sitios .onion</span></h1>
+      <p class="lede muted">Las direcciones .onion dan acceso a servicios dentro de Tor sin revelar dónde están sus servidores. Cómo funcionan, cómo verificarlas y qué precauciones tomar.</p>
+    </header>
+    <p>Casi todas las páginas que visitas usan dominios como <code>.com</code>, <code>.org</code> o <code>.es</code>. Hay servicios que funcionan dentro de la red Tor y terminan en <code>.onion</code>. No son necesariamente ilegales ni peligrosos: algunos sirven para compartir información, comunicarse en privado o publicar donde hay censura. Para usarlos bien hay que entender en qué se diferencian de una página normal.</p>
+    <ol class="claves">
+      <li><h2>Onion significa cebolla</h2><p>Los servicios onion, o servicios cebolla, permiten publicar páginas y otros recursos accesibles solo a través de Tor. El nombre viene de las mismas capas de protección que dan nombre a Tor. Su rasgo principal: pueden ocultar la IP del servidor que ofrece el servicio, así que es difícil localizar desde dónde se publica. Sirven para webs, para comunicación entre personas y para otras aplicaciones compatibles, y no tienen por qué ser públicos ni estar siempre disponibles.</p></li>
+      <li><h2>Una dirección .onion no funciona como una normal</h2><p>Las páginas convencionales se resuelven por el <a href="/articulos/conexion/que-es-el-dns.html">DNS</a>. Los servicios onion usan un mecanismo propio, integrado en Tor. Sus direcciones actuales son 56 letras y números seguidos de <code>.onion</code>, y están relacionadas criptográficamente con la identidad del servicio. No tienes que memorizarla, pero sí comprobar que corresponde al servicio que buscas: un solo carácter cambiado y la conexión no funciona, o te lleva a otro sitio.</p></li>
+      <li><h2>Necesitas Tor para entrar</h2><p>Un navegador normal no se conecta a un servicio onion. La forma más accesible es <a href="/articulos/conexion/tor-browser.html">Tor Browser</a>, gratuito en <a href="https://www.torproject.org/" rel="noopener">torproject.org</a>: una vez conectado, escribes la dirección onion en la barra. No necesitas VPN ni pagar nada. Existen intermediarios web que prometen mostrar páginas onion desde un navegador normal, pero rompen las propiedades de privacidad y autenticación de la conexión.</p></li>
+      <li><h2>La dirección autentica el servicio</h2><p>En una web normal, HTTPS usa certificados para comprobar la identidad del servidor y cifrar. Los servicios onion traen su propia autenticación: al conectarte, Tor comprueba que el servicio controla la identidad criptográfica de esa dirección, y la comunicación va cifrada de extremo a extremo por el protocolo de Tor. Lo que eso no demuestra es que quien publica sea honrado: una página fraudulenta también puede tener una dirección onion válida. Autenticar el servicio y confiar en su contenido son cosas distintas.</p></li>
+      <li><h2>Onion no es sinónimo de delincuencia</h2><p>Los servicios onion salen en las noticias por mercados ilegales. Esa asociación no describe todos sus usos: también sirven para que las fuentes contacten con periodistas, para compartir archivos y para acceder a información donde hay restricciones. El Proyecto Tor documenta usos de periodismo, privacidad y acceso a servicios. Una tecnología que protege la identidad se usa para fines legítimos e ilícitos; lo que se evalúa es el servicio concreto y la actividad, no a todas las personas que usan Tor.</p></li>
+      <li><h2>Algunas organizaciones publican su versión onion</h2><p>Una organización puede ofrecer su web habitual y, además, una versión accesible por Tor, para que la gente consulte información sin revelar su IP al servidor convencional. Hay también servicios creados solo para Tor. El Proyecto Tor mantiene los suyos en <a href="https://onion.torproject.org/" rel="noopener">onion.torproject.org</a>. Cuando una organización publica su dirección onion en su página oficial, tienes una referencia fiable para comprobar que vas al destino previsto.</p></li>
+      <li><h2>Desconfía de los directorios desconocidos</h2><p>Como las direcciones son largas, mucha gente las busca en directorios que recopilan enlaces. Un directorio puede tener enlaces caducados, páginas fraudulentas e imitaciones. Antes de escribir una contraseña o compartir nada, comprueba de dónde salió la dirección: si el sitio tiene una versión convencional oficial, busca allí la referencia. Tor Browser avisa cuando un sitio ha configurado una versión onion. Encontrar un enlace no es haberlo verificado.</p></li>
+      <li><h2>Las páginas onion también tienen riesgos</h2><p>Que un servicio use Tor no garantiza que su contenido sea seguro: puede ofrecer archivos maliciosos, intentar engañarte o pedir datos que no necesita. No descargues programas desconocidos ni compartas contraseñas solo porque la dirección acabe en onion. Mantén Tor Browser actualizado y usa sus niveles de seguridad cuando corresponda. Y si descargas documentos, recuerda que abrirlos con otras aplicaciones puede generar conexiones fuera de Tor.</p></li>
+      <li><h2>Onion no es anonimato absoluto</h2><p>Los servicios onion protegen a quien visita y a quien publica, pero no impiden que una persona se identifique sola. Si escribes tu nombre, tu correo personal o tu dirección en un formulario, se lo estás diciendo al servicio. También delatan los archivos que compartes, las cuentas que usas y los metadatos de tus documentos. Una cosa es la protección de la infraestructura de Tor y otra las decisiones que tomas mientras navegas.</p></li>
+      <li><h2>Cómo usar una dirección onion</h2><div class="scroll" tabindex="0" role="region" aria-label="Tabla, se puede desplazar"><table><thead><tr><th scope="col">Qué necesitas</th><th scope="col">Qué hacer</th></tr></thead><tbody><tr><td>Abrir un sitio onion</td><td>Usar Tor Browser</td></tr><tr><td>Encontrar una dirección fiable</td><td>La web oficial del servicio</td></tr><tr><td>Verificar que es auténtica</td><td>Comprobar la dirección completa</td></tr><tr><td>Evitar páginas fraudulentas</td><td>No fiarse de directorios desconocidos</td></tr><tr><td>Mantener tu identidad aparte</td><td>No escribir datos personales</td></tr><tr><td>Entender por qué no carga</td><td>Revisar la dirección y la conexión Tor</td></tr></tbody></table></div><p>Si una página onion deja de funcionar, comprueba que has escrito bien la dirección; algunos servicios también están desconectados temporalmente.</p></li>
+    </ol>
+    <div class="cierre stack">
+      <h2>Por dónde empezar</h2>
+      <p>Instala Tor Browser y consulta la documentación oficial de los servicios onion. No necesitas explorar directorios desconocidos para aprender cómo funcionan estas páginas.</p>
+      <p class="muted">Revisado el 11 de noviembre de 2026. Los servicios onion cambian de dirección o dejan de estar disponibles. Fuentes: <a href="https://support.torproject.org/es/about-tor/onion-services/what-is-a-dot-onion/" rel="noopener">Tor Project, qué son los sitios .onion</a> · <a href="https://community.torproject.org/onion-services/overview/" rel="noopener">Tor Project, cómo funcionan los servicios onion</a> · <a href="https://support.torproject.org/es/tor-browser/encountering-issues/troubleshooting-onion-services/" rel="noopener">Tor Project, problemas con servicios onion</a> · <a href="https://onion.torproject.org/" rel="noopener">Tor Project, servicios oficiales</a>.</p>
+    </div>
+    <nav class="rel" aria-label="Relacionado">
+      <span class="tag">Sigue leyendo</span>
+      <a href="/articulos/conexion/tor-browser.html">Diez claves para entender y usar Tor Browser</a><a href="/articulos/conexion/tails-usb.html">Diez claves para usar Tails desde un USB</a><a href="/articulos/privacidad/proteger-tu-identidad.html">Diez claves para proteger tu identidad al navegar</a>
+    </nav>
+  </article>
+  </main>
+  <footer>
+    <span>Diez Claves · 2026</span>
+    <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
+    <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
+    <a href="/aviso-legal.html">Aviso legal</a>
+    <a href="/privacidad.html">Privacidad</a>
+  </footer>
+</div>
+</body>
+</html>

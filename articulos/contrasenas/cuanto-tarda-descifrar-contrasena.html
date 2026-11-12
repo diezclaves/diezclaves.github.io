@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Bits, fuerza bruta, diccionarios, filtraciones, cómo la guarda el servicio y qué pasa con el ordenador cuántico: lo que de verdad decide cuánto aguanta una contraseña.">
+<link rel="canonical" href="https://diezclaves.com/articulos/contrasenas/cuanto-tarda-descifrar-contrasena.html">
+<meta name="theme-color" content="#131a2b">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://diezclaves.com/articulos/contrasenas/cuanto-tarda-descifrar-contrasena.html">
+<meta property="og:site_name" content="Diez Claves">
+<meta property="og:title" content="Diez claves sobre cuánto tarda en descifrarse una contraseña">
+<meta property="og:description" content="Bits, fuerza bruta, diccionarios, filtraciones, cómo la guarda el servicio y qué pasa con el ordenador cuántico: lo que de verdad decide cuánto aguanta una contraseña.">
+<meta property="og:image" content="https://diezclaves.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/assets/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/base.css">
+<script src="/assets/region.js" defer></script>
+<title>Diez claves sobre cuánto tarda en descifrarse una contraseña · Diez Claves</title>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Diez claves sobre cuánto tarda en descifrarse una contraseña", "description": "Bits, fuerza bruta, diccionarios, filtraciones, cómo la guarda el servicio y qué pasa con el ordenador cuántico: lo que de verdad decide cuánto aguanta una contraseña.", "inLanguage": "es", "datePublished": "2026-11-11", "dateModified": "2026-11-11", "author": {"@type": "Organization", "name": "Diez Claves", "url": "https://diezclaves.com/"}, "publisher": {"@type": "Organization", "name": "Diez Claves", "logo": {"@type": "ImageObject", "url": "https://diezclaves.com/assets/icon-512.png"}}, "mainEntityOfPage": "https://diezclaves.com/articulos/contrasenas/cuanto-tarda-descifrar-contrasena.html", "image": "https://diezclaves.com/assets/og.png"}, {"@type": "ItemList", "name": "Diez claves sobre cuánto tarda en descifrarse una contraseña", "numberOfItems": 10, "itemListOrder": "https://schema.org/ItemListOrderAscending", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Se mide en bits, y cada bit dobla el trabajo"}, {"@type": "ListItem", "position": 2, "name": "Por internet, casi nadie puede probar muchas"}, {"@type": "ListItem", "position": 3, "name": "El ataque serio es con la base de datos robada"}, {"@type": "ListItem", "position": 4, "name": "Cómo la guarda el servicio cambia el resultado un millón de veces"}, {"@type": "ListItem", "position": 5, "name": "Primero prueban lo que ya saben"}, {"@type": "ListItem", "position": 6, "name": "Cambiar la a por un 4 no engaña a nadie"}, {"@type": "ListItem", "position": 7, "name": "Una palabra con un número detrás es una palabra"}, {"@type": "ListItem", "position": 8, "name": "La longitud gana a la complejidad"}, {"@type": "ListItem", "position": 9, "name": "¿Y el ordenador cuántico?"}, {"@type": "ListItem", "position": 10, "name": "Qué tiempo es «suficiente»"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="wrap">
+  <header class="stack">
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="/generador.html">Generador</a><a href="/medidor.html">Medidor</a><a href="/articulos/" aria-current="page">Artículos</a></nav>
+  </header>
+  <main id="contenido">
+  <article>
+    <header>
+      <p class="meta"><a href="/articulos/contrasenas/">Contraseñas y cuentas</a> · 11 de noviembre de 2026 · 8 min de lectura</p>
+      <h1>Diez claves sobre <span>cuánto tarda en descifrarse</span> una contraseña</h1>
+      <p class="lede muted">Bits, fuerza bruta, diccionarios, filtraciones, cómo la guarda el servicio y qué pasa con el ordenador cuántico: lo que de verdad decide cuánto aguanta una contraseña.</p>
+    </header>
+    <p>«Tardarían 300 años en descifrarla» es una frase que aparece en muchos medidores y que casi nunca viene con la letra pequeña. Estas diez claves son la letra pequeña.</p>
+
+    <ol class="claves">
+      <li><h2>Se mide en bits, y cada bit dobla el trabajo</h2><p>La fuerza de una contraseña se expresa en bits de entropía: cuántas contraseñas distintas podría haber generado el mismo método. 40 bits son un billón de posibilidades; 41, el doble; 50, mil veces más que 40. Por eso los tiempos de la tabla crecen tan deprisa.</p></li>
+      <li><h2>Por internet, casi nadie puede probar muchas</h2><p>Si el atacante teclea contraseñas en la web del banco, el servicio le frena: bloquea tras unos fallos o le obliga a esperar. A diez intentos por segundo, hasta una contraseña mediana aguanta siglos. El peligro ahí no es la fuerza bruta: es que la contraseña sea de las comunes y acierte a la primera.</p></li>
+      <li><h2>El ataque serio es con la base de datos robada</h2><p>Cuando una web sufre una filtración, el atacante se lleva la copia cifrada de las contraseñas y la ataca en su propio ordenador, sin límite de intentos. Entonces sí cuenta la velocidad: una gráfica de gama alta prueba decenas de miles de millones de candidatos por segundo contra una contraseña guardada con un algoritmo rápido.</p></li>
+      <li><h2>Cómo la guarda el servicio cambia el resultado un millón de veces</h2><p>Con MD5 o SHA-256 sin más, la gráfica va a toda velocidad. Con bcrypt o Argon2, diseñados para ser lentos a propósito, prueba decenas de miles por segundo, no miles de millones. La misma contraseña aguanta segundos o siglos según esta decisión del servicio, que tú no controlas. Por eso la longitud es tu única defensa segura.</p></li>
+      <li><h2>Primero prueban lo que ya saben</h2><p>Nadie empieza por la fuerza bruta. Se prueban primero las contraseñas de filtraciones anteriores, los diccionarios de todos los idiomas, nombres, fechas, equipos de fútbol, y combinaciones de todo eso con números y símbolos al final. Si tu contraseña está en una de esas listas, el tiempo es cero.</p></li>
+      <li><h2>Cambiar la a por un 4 no engaña a nadie</h2><p>Las sustituciones habituales (a→4, e→3, i→1, o→0, s→5) están en las reglas de todos los programas de ataque. «P4ssw0rd» cae tan rápido como «Password». Lo que el atacante no tiene de serie son las palabras en español con tilde y la ñ; de ahí la ventaja del <a href="/generador.html">generador</a>.</p></li>
+      <li><h2>Una palabra con un número detrás es una palabra</h2><p>«Elefante1985» parece larga, pero para el ataque es una palabra del diccionario más un año: dos piezas de las primeras que se prueban. Una frase de cuatro palabras al azar sin relación entre sí («Leña-Cigüeña-Ámbar-Podón») son cuatro piezas de entre 50.000 cada una: 60 bits solo con eso.</p></li>
+      <li><h2>La longitud gana a la complejidad</h2><p>Ocho caracteres de todos los tipos dan unos 52 bits. Dieciséis letras minúsculas dan 75. Añadir un carácter multiplica; cambiar un tipo por otro, apenas. Antes de complicarla, alárgala. Lo ideal es las dos cosas: larga y variada, como una frase de palabras con un número y un símbolo.</p></li>
+      <li><h2>¿Y el ordenador cuántico?</h2><p>Hoy no existe ninguno capaz de esto. En teoría, el algoritmo de Grover reduciría los bits efectivos a la mitad: una contraseña de 100 bits se comportaría como una de 50. La regla práctica, si quieres prepararte: dobla los bits. Una frase de ocho palabras del diccionario pasa de 125 bits a 62 efectivos, que siguen siendo muchos.</p></li>
+      <li><h2>Qué tiempo es «suficiente»</h2><p>Depende de qué protege. Para un foro, 50 bits. Para el correo, el banco y el gestor, 80 o más, y además doble factor, que vuelve irrelevante el tiempo de descifrado. Mide la tuya en el <a href="/medidor.html">medidor</a>: te da los bits, los fallos y la tabla de tiempos completa.</p></li>
+    </ol>
+    <div class="cierre stack">
+      <h2>La tabla que lo resume</h2>
+      <div class="scroll" tabindex="0" role="region" aria-label="Tabla, se puede desplazar"><table>
+        <thead><tr><th scope="col">Bits</th><th scope="col">Ejemplo</th><th scope="col">Gráfica potente, guardada mal</th><th scope="col">Igual, guardada bien</th></tr></thead>
+        <tbody>
+          <tr><td>30</td><td>Palabra y dos cifras</td><td>al instante</td><td>7 horas</td></tr>
+          <tr><td>50</td><td>8 caracteres variados</td><td>16 horas</td><td>900 años</td></tr>
+          <tr><td>70</td><td>4 palabras al azar</td><td>1.900 años</td><td>más de un millón de años</td></tr>
+          <tr><td>100</td><td>6 palabras con número y símbolo</td><td>más que la edad del universo</td><td>más que la edad del universo</td></tr>
+        </tbody>
+      </table></div>
+      <p class="muted">Tiempos estimados a 10.000 millones de intentos por segundo (guardada mal) y 20.000 (guardada bien), acertando a mitad de camino. Son órdenes de magnitud, no cifras exactas.</p>
+    </div>
+    <section class="prods" aria-labelledby="h-prods">
+      <h2 id="h-prods">Para ponerlo en práctica</h2>
+      <ul>
+      <li><a data-busca="llave seguridad fido2 usb c nfc" href="https://www.amazon.es/s?k=llave+seguridad+fido2+usb+c+nfc" rel="noopener">Llave de seguridad FIDO2</a><p>El doble factor que hace irrelevante el tiempo de descifrado: sin la llave, la contraseña no sirve.</p></li>
+      </ul>
+      <p class="aviso">Enlaces a <span data-tienda-nombre>Amazon España</span> según tu región. Diez Claves no tiene por ahora acuerdo de afiliación con ninguna tienda; cuando lo tenga, lo dirá aquí. Las alternativas gratuitas van siempre junto a las de pago.</p>
+    </section>
+    <nav class="rel" aria-label="Relacionado">
+      <span class="tag">Sigue leyendo</span>
+      <a href="/medidor.html">Medidor de contraseñas</a><a href="/articulos/contrasenas/ene-y-tildes-en-contrasenas.html">Diez claves sobre la ñ y las tildes en las contraseñas</a><a href="/articulos/contrasenas/elegir-gestor-de-contrasenas.html">Diez claves para elegir gestor de contraseñas</a>
+    </nav>
+  </article>
+  </main>
+  <footer>
+    <span>Diez Claves · 2026</span>
+    <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
+    <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
+    <a href="/aviso-legal.html">Aviso legal</a>
+    <a href="/privacidad.html">Privacidad</a>
+  </footer>
+</div>
+</body>
+</html>

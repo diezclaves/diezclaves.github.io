@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Una VPN cifra parte del recorrido de tu conexión y oculta tu IP a las páginas. Cuándo te protege, qué límites tiene y si de verdad la necesitas.">
+<link rel="canonical" href="https://diezclaves.com/articulos/conexion/vpn.html">
+<meta name="theme-color" content="#131a2b">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://diezclaves.com/articulos/conexion/vpn.html">
+<meta property="og:site_name" content="Diez Claves">
+<meta property="og:title" content="Diez claves para entender y usar una VPN">
+<meta property="og:description" content="Una VPN cifra parte del recorrido de tu conexión y oculta tu IP a las páginas. Cuándo te protege, qué límites tiene y si de verdad la necesitas.">
+<meta property="og:image" content="https://diezclaves.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/assets/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/base.css">
+<script src="/assets/region.js" defer></script>
+<title>Diez claves para entender y usar una VPN · Diez Claves</title>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Diez claves para entender y usar una VPN", "description": "Una VPN cifra parte del recorrido de tu conexión y oculta tu IP a las páginas. Cuándo te protege, qué límites tiene y si de verdad la necesitas.", "inLanguage": "es", "datePublished": "2026-11-11", "dateModified": "2026-11-11", "author": {"@type": "Organization", "name": "Diez Claves", "url": "https://diezclaves.com/"}, "publisher": {"@type": "Organization", "name": "Diez Claves", "logo": {"@type": "ImageObject", "url": "https://diezclaves.com/assets/icon-512.png"}}, "mainEntityOfPage": "https://diezclaves.com/articulos/conexion/vpn.html", "image": "https://diezclaves.com/assets/og.png"}, {"@type": "ItemList", "name": "Diez claves para entender y usar una VPN", "numberOfItems": 10, "itemListOrder": "https://schema.org/ItemListOrderAscending", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VPN significa red privada virtual"}, {"@type": "ListItem", "position": 2, "name": "No oculta todo lo que haces"}, {"@type": "ListItem", "position": 3, "name": "El proveedor VPN pasa a ser el intermediario"}, {"@type": "ListItem", "position": 4, "name": "HTTPS sigue siendo necesario"}, {"@type": "ListItem", "position": 5, "name": "Útil en redes wifi ajenas, con matices"}, {"@type": "ListItem", "position": 6, "name": "También sirve para entrar en la red del trabajo"}, {"@type": "ListItem", "position": 7, "name": "Cambiar de país no garantiza acceso a todo"}, {"@type": "ListItem", "position": 8, "name": "Gratuita o de pago: ninguna es segura por el precio"}, {"@type": "ListItem", "position": 9, "name": "Kill switch, fugas DNS y túnel dividido"}, {"@type": "ListItem", "position": 10, "name": "Decide si de verdad la necesitas"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="wrap">
+  <header class="stack">
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="/generador.html">Generador</a><a href="/medidor.html">Medidor</a><a href="/articulos/" aria-current="page">Artículos</a></nav>
+  </header>
+  <main id="contenido">
+  <article>
+    <header>
+      <p class="meta"><a href="/articulos/conexion/">Conexión: DNS, VPN y Tor</a> · 11 de noviembre de 2026 · 9 min de lectura</p>
+      <h1>Diez claves para entender <span>y usar una VPN</span></h1>
+      <p class="lede muted">Una VPN cifra parte del recorrido de tu conexión y oculta tu IP a las páginas. Cuándo te protege, qué límites tiene y si de verdad la necesitas.</p>
+    </header>
+    <p>Las redes privadas virtuales, VPN, conectan tu dispositivo a otra red por un túnel cifrado. Se usan para entrar en redes de trabajo, proteger la conexión en algunas situaciones y hacer que las páginas vean otra dirección IP. También son objeto de mucha publicidad engañosa: anonimato absoluto, protección frente a cualquier ataque, navegar sin dejar rastro. La realidad es más modesta, y conviene conocerla antes de pagar nada.</p>
+    <ol class="claves">
+      <li><h2>VPN significa red privada virtual</h2><p>Tu dispositivo establece una conexión cifrada con un servidor VPN; el tráfico llega primero a ese servidor y desde allí sigue a su destino. Las páginas ven la IP de salida del servicio en lugar de la tuya, y quien observa el tramo entre tu dispositivo y el servidor (tu operador, el wifi de un hotel) ve que te conectas a una VPN, pero no debería poder leer lo que va dentro del túnel. <strong>Tu dispositivo → túnel cifrado → servidor VPN → Internet.</strong> Por debajo se usan protocolos como WireGuard, OpenVPN o IKEv2; para una persona corriente importa más elegir un proveedor fiable y mantener la aplicación al día que el nombre del protocolo.</p></li>
+      <li><h2>No oculta todo lo que haces</h2><p>Cambiar la IP visible no te hace anónimo. Las páginas pueden seguir reconociéndote por cookies, identificadores publicitarios, la huella del navegador, permisos de ubicación y, sobre todo, porque inicias sesión: si entras en tu cuenta de Google o en una red social con la VPN activada, la plataforma sabe exactamente qué cuenta está conectada. La EFF lo resume así: una VPN no es una herramienta de anonimato completo, y su utilidad depende del riesgo concreto que quieras reducir. Privacidad de la conexión y anonimato son cosas distintas.</p></li>
+      <li><h2>El proveedor VPN pasa a ser el intermediario</h2><p>Sin VPN, tu operador puede ver determinados metadatos de tus conexiones. Con VPN, esa visibilidad se traslada al proveedor: conoce tu IP de origen, tus horarios de conexión y, según su infraestructura, parte de tus destinos. Estás cambiando en quién confías, no eliminando la confianza. Antes de elegir uno, comprueba si publica una política clara de registros, auditorías independientes, quién es la empresa responsable y en qué país opera, y cómo responde a requerimientos legales. Un «no guardamos registros» en la publicidad no es, por sí solo, una garantía verificable.</p></li>
+      <li><h2>HTTPS sigue siendo necesario</h2><p>La VPN cifra el tramo hasta su servidor; a partir de ahí, el tráfico sale hacia la página con la protección que tenga por sí mismo. HTTPS cifra la comunicación entre tu navegador y el sitio de principio a fin. Son dos protecciones distintas y se complementan. Por eso sigues teniendo que mirar la dirección antes de escribir una contraseña: una VPN no convierte una página fraudulenta en una página segura, y tampoco impide que te instales un programa malicioso.</p></li>
+      <li><h2>Útil en redes wifi ajenas, con matices</h2><p>En un wifi que no administras no sabes cómo está configurado ni quién tiene acceso a él. Una VPN bien configurada añade una capa al cifrar el tráfico hasta su servidor y reduce lo que el operador de esa red puede ver. Pero el HTTPS que ya usan casi todas las páginas protege el contenido de la mayoría de tus conexiones, y la VPN no evita que te conectes a una red falsa ni que entregues datos a una web fraudulenta. Tenemos una guía aparte: <a href="/articulos/conexion/vpn-wifi-publico.html">diez claves para usar wifi público con seguridad</a>.</p></li>
+      <li><h2>También sirve para entrar en la red del trabajo</h2><p>Muchas organizaciones usan VPN para que su personal acceda desde fuera a documentos, aplicaciones o servidores internos. Es otra cosa: la VPN corporativa la configura y controla la empresa, exige autenticación propia y suele registrar las conexiones. Una suscripción personal no la sustituye, y no conviene instalar servicios VPN propios en un equipo administrado sin comprobar las normas. Lo explicamos en <a href="/articulos/conexion/vpn-teletrabajo.html">diez claves sobre la VPN de tu empresa</a>.</p></li>
+      <li><h2>Cambiar de país no garantiza acceso a todo</h2><p>Algunos servicios permiten elegir un servidor en otro país, y las páginas interpretan que la conexión procede de allí. Pero las plataformas no se fían solo de la IP: miran el país de la cuenta, el método de pago, el GPS del móvil, detectan servidores VPN conocidos y aplican restricciones contractuales. Además, las normas sobre estas herramientas cambian según el país. Una VPN puede sortear ciertos bloqueos de red; no garantiza ningún catálogo ni elimina las obligaciones legales. Más en <a href="/articulos/conexion/vpn-de-viaje.html">diez claves para usar una VPN de viaje</a>.</p></li>
+      <li><h2>Gratuita o de pago: ninguna es segura por el precio</h2><p>Un servicio gratuito no es necesariamente inseguro, y pagar no garantiza una buena política de privacidad. Lo que importa es cómo se financia y quién lo administra. Hay planes gratuitos limitados sostenidos por suscripciones de pago, y hay servicios que viven de recopilar datos. Señales de alerta: prometer anonimato absoluto, no identificar a su responsable, pedir permisos innecesarios en el móvil, distribuirse fuera de las tiendas oficiales o no explicar de qué vive.</p></li>
+      <li><h2>Kill switch, fugas DNS y túnel dividido</h2><p>Tres ajustes que cambian lo que la VPN protege de verdad. El <em>kill switch</em> corta la conexión si la VPN se cae, para que las aplicaciones no salgan a Internet por la vía normal sin que te enteres. La protección frente a fugas DNS evita que las consultas de nombres de dominio se escapen fuera del túnel (tenemos un artículo sobre <a href="/articulos/conexion/que-es-el-dns.html">qué es el DNS</a>). El túnel dividido deja elegir qué aplicaciones pasan por la VPN y cuáles no: cómodo cuando algo no funciona con ella, pero cada excepción es tráfico sin proteger. Comprueba en la aplicación cuál es la configuración por defecto.</p></li>
+      <li><h2>Decide si de verdad la necesitas</h2><div class="scroll" tabindex="0" role="region" aria-label="Tabla, se puede desplazar"><table><thead><tr><th scope="col">Qué necesitas</th><th scope="col">Qué puedes usar</th></tr></thead><tbody><tr><td>Acceder a recursos de tu empresa</td><td>La VPN corporativa autorizada</td></tr><tr><td>Proteger tráfico en una red ajena</td><td>HTTPS y, si procede, VPN</td></tr><tr><td>Ocultar tu IP habitual a las páginas</td><td>VPN o Tor, según el objetivo</td></tr><tr><td>Reducir cookies y rastreadores</td><td>Ajustes de privacidad del navegador</td></tr><tr><td>Cifrar las consultas DNS</td><td>DNS sobre HTTPS o TLS</td></tr><tr><td>Navegar completamente anónimo</td><td>Ninguna VPN lo consigue</td></tr><tr><td>Impedir que te roben una contraseña</td><td>Gestor, doble factor y mirar la dirección</td></tr><tr><td>Eliminar virus</td><td>No es lo suyo</td></tr></tbody></table></div><p>Si decides contratar una, prueba primero que funciona con tus aplicaciones habituales y lee las condiciones. No todo el mundo necesita pagar por este servicio.</p></li>
+    </ol>
+    <div class="cierre stack">
+      <h2>Por dónde empezar</h2>
+      <p>Define qué quieres proteger antes de instalar nada. Si solo buscas bloquear rastreadores o cifrar las consultas DNS, probablemente lo consigues con herramientas gratuitas que ya trae tu dispositivo. Si la necesitas, elige por transparencia, no por promesas.</p>
+      <p class="muted">Revisado el 11 de noviembre de 2026. Las condiciones, políticas y funciones de cada proveedor cambian. Fuentes: <a href="https://ssd.eff.org/es/module/choosing-vpn-thats-right-you" rel="noopener">EFF, elegir una VPN</a> · <a href="https://ssd.eff.org/module/what-should-i-know-about-encryption" rel="noopener">EFF, qué debes saber sobre el cifrado</a> · <a href="https://csrc.nist.gov/glossary/term/virtual_private_network" rel="noopener">NIST, definición de VPN</a> · <a href="https://www.ncsc.gov.uk/collection/device-security-guidance/infrastructure/virtual-private-networks" rel="noopener">NCSC, redes privadas virtuales</a> · <a href="https://support.torproject.org/" rel="noopener">Tor Project, documentación</a>.</p>
+    </div>
+    <nav class="rel" aria-label="Relacionado">
+      <span class="tag">Sigue leyendo</span>
+      <a href="/articulos/conexion/vpn-wifi-publico.html">Diez claves para usar wifi público con seguridad</a><a href="/articulos/privacidad/navegar-con-privacidad.html">Diez claves para navegar con más privacidad</a><a href="/articulos/conexion/cambiar-dns.html">Diez claves para cambiar tu DNS con privacidad</a>
+    </nav>
+  </article>
+  </main>
+  <footer>
+    <span>Diez Claves · 2026</span>
+    <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
+    <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
+    <a href="/aviso-legal.html">Aviso legal</a>
+    <a href="/privacidad.html">Privacidad</a>
+  </footer>
+</div>
+</body>
+</html>

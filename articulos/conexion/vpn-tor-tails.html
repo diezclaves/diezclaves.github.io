@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Tres herramientas que protegen cosas distintas. Qué hace cada una, qué límites tiene y cómo elegir sin gastar de más.">
+<link rel="canonical" href="https://diezclaves.com/articulos/conexion/vpn-tor-tails.html">
+<meta name="theme-color" content="#131a2b">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://diezclaves.com/articulos/conexion/vpn-tor-tails.html">
+<meta property="og:site_name" content="Diez Claves">
+<meta property="og:title" content="Diez claves para entender VPN, Tor y Tails">
+<meta property="og:description" content="Tres herramientas que protegen cosas distintas. Qué hace cada una, qué límites tiene y cómo elegir sin gastar de más.">
+<meta property="og:image" content="https://diezclaves.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/assets/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/base.css">
+<script src="/assets/region.js" defer></script>
+<title>Diez claves para entender VPN, Tor y Tails · Diez Claves</title>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Diez claves para entender VPN, Tor y Tails", "description": "Tres herramientas que protegen cosas distintas. Qué hace cada una, qué límites tiene y cómo elegir sin gastar de más.", "inLanguage": "es", "datePublished": "2026-11-11", "dateModified": "2026-11-11", "author": {"@type": "Organization", "name": "Diez Claves", "url": "https://diezclaves.com/"}, "publisher": {"@type": "Organization", "name": "Diez Claves", "logo": {"@type": "ImageObject", "url": "https://diezclaves.com/assets/icon-512.png"}}, "mainEntityOfPage": "https://diezclaves.com/articulos/conexion/vpn-tor-tails.html", "image": "https://diezclaves.com/assets/og.png"}, {"@type": "ItemList", "name": "Diez claves para entender VPN, Tor y Tails", "numberOfItems": 10, "itemListOrder": "https://schema.org/ItemListOrderAscending", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Una VPN crea una conexión cifrada"}, {"@type": "ListItem", "position": 2, "name": "Tor reparte tu conexión entre varios nodos"}, {"@type": "ListItem", "position": 3, "name": "Tails cambia el entorno de trabajo"}, {"@type": "ListItem", "position": 4, "name": "Ocultar la IP no es ocultar tu identidad"}, {"@type": "ListItem", "position": 5, "name": "No siempre hay que combinarlas"}, {"@type": "ListItem", "position": 6, "name": "HTTPS sigue importando"}, {"@type": "ListItem", "position": 7, "name": "Depende de quién puede observarte"}, {"@type": "ListItem", "position": 8, "name": "La facilidad de uso también cuenta"}, {"@type": "ListItem", "position": 9, "name": "Privacidad no es ausencia de responsabilidad"}, {"@type": "ListItem", "position": 10, "name": "Elige según lo que necesitas proteger"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="wrap">
+  <header class="stack">
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="/generador.html">Generador</a><a href="/medidor.html">Medidor</a><a href="/articulos/" aria-current="page">Artículos</a></nav>
+  </header>
+  <main id="contenido">
+  <article>
+    <header>
+      <p class="meta"><a href="/articulos/conexion/">Conexión: DNS, VPN y Tor</a> · 11 de noviembre de 2026 · 7 min de lectura</p>
+      <h1>Diez claves para entender <span>VPN, Tor y Tails</span></h1>
+      <p class="lede muted">Tres herramientas que protegen cosas distintas. Qué hace cada una, qué límites tiene y cómo elegir sin gastar de más.</p>
+    </header>
+    <p>Al buscar sobre privacidad aparecen las tres: instala una VPN, navega con Tor, usa Tails desde un USB. A veces se presentan como equivalentes, o como si usar las tres a la vez diera más seguridad. Cada una responde a una necesidad distinta, y distinguirlas evita instalaciones innecesarias.</p>
+    <ol class="claves">
+      <li><h2>Una VPN crea una conexión cifrada</h2><p>Establece un túnel cifrado entre tu dispositivo y un servidor del proveedor. Las páginas ven la IP de salida de ese servidor en vez de la tuya. Útil en redes ajenas o para ocultar ciertos datos de conexión a tu operador. A cambio, el proveedor VPN pasa a ocupar una posición de confianza importante. No impide las cookies ni que una plataforma reconozca tu cuenta al iniciar sesión, y no garantiza anonimato. Más en <a href="/articulos/conexion/vpn.html">diez claves para entender y usar una VPN</a>.</p></li>
+      <li><h2>Tor reparte tu conexión entre varios nodos</h2><p>En lugar de enviar todo a un único proveedor, usa una red de nodos para que ningún intermediario pueda relacionar origen y destino. Tor Browser añade protecciones contra el seguimiento y la identificación del navegador. La contrapartida: conexiones más lentas y servicios que ponen pegas. Tampoco impide que te identifiques tú al usar cuentas personales. Más en <a href="/articulos/conexion/tor-browser.html">diez claves para usar Tor Browser</a>.</p></li>
+      <li><h2>Tails cambia el entorno de trabajo</h2><p>No es una VPN ni un navegador: es un sistema operativo que arranca desde un USB, preparado para usar Tor y no dejar rastros locales. Es «amnésico»: al apagar, no queda nada de la sesión, salvo lo que guardes a propósito en un almacenamiento cifrado. Sirve cuando necesitas separarte más del sistema habitual. Necesita hardware compatible y no elimina los riesgos del equipo físico ni los de tu conducta. Más en <a href="/articulos/conexion/tails-usb.html">diez claves para usar Tails</a>.</p></li>
+      <li><h2>Ocultar la IP no es ocultar tu identidad</h2><p>La IP dice cosas de una conexión, pero no es el único dato que relaciona una actividad con una persona: las cuentas iniciadas, las cookies, los identificadores de las aplicaciones, los metadatos de los archivos y lo que escribes tú. Una VPN cambia la IP que ve la página; Tor dificulta asociar origen y destino; Tails añade protección sobre el sistema y los rastros locales. Ninguna impide que una persona diga su nombre o use su cuenta de siempre.</p></li>
+      <li><h2>No siempre hay que combinarlas</h2><p>VPN más Tor no es automáticamente más protección. Conectar primero a una VPN y luego a Tor cambia lo que ven algunos intermediarios, pero mete otro proveedor en el recorrido, puede dar problemas técnicos y no elimina los riesgos de identificación. El Proyecto Tor tiene recomendaciones específicas sobre esto. Para quien empieza, es más razonable conocer Tor Browser tal cual, sin configuraciones añadidas.</p></li>
+      <li><h2>HTTPS sigue importando</h2><p>Ninguna de las tres convierte una web en segura. HTTPS cifra entre el navegador y la página; la VPN cifra hasta su servidor; Tor cifra entre nodos. En una conexión Tor hacia una página normal, el nodo de salida puede ver el tráfico que no vaya cifrado de extremo a extremo, así que mira si hay HTTPS. Los <a href="/articulos/conexion/sitios-onion.html">servicios onion</a> traen cifrado y autenticación propios, pero tampoco garantizan que su contenido sea de fiar.</p></li>
+      <li><h2>Depende de quién puede observarte</h2><p>No todo el mundo necesita la misma protección. Quizá quieres evitar el seguimiento comercial, usar un wifi ajeno o separar ciertas actividades de tu identidad. Otras personas necesitan proteger comunicaciones frente a vigilancia, censura o amenazas concretas. El primer paso es identificar quién podría obtener información sobre lo que haces y qué consecuencias tendría. Después eliges. La protección adecuada es la que responde a un riesgo real y sabes usar bien.</p></li>
+      <li><h2>La facilidad de uso también cuenta</h2><p>Una herramienta tan complicada que acabas usándola mal es contraproducente. Una VPN comercial es fácil de activar, aunque exige confiar en el proveedor. Tor Browser se usa sin administrar nada. Tails implica preparar un USB, arrancar otro sistema y conocerlo. Eso no hace mejor a ninguna: lo importante es elegir algo que puedas mantener actualizado y usar correctamente. La seguridad depende también de los hábitos.</p></li>
+      <li><h2>Privacidad no es ausencia de responsabilidad</h2><p>Usar Tor, una VPN o Tails no convierte una actividad en legítima ni en ilegítima. Estas tecnologías protegen comunicaciones, dan acceso a información y reducen riesgos de vigilancia; también pueden usarse mal. Las leyes sobre ellas varían entre países y cambian. No asumas que una herramienta garantiza impunidad, ni que usarla te hace sospechoso: la privacidad es una necesidad legítima, y las protecciones técnicas no borran las responsabilidades de lo que hagas.</p></li>
+      <li><h2>Elige según lo que necesitas proteger</h2><div class="scroll" tabindex="0" role="region" aria-label="Tabla, se puede desplazar"><table><thead><tr><th scope="col">Qué necesitas</th><th scope="col">Qué evaluar</th></tr></thead><tbody><tr><td>Acceder a la red del trabajo</td><td>VPN corporativa</td></tr><tr><td>Ocultar tu IP habitual a una página</td><td>VPN o Tor Browser</td></tr><tr><td>Dificultar el seguimiento entre sitios</td><td>Protecciones del navegador o Tor Browser</td></tr><tr><td>No dejar rastros locales de una sesión</td><td>Tails</td></tr><tr><td>Entrar en servicios .onion</td><td>Tor Browser</td></tr><tr><td>Cifrar las consultas DNS</td><td>DNS cifrado</td></tr><tr><td>Proteger tus cuentas</td><td>Contraseñas únicas y doble factor</td></tr></tbody></table></div><p>No necesitas usar todas a la vez.</p></li>
+    </ol>
+    <div class="cierre stack">
+      <h2>Por dónde empezar</h2>
+      <p>Define qué quieres proteger y frente a quién. Después usa la herramienta menos compleja que responda a esa necesidad, sin dar por hecho que una suscripción de pago ofrece más privacidad. Tor Browser y Tails son gratuitos.</p>
+      <p class="muted">Revisado el 11 de noviembre de 2026. Las funciones y políticas de los servicios evolucionan. Fuentes: <a href="https://ssd.eff.org/es/module/choosing-vpn-thats-right-you" rel="noopener">EFF, elegir una VPN</a> · <a href="https://support.torproject.org/tor-browser/security/using-tb-safely/" rel="noopener">Tor Project, usar Tor Browser con seguridad</a> · <a href="https://support.torproject.org/tor-browser/" rel="noopener">Tor Project, documentación</a> · <a href="https://tails.net/" rel="noopener">Tails, web oficial</a> · <a href="https://tails.net/doc/about/warnings/" rel="noopener">Tails, advertencias y limitaciones</a>.</p>
+    </div>
+    <nav class="rel" aria-label="Relacionado">
+      <span class="tag">Sigue leyendo</span>
+      <a href="/articulos/conexion/vpn.html">Diez claves para entender y usar una VPN</a><a href="/articulos/conexion/tor-browser.html">Diez claves para entender y usar Tor Browser</a><a href="/articulos/conexion/tails-usb.html">Diez claves para usar Tails desde un USB</a>
+    </nav>
+  </article>
+  </main>
+  <footer>
+    <span>Diez Claves · 2026</span>
+    <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
+    <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
+    <a href="/aviso-legal.html">Aviso legal</a>
+    <a href="/privacidad.html">Privacidad</a>
+  </footer>
+</div>
+</body>
+</html>

@@ -8,7 +8,7 @@ Web: <https://diezclaves.com>
 - `index.html`: portada.
 - `generador.html`: generador de contraseñas y frases en español.
 - `medidor.html`: medidor de contraseñas.
-- `articulos/`: artículos.
+- `articulos/`: artículos, en una carpeta por sección (`articulos/<seccion>/<slug>.html`). Ver `docs/estructura-articulos.md`.
 - `assets/`: estilos, diccionario, iconos e imagen para redes.
 
 Todo es HTML estático. Las páginas llevan una política de seguridad de contenido que impide cualquier conexión a terceros.
