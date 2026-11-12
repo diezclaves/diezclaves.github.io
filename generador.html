@@ -147,7 +147,6 @@ footer a{color:var(--accent)}
 </style>
 </head>
 <body style="margin:0">
-<script src="/assets/diccionario.js"></script>
 <script src="/assets/region.js" defer></script>
 
 
@@ -169,15 +168,15 @@ footer a{color:var(--accent)}
 
   <section class="slab" aria-labelledby="h-clave">
     <h2 class="sr" id="h-clave">Clave generada</h2>
-    <ol class="grid" id="grid" hidden></ol>
+    <ol class="grid" id="grid"><li><span>1</span><b>&nbsp;</b></li><li><span>2</span><b>&nbsp;</b></li><li><span>3</span><b>&nbsp;</b></li><li><span>4</span><b>&nbsp;</b></li><li><span>5</span><b>&nbsp;</b></li><li><span>6</span><b>&nbsp;</b></li><li><span>7</span><b>&nbsp;</b></li><li><span>8</span><b>&nbsp;</b></li><li><span>9</span><b>&nbsp;</b></li><li><span>10</span><b>&nbsp;</b></li><li><span>11</span><b>&nbsp;</b></li><li><span>12</span><b>&nbsp;</b></li></ol>
     <div class="out" id="out" hidden></div>
     <div class="meter">
       <div class="bar" id="bar" role="meter" aria-label="Fuerza de la clave" aria-valuemin="0" aria-valuemax="256" aria-valuenow="0"><div id="barfill"></div></div>
       <span><strong id="bits">0</strong> bits · <span id="verdict"></span></span>
     </div>
     <dl class="crack">
-      <div><dt>Un PC con gráfica potente tardaría</dt><dd id="t-pc"></dd></div>
-      <div><dt>Un ordenador cuántico hipotético tardaría</dt><dd id="t-q"></dd></div>
+      <div><dt>Un PC con gráfica potente tardaría</dt><dd id="t-pc">&nbsp;</dd></div>
+      <div><dt>Un ordenador cuántico hipotético tardaría</dt><dd id="t-q">&nbsp;</dd></div>
     </dl>
     <div class="actions">
       <button class="btn primary" id="copy" type="button">Copiar contraseña</button>
@@ -336,6 +335,7 @@ footer a{color:var(--accent)}
   </footer>
 </div>
 
+<script src="/assets/diccionario.js"></script>
 <script>
 // ---------- núcleo (sin DOM) ----------
 const WORDS = (typeof DIEZCLAVES_WORDS === "string" ? DIEZCLAVES_WORDS : "").split(" ");
