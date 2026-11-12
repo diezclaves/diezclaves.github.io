@@ -39,3 +39,7 @@ Secciones previstas, que se crean al publicar su primer artículo:
 3. Escribir en la línea `meta` el enlace a la sección.
 4. Añadirlo a `articulos/<seccion>/index.html`, al índice general si procede y a `sitemap.xml`.
 5. Los enlaces internos siempre con la ruta completa (`/articulos/<seccion>/<slug>.html`).
+
+## País de entrada
+
+Cualquier URL admite `?pais=<código>`, por ejemplo `?pais=mx`. Al entrar, `region.js` guarda ese país, quita el parámetro de la barra de direcciones y aplica la tienda y el código de afiliado de ese país en todas las páginas de la visita. Las URL de los artículos no cambian, así que no hay contenido duplicado. Los códigos son los de `REGIONES` en `assets/region.js`: `es`, `ic`, `mx`, `ar`, `us`…

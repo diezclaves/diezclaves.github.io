@@ -132,7 +132,15 @@
       location.href = "mailto:" + correo() + "?subject=" + encodeURIComponent(asunto) + "&body=" + encodeURIComponent(cuerpo); });
     foot.appendChild(a);
   }
+  // país de entrada: ?pais=mx en cualquier URL fija la región para toda la visita y se quita de la barra de direcciones
+  function paisDeEntrada(){
+    let p = ""; try { p = (new URLSearchParams(location.search).get("pais") || "").toLowerCase(); } catch(e){ return; }
+    if (!REGIONES[p]) return;
+    guardar(p);
+    try { const u = new URL(location.href); u.searchParams.delete("pais"); history.replaceState(history.state, "", u.pathname + u.search + u.hash); } catch(e){}
+  }
   function inicio(){
+    paisDeEntrada();
     montarControles(); montarError();
     const guardada = leer();
     if (guardada){ aplicar(guardada); const dest = paginaDe(guardada); if (dest && dest !== location.pathname && document.body.dataset.variantesAuto === "1") location.replace(dest); return; }
