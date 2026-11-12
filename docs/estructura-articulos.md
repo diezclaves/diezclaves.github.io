@@ -22,13 +22,13 @@ Pensada para crecer a cientos de artículos sin cambiar URL. Definida el 12 de n
 | `conexion` | Conexión: DNS, VPN y Tor | DNS, VPN, wifi, Tor, Tails, P2P, ataques de intermediario |
 | `amenazas` | Programas maliciosos | Virus, troyanos, ransomware, botnets, gusanos, honeypots |
 | `tramites` | Identidad digital y trámites | Certificado digital, DNIe, identidad digital por país |
+| `fraudes` | Fraudes y engaños | Phishing, vishing, smishing, QR, ingeniería social, suplantación |
+| `redes-sociales` | Redes sociales | Algoritmos, granjas de bots, desinformación |
 
 Secciones previstas, que se crean al publicar su primer artículo:
 
 | Carpeta | Nombre | Qué entra |
 |---|---|---|
-| `fraudes` | Fraudes y engaños | Phishing, vishing, smishing, QR, ingeniería social, suplantación |
-| `redes-sociales` | Redes sociales | Algoritmos, granjas de bots, desinformación |
 | `acoso` | Abusos y acoso | Abusos, odio, racismo, ciberacoso, protección de menores, con recursos por país |
 | `bienestar` | Bienestar digital y familias | Salud mental, sueño, pantallas por edad, juegos |
 
