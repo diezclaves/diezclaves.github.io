@@ -24,12 +24,12 @@ Pensada para crecer a cientos de artículos sin cambiar URL. Definida el 12 de n
 | `tramites` | Identidad digital y trámites | Certificado digital, DNIe, identidad digital por país |
 | `fraudes` | Fraudes y engaños | Phishing, vishing, smishing, QR, ingeniería social, suplantación |
 | `redes-sociales` | Redes sociales | Algoritmos, granjas de bots, desinformación |
+| `acoso` | Abusos y acoso | Abusos, odio, racismo, ciberacoso, protección de menores; incluye la página «Dónde pedir ayuda, por país» |
 
 Secciones previstas, que se crean al publicar su primer artículo:
 
 | Carpeta | Nombre | Qué entra |
 |---|---|---|
-| `acoso` | Abusos y acoso | Abusos, odio, racismo, ciberacoso, protección de menores, con recursos por país |
 | `bienestar` | Bienestar digital y familias | Salud mental, sueño, pantallas por edad, juegos |
 
 ## Al publicar un artículo
