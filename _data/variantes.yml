@@ -1,0 +1,46 @@
+# Grupos de artículos que son versiones por país de una misma guía.
+# Cada artículo del grupo lleva en su front matter «variantes: <grupo>» y «pais: <código>».
+# El orden de esta lista es el de la línea «También:» y el de data-variantes (que usa region.js).
+identidad-digital:
+- pais: es
+  nombre: España
+- pais: ic
+  nombre: Canarias
+- pais: mx
+  nombre: México
+- pais: gt
+  nombre: Guatemala
+- pais: sv
+  nombre: El Salvador
+- pais: hn
+  nombre: Honduras
+- pais: ni
+  nombre: Nicaragua
+- pais: cr
+  nombre: Costa Rica
+- pais: pa
+  nombre: Panamá
+- pais: cu
+  nombre: Cuba
+- pais: do
+  nombre: R. Dominicana
+- pais: pr
+  nombre: Puerto Rico
+- pais: co
+  nombre: Colombia
+- pais: ec
+  nombre: Ecuador
+- pais: pe
+  nombre: Perú
+- pais: bo
+  nombre: Bolivia
+- pais: cl
+  nombre: Chile
+- pais: ar
+  nombre: Argentina
+- pais: py
+  nombre: Paraguay
+- pais: uy
+  nombre: Uruguay
+- pais: us
+  nombre: Estados Unidos

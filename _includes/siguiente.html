@@ -1,0 +1,3 @@
+{%- assign s = page.sig %}{% if s %}
+    <nav class="sig" aria-label="Siguiente en esta sección"><span class="tag">Siguiente en {{ s.seccion | escape }} · {{ s.n }} de {{ s.total }}</span><a class="s" href="{{ s.url }}">{{ s.h1 | escape }}</a><p>{{ s.desc | escape }} <a href="{{ s.seccion_url }}">Ver las {{ s.total }} guías</a>.</p></nav>
+{%- endif %}

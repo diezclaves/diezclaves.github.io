@@ -1,0 +1,31 @@
+{%- comment -%}
+  Cabecera <head> común. Parámetros: titulo, descripcion, og_tipo, og_titulo, og_descripcion.
+  La política de seguridad de contenido impide cargar nada de terceros: no la relajes.
+{%- endcomment -%}
+{%- assign canon = site.url | append: page.url | replace: "/index.html", "/" -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="{{ include.descripcion | escape }}">
+<link rel="canonical" href="{{ canon }}">
+<meta name="theme-color" content="#131a2b">
+<meta property="og:type" content="{{ include.og_tipo | default: 'website' }}">
+<meta property="og:url" content="{{ canon }}">
+<meta property="og:site_name" content="Diez Claves">
+<meta property="og:title" content="{{ include.og_titulo | escape }}">
+<meta property="og:description" content="{{ include.og_descripcion | default: include.descripcion | escape }}">
+<meta property="og:image" content="{{ site.url }}{{ page.imagen | default: '/assets/og.png' }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/assets/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/base.css">
+<script src="/assets/region.js" defer></script>
+{%- if include.buscar %}
+<script src="/assets/buscar.js" defer></script>
+{%- endif %}
+<title>{{ include.titulo | escape }}</title>

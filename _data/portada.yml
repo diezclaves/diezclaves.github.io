@@ -1,0 +1,37 @@
+# Bloques de la portada que se eligen a mano.
+# Las tarjetas de temas y «Lo último» se generan solas a partir de los artículos.
+
+# «¿Qué necesitas ahora?»
+chips:
+  - texto: Me han robado el móvil
+    url: /articulos/dispositivos/si-te-roban-el-movil.html
+  - texto: Necesito una contraseña
+    url: /generador.html
+  - texto: ¿Es segura mi contraseña?
+    url: /medidor.html
+  - texto: Creo que tengo un virus
+    url: /articulos/amenazas/virus-programas-maliciosos.html
+  - texto: Mis archivos no se abren
+    url: /articulos/amenazas/ransomware-secuestro-archivos.html
+  - texto: Hacer trámites por Internet
+    url: /articulos/tramites/
+  - texto: Que no me rastreen
+    url: /articulos/privacidad/navegar-con-privacidad.html
+  - texto: Conectarme a un wifi público
+    url: /articulos/conexion/vpn-wifi-publico.html
+  - texto: Revisar mi móvil
+    url: /articulos/dispositivos/proteger-tu-movil.html
+  - texto: Me acosan o amenazan en la red
+    url: /articulos/acoso/donde-pedir-ayuda.html
+
+# «Si empiezas de cero, en este orden»: slugs de artículos
+ruta:
+  - elegir-gestor-de-contrasenas
+  - de-la-contrasena-a-la-passkey
+  - proteger-tu-movil
+  - navegar-con-privacidad
+  - vpn
+  - virus-programas-maliciosos
+
+# «Lo último»: cuántas guías enseñar (las de la fecha más reciente, alternando temas)
+novedades: 8

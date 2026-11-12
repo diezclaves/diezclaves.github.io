@@ -1,0 +1,3 @@
+{%- assign i = include.a -%}
+<li data-q="{{ i.q | escape }}"><a href="{{ i.url }}">{{ i.corto | escape }}</a>{% unless include.sin_desc %}<p>{{ i.desc | escape }}</p>{% endunless %}</li>
+{%- comment -%} sin saltos de línea: la lista se escribe en una sola línea {%- endcomment -%}

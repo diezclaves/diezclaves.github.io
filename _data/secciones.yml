@@ -1,0 +1,139 @@
+# Secciones de la web, en el orden en que aparecen.
+# - nombre y desc: lo que se ve en la portada, el índice y la página de la sección.
+# - orden: orden de las guías dentro de la sección (es también el orden de «Siguiente en…»).
+#   Un artículo nuevo que no esté en la lista aparece igualmente, al final, ordenado por fecha.
+# - Para crear una sección nueva basta con añadirla aquí y crear la carpeta articulos/<clave>/.
+contrasenas:
+  nombre: Contraseñas y cuentas
+  desc: Cómo crear y guardar contraseñas, qué son las passkeys y por qué roban las cuentas.
+  orden:
+  - ene-y-tildes-en-contrasenas
+  - cuanto-tarda-descifrar-contrasena
+  - elegir-gestor-de-contrasenas
+  - identificadores-y-contrasenas
+  - de-la-contrasena-a-la-passkey
+dispositivos:
+  nombre: Móvil y dispositivos
+  desc: 'Tu móvil, tu ordenador y tu router: qué saben, qué guardan, qué comparten y cómo depender menos de Google.'
+  orden:
+  - proteger-tu-movil
+  - si-te-roban-el-movil
+  - claves-de-dispositivos
+  - permisos-aplicaciones-movil
+  - proteger-ubicacion-movil
+  - limitar-rastreo-publicitario-movil
+  - proteger-fotos-archivos-movil
+  - proteger-mensajes-llamadas
+  - movil-segundo-plano
+  - instalar-aplicaciones-seguridad
+  - rastreadores-aplicaciones-movil
+  - copias-seguridad-privadas
+  - rastros-en-tu-ordenador
+  - filtros-de-pantalla
+  - reducir-dependencia-google
+  - entender-degoogling
+  - vivir-sin-servicios-google
+  - elegir-aplicaciones-codigo-abierto
+  - entender-grapheneos
+  - instalar-grapheneos
+  - movil-compatible-grapheneos
+  - comparar-sistemas-android-alternativos
+privacidad:
+  nombre: Privacidad al navegar
+  desc: 'Navegadores, cookies, huella digital y modo incógnito: qué ven las páginas y cómo limitarlo.'
+  orden:
+  - navegar-con-privacidad
+  - elegir-navegador-privado
+  - cookies-y-rastreadores
+  - huella-digital-navegador
+  - modo-incognito
+  - proteger-tu-identidad
+  - navegar-privacidad-movil
+conexion:
+  nombre: 'Conexión: DNS, VPN y Tor'
+  desc: Qué ve tu operador y tu wifi, y qué cambian el DNS, una VPN, Tor o Tails.
+  orden:
+  - que-es-el-dns
+  - cambiar-dns
+  - dns-bloqueo-rastreadores
+  - dns-privado-movil
+  - vpn
+  - vpn-wifi-publico
+  - vpn-teletrabajo
+  - vpn-de-viaje
+  - vpn-movil
+  - vpn-tor-tails
+  - tor-browser
+  - sitios-onion
+  - tails-usb
+  - tor-android
+  - redes-p2p
+  - vpn-en-casa
+  - elegir-vpn-privada
+  - intermediario-malicioso-mitm
+amenazas:
+  nombre: Programas maliciosos
+  desc: 'Virus, troyanos, ransomware y compañía: qué es cada amenaza y qué hacer si te toca.'
+  orden:
+  - virus-programas-maliciosos
+  - troyanos-falsas-aplicaciones
+  - ransomware-secuestro-archivos
+  - gusanos-informaticos
+  - capturadores-teclado
+  - botnets-equipos-controlados
+  - mineria-no-autorizada
+  - honeypots
+fraudes:
+  nombre: Fraudes y engaños
+  desc: 'Correos, llamadas, SMS y códigos QR falsos: cómo reconocer el engaño y qué hacer si ya has picado.'
+  orden:
+  - reconocer-phishing
+  - vishing-llamadas-fraudulentas
+  - smishing-mensajes-fraudulentos
+  - quishing-codigos-qr
+  - ingenieria-social
+  - suplantacion-identidad
+redes-sociales:
+  nombre: Redes sociales
+  desc: 'Por qué ves lo que ves y quién empuja ciertos mensajes: algoritmos, recomendaciones y cuentas automatizadas.'
+  orden:
+  - algoritmos-redes-sociales
+  - granjas-bots-redes-sociales
+acoso:
+  nombre: Abusos y acoso
+  desc: 'Acoso, odio, racismo y abuso a menores en la red: cómo proteger, a quién acudir y qué no hacer.'
+  orden:
+  - donde-pedir-ayuda
+  - abusos-en-internet
+  - abuso-sexual-infantil-red
+  - ciberacoso-escolar
+  - incitacion-odio-internet
+  - racismo-en-internet
+tramites:
+  nombre: Identidad digital y trámites
+  desc: Certificado digital, DNI electrónico e identidad digital en cada país hispanohablante y en Estados Unidos.
+  orden:
+  - clave-certificado-digital-dnie
+  - clave-certificado-digital-canarias
+  - identidad-digital-mexico
+  - identidad-digital-guatemala
+  - identidad-digital-el-salvador
+  - identidad-digital-honduras
+  - identidad-digital-nicaragua
+  - identidad-digital-costa-rica
+  - identidad-digital-panama
+  - identidad-digital-cuba
+  - identidad-digital-republica-dominicana
+  - identidad-digital-puerto-rico
+  - identidad-digital-colombia
+  - identidad-digital-ecuador
+  - identidad-digital-peru
+  - identidad-digital-bolivia
+  - identidad-digital-chile
+  - identidad-digital-argentina
+  - identidad-digital-paraguay
+  - identidad-digital-uruguay
+  - identidad-digital-estados-unidos
+  agrupar:
+    prefijo: identidad-digital-
+    titulo: Identidad digital por país

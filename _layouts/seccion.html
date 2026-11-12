@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+<head>
+{%- assign s = page.seccion %}
+{%- capture titulo %}{{ s.nombre }}: guías en diez claves{% endcapture %}
+{%- capture t %}{{ titulo }} · Diez Claves{% endcapture %}
+{% include head.html titulo=t descripcion=s.desc og_titulo=titulo %}
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="wrap ancha">
+{% include cabecera.html %}
+  <main id="contenido" class="stack">
+    <p class="meta"><a href="/articulos/">Todos los artículos</a> · {{ s.n }} guías</p>
+    <h1>{{ s.nombre | escape }}, <span>en diez claves</span></h1>
+    <p class="lede muted">{{ s.desc | escape }}</p>
+    <ul class="lista">{% for a in s.articulos %}{% include item-lista.html a=a %}{% endfor %}</ul>
+    <section class="stack" aria-labelledby="h-otros"><h2 id="h-otros">Otros temas</h2><ul class="chips">{% for o in site.data.dc.secciones %}<li><a href="{{ o.url }}"{% if o.clave == s.clave %} aria-current="page"{% endif %}>{{ o.nombre | escape }}</a></li>{% endfor %}</ul></section>
+  </main>
+{% include pie.html %}</div>
+</body>
+</html>

@@ -8,7 +8,7 @@ Pensada para crecer a cientos de artículos sin cambiar URL. Definida el 12 de n
 
 - **Sección:** una carpeta por temática amplia. Cada artículo pertenece a una sola sección. Cada sección tiene su página `index.html`, que lista sus guías.
 - **Slug:** único en toda la web, aunque las secciones sean distintas. Va en minúsculas, sin tildes ni ñ, con palabras separadas por guiones, y cuantas menos palabras mejor (de 2 a 6). No lleva fechas ni números de tanda. Que sea único permite cambiar un artículo de sección sin tener que renombrarlo.
-- **Variantes por país:** son artículos de la misma sección, con el país como sufijo. Por ejemplo, `identidad-digital-peru.html`. Se enlazan entre sí con `data-variantes`.
+- **Variantes por país:** son artículos de la misma sección, con el país como sufijo. Por ejemplo, `identidad-digital-peru.html`. Se agrupan en `_data/variantes.yml` y cada una lleva `variantes` y `pais` en su front matter; la web genera la línea «Versión para…» y el atributo `data-variantes`.
 - **Otros idiomas, en el futuro:** un prefijo de idioma (`/en/...`) con las mismas secciones traducidas. No se mezclan idiomas en una misma carpeta.
 - No se crean subcarpetas dentro de una sección. Si una sección pasa de unos 60 artículos, se divide en dos secciones hermanas.
 
@@ -34,11 +34,11 @@ Secciones previstas, que se crean al publicar su primer artículo:
 
 ## Al publicar un artículo
 
-1. Elegir la sección de la tabla. Si no encaja en ninguna, proponer una nueva antes de publicar.
-2. Crear `articulos/<seccion>/<slug>.html` con canonical, `og:url` y `mainEntityOfPage` apuntando a esa URL.
-3. Escribir en la línea `meta` el enlace a la sección.
-4. Añadirlo a `articulos/<seccion>/index.html`, al índice general si procede y a `sitemap.xml`.
-5. Los enlaces internos siempre con la ruta completa (`/articulos/<seccion>/<slug>.html`).
+1. Elegir la sección de la tabla. Si no encaja en ninguna, proponer una nueva antes de publicar (se añade en `_data/secciones.yml`).
+2. Crear `articulos/<seccion>/<slug>.md` con el formato de los borradores. Ver `docs/editar-y-publicar.md`.
+3. Los enlaces internos, con la ruta completa (`/articulos/<seccion>/<slug>.html`). Los del formato antiguo se corrigen solos al construir.
+
+Canonical, `og:url`, JSON-LD, la línea `meta` con la sección, la página de sección, el índice, la portada y `sitemap.xml` se generan solos.
 
 ## País de entrada
 
@@ -46,4 +46,4 @@ Cualquier URL admite `?pais=<código>`, por ejemplo `?pais=mx`. Al entrar, `regi
 
 ## Portada, índice y secciones
 
-La portada, el índice de artículos, las páginas de sección y el bloque «Siguiente en esta sección» de cada artículo se generan a partir de la lista de secciones. Después de publicar artículos nuevos, hay que volver a generarlos para que aparezcan en todas partes.
+La portada, el índice de artículos, las páginas de sección, el bloque «Siguiente en esta sección» de cada artículo y el sitemap los genera Jekyll en cada publicación, a partir de `_data/secciones.yml` y de los propios artículos.

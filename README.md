@@ -8,10 +8,12 @@ Web: <https://diezclaves.com>
 - `index.html`: portada.
 - `generador.html`: generador de contraseñas y frases en español.
 - `medidor.html`: medidor de contraseñas.
-- `articulos/`: artículos, en una carpeta por sección (`articulos/<seccion>/<slug>.html`). Ver `docs/estructura-articulos.md`.
+- `articulos/`: artículos en Markdown, en una carpeta por sección (`articulos/<seccion>/<slug>.md`, se publica como `.html`). Ver `docs/estructura-articulos.md`.
 - `assets/`: estilos, diccionario, iconos e imagen para redes.
 
-Todo es HTML estático. Las páginas llevan una política de seguridad de contenido que impide cualquier conexión a terceros.
+La web se construye con Jekyll y se publica en GitHub Pages con GitHub Actions al fusionar en `main`. Cómo editar y publicar: `docs/editar-y-publicar.md`.
+
+Las páginas llevan una política de seguridad de contenido que impide cualquier conexión a terceros.
 
 ## Diccionario
 
