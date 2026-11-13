@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+# notas internas del proyecto: siguen en el repositorio, pero fuera de los buscadores
+Disallow: /PRODUCT.md
+Disallow: /DESIGN.md
 
 Sitemap: https://diezclaves.com/sitemap.xml

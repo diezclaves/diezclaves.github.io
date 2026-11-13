@@ -35,6 +35,15 @@
 header.top{display:flex;flex-direction:column;gap:14px}
 main#contenido{display:flex;flex-direction:column;gap:30px}
 main#contenido > .tabs + .slab{margin-top:4px}
+/* qué es el tipo de clave elegido, justo bajo las pestañas */
+.modo{margin:-16px 0 0;font-size:16px;line-height:1.5;max-width:62ch}
+.modo b{font:800 16px var(--display)}
+main#contenido > .modo + .slab{margin-top:-4px}
+/* los cuatro tipos, explicados en la introducción */
+.tipos{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:12px 22px;margin:0}
+.tipos div{border-top:1.5px dashed var(--hair);padding-top:10px}
+.tipos dt{font:800 18px/1.3 var(--display)}
+.tipos dd{margin:4px 0 0;font-size:16px;color:var(--muted)}
 h1.gen{font-size:clamp(34px,9vw,60px);line-height:1.05;max-width:none}
 :root h1.gen b.ene{display:inline-block;font-size:1.55em;line-height:.9;color:var(--on-hl);background:var(--hl-y);border:3px solid var(--on-hl);border-radius:var(--wob-1);padding:.06em .1em .02em;margin:0 .03em;transform:rotate(-5deg) translateY(.06em);text-decoration:none}
 .sub{font:800 clamp(18px,4.6vw,22px)/1.3 var(--display);margin:0}
@@ -72,7 +81,11 @@ h1.gen{font-size:clamp(34px,9vw,60px);line-height:1.05;max-width:none}
 .crack dd{margin:0;font:800 19px/1.3 var(--display);color:var(--ink);overflow-wrap:anywhere}
 
 /* acciones */
-.actions{display:flex;flex-wrap:wrap;gap:10px}
+.actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.actions .btn{width:100%;padding-inline:10px;line-height:1.25}
+.actions .btn.primary,.actions .said{grid-column:1 / -1}
+.actions .corte{display:none}
+@media (min-width:640px){ .actions{display:flex;flex-wrap:wrap} .actions .btn{width:auto;padding-inline:20px} .actions .corte{display:block;flex-basis:100%;height:0} }
 .slab .btn{font-size:16px}
 .slab .btn.primary{box-shadow:none}
 .slab .btn.ghost{color:var(--ink);border-color:var(--line);background:var(--surface)}
@@ -93,7 +106,22 @@ h1.gen{font-size:clamp(34px,9vw,60px);line-height:1.05;max-width:none}
 .rec[data-ok="0"]{color:var(--warn)}
 .row output{font:800 20px var(--display);font-variant-numeric:tabular-nums;min-width:2ch;text-align:right}
 .ctl{display:flex;gap:12px;align-items:center}
-input[type=range]{width:min(200px,50vw);min-height:32px;accent-color:var(--ink)}
+input[type=range]{width:min(200px,50vw);min-height:32px;accent-color:var(--ink);-webkit-appearance:none;appearance:none;background:transparent;cursor:pointer}
+/* deslizador a rotulador: carril dibujado y tirador amarillo */
+input[type=range]::-webkit-slider-runnable-track{height:12px;border:var(--stroke) solid var(--line);border-radius:var(--wob-3);background:var(--surface)}
+input[type=range]::-moz-range-track{height:7px;border:var(--stroke) solid var(--line);border-radius:var(--wob-3);background:var(--surface)}
+input[type=range]::-moz-range-progress{height:7px;background:var(--hl-y);border-radius:var(--wob-3)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:26px;height:26px;margin-top:-9.5px;border:var(--stroke) solid var(--on-hl);border-radius:50% 45% 52% 48%/48% 52% 45% 50%;background:var(--hl-y)}
+input[type=range]::-moz-range-thumb{width:21px;height:21px;border:var(--stroke) solid var(--on-hl);border-radius:50% 45% 52% 48%/48% 52% 45% 50%;background:var(--hl-y)}
+input[type=range]:active::-webkit-slider-thumb{transform:rotate(-8deg)}
+/* deslizador desactivado: trazo discontinuo y tirador vacío, sin bajar la opacidad */
+input[type=range]:disabled{cursor:not-allowed}
+input[type=range]:disabled::-webkit-slider-runnable-track{border-style:dashed;border-color:var(--muted)}
+input[type=range]:disabled::-moz-range-track{border-style:dashed;border-color:var(--muted)}
+input[type=range]:disabled::-moz-range-progress{background:none}
+input[type=range]:disabled::-webkit-slider-thumb{background:var(--surface);border-style:dashed;border-color:var(--muted)}
+input[type=range]:disabled::-moz-range-thumb{background:var(--surface);border-style:dashed;border-color:var(--muted)}
+.ctl:has(input:disabled) output{color:var(--muted)}
 input[type=checkbox]{width:28px;height:28px;flex:none;accent-color:var(--ink);cursor:pointer}
 select{font:600 16px var(--body);color:var(--ink);background:var(--surface);border:var(--stroke) solid var(--line);border-radius:var(--wob-3);padding:8px 12px;min-height:48px}
 .seg{display:flex;border:var(--stroke) solid var(--line);border-radius:var(--wob-1);overflow:hidden}
@@ -112,7 +140,14 @@ select{font:600 16px var(--body);color:var(--ink);background:var(--surface);bord
 .notes h2{font-size:22px;color:var(--ink)}
 .notes h3{font:800 17px var(--display);color:var(--ink);margin:8px 0 0}
 .notes p{margin:0;max-width:65ch}
-.notes ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;max-width:65ch}
+.notes ul{margin:0;padding-left:26px;display:flex;flex-direction:column;gap:6px;max-width:65ch;list-style:none}
+/* viñetas de rotulador, como en los artículos */
+.notes ul:not(.prod)>li{position:relative}
+.notes ul:not(.prod)>li::before{content:"";position:absolute;left:-20px;top:.62em;width:10px;height:10px;border-radius:var(--wob-3);background:var(--hl-t);box-shadow:0 0 0 1.5px var(--ink)}
+/* nombres de producto: objetivo táctil de 44 px sin mover el texto */
+.prod b a{display:inline-block;padding:11px 0;margin:-11px 0}
+.favbtn{display:inline-flex;align-items:center;gap:8px}
+.favbtn svg{flex:none}
 .notes strong{color:var(--ink)}
 .prod{list-style:none;padding:0!important;gap:0!important}
 .prod li{padding:12px 0;border-bottom:1.5px dashed var(--hair)}
@@ -138,7 +173,7 @@ details summary::-webkit-details-marker{display:none}
   <header class="top">
     <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg class="llave" viewBox="0 0 40 100" width="27" height="66" aria-hidden="true"><path d="M6 5.5C14 3.6 27 3.4 34.6 5.2c1.6 9.4 1.5 22.6.2 31.6C26 38.6 13.6 38.4 5.3 36.9 3.9 27 4.2 15 6 5.5z" style="fill:var(--hl-y);stroke:currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M13 31V17.5L27 31V17.5M12.5 12.4c2.3-2.6 4.6-2.6 7 0s4.7 2.6 7.5-.2" style="fill:none;stroke:var(--on-hl)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 38.5V95M20 70h9.5v6M20 83h7" style="fill:none;stroke:currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="marca">Diez Claves<span class="lema">Recetas con <b class="ene">ñ</b></span><span class="desc">Seguridad digital en español</span></span></a><a href="/articulos/">Artículos</a><a href="/herramientas.html" aria-current="page">Herramientas</a></nav>
     <h1 class="gen">Generador de contrase<b class="ene">Ñ</b>as</h1>
-    <p class="sub">En español, con <b>ñ</b> y con <b>tilde</b>.</p>
+    <p class="sub">En español, con <b>ñ</b> y con <b>tilde</b> si las quieres.</p>
   </header>
 
   <main id="contenido">
@@ -148,6 +183,7 @@ details summary::-webkit-details-marker{display:none}
     <button role="tab" id="tab-letras" data-mode="letras" aria-selected="false">Contraseña de caracteres</button>
     <button role="tab" id="tab-gamberro" data-mode="gamberro" aria-selected="false"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5.5 8.5 3 2l6.5 3.2zM18.5 8.5 21 2l-6.5 3.2z" fill="currentColor"/><circle cx="12" cy="13.5" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7.6 10.6l3 1.2M16.4 10.6l-3 1.2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8.3 15.6q3.7 3.6 7.4 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Modo gamberro</button>
   </div>
+  <p class="modo" id="modo-info"></p>
 
   <section class="slab" aria-labelledby="h-clave">
     <h2 class="sr" id="h-clave">Clave generada</h2>
@@ -165,6 +201,7 @@ details summary::-webkit-details-marker{display:none}
       <button class="btn primary" id="copy" type="button">Copiar contraseña</button>
       <button class="btn ghost" id="regen" type="button">Generar otra</button>
       <button class="btn ghost" id="ver" type="button" aria-pressed="false">Ocultar</button>
+      <span class="corte" aria-hidden="true"></span>
       <button class="btn ghost" id="aj-f" type="button">Ajustar a fuerte</button>
       <button class="btn ghost" id="aj-m" type="button">Ajustar a muy fuerte</button>
       <span class="said" id="said" role="status"></span>
@@ -178,7 +215,7 @@ details summary::-webkit-details-marker{display:none}
       <label for="f-n">Número de palabras<small>Se sortean entre <span id="dic-n"></span> palabras de 4 a 10 letras.</small></label>
       <div class="ctl"><input type="range" id="f-n" min="4" max="24" value="12"><output id="f-n-o">12</output></div>
     </div>
-    <div class="row"><label for="f-ascii">Sin tildes ni ñ<small>Escribe las palabras solo con letras estándar.</small></label><input type="checkbox" id="f-ascii"></div>
+    <div class="row"><label for="f-tildes">Añadir tildes y ñ<small>Escribe las palabras como en el diccionario: «año», «canción».</small></label><input type="checkbox" id="f-tildes"></div>
   </section>
 
   <section class="opts" id="opts-palabras" hidden>
@@ -210,10 +247,11 @@ details summary::-webkit-details-marker{display:none}
       <input type="checkbox" id="p-num" checked>
     </div>
     <div class="row">
-      <label for="p-sym">Añadir un símbolo<small>Incluye los nuestros: ¿ ¡ € ª º</small></label>
+      <label for="p-sym">Añadir un símbolo</label>
       <input type="checkbox" id="p-sym" checked>
     </div>
-    <div class="row"><label for="p-ascii">Sin tildes ni ñ<small>Escribe las palabras solo con letras estándar.</small></label><input type="checkbox" id="p-ascii"></div>
+    <div class="row"><label for="p-tildes">Añadir tildes y ñ<small>Escribe las palabras como en el diccionario: «año», «canción».</small></label><input type="checkbox" id="p-tildes"></div>
+    <div class="row"><label for="p-simb">Añadir símbolos del español<small>¿ ¡ € º ª</small></label><input type="checkbox" id="p-simb"></div>
     <div class="row">
       <label for="p-leet">Código leet (1337)<small>a→4 · e→3 · i→1 · o→0 · s→5 · t→7. Las vocales con tilde no se tocan.</small></label>
       <select id="p-leet">
@@ -227,8 +265,10 @@ details summary::-webkit-details-marker{display:none}
       <label for="l-n">Longitud</label>
       <div class="ctl"><input type="range" id="l-n" min="8" max="48" value="18"><output id="l-n-o">18</output></div>
     </div>
+    <div class="row"><label for="l-tildes">Añadir tildes y ñ<small>Mezcla ñ, á, é, í, ó, ú y ü con el resto.</small></label><input type="checkbox" id="l-tildes"></div>
+    <div class="row"><label for="l-simb">Añadir símbolos del español<small>¿ ¡ € º ª</small></label><input type="checkbox" id="l-simb"></div>
     <div class="row">
-      <label for="l-esp">Caracteres propios del español<small>Cuántos de estos entran en la mezcla: <span id="esp-list"></span>. Con 0, la contraseña usa solo caracteres estándar.</small></label>
+      <label for="l-esp">Caracteres propios del español<small>Cuántos de estos entran en la mezcla: <span id="esp-list"></span>.</small></label>
       <div class="ctl"><input type="range" id="l-esp" min="0" max="18" value="4"><output id="l-esp-o">4</output></div>
     </div>
     <div class="row"><label for="l-min">Minúsculas estándar<small>a–z</small></label><input type="checkbox" id="l-min" checked></div>
@@ -236,22 +276,33 @@ details summary::-webkit-details-marker{display:none}
     <div class="row"><label for="l-num">Números<small>0–9</small></label><input type="checkbox" id="l-num" checked></div>
     <div class="row"><label for="l-sym">Símbolos estándar<small id="sym-list"></small></label><input type="checkbox" id="l-sym" checked></div>
     <div class="row"><label for="l-amb">Evitar caracteres que se confunden<small>Quita l, I, 1, O y 0.</small></label><input type="checkbox" id="l-amb"></div>
-    <div class="row"><label for="l-ascii">Sin tildes ni ñ<small>Usa solo caracteres estándar y desactiva los propios del español.</small></label><input type="checkbox" id="l-ascii"></div>
-  </section>
+      </section>
 
   <section class="opts" id="opts-gamberro" hidden>
     <div class="row">
-      <label for="g-n">Número de palabrotas<small>Solo palabras malsonantes, insultos de andar por casa y algún canarismo: <span id="g-total"></span> en total. Sin insultos contra colectivos.</small></label>
+      <label for="g-n">Número de palabras</label>
       <div class="ctl"><input type="range" id="g-n" min="4" max="16" value="12"><output id="g-n-o">12</output></div>
     </div>
-    <div class="row"><label for="g-ascii">Sin tildes ni ñ<small>Escribe las palabras solo con letras estándar.</small></label><input type="checkbox" id="g-ascii"></div>
-    <p class="aviso">Va con mayúscula inicial, guiones, un número y un símbolo. Como la lista es corta, cada palabra protege menos que en los otros modos y hacen falta más. Piénsatelo antes de usarla donde tengas que dictarla o enseñarla.</p>
+    <div class="row">
+      <label for="g-k">Cuántas son palabrotas<small>De una sola a todas. Salen de una lista de palabras malsonantes e insultos de andar por casa, de todo el mundo hispanohablante: <span id="g-total"></span> en total, sin insultos contra colectivos. Las demás salen del diccionario.</small></label>
+      <div class="ctl"><input type="range" id="g-k" min="1" max="12" value="12"><output id="g-k-o">todas</output></div>
+    </div>
+    <div class="row"><label for="g-tildes">Añadir tildes y ñ<small>Escribe las palabras como en el diccionario: «año», «canción».</small></label><input type="checkbox" id="g-tildes"></div>
+    <div class="row"><label for="g-simb">Añadir símbolos del español<small>¿ ¡ € º ª</small></label><input type="checkbox" id="g-simb"></div>
+    <p class="aviso">Va con mayúscula inicial, guiones, un número y un símbolo. Como la lista de palabrotas es corta, cada palabrota protege menos que una palabra del diccionario: cuantas más pongas, más palabras hacen falta. Piénsatelo antes de usarla donde tengas que dictarla o enseñarla.</p>
   </section>
 
   <section class="intro" aria-labelledby="h-intro">
     <h2 id="h-intro">Qué hace esta herramienta</h2>
     <p class="lede">Frases de palabras y contraseñas en español, generadas en tu navegador. Nada de lo que hagas aquí se envía: no hay analítica, ni fuentes externas, ni terceros.</p>
-    <p class="fav" id="favbox" hidden><button class="favbtn" id="fav" type="button">☆ Guardar en favoritos</button><span id="favtip" role="status"></span></p>
+    <h3>Los cuatro tipos de clave</h3>
+    <dl class="tipos" id="tipos">
+      <div data-modo="frase"><dt>Frase de palabras</dt><dd id="d-frase">Varias palabras del diccionario, sorteadas y separadas por espacios, sin nada más. Es la más fácil de recordar para su fuerza: úsala para la clave maestra de tu gestor o para lo que tengas que escribir de memoria.</dd></div>
+      <div data-modo="palabras"><dt>Contraseña de palabras</dt><dd id="d-palabras">Menos palabras, unidas con un guion, con mayúscula inicial, un número y un símbolo. Sirve en las webs que exigen mayúsculas, números y símbolos, y todavía se puede leer y teclear.</dd></div>
+      <div data-modo="letras"><dt>Contraseña de caracteres</dt><dd id="d-letras">Letras, números y símbolos sorteados uno a uno, con ñ y tildes si quieres. Es la más corta para la misma fuerza, pero no hay quien la recuerde: guárdala en el gestor.</dd></div>
+      <div data-modo="gamberro"><dt>Modo gamberro</dt><dd id="d-gamberro">Como la contraseña de palabras, pero con palabrotas e insultos de andar por casa de todo el mundo hispanohablante: todas las palabras o solo alguna, mezclada con las del diccionario. Para reírte un rato: cuantas más palabrotas, más palabras hacen falta para la misma fuerza.</dd></div>
+    </dl>
+    <p class="fav" id="favbox" hidden><button class="favbtn" id="fav" type="button"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 2.8l2.7 5.9 6.4.6-4.8 4.3 1.4 6.3L12 16.6 6.3 19.9l1.4-6.3L2.9 9.3l6.4-.6z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>Guardar en favoritos</button><span id="favtip" role="status"></span></p>
     <p class="lede">¿Quieres saber cuánto aguanta una contraseña que ya usas? Prueba el <a href="/medidor.html">medidor de contraseñas</a>.</p>
   </section>
 
@@ -322,10 +373,13 @@ details summary::-webkit-details-marker{display:none}
 <script>
 // ---------- núcleo (sin DOM) ----------
 const WORDS = (typeof DIEZCLAVES_WORDS === "string" ? DIEZCLAVES_WORDS : "").split(" ");
-const GAMB = "mierda joder coño hostia hostias cabrón cabronazo gilipollas gilipuertas capullo mamón pringado cretino zoquete mequetrefe botarate tarugo memo lerdo cenutrio zopenco mentecato majadero papanatas pelmazo petardo plasta tocapelotas tocahuevos tocanarices soplagaitas lameculos chupatintas mamarracho mastuerzo merluzo besugo berzotas cabestro cantamañanas caraculo carajo cojones culo pedo pedorro meón cagón cagada cagarruta mocoso guarro cerdo marrano cochino asqueroso baboso sinvergüenza caradura jeta chorizo mangante canalla rufián granuja bribón truhan tunante bellaco malandrín zascandil pelagatos pelele pazguato panoli pardillo percebe pasmarote palurdo paleto cateto garrulo gañán patán zafio cafre bestia burro asno bruto borrico mendrugo melón ceporro alcornoque adoquín tolai tontolaba tontaina bobo bobalicón necio fantoche fanfarrón fantasma fantasmón chulo macarra hortera pedante repelente cotilla chismoso bocazas bocachancla charlatán cuentista embustero trolero farsante tramposo rata rácano tacaño roñoso vago gandul holgazán zángano haragán mierdoso puñeta puñetero puñetas leches ostras jolín jolines jopé rediós recórcholis cáspita caramba caray diantre demonios diablos maldito condenado porras narices cuernos rayos centellas repámpanos córcholis canastos mecachis cachis leñe pardiez zurullo mojón moco gargajo escupitajo sobaco tufo peste pestazo cutre casposo rancio pesado cansino pejiguera latoso moscardón moscón pelotillero pelota trepa enchufado listillo sabelotodo marisabidilla sabihondo empollón pijo niñato malcriado consentido llorica quejica cobardica gallina miedica acusica chivato soplón traidor vendido rastrero arrastrado gusano sabandija alimaña bicho víbora cucaracha piojoso sarnoso mugriento zarrapastroso desgraciado miserable infeliz mindundi energúmeno bárbaro salvaje vándalo gamberro golfo bandarra pendenciero matón abusón chuleta bravucón tiquismiquis melindroso ñoño cursi remilgado estirado engreído creído chulito vacilón flipado cabezota cabezón testarudo terco tozudo mula machango totorota tolete guanajo singuango majalulo arretranco sanaca jediondo".split(" ");
+const GAMB = "mierda joder coño hostia hostias cabrón cabronazo gilipollas gilipuertas capullo mamón pringado cretino zoquete mequetrefe botarate tarugo memo lerdo cenutrio zopenco mentecato majadero papanatas pelmazo petardo plasta tocapelotas tocahuevos tocanarices soplagaitas lameculos chupatintas mamarracho mastuerzo merluzo besugo berzotas cabestro cantamañanas caraculo carajo cojones culo pedo pedorro meón cagón cagada cagarruta mocoso guarro cerdo marrano cochino asqueroso baboso sinvergüenza caradura jeta chorizo mangante canalla rufián granuja bribón truhan tunante bellaco malandrín zascandil pelagatos pelele pazguato panoli pardillo percebe pasmarote palurdo paleto cateto garrulo gañán patán zafio cafre bestia burro asno bruto borrico mendrugo melón ceporro alcornoque adoquín tolai tontolaba tontaina bobo bobalicón necio fantoche fanfarrón fantasma fantasmón chulo macarra hortera pedante repelente cotilla chismoso bocazas bocachancla charlatán cuentista embustero trolero farsante tramposo rata rácano tacaño roñoso vago gandul holgazán zángano haragán mierdoso puñeta puñetero puñetas leches ostras jolín jolines jopé rediós recórcholis cáspita caramba caray diantre demonios diablos maldito condenado porras narices cuernos rayos centellas repámpanos córcholis canastos mecachis cachis leñe pardiez zurullo mojón moco gargajo escupitajo sobaco tufo peste pestazo cutre casposo rancio pesado cansino pejiguera latoso moscardón moscón pelotillero pelota trepa enchufado listillo sabelotodo marisabidilla sabihondo empollón pijo niñato malcriado consentido llorica quejica cobardica gallina miedica acusica chivato soplón traidor vendido rastrero arrastrado gusano sabandija alimaña bicho víbora cucaracha piojoso sarnoso mugriento zarrapastroso desgraciado miserable infeliz mindundi energúmeno bárbaro salvaje vándalo gamberro golfo bandarra pendenciero matón abusón chuleta bravucón tiquismiquis melindroso ñoño cursi remilgado estirado engreído creído chulito vacilón flipado cabezota cabezón testarudo terco tozudo mula machango totorota tolete guanajo singuango majalulo arretranco sanaca jediondo pendejo pendejada pinche culero ojete verga vergazo madrazo chingadazo chingadera chingón mamadas chafa gacho cerote pisado bayunco maje pijudo jodido agüevado vergación hijueputa chunche comemierda singao pinga pingón cojonudo mamañema pariguayo mamagüevo mamabicho charro becerro jalabolas pajúo gafo arrecho ladilla carajito gonorrea malparido güevón pirobo lambón chimba berraco sapo careculo chucha mamaverga chuchaqui aniñado cojudo conchudo huevón pichiruchi pituco huachafo conchatumare achorado misio jailón llunku weón culiao conchetumare aweonao pico gil cahuín fome boludo pelotudo forro boludez pelotudez concha chanta garca orto choto pajero salame otario mufa ortiva nabo bolazo garronero tavy".split(" ");
 const sinTilde = w => w.normalize("NFD").replace(/[\u0300-\u036f]/g, "").normalize("NFC");
+// sin tildes ni ñ: las tildes se quitan («canción» → «cancion»), pero las palabras con ñ se descartan,
+// porque sin ella son otra palabra («año» → «ano», «alimaña» → «alimana»)
+const sinEnie = list => [...new Set(list.filter(w => !/ñ/i.test(w)).map(sinTilde))];
 let _ascii = null, _frase = {};
-function base(ascii){ return ascii ? (_ascii || (_ascii = [...new Set(WORDS.map(sinTilde))])) : WORDS; }
+function base(ascii){ return ascii ? (_ascii || (_ascii = sinEnie(WORDS))) : WORDS; }
 function poolFrase(ascii){ const k = ascii ? 1 : 0; return _frase[k] || (_frase[k] = base(ascii).filter(w => w.length >= 4 && w.length <= 10)); }
 const SYMBOLS = "!¡?¿@#$%&*+-_=.,;:/()[]{}€ºª~^".split("");
 const SETS = {
@@ -336,7 +390,8 @@ const SETS = {
 };
 const AMBIGUOS = "lIO01";
 function setDe(k, o){ return o.amb ? SETS[k].filter(c => !AMBIGUOS.includes(c)) : SETS[k]; }
-const ESP = "ñÑáéíóúüÁÉÍÓÚÜ¿¡€ºª".split("");
+const ESP_LET = "ñÑáéíóúüÁÉÍÓÚÜ".split(""), ESP_SYM = "¿¡€ºª".split("");
+const espSet = (tildes, simb) => (tildes ? ESP_LET : []).concat(simb ? ESP_SYM : []);
 const LEET = { a:"4", e:"3", i:"1", o:"0", s:"5", t:"7" };
 function randInt(n){ // entero uniforme en [0,n) sin sesgo
   const lim = Math.floor(0x100000000 / n) * n, b = new Uint32Array(1);
@@ -349,12 +404,20 @@ function genFrase(n, ascii){ // n palabras al azar, de 4 a 10 letras
   return { words: Array.from({length:n}, () => pick(pool)), bits: n * Math.log2(pool.length) };
 }
 let _gamb = null;
-function poolG(ascii){ return ascii ? (_gamb || (_gamb = [...new Set(GAMB.map(sinTilde))])) : GAMB; }
-function genGamberro(n, ascii){
-  const G = poolG(ascii);
-  const parts = Array.from({length:n}, () => { const w = pick(G); return w[0].toLocaleUpperCase("es") + w.slice(1); });
-  parts.push(String(randInt(100)).padStart(2,"0") + pick(symSet(ascii)));
-  return { text: parts.join("-"), bits: n * Math.log2(G.length) + extraG(ascii) };
+function poolG(ascii){ return ascii ? (_gamb || (_gamb = sinEnie(GAMB))) : GAMB; }
+function genGamberro(n, k, ascii, es){ // n palabras, k de ellas palabrotas en posiciones al azar
+  const G = poolG(ascii), W = poolFrase(ascii);
+  k = Math.max(1, Math.min(k, n));
+  const pos = Array.from({length:n}, (_, i) => i);
+  for (let i=n-1;i>0;i--){ const j = randInt(i+1); [pos[i],pos[j]] = [pos[j],pos[i]]; } // mezcla sin sesgo
+  const malas = new Set(pos.slice(0, k));
+  const parts = Array.from({length:n}, (_, i) => { const w = pick(malas.has(i) ? G : W); return w[0].toLocaleUpperCase("es") + w.slice(1); });
+  parts.push(String(randInt(100)).padStart(2,"0") + pick(symSet(es)));
+  return { text: parts.join("-"), bits: bitsGamberro(n, k, ascii, es) };
+}
+function bitsGamberro(n, k, ascii, es){ // posiciones de las palabrotas + cada palabra de su lista + número y símbolo
+  k = Math.max(1, Math.min(k, n));
+  return log2comb(n, k) + k*Math.log2(poolG(ascii).length) + (n-k)*Math.log2(poolFrase(ascii).length) + extraG(es);
 }
 function poolPalabras(o){
   return base(o.ascii).filter(w => w.length >= o.lmin && w.length <= o.lmax);
@@ -378,7 +441,7 @@ function genPalabras(o){
   }
   const extra = [];
   if (o.num){ extra.push(String(randInt(100)).padStart(2,"0")); bits += Math.log2(100); }
-  if (o.sym){ const S = symSet(o.ascii); extra.push(pick(S)); bits += Math.log2(S.length); }
+  if (o.sym){ const S = symSet(o.es); extra.push(pick(S)); bits += Math.log2(S.length); }
   return { text: parts.concat(extra.length ? [extra.join("")] : []).join(o.sep), bits };
 }
 function log2comb(n,k){ let s = 0; for (let i=1;i<=k;i++) s += Math.log2((n-k+i)/i); return s; }
@@ -392,7 +455,7 @@ function genLetras(o){
     do { std = Array.from({length:m}, () => pick(pool)); }
     while (m >= groups.length && !groups.every(g => std.some(ch => g.includes(ch))));
   }
-  const s = std.concat(Array.from({length:k}, () => pick(ESP)));
+  const s = std.concat(Array.from({length:k}, () => pick(o.espSet)));
   for (let i=s.length-1;i>0;i--){ const j = randInt(i+1); [s[i],s[j]] = [s[j],s[i]]; } // mezcla sin sesgo
   return { text: s.join(""), bits: bitsLetras(o) };
 }
@@ -401,10 +464,10 @@ function bitsLetras(o){
   let k = Math.min(o.esp, o.n);
   if (!A){ if (!k) return 0; k = o.n; }
   const m = o.n - k;
-  return log2comb(o.n,k) + k*Math.log2(ESP.length) + (m ? m*Math.log2(A) : 0);
+  return log2comb(o.n,k) + (k ? k*Math.log2(o.espSet.length) : 0) + (m ? m*Math.log2(A) : 0);
 }
-const symSet = ascii => ascii ? SETS.sym : SYMBOLS; // sin tildes ni ñ: tampoco ¿ ¡ € º ª
-const extraG = ascii => Math.log2(100) + Math.log2(symSet(ascii).length);
+const symSet = es => es ? SYMBOLS : SETS.sym; // con la casilla de símbolos del español, también ¿ ¡ € º ª
+const extraG = es => Math.log2(100) + Math.log2(symSet(es).length);
 const NIVEL = { fuerte: 70, muy: 100 };
 const PC_RATE = 1e10, Q_RATE = 1e6; // intentos por segundo (clásico) y pasos de Grover por segundo (hipotético)
 const tClasico = b => Math.pow(2, b-1) / PC_RATE;
@@ -436,13 +499,13 @@ function mark(el, text){ // resalta ñ, tildes y diéresis sin usar innerHTML
 function verdict(b){ return b < 50 ? "débil" : b < NIVEL.fuerte ? "aceptable" : b < NIVEL.muy ? "fuerte" : b < 128 ? "muy fuerte" : b < 256 ? "extrema" : "poscuántica"; }
 function optsPalabras(){
   return { n:+$("p-n").value, lmin:+$("p-min").value, lmax:+$("p-max").value, sep:$("p-sep").value, leet:$("p-leet").value,
-    cap:$("p-cap").checked, num:$("p-num").checked, sym:$("p-sym").checked, ascii:$("p-ascii").checked };
+    cap:$("p-cap").checked, num:$("p-num").checked, sym:$("p-sym").checked, ascii:!$("p-tildes").checked, es:$("p-simb").checked };
 }
 function generate(){
   let bits;
   $("said").textContent = "";
   if (mode === "frase"){
-    const r = genFrase(+$("f-n").value, $("f-ascii").checked); bits = r.bits; current = r.words.join(" ");
+    const r = genFrase(+$("f-n").value, !$("f-tildes").checked); bits = r.bits; current = r.words.join(" ");
     const g = $("grid"); g.textContent = "";
     r.words.forEach((w,i) => { const li = document.createElement("li"), n = document.createElement("span"), t = document.createElement("b");
       t.style.fontWeight = "400"; n.textContent = i+1; mark(t, w); li.append(n, t); g.appendChild(li); });
@@ -450,7 +513,7 @@ function generate(){
   } else {
     const r = mode === "palabras"
       ? genPalabras(optsPalabras())
-      : mode === "gamberro" ? genGamberro(+$("g-n").value, $("g-ascii").checked) : genLetras(optsLetras());
+      : mode === "gamberro" ? genGamberro(+$("g-n").value, +$("g-k").value, !$("g-tildes").checked, $("g-simb").checked) : genLetras(optsLetras());
     bits = r.bits; current = r.text;
     if (mode === "palabras") $("p-pool").textContent = poolPalabras(optsPalabras()).length;
     if (current) mark($("out"), current);
@@ -473,41 +536,68 @@ function setMode(m){
   mode = m;
   document.querySelectorAll(".tabs button").forEach(b => { b.setAttribute("aria-selected", b.dataset.mode === m); b.tabIndex = b.dataset.mode === m ? 0 : -1; });
   ["frase","palabras","letras","gamberro"].forEach(k => $("opts-"+k).hidden = k !== m);
+  // bajo las pestañas, qué es el tipo elegido (el texto sale de la lista «Los cuatro tipos de clave»)
+  const info = $("modo-info"), tipo = document.querySelector('#tipos [data-modo="' + m + '"]');
+  info.textContent = "";
+  if (tipo){ const b = document.createElement("b"); b.textContent = tipo.querySelector("dt").textContent + ". "; info.append(b, tipo.querySelector("dd").textContent); }
   try { localStorage.setItem("pc:modo", m); } catch(e){}
   generate();
 }
 document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => setMode(b.dataset.mode)));
 function optsLetras(){
-  return { n:+$("l-n").value, esp:$("l-ascii").checked ? 0 : +$("l-esp").value, min:$("l-min").checked, may:$("l-may").checked, num:$("l-num").checked, sym:$("l-sym").checked, amb:$("l-amb").checked };
+  const set = espSet($("l-tildes").checked, $("l-simb").checked);
+  return { n:+$("l-n").value, espSet:set, esp:set.length ? +$("l-esp").value : 0, min:$("l-min").checked, may:$("l-may").checked, num:$("l-num").checked, sym:$("l-sym").checked, amb:$("l-amb").checked };
 }
 function ajustar(nivel){
   const t = NIVEL[nivel], clamp = (el, v) => { el.value = Math.max(+el.min, Math.min(+el.max, v)); };
-  if (mode === "frase") clamp($("f-n"), nPalabrasPara(t, poolFrase($("f-ascii").checked).length, 0));
-  else if (mode === "palabras"){
+  ajustarModo(mode, t);
+  syncRanges(); generate();
+  $("said").textContent = lastBits >= t ? (nivel === "muy" ? "Ajustada a muy fuerte" : "Ajustada a fuerte")
+    : "Con estas opciones no llega: amplía el rango de letras o los tipos de carácter";
+}
+function ajustarModo(m, t){ // pone el mínimo de palabras o de caracteres que llega a t bits
+  const clamp = (el, v) => { el.value = Math.max(+el.min, Math.min(+el.max, v)); };
+  if (m === "frase") clamp($("f-n"), nPalabrasPara(t, poolFrase(!$("f-tildes").checked).length, 0));
+  else if (m === "palabras"){
     const o = optsPalabras(), pool = poolPalabras(o).length;
-    if (pool >= 2) clamp($("p-n"), nPalabrasPara(t, pool, (o.num ? Math.log2(100) : 0) + (o.sym ? Math.log2(symSet(o.ascii).length) : 0)));
-  } else if (mode === "gamberro") clamp($("g-n"), nPalabrasPara(t, poolG($("g-ascii").checked).length, extraG($("g-ascii").checked)));
+    if (pool >= 2) clamp($("p-n"), nPalabrasPara(t, pool, (o.num ? Math.log2(100) : 0) + (o.sym ? Math.log2(symSet(o.es).length) : 0)));
+  } else if (m === "gamberro"){
+    const el = $("g-n"); let n = +el.min;
+    while (n < +el.max && bitsGamberro(n, gTodas ? n : +$("g-k").value, !$("g-tildes").checked, $("g-simb").checked) < t) n++;
+    el.value = n;
+    syncRanges();
+  }
   else {
     const o = optsLetras(), el = $("l-n"); let n = +el.min;
     while (n < +el.max && bitsLetras({ ...o, n }) < t) n++;
     el.value = n;
   }
-  syncRanges(); generate();
-  $("said").textContent = lastBits >= t ? (nivel === "muy" ? "Ajustada a muy fuerte" : "Ajustada a fuerte")
-    : "Con estas opciones no llega: amplía el rango de letras o los tipos de carácter";
 }
 $("aj-f").addEventListener("click", () => ajustar("fuerte"));
 $("aj-m").addEventListener("click", () => ajustar("muy"));
+let gTodas = true; // el deslizador de palabrotas está en «todas»
 function syncRanges(changed){
   const mn = $("p-min"), mx = $("p-max");
   if (+mn.value > +mx.value){ if (changed === "p-min") mx.value = mn.value; else mn.value = mx.value; }
   const esp = $("l-esp"); esp.max = $("l-n").value; if (+esp.value > +esp.max) esp.value = esp.max;
-  ["f-n","p-n","p-min","p-max","l-n","l-esp","g-n"].forEach(id => $(id+"-o").textContent = $(id).value);
+  // palabrotas: como mucho, tantas como palabras; si estaba en «todas», sigue en todas
+  const gn = $("g-n"), gk = $("g-k");
+  if (changed === "g-k") gTodas = +gk.value >= +gn.value;
+  gk.max = gn.value; if (gTodas || +gk.value > +gk.max) gk.value = gk.max;
+  ["f-n","p-n","p-min","p-max","l-n","l-esp","g-n","g-k"].forEach(id => $(id+"-o").textContent = $(id).value);
+  if (+gk.value >= +gn.value) $("g-k-o").textContent = "todas";
 }
-["f-n","p-n","p-min","p-max","l-n","l-esp","g-n"].forEach(id => $(id).addEventListener("input", () => { syncRanges(id); generate(); }));
-["p-sep","p-leet","p-cap","p-num","p-sym","l-min","l-may","l-num","l-sym","l-amb","f-ascii","p-ascii","l-ascii","g-ascii"].forEach(id => $(id).addEventListener("change", generate));
+["f-n","p-n","p-min","p-max","l-n","l-esp","g-n","g-k"].forEach(id => $(id).addEventListener("input", () => { syncRanges(id); generate(); }));
+["p-sep","p-leet","p-cap","p-num","p-sym","l-min","l-may","l-num","l-sym","l-amb"].forEach(id => $(id).addEventListener("change", generate));
+// «Añadir tildes y ñ» y «Añadir símbolos del español» son preferencias únicas: marcarlas en un tipo de clave las marca en todos
+[["f-tildes","p-tildes","l-tildes","g-tildes"], ["p-simb","l-simb","g-simb"]].forEach(grupo =>
+  grupo.forEach(id => $(id).addEventListener("change", () => { grupo.forEach(o => { $(o).checked = $(id).checked; }); syncEsp(); generate(); })));
+function syncEsp(){ // la lista de caracteres propios sigue a las dos casillas
+  const set = espSet($("l-tildes").checked, $("l-simb").checked);
+  $("esp-list").textContent = set.length ? set.join(" ") : "ninguno por ahora";
+}
 // ---------- recomendaciones junto a cada control ----------
-["f-n","p-n","p-min","p-max","p-sep","p-cap","p-num","p-sym","p-leet","l-n","l-esp","l-min","l-may","l-num","l-sym","l-amb","f-ascii","p-ascii","g-n","l-ascii","g-ascii"].forEach(id => {
+["f-n","p-n","p-min","p-max","p-sep","p-cap","p-num","p-sym","p-leet","l-n","l-esp","l-min","l-may","l-num","l-sym","l-amb","f-tildes","p-tildes","p-simb","g-n","g-k","l-tildes","l-simb","g-tildes","g-simb"].forEach(id => {
   // la recomendación va fuera de la etiqueta y enlazada al control, para que el lector de pantalla la lea como descripción
   const lab = document.querySelector('label[for="' + id + '"]'), box = document.createElement("div"), s = document.createElement("span");
   box.className = "lab"; s.className = "rec"; s.id = "r-" + id;
@@ -521,12 +611,16 @@ function rec(id, ok, bien, mejor){ // ok: true, false o null (no afecta a la fue
 }
 function recomendar(){
   const T = NIVEL.muy;
+  // cuántas palabras entran de verdad en el sorteo: sin ñ, las que la llevan se quedan fuera
+  $("dic-n").textContent = poolFrase(!$("f-tildes").checked).length.toLocaleString("es");
+  $("g-total").textContent = poolG(!$("g-tildes").checked).length.toLocaleString("es");
   // frase
-  const nf = nPalabrasPara(T, poolFrase($("f-ascii").checked).length, 0);
+  const nf = nPalabrasPara(T, poolFrase(!$("f-tildes").checked).length, 0);
   rec("f-n", +$("f-n").value >= nf, "Llega a muy fuerte.", nf + " palabras o más para llegar a muy fuerte.");
   // contraseña de palabras
   const o = optsPalabras(), pool = poolPalabras(o).length;
-  const extra = (o.num ? Math.log2(100) : 0) + (o.sym ? Math.log2(symSet(o.ascii).length) : 0);
+  const extra = (o.num ? Math.log2(100) : 0) + (o.sym ? Math.log2(symSet(o.es).length) : 0);
+  const bitsSym = Math.log2(symSet(o.es).length).toLocaleString("es", { maximumFractionDigits: 1 });
   const need = pool >= 2 ? nPalabrasPara(T, pool, extra) : Infinity;
   rec("p-n", o.n >= need, "Llega a muy fuerte con estas opciones.",
     need <= +$("p-n").max ? need + " o más para llegar a muy fuerte con estas opciones." : "amplía el rango de letras; con este sorteo no llega a muy fuerte.");
@@ -535,7 +629,7 @@ function recomendar(){
   rec("p-sep", null, "No cambia la fuerza. El guion es el que menos problemas da al teclear.");
   rec("p-cap", o.cap, "No suma bits, pero muchos servicios la exigen.", "actívala; no suma bits, pero muchos servicios exigen una mayúscula.");
   rec("p-num", o.num, "Suma 6,6 bits y cumple el requisito habitual.", "actívalo; suma 6,6 bits y muchos servicios piden un número.");
-  rec("p-sym", o.sym, "Suma 4,9 bits. Si un servicio rechaza ¿ ¡ € ª º, genera otra.", "actívalo; suma 4,9 bits y muchos servicios piden un símbolo.");
+  rec("p-sym", o.sym, "Suma " + bitsSym + " bits." + (o.es ? " Si un servicio rechaza ¿ ¡ € º ª, genera otra." : ""), "actívalo; suma " + bitsSym + " bits y muchos servicios piden un símbolo.");
   rec("p-leet", o.leet === "no", "Una palabra más protege más que el leet.", "no. Suma poco y cuesta teclearla; mejor añade una palabra.");
   // contraseña de caracteres
   const l = optsLetras(), ln = $("l-n"); let nl = +ln.min;
@@ -543,22 +637,28 @@ function recomendar(){
   rec("l-n", l.n >= nl, "Llega a muy fuerte con esta mezcla.",
     nl <= +ln.max ? nl + " o más para llegar a muy fuerte con esta mezcla." : "marca más tipos de carácter; con esta mezcla no llega a muy fuerte.");
   rec("l-esp", l.esp >= 1 && l.esp <= 4, "Dan variedad sin complicar el tecleo.",
-    l.esp === 0 ? "entre 1 y 4, salvo que el servicio no acepte ñ ni tildes." : "entre 1 y 4. Son solo " + ESP.length + " caracteres: en exceso bajan la fuerza y cuestan de teclear.");
+    l.esp === 0 ? "entre 1 y 4, salvo que el servicio no los acepte." : "entre 1 y 4. Son solo " + l.espSet.length + " caracteres: en exceso bajan la fuerza y cuestan de teclear.");
   [["l-min","min","actívalas"],["l-may","may","actívalas"],["l-num","num","actívalos"],["l-sym","sym","actívalos"]].forEach(([id,k,v]) =>
     rec(id, l[k], "Amplía el sorteo de cada carácter.", v + "; cada tipo amplía el sorteo de cada carácter."));
   rec("l-amb", null, "Resta muy poca fuerza. Útil si vas a copiarla a mano o a dictarla.");
-  const sinT = "Resta muy poca fuerza. Útil con un teclado extranjero o si el servicio no acepta ñ ni tildes.";
-  rec("f-ascii", null, sinT); rec("p-ascii", null, sinT); rec("g-ascii", null, sinT);
-  rec("l-ascii", null, "Útil con un teclado extranjero o si el servicio no acepta ñ ni tildes.");
-  $("l-esp").disabled = $("l-ascii").checked;
-  if ($("l-ascii").checked) rec("l-esp", null, "Desactivado por la casilla «Sin tildes ni ñ».");
-  const ng = nPalabrasPara(T, poolG($("g-ascii").checked).length, extraG($("g-ascii").checked));
-  rec("g-n", +$("g-n").value >= ng, "Llega a muy fuerte.", ng + " o más para llegar a muy fuerte.");
+  const conT = "Suma un poco de fuerza. Algunos servicios no aceptan ñ ni tildes: entra una vez con la clave antes de fiarte.";
+  ["f-tildes","p-tildes","g-tildes","l-tildes"].forEach(id => rec(id, null, conT));
+  const conS = "Algunos servicios no aceptan ¿ ¡ € º ª: entra una vez con la clave antes de fiarte.";
+  ["p-simb","l-simb","g-simb"].forEach(id => rec(id, null, conS));
+  $("l-esp").disabled = !l.espSet.length;
+  if (!l.espSet.length) rec("l-esp", null, "Desactivado: marca «Añadir tildes y ñ» o «Añadir símbolos del español».");
+  const gA = !$("g-tildes").checked, gS = $("g-simb").checked, gk = +$("g-k").value, gnMax = +$("g-n").max;
+  let ng = +$("g-n").min;
+  while (ng <= gnMax && bitsGamberro(ng, gTodas ? ng : gk, gA, gS) < T) ng++;
+  rec("g-n", bitsGamberro(+$("g-n").value, gk, gA, gS) >= T, "Llega a muy fuerte.",
+    ng <= gnMax ? ng + " o más para llegar a muy fuerte con estas palabrotas." : "pon menos palabrotas; con todas no llega a muy fuerte.");
+  rec("g-k", null, "Cada palabrota que cambias por una palabra del diccionario suma unos " +
+    (Math.log2(poolFrase(gA).length) - Math.log2(poolG(gA).length)).toLocaleString("es", { maximumFractionDigits: 0 }) + " bits.");
 }
 $("regen").addEventListener("click", generate);
 // pestañas: papeles ARIA y flechas del teclado
 const MODOS = ["frase","palabras","letras","gamberro"];
-MODOS.forEach(k => { const p = $("opts-" + k); p.setAttribute("role", "tabpanel"); p.setAttribute("aria-labelledby", "tab-" + k); $("tab-" + k).setAttribute("aria-controls", "opts-" + k); });
+MODOS.forEach(k => { const p = $("opts-" + k); p.setAttribute("role", "tabpanel"); p.setAttribute("aria-labelledby", "tab-" + k); $("tab-" + k).setAttribute("aria-controls", "opts-" + k); $("tab-" + k).setAttribute("aria-describedby", "d-" + k); });
 document.querySelector(".tabs").addEventListener("keydown", e => {
   const i = MODOS.indexOf(mode);
   const L = MODOS.length, n = e.key === "ArrowRight" ? (i+1) % L : e.key === "ArrowLeft" ? (i+L-1) % L : e.key === "Home" ? 0 : e.key === "End" ? L-1 : -1;
@@ -590,11 +690,12 @@ $("copy").addEventListener("click", () => {
     const s = getSelection(); s.removeAllRanges(); s.addRange(r); $("said").textContent = "Seleccionada: cópiala con Ctrl o Cmd + C"; };
   try { navigator.clipboard.writeText(current).then(() => { $("said").textContent = "Copiada. Pégala y después copia otra cosa para no dejarla en el portapapeles."; sugerirFav(); }, fallback); } catch(e){ fallback(); }
 });
-$("dic-n").textContent = poolFrase(false).length.toLocaleString("es");
 $("dic-n2").textContent = WORDS.length.toLocaleString("es");
-$("g-total").textContent = GAMB.length;
 $("sym-list").textContent = SETS.sym.join(" ");
-$("esp-list").textContent = ESP.join(" ");
+syncEsp();
+// valores de inicio: los recomendados (muy fuerte) en cada tipo de clave
+["frase","palabras","letras","gamberro"].forEach(m => ajustarModo(m, NIVEL.muy));
+syncRanges();
 syncRanges();
 let start = "frase"; try { start = localStorage.getItem("pc:modo") || "frase"; } catch(e){}
 setMode(["frase","palabras","letras","gamberro"].includes(start) ? start : "frase");
