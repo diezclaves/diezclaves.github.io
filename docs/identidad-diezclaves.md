@@ -1,4 +1,23 @@
-# Guion de identidad de Diez Claves (diezclaves.com)
+#
+**Rotuladores (resaltado estilo marcador)**
+
+Diez colores de rotulador, `--hl-1` a `--hl-10` en `assets/base.css`. Todos pasan de 8:1 con la tinta `#161616`, así que el texto sobre ellos va siempre en tinta (`--on-hl`) y cumple AAA. En el tema oscuro el resaltado de texto pasa a subrayado del mismo color.
+
+| Variable | Color | Nombre | Uso fijo |
+|---|---|---|---|
+| `--hl-1` | `#FFE45C` | amarillo | Contraseñas y cuentas; titular; botón principal |
+| `--hl-2` | `#FF8FB8` | rosa | Móvil y dispositivos; medidor |
+| `--hl-3` | `#3CC6B5` | turquesa | Privacidad al navegar |
+| `--hl-4` | `#FFAB57` | naranja | Programas maliciosos |
+| `--hl-5` | `#C5A6FF` | lila | Redes sociales |
+| `--hl-6` | `#B9E35D` | lima | Identidad digital y trámites |
+| `--hl-7` | `#FF8D7A` | coral | Fraudes y engaños |
+| `--hl-8` | `#86C8FF` | celeste | Conexión: DNS, VPN y Tor |
+| `--hl-9` | `#FFC8A0` | melocotón | (sin tema fijo) |
+| `--hl-10` | `#93E8C9` | menta | Abusos y acoso |
+
+Cada tema del índice tiene su color fijo. En las listas (viñetas, pasos de «¿No sabes por dónde empezar?», «Lo último») los colores se reparten en orden, del 1 al 10. Al pasar el ratón o llegar con el teclado, la caja entera se rellena con su color y lo que ya tenía color (etiquetas, círculos) pasa a blanco. El resaltado de texto es un doble trazo que cubre toda la altura de la letra.
+ Guion de identidad de Diez Claves (diezclaves.com)
 
 Versión 1 · 11 de noviembre de 2026 · Para generar artículos, revisar textos y curar imágenes con cualquier herramienta de IA. Pega el bloque que necesites como contexto.
 
@@ -9,7 +28,8 @@ Versión 1 · 11 de noviembre de 2026 · Para generar artículos, revisar textos
 **En una frase:** herramientas y guías de seguridad digital en español, para cualquier persona, que funcionan en el navegador sin enviar nada a nadie.
 
 - **Nombre:** Diez Claves. Siempre con «Diez» en letra, nunca «10 Claves». Dominio: diezclaves.com.
-- **Lema:** «Seguridad digital en español, para cualquier persona».
+- **Tagline:** «Recetas con ñ.» Va bajo el nombre en la cabecera de todas las páginas, con la ñ resaltada. Sigue la idea de la portada, «Seguridad digital, explicada en la cocina»: cada guía es una receta, con pasos sencillos que cualquiera sigue en casa, y la ñ dice «en español». Sustituye a «Maña digital» (noviembre de 2026).
+- **Descriptor:** «Seguridad digital en español.» Va bajo el tagline en la cabecera de todas las páginas menos la portada, donde el titular ya presenta la web. La autonomía (depender menos de Google y de terceros, entender lo que usas y decidir tú) sigue siendo la otra mitad de la casa, pero se cuenta en los textos, no en el descriptor.
 - **Quién está detrás:** es un proyecto de Gofio Design (gofiodesign.eu), estudio de Lanzarote, Canarias.
 - **Qué ofrece hoy:** un generador de contraseñas y frases con ñ y tildes, un medidor de contraseñas, y artículos en formato «diez claves» sobre contraseñas, dispositivos, identidad digital y trámites con la administración de 19 países hispanohablantes.
 - **Qué no es:** no es un gestor de contraseñas, no guarda nada, no da soporte técnico ni asesoría legal, no sustituye a las fuentes oficiales.

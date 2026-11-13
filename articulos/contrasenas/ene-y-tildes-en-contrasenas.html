@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="¿Se puede poner la ñ en una contraseña? Sí, y conviene: por qué protegen más, cuándo dan problemas, qué servicios las rechazan y cómo probarlas sin sustos.">
 <link rel="canonical" href="https://diezclaves.com/articulos/contrasenas/ene-y-tildes-en-contrasenas.html">
-<meta name="theme-color" content="#131a2b">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://diezclaves.com/articulos/contrasenas/ene-y-tildes-en-contrasenas.html">
 <meta property="og:site_name" content="Diez Claves">
@@ -22,6 +23,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/assets/manifest.webmanifest">
 <link rel="stylesheet" href="/assets/base.css">
+<script src="/assets/tema.js"></script>
 <script src="/assets/region.js" defer></script>
 <title>Diez claves sobre la ñ y las tildes en las contraseñas · Diez Claves</title>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Diez claves sobre la ñ y las tildes en las contraseñas", "description": "¿Se puede poner la ñ en una contraseña? Sí, y conviene: por qué protegen más, cuándo dan problemas, qué servicios las rechazan y cómo probarlas sin sustos.", "inLanguage": "es", "datePublished": "2026-11-11", "dateModified": "2026-11-11", "author": {"@type": "Organization", "name": "Diez Claves", "url": "https://diezclaves.com/"}, "publisher": {"@type": "Organization", "name": "Diez Claves", "logo": {"@type": "ImageObject", "url": "https://diezclaves.com/assets/icon-512.png"}}, "mainEntityOfPage": "https://diezclaves.com/articulos/contrasenas/ene-y-tildes-en-contrasenas.html", "image": "https://diezclaves.com/assets/og.png"}, {"@type": "ItemList", "name": "Diez claves sobre la ñ y las tildes en las contraseñas", "numberOfItems": 10, "itemListOrder": "https://schema.org/ItemListOrderAscending", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Sí, se puede: una contraseña es texto, y la ñ es texto"}, {"@type": "ListItem", "position": 2, "name": "Amplían el alfabeto, y eso cuesta de adivinar"}, {"@type": "ListItem", "position": 3, "name": "La mayoría de los programas de ataque no las prueban de serie"}, {"@type": "ListItem", "position": 4, "name": "Una palabra con tilde es dos palabras para el atacante"}, {"@type": "ListItem", "position": 5, "name": "El riesgo real: que el servicio la guarde de una forma y la lea de otra"}, {"@type": "ListItem", "position": 6, "name": "Prueba antes de fiarte: registra, cierra sesión y vuelve a entrar"}, {"@type": "ListItem", "position": 7, "name": "Piensa en dónde vas a teclearla"}, {"@type": "ListItem", "position": 8, "name": "Algunos sitios la rechazan, y conviene saberlo"}, {"@type": "ListItem", "position": 9, "name": "El teclado del móvil también cuenta"}, {"@type": "ListItem", "position": 10, "name": "La ñ no sustituye a la longitud"}]}]}</script>
@@ -30,7 +32,7 @@
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <div class="wrap">
   <header class="stack">
-    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="/generador.html">Generador</a><a href="/medidor.html">Medidor</a><a href="/articulos/" aria-current="page">Artículos</a></nav>
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg class="llave" viewBox="0 0 40 100" width="27" height="66" aria-hidden="true"><path d="M6 5.5C14 3.6 27 3.4 34.6 5.2c1.6 9.4 1.5 22.6.2 31.6C26 38.6 13.6 38.4 5.3 36.9 3.9 27 4.2 15 6 5.5z" style="fill:var(--hl-y);stroke:currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M13 31V17.5L27 31V17.5M12.5 12.4c2.3-2.6 4.6-2.6 7 0s4.7 2.6 7.5-.2" style="fill:none;stroke:var(--on-hl)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 38.5V95M20 70h9.5v6M20 83h7" style="fill:none;stroke:currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="marca">Diez Claves<span class="lema">Recetas con <b class="ene">ñ</b></span><span class="desc">Seguridad digital en español</span></span></a><a href="/articulos/" aria-current="page">Artículos</a><a href="/herramientas.html">Herramientas</a></nav>
   </header>
   <main id="contenido">
   <article>
@@ -39,19 +41,34 @@
       <h1>Diez claves sobre <span>la ñ y las tildes</span> en las contraseñas</h1>
       <p class="lede muted">¿Se puede poner la ñ en una contraseña? Sí, y conviene: por qué protegen más, cuándo dan problemas, qué servicios las rechazan y cómo probarlas sin sustos.</p>
     </header>
+    <details class="indice-claves">
+      <summary>Ver las diez claves</summary>
+      <ol>
+        <li><a href="#clave-1">Sí, se puede: una contraseña es texto, y la ñ es texto</a></li>
+        <li><a href="#clave-2">Amplían el alfabeto, y eso cuesta de adivinar</a></li>
+        <li><a href="#clave-3">La mayoría de los programas de ataque no las prueban de serie</a></li>
+        <li><a href="#clave-4">Una palabra con tilde es dos palabras para el atacante</a></li>
+        <li><a href="#clave-5">El riesgo real: que el servicio la guarde de una forma y la lea de otra</a></li>
+        <li><a href="#clave-6">Prueba antes de fiarte: registra, cierra sesión y vuelve a entrar</a></li>
+        <li><a href="#clave-7">Piensa en dónde vas a teclearla</a></li>
+        <li><a href="#clave-8">Algunos sitios la rechazan, y conviene saberlo</a></li>
+        <li><a href="#clave-9">El teclado del móvil también cuenta</a></li>
+        <li><a href="#clave-10">La ñ no sustituye a la longitud</a></li>
+      </ol>
+    </details>
     <p>Es la pregunta que más nos hacen: «¿puedo poner la ñ en la contraseña?». Puedes, y en la mayoría de los casos deberías. Pero hay sitios donde da problemas, y conviene saber cuáles.</p>
 
     <ol class="claves">
-      <li><h2>Sí, se puede: una contraseña es texto, y la ñ es texto</h2><p>No hay ninguna norma que prohíba la ñ, las tildes o la diéresis en una contraseña. Todos los sistemas modernos manejan texto en Unicode, el estándar que incluye todos los alfabetos. El problema no es técnico: es que algunos servicios, por pereza o por programas antiguos, las rechazan o las tratan mal.</p></li>
-      <li><h2>Amplían el alfabeto, y eso cuesta de adivinar</h2><p>Una contraseña de letras, números y símbolos estándar sale de un alfabeto de unos 95 caracteres. Con ñ, Ñ, las vocales con tilde, ü, ¿, ¡, € y los ordinales º y ª son unos 115. Cada posición tiene más opciones, así que la misma longitud da más combinaciones. Lo puedes ver en el <a href="/medidor.html">medidor</a>.</p></li>
-      <li><h2>La mayoría de los programas de ataque no las prueban de serie</h2><p>Las herramientas de fuerza bruta y los diccionarios de contraseñas filtradas están hechos, sobre todo, en inglés y con teclado estadounidense. Una contraseña con ñ queda fuera de los recorridos habituales. No es una protección absoluta (quien ataque en España puede añadirlas), pero sí una ventaja real frente al ataque masivo y automático.</p></li>
-      <li><h2>Una palabra con tilde es dos palabras para el atacante</h2><p>Los diccionarios de ataque suelen traer las palabras sin tilde. «cámara» y «camara» son cadenas distintas: si el diccionario tiene una, no acierta la otra. Por eso el <a href="/generador.html">generador</a> conserva las tildes del diccionario español y las resalta.</p></li>
-      <li><h2>El riesgo real: que el servicio la guarde de una forma y la lea de otra</h2><p>La ñ se puede escribir en Unicode de dos maneras (un solo carácter, o una n seguida de la virgulilla). Si el formulario de registro la guarda de una forma y el de inicio de sesión la envía de otra, la contraseña correcta falla. Es raro, pero pasa, sobre todo entre un teclado de ordenador y uno de móvil. Mantén la calma: es un fallo del servicio, no tuyo.</p></li>
-      <li><h2>Prueba antes de fiarte: registra, cierra sesión y vuelve a entrar</h2><p>Es el gesto que evita sustos. Si la contraseña con ñ entra a la primera después de cerrar sesión, el servicio la maneja bien. Si no, cámbiala por una sin caracteres españoles antes de olvidarte del asunto. En el generador, la casilla «Sin tildes ni ñ» te hace una equivalente.</p></li>
-      <li><h2>Piensa en dónde vas a teclearla</h2><p>En un teclado extranjero (un portátil comprado fuera, el ordenador de un hotel), en un cajero, una consola o la tele, escribir ñ o ¿ puede ser imposible o muy incómodo. Para las cuentas que vas a usar en esos sitios, mejor una frase larga de palabras sin tilde que una contraseña corta con ñ.</p></li>
-      <li><h2>Algunos sitios la rechazan, y conviene saberlo</h2><p>Bancos antiguos, portales de empresa, routers y aparatos conectados a veces aceptan solo letras y números estándar. Suelen avisar al registrarte; otros la aceptan y luego fallan. Hay una regla práctica: para webs modernas, con ñ; para aparatos y programas viejos, sin ella.</p></li>
-      <li><h2>El teclado del móvil también cuenta</h2><p>Los teclados de móvil autocorrigen y cambian mayúsculas por su cuenta: «Leña» puede acabar como «leña» o «Lena» sin que lo veas, porque la contraseña va oculta. Al escribir una contraseña con ñ en el móvil, pulsa el ojo de «mostrar» y revísala antes de confirmar.</p></li>
-      <li><h2>La ñ no sustituye a la longitud</h2><p>Una contraseña de ocho caracteres con ñ sigue siendo corta. Lo que más protege es la longitud: cada carácter de más multiplica las combinaciones. La ñ y las tildes son el extra, no la base. Primero larga; después, con acento.</p></li>
+      <li id="clave-1"><h2>Sí, se puede: una contraseña es texto, y la ñ es texto</h2><p>No hay ninguna norma que prohíba la ñ, las tildes o la diéresis en una contraseña. Todos los sistemas modernos manejan texto en Unicode, el estándar que incluye todos los alfabetos. El problema no es técnico: es que algunos servicios, por pereza o por programas antiguos, las rechazan o las tratan mal.</p></li>
+      <li id="clave-2"><h2>Amplían el alfabeto, y eso cuesta de adivinar</h2><p>Una contraseña de letras, números y símbolos estándar sale de un alfabeto de unos 95 caracteres. Con ñ, Ñ, las vocales con tilde, ü, ¿, ¡, € y los ordinales º y ª son unos 115. Cada posición tiene más opciones, así que la misma longitud da más combinaciones. Lo puedes ver en el <a href="/medidor.html">medidor</a>.</p></li>
+      <li id="clave-3"><h2>La mayoría de los programas de ataque no las prueban de serie</h2><p>Las herramientas de fuerza bruta y los diccionarios de contraseñas filtradas están hechos, sobre todo, en inglés y con teclado estadounidense. Una contraseña con ñ queda fuera de los recorridos habituales. No es una protección absoluta (quien ataque en España puede añadirlas), pero sí una ventaja real frente al ataque masivo y automático.</p></li>
+      <li id="clave-4"><h2>Una palabra con tilde es dos palabras para el atacante</h2><p>Los diccionarios de ataque suelen traer las palabras sin tilde. «cámara» y «camara» son cadenas distintas: si el diccionario tiene una, no acierta la otra. Por eso el <a href="/generador.html">generador</a> conserva las tildes del diccionario español y las resalta.</p></li>
+      <li id="clave-5"><h2>El riesgo real: que el servicio la guarde de una forma y la lea de otra</h2><p>La ñ se puede escribir en Unicode de dos maneras (un solo carácter, o una n seguida de la virgulilla). Si el formulario de registro la guarda de una forma y el de inicio de sesión la envía de otra, la contraseña correcta falla. Es raro, pero pasa, sobre todo entre un teclado de ordenador y uno de móvil. Mantén la calma: es un fallo del servicio, no tuyo.</p></li>
+      <li id="clave-6"><h2>Prueba antes de fiarte: registra, cierra sesión y vuelve a entrar</h2><p>Es el gesto que evita sustos. Si la contraseña con ñ entra a la primera después de cerrar sesión, el servicio la maneja bien. Si no, cámbiala por una sin caracteres españoles antes de olvidarte del asunto. En el generador, la casilla «Sin tildes ni ñ» te hace una equivalente.</p></li>
+      <li id="clave-7"><h2>Piensa en dónde vas a teclearla</h2><p>En un teclado extranjero (un portátil comprado fuera, el ordenador de un hotel), en un cajero, una consola o la tele, escribir ñ o ¿ puede ser imposible o muy incómodo. Para las cuentas que vas a usar en esos sitios, mejor una frase larga de palabras sin tilde que una contraseña corta con ñ.</p></li>
+      <li id="clave-8"><h2>Algunos sitios la rechazan, y conviene saberlo</h2><p>Bancos antiguos, portales de empresa, routers y aparatos conectados a veces aceptan solo letras y números estándar. Suelen avisar al registrarte; otros la aceptan y luego fallan. Hay una regla práctica: para webs modernas, con ñ; para aparatos y programas viejos, sin ella.</p></li>
+      <li id="clave-9"><h2>El teclado del móvil también cuenta</h2><p>Los teclados de móvil autocorrigen y cambian mayúsculas por su cuenta: «Leña» puede acabar como «leña» o «Lena» sin que lo veas, porque la contraseña va oculta. Al escribir una contraseña con ñ en el móvil, pulsa el ojo de «mostrar» y revísala antes de confirmar.</p></li>
+      <li id="clave-10"><h2>La ñ no sustituye a la longitud</h2><p>Una contraseña de ocho caracteres con ñ sigue siendo corta. Lo que más protege es la longitud: cada carácter de más multiplica las combinaciones. La ñ y las tildes son el extra, no la base. Primero larga; después, con acento.</p></li>
     </ol>
     <div class="cierre stack">
       <h2>En resumen</h2>
@@ -60,25 +77,24 @@
     <section class="prods" aria-labelledby="h-prods">
       <h2 id="h-prods">Para ponerlo en práctica</h2>
       <ul>
-      <li><a data-busca="teclado español portatil usb" href="https://www.amazon.es/s?k=teclado+español+portatil+usb" rel="noopener">Teclado en español para portátil</a><p>Si trabajas con un portátil comprado fuera y las teclas no coinciden, un teclado externo con ñ evita errores al escribir contraseñas.</p></li>
-      <li><a data-busca="pegatinas teclado español" href="https://www.amazon.es/s?k=pegatinas+teclado+español" rel="noopener">Pegatinas de teclado en español</a><p>La solución barata para el mismo problema: cambian la serigrafía, no el teclado.</p></li>
+      <li><a data-busca="teclado español portatil usb" href="https://www.amazon.es/s?k=teclado+espa%C3%B1ol+portatil+usb" rel="noopener">Teclado en español para portátil</a><p>Si trabajas con un portátil comprado fuera y las teclas no coinciden, un teclado externo con ñ evita errores al escribir contraseñas.</p></li><li><a data-busca="pegatinas teclado español" href="https://www.amazon.es/s?k=pegatinas+teclado+espa%C3%B1ol" rel="noopener">Pegatinas de teclado en español</a><p>La solución barata para el mismo problema: cambian la serigrafía, no el teclado.</p></li>
       </ul>
       <p class="aviso">Enlaces a <span data-tienda-nombre>Amazon España</span> según tu región. Diez Claves no tiene por ahora acuerdo de afiliación con ninguna tienda; cuando lo tenga, lo dirá aquí. Las alternativas gratuitas van siempre junto a las de pago.</p>
     </section>
     <nav class="rel" aria-label="Relacionado">
       <span class="tag">Sigue leyendo</span>
-      <a href="/generador.html">Generador de contraseñas con ñ y tildes</a><a href="/medidor.html">Medidor de contraseñas</a><a href="/articulos/contrasenas/cuanto-tarda-descifrar-contrasena.html">Diez claves sobre cuánto tarda en descifrarse una contraseña</a>
+      <a href="/articulos/contrasenas/identificadores-y-contrasenas.html">Tu correo, tu usuario y por qué los roban</a><a href="/articulos/amenazas/capturadores-teclado.html">Capturadores de teclado</a><a href="/articulos/dispositivos/si-te-roban-el-movil.html">Si te roban el móvil</a><a href="/articulos/conexion/sitios-onion.html">Entender los sitios .onion</a><a href="/generador.html">Generador de contraseñas</a>
     </nav>
     <nav class="sig" aria-label="Siguiente en esta sección"><span class="tag">Siguiente en Contraseñas y cuentas · 1 de 5</span><a class="s" href="/articulos/contrasenas/cuanto-tarda-descifrar-contrasena.html">Diez claves sobre cuánto tarda en descifrarse una contraseña</a><p>Bits, fuerza bruta, diccionarios, filtraciones, cómo la guarda el servicio y qué pasa con el ordenador cuántico: lo que de verdad decide cuánto aguanta una contraseña. <a href="/articulos/contrasenas/">Ver las 5 guías</a>.</p></nav>
   </article>
   </main>
   <footer>
     <span>Diez Claves · 2026</span>
-    <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
+    
     <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
     <a href="/aviso-legal.html">Aviso legal</a>
     <a href="/privacidad.html">Privacidad</a>
-  </footer>
+  <a class="sello" href="https://gofiodesign.eu" rel="noopener"><img src="/assets/gofio-monograma-ambar.svg" width="40" height="40" alt="" loading="lazy"><span>Un proyecto de <b>Gofio Design</b></span></a></footer>
 </div>
 </body>
 </html>

@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Generador de contraseñas y frases seguras en español, con ñ y tildes. Gratis, sin registro y sin enviar nada: todo ocurre en tu navegador.">
 <link rel="canonical" href="https://diezclaves.com/generador.html">
-<meta name="theme-color" content="#131a2b">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://diezclaves.com/generador.html">
 <meta property="og:site_name" content="Diez Claves">
@@ -23,130 +24,111 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/assets/manifest.webmanifest">
 <link rel="stylesheet" href="/assets/base.css">
+<script src="/assets/tema.js"></script>
 <title>Generador de contraseñas en español · Diez Claves</title>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Generador de contraseñas en español","url":"https://diezclaves.com/generador.html","description":"Genera contraseñas y frases de palabras en español, con ñ y tildes, sin enviar nada fuera del navegador.","applicationCategory":"SecurityApplication","operatingSystem":"Cualquiera, en el navegador","inLanguage":"es","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"Diez Claves","url":"https://diezclaves.com/"}}</script>
 <style>
-/* Layout: una columna de herramienta; la clave generada es el único bloque con fondo propio, los ajustes van debajo en filas planas. */
-:root{
-  --bg:#f3f5f9; --surface:#ffffff; --ink:#131a2b; --muted:#56607a; --line:#d5dae6;
-  --slab:#131a2b; --slab-ink:#f3f5f9; --slab-muted:#9aa5c0;
-  --accent:#8f5200; --accent-on-slab:#ffb84a; --accent-ink:#ffffff;
-  --ok:#1f7a4d; --warn:#8f5200; --bad:#b3261e;
-  --display:"Avenir Next","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
-  --body:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --mono:ui-monospace,"Cascadia Mono","SF Mono",Menlo,Consolas,monospace;
-}
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --bg:#0e1320; --surface:#161d2e; --ink:#e9edf6; --muted:#9aa5c0; --line:#2a3349;
-  --slab:#1d2740; --slab-ink:#f3f5f9; --slab-muted:#9aa5c0;
-  --accent:#ffb84a; --accent-on-slab:#ffb84a; --accent-ink:#1a1204;
-  --ok:#5fd39a; --warn:#ffb84a; --bad:#ff8a80; color-scheme:dark } }
-:root[data-theme="dark"]{
-  --bg:#0e1320; --surface:#161d2e; --ink:#e9edf6; --muted:#9aa5c0; --line:#2a3349;
-  --slab:#1d2740; --slab-ink:#f3f5f9; --slab-muted:#9aa5c0;
-  --accent:#ffb84a; --accent-on-slab:#ffb84a; --accent-ink:#1a1204;
-  --ok:#5fd39a; --warn:#ffb84a; --bad:#ff8a80; color-scheme:dark }
-
-*{box-sizing:border-box}
-.skip{position:absolute;left:-999px}
-.skip:focus{left:16px;top:12px;background:var(--surface);color:var(--ink);padding:8px 12px;border-radius:8px;z-index:2}
+/* Generador · mundo fanzine. Colores y fuentes en /assets/base.css.
+   La clave generada va sobre papel, en un recuadro de rotulador; la ñ y las tildes, subrayadas en amarillo. */
 [hidden]{display:none!important}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
-.wrap{max-width:720px;margin:0 auto;padding-block:16px 48px;
-  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));
-  display:flex;flex-direction:column;gap:22px}
-header.top{display:flex;flex-direction:column;gap:10px}
-.by{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;font-size:14px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:10px}
-.by a{color:inherit;text-decoration:none;min-height:44px;display:inline-flex;align-items:center;gap:8px}
-.by a:hover,.by a[aria-current]{color:var(--ink)}
-.by .brand{font-family:var(--display);font-size:16px;color:var(--ink);margin-right:auto}
-.by a:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
-h1{font-family:var(--display);font-weight:700;font-size:clamp(22px,5.2vw,30px);line-height:1.15;margin:0;letter-spacing:-.01em;text-wrap:balance}
-h1 b{color:var(--accent);font-weight:700}
-.lede{margin:0;color:var(--muted);max-width:60ch}
-.lede a{color:var(--accent)}
-.intro{display:flex;flex-direction:column;gap:12px}
-.intro h2{font:700 20px var(--display);margin:0;color:var(--ink)}
+.wrap{gap:24px}
+header.top{display:flex;flex-direction:column;gap:14px}
+main#contenido{display:flex;flex-direction:column;gap:30px}
+main#contenido > .tabs + .slab{margin-top:4px}
+h1.gen{font-size:clamp(34px,9vw,60px);line-height:1.05;max-width:none}
+:root h1.gen b.ene{display:inline-block;font-size:1.55em;line-height:.9;color:var(--on-hl);background:var(--hl-y);border:3px solid var(--on-hl);border-radius:var(--wob-1);padding:.06em .1em .02em;margin:0 .03em;transform:rotate(-5deg) translateY(.06em);text-decoration:none}
+.sub{font:800 clamp(18px,4.6vw,22px)/1.3 var(--display);margin:0}
+.sub b{font-weight:inherit;color:var(--on-hl);background:var(--hl-p);padding:0 .15em;border-radius:var(--wob-3)}
+.sub b+b{background:var(--hl-t)}
+.lede{color:var(--muted);max-width:60ch}
 
-.fav{margin:4px 0 0;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14px;color:var(--muted)}
-.fav span{flex:1 1 220px;min-width:0}
-.favbtn{font:600 14px var(--body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 16px;min-height:44px;cursor:pointer}
-.favbtn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-.tabs{display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--line)}
-.tabs button{font:600 15px var(--body);color:var(--muted);background:none;border:0;border-bottom:3px solid transparent;
-  padding:10px 12px;min-height:44px;margin-bottom:-1px;cursor:pointer}
-.tabs button{display:inline-flex;align-items:center;gap:6px}
-.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+/* pestañas: fichas dibujadas */
+.tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.tabs button{font:800 15px/1.2 var(--display);color:var(--ink);background:var(--surface);border:var(--stroke) solid var(--line);border-radius:var(--wob-1);padding:10px 12px;min-height:48px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;text-align:center;transition:transform .15s cubic-bezier(.2,.8,.2,1)}
+.tabs button:nth-child(even){border-radius:var(--wob-2)}
+.tabs button:hover{background:var(--hl-y);color:var(--on-hl);border-color:var(--on-hl)}
+.tabs button[aria-selected="true"]{background:var(--hl-y);color:var(--on-hl);border-color:var(--on-hl);transform:rotate(-1deg)}
+.tabs button[data-mode="gamberro"][aria-selected="true"]{background:var(--hl-p)}
+@media (min-width:640px){ .tabs{grid-template-columns:repeat(4,auto);justify-content:start} }
 
-.slab{background:var(--slab);color:var(--slab-ink);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:16px}
-.out{font-family:var(--mono);font-size:clamp(17px,4.4vw,22px);line-height:1.5;min-width:0;overflow-wrap:anywhere;user-select:all}
-.out i{font-style:normal;color:var(--accent-on-slab);font-weight:600}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px 14px;margin:0;padding:0;list-style:none;
-  font-family:var(--mono);font-size:17px}
+/* la hoja con la clave */
+.slab{--slab-ink:var(--ink);--slab-muted:var(--muted);background:var(--surface);color:var(--ink);border:3px solid var(--line);border-radius:var(--wob-2);padding:22px 20px;gap:18px;position:relative}
+.slab::before{content:"";position:absolute;right:22px;top:-11px;width:58px;height:18px;background:var(--hl-t);border:1.5px solid var(--on-hl);transform:rotate(4deg);border-radius:2px}
+.out{font:600 clamp(19px,5vw,26px)/1.5 var(--mono);min-width:0;overflow-wrap:anywhere;user-select:all}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px 18px;margin:0;padding:0;list-style:none;font:600 19px/1.35 var(--mono)}
 .grid li{display:flex;gap:8px;align-items:baseline;min-width:0;overflow-wrap:anywhere}
-.grid li span{color:var(--slab-muted);font-size:12px;width:2ch;text-align:right;flex:none;font-variant-numeric:tabular-nums}
-.grid i{font-style:normal;color:var(--accent-on-slab);font-weight:600}
-.meter{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:13px;color:var(--slab-muted)}
-.bar{flex:1 1 160px;height:6px;border-radius:3px;background:rgba(255,255,255,.14);overflow:hidden}
-.bar div{height:100%;background:var(--accent-on-slab);border-radius:3px;transition:width .2s}
-.meter strong{color:var(--slab-ink);font-variant-numeric:tabular-nums}
-.crack{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 20px;margin:0}
-.crack div{display:flex;flex-direction:column;gap:2px;min-width:0}
-.crack dt{font-size:12px;color:var(--slab-muted)}
-.crack dd{margin:0;font:600 17px var(--display);color:var(--slab-ink);overflow-wrap:anywhere}
-.actions{display:flex;flex-wrap:wrap;gap:10px}
-.btn{font:600 15px var(--body);border-radius:10px;padding:11px 18px;min-height:44px;cursor:pointer;border:1px solid transparent}
-.btn.primary{background:var(--accent-on-slab);color:#1a1204}
-.btn.ghost{background:transparent;color:var(--slab-ink);border-color:rgba(255,255,255,.3)}
-.btn:focus-visible,.tabs button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-.said{font-size:13px;color:var(--accent-on-slab);align-self:center;min-height:1em}
+.grid li span{font:800 13px var(--display);color:var(--muted);width:2.2ch;text-align:right;flex:none;font-variant-numeric:tabular-nums}
+.out i,.grid i{font-style:normal;font-weight:700;color:var(--on-hl);background:var(--hl-y);border-radius:3px;padding:0 1px;box-shadow:0 0 0 1px var(--hl-y)}
+.velada{filter:blur(11px);user-select:none}
 
-.opts{display:flex;flex-direction:column}
-.row{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line)}
-.row label{font-weight:500;min-width:0}
-.row small{display:block;color:var(--muted);font-weight:400;font-size:13px}
+/* medidor de fuerza: barra de rotulador */
+.meter{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:16px;color:var(--muted)}
+.bar{flex:1 1 180px;height:18px;border:var(--stroke) solid var(--line);border-radius:var(--wob-3);background:var(--surface);overflow:hidden;padding:2px}
+.bar div{height:100%;background:var(--hl-y);border-radius:var(--wob-1);transition:width .3s cubic-bezier(.16,1,.3,1);box-shadow:inset 0 0 0 1.5px var(--on-hl)}
+.meter strong{font:800 22px var(--display);color:var(--ink);font-variant-numeric:tabular-nums}
+.crack{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px 22px;margin:0;border-top:1.5px dashed var(--hair);padding-top:14px}
+.crack div{display:flex;flex-direction:column;gap:2px;min-width:0}
+.crack dt{font-size:15px;color:var(--muted)}
+.crack dd{margin:0;font:800 19px/1.3 var(--display);color:var(--ink);overflow-wrap:anywhere}
+
+/* acciones */
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.slab .btn{font-size:16px}
+.slab .btn.primary{box-shadow:none}
+.slab .btn.ghost{color:var(--ink);border-color:var(--line);background:var(--surface)}
+.slab .btn.ghost:hover{background:var(--hl-y);color:var(--on-hl);border-color:var(--on-hl)}
+.slab .btn.ghost[aria-pressed="true"]{background:var(--hl-p);color:var(--on-hl);border-color:var(--on-hl)}
+.said{flex-basis:100%;font:800 15px var(--display);color:var(--ink);min-height:1em}
+
+/* opciones: filas de cuaderno */
+.opts{display:flex;flex-direction:column;border:var(--stroke) solid var(--line);border-radius:var(--wob-1);padding:4px 18px}
+.row{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1.5px dashed var(--hair)}
+.row:last-child{border-bottom:0}
+.row label{font-weight:700;min-width:0}
+.row small{display:block;color:var(--muted);font-weight:400;font-size:15px}
 .lab{display:flex;flex-direction:column;flex:1 1 240px;min-width:0}
 .row:has(> input[type=checkbox]){flex-wrap:nowrap}
-.velada{filter:blur(11px);user-select:none}
-.said{flex-basis:100%}
-.notes p{margin:0;max-width:65ch}
-.notes h3{font:700 15px var(--body);color:var(--ink);margin:8px 0 0}
-.prod{list-style:none;padding:0!important;gap:0!important}
-.prod li{padding:10px 0;border-bottom:1px solid var(--line)}
-.prod b{color:var(--ink)}
-.prod em{font-style:normal;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-left:6px}
-details summary{cursor:pointer;font:700 18px var(--display);color:var(--ink);padding:6px 0;min-height:44px;display:flex;align-items:center;gap:8px}
-details summary::before{content:"+";font-family:var(--mono);color:var(--accent)}
-details[open] summary::before{content:"–"}
-details summary::-webkit-details-marker{display:none}
-details summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-.aviso{margin:12px 0 0;font-size:14px;color:var(--muted);max-width:65ch}
-.rec{display:block;font-size:13px;font-weight:500;color:var(--muted)}
+.rec{display:block;font-size:15px;font-weight:600;color:var(--muted)}
 .rec[data-ok="1"]{color:var(--ok)}
 .rec[data-ok="0"]{color:var(--warn)}
-.row output{font-family:var(--mono);font-variant-numeric:tabular-nums;min-width:2ch;text-align:right}
-.ctl{display:flex;gap:10px;align-items:center}
-input[type=range]{width:min(200px,50vw);accent-color:var(--accent)}
-input[type=checkbox]{width:26px;height:26px;flex:none;accent-color:var(--accent)}
-select{font:500 15px var(--body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 10px;min-height:44px}
-.seg{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.seg button{font:600 14px var(--body);padding:7px 14px;border:0;background:var(--surface);color:var(--muted);cursor:pointer}
-.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.row output{font:800 20px var(--display);font-variant-numeric:tabular-nums;min-width:2ch;text-align:right}
+.ctl{display:flex;gap:12px;align-items:center}
+input[type=range]{width:min(200px,50vw);min-height:32px;accent-color:var(--ink)}
+input[type=checkbox]{width:28px;height:28px;flex:none;accent-color:var(--ink);cursor:pointer}
+select{font:600 16px var(--body);color:var(--ink);background:var(--surface);border:var(--stroke) solid var(--line);border-radius:var(--wob-3);padding:8px 12px;min-height:48px}
+.seg{display:flex;border:var(--stroke) solid var(--line);border-radius:var(--wob-1);overflow:hidden}
+.seg button{font:700 15px var(--body);padding:8px 14px;min-height:44px;border:0;background:var(--surface);color:var(--ink);cursor:pointer}
+.seg button+button{border-left:var(--stroke) solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--hl-y);color:var(--on-hl)}
 
-.notes{display:flex;flex-direction:column;gap:10px;font-size:14px;color:var(--muted)}
-.notes h2{font:700 18px var(--display);color:var(--ink);margin:0}
-.notes ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;max-width:65ch}
+/* favoritos y notas */
+.fav{margin:4px 0 0;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:15px;color:var(--muted)}
+.fav span{flex:1 1 220px;min-width:0}
+.favbtn{font:800 15px var(--display);color:var(--ink);background:var(--surface);border:var(--stroke) solid var(--line);border-radius:var(--wob-2);padding:8px 16px;min-height:44px;cursor:pointer}
+.favbtn:hover{background:var(--hl-y);color:var(--on-hl);border-color:var(--on-hl)}
+.intro{display:flex;flex-direction:column;gap:12px}
+.intro h2{font-size:22px}
+.notes{display:flex;flex-direction:column;gap:12px;font-size:16px;color:var(--muted)}
+.notes h2{font-size:22px;color:var(--ink)}
+.notes h3{font:800 17px var(--display);color:var(--ink);margin:8px 0 0}
+.notes p{margin:0;max-width:65ch}
+.notes ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;max-width:65ch}
 .notes strong{color:var(--ink)}
-footer{font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 18px;align-items:center;border-top:1px solid var(--line);padding-top:12px}
-footer a,footer button{min-height:32px;display:inline-flex;align-items:center}
-input[type=range]{min-height:32px}
-footer a{color:var(--accent)}
-.notes a{color:var(--accent)}
+.prod{list-style:none;padding:0!important;gap:0!important}
+.prod li{padding:12px 0;border-bottom:1.5px dashed var(--hair)}
+.prod b{color:var(--ink)}
+.prod em{font:800 12px var(--display);font-style:normal;color:var(--on-hl);background:var(--hl-p);padding:1px 6px;border-radius:var(--wob-3);margin-left:6px}
+details{border:var(--stroke) solid var(--line);border-radius:var(--wob-3);padding:4px 16px}
+details[open]{padding-bottom:14px}
+details summary{cursor:pointer;font:800 19px var(--display);color:var(--ink);padding:8px 0;min-height:48px;display:flex;align-items:center;gap:10px;list-style:none}
+details summary::before{content:"";flex:none;width:22px;height:22px;border:var(--stroke) solid var(--line);border-radius:var(--wob-1);background:linear-gradient(var(--ink),var(--ink)) center/12px 2.5px no-repeat,linear-gradient(var(--ink),var(--ink)) center/2.5px 12px no-repeat}
+details[open] summary::before{background:linear-gradient(var(--on-hl),var(--on-hl)) center/12px 2.5px no-repeat,var(--hl-y);border-color:var(--on-hl)}
+details summary::-webkit-details-marker{display:none}
+.aviso{margin:12px 0 0;font-size:15px;color:var(--muted);max-width:65ch}
 @media (prefers-reduced-motion: reduce){ .bar div{transition:none} }
 </style>
 </head>
-<body style="margin:0">
+<body>
 <script src="/assets/region.js" defer></script>
 
 
@@ -154,8 +136,9 @@ footer a{color:var(--accent)}
 <a class="skip" href="#contenido">Saltar al generador</a>
 <div class="wrap">
   <header class="top">
-    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="/generador.html" aria-current="page">Generador</a><a href="/medidor.html">Medidor</a><a href="/articulos/">Artículos</a></nav>
-    <h1>Generador de contraseñas en español, con <b>ñ</b> y con <b>tilde</b></h1>
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg class="llave" viewBox="0 0 40 100" width="27" height="66" aria-hidden="true"><path d="M6 5.5C14 3.6 27 3.4 34.6 5.2c1.6 9.4 1.5 22.6.2 31.6C26 38.6 13.6 38.4 5.3 36.9 3.9 27 4.2 15 6 5.5z" style="fill:var(--hl-y);stroke:currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M13 31V17.5L27 31V17.5M12.5 12.4c2.3-2.6 4.6-2.6 7 0s4.7 2.6 7.5-.2" style="fill:none;stroke:var(--on-hl)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 38.5V95M20 70h9.5v6M20 83h7" style="fill:none;stroke:currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="marca">Diez Claves<span class="lema">Recetas con <b class="ene">ñ</b></span><span class="desc">Seguridad digital en español</span></span></a><a href="/articulos/">Artículos</a><a href="/herramientas.html" aria-current="page">Herramientas</a></nav>
+    <h1 class="gen">Generador de contrase<b class="ene">Ñ</b>as</h1>
+    <p class="sub">En español, con <b>ñ</b> y con <b>tilde</b>.</p>
   </header>
 
   <main id="contenido">
@@ -328,11 +311,11 @@ footer a{color:var(--accent)}
   </main>
   <footer>
     <span>Diez Claves · 2026</span>
-    <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
+    
     <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
     <a href="/aviso-legal.html">Aviso legal</a>
     <a href="/privacidad.html">Privacidad</a>
-  </footer>
+  <a class="sello" href="https://gofiodesign.eu" rel="noopener"><img src="/assets/gofio-monograma-ambar.svg" width="40" height="40" alt="" loading="lazy"><span>Un proyecto de <b>Gofio Design</b></span></a></footer>
 </div>
 
 <script src="/assets/diccionario.js"></script>

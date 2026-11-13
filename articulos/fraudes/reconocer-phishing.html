@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Un mensaje convincente puede pedirte datos, dinero o acceso. Aprende a comprobar la petición por otra vía y a responder según lo que hayas hecho.">
 <link rel="canonical" href="https://diezclaves.com/articulos/fraudes/reconocer-phishing.html">
-<meta name="theme-color" content="#131a2b">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://diezclaves.com/articulos/fraudes/reconocer-phishing.html">
 <meta property="og:site_name" content="Diez Claves">
@@ -22,6 +23,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/assets/manifest.webmanifest">
 <link rel="stylesheet" href="/assets/base.css">
+<script src="/assets/tema.js"></script>
 <script src="/assets/region.js" defer></script>
 <title>Diez claves para reconocer el phishing · Diez Claves</title>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Diez claves para reconocer el phishing", "description": "Un mensaje convincente puede pedirte datos, dinero o acceso. Aprende a comprobar la petición por otra vía y a responder según lo que hayas hecho.", "inLanguage": "es", "datePublished": "2026-11-12", "dateModified": "2026-11-12", "author": {"@type": "Organization", "name": "Diez Claves", "url": "https://diezclaves.com/"}, "publisher": {"@type": "Organization", "name": "Diez Claves", "logo": {"@type": "ImageObject", "url": "https://diezclaves.com/assets/icon-512.png"}}, "mainEntityOfPage": "https://diezclaves.com/articulos/fraudes/reconocer-phishing.html", "image": "https://diezclaves.com/assets/og.png"}, {"@type": "ItemList", "name": "Diez claves para reconocer el phishing", "numberOfItems": 10, "itemListOrder": "https://schema.org/ItemListOrderAscending", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "El engaño busca conseguir una acción"}, {"@type": "ListItem", "position": 2, "name": "La apariencia no acredita al remitente"}, {"@type": "ListItem", "position": 3, "name": "La urgencia reduce tu margen"}, {"@type": "ListItem", "position": 4, "name": "Mira la petición antes del enlace"}, {"@type": "ListItem", "position": 5, "name": "Comprueba el destino por otra vía"}, {"@type": "ListItem", "position": 6, "name": "Los mensajes dirigidos aprovechan contexto"}, {"@type": "ListItem", "position": 7, "name": "Una conversación conocida puede estar comprometida"}, {"@type": "ListItem", "position": 8, "name": "El canal puede cambiar durante el engaño"}, {"@type": "ListItem", "position": 9, "name": "Responde según lo que entregaste"}, {"@type": "ListItem", "position": 10, "name": "Elige la ruta por los hechos"}]}]}</script>
@@ -30,7 +32,7 @@
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <div class="wrap">
   <header class="stack">
-    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="/generador.html">Generador</a><a href="/medidor.html">Medidor</a><a href="/articulos/" aria-current="page">Artículos</a></nav>
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg class="llave" viewBox="0 0 40 100" width="27" height="66" aria-hidden="true"><path d="M6 5.5C14 3.6 27 3.4 34.6 5.2c1.6 9.4 1.5 22.6.2 31.6C26 38.6 13.6 38.4 5.3 36.9 3.9 27 4.2 15 6 5.5z" style="fill:var(--hl-y);stroke:currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M13 31V17.5L27 31V17.5M12.5 12.4c2.3-2.6 4.6-2.6 7 0s4.7 2.6 7.5-.2" style="fill:none;stroke:var(--on-hl)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 38.5V95M20 70h9.5v6M20 83h7" style="fill:none;stroke:currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="marca">Diez Claves<span class="lema">Recetas con <b class="ene">ñ</b></span><span class="desc">Seguridad digital en español</span></span></a><a href="/articulos/" aria-current="page">Artículos</a><a href="/herramientas.html">Herramientas</a></nav>
   </header>
   <main id="contenido">
   <article>
@@ -39,18 +41,42 @@
       <h1>Diez claves <span>para reconocer el phishing</span></h1>
       <p class="lede muted">Un mensaje convincente puede pedirte datos, dinero o acceso. Aprende a comprobar la petición por otra vía y a responder según lo que hayas hecho.</p>
     </header>
-    <p>Imagina un aviso de cuenta que exige actuar de inmediato mediante un enlace. Es una situación hipotética, no una campaña documentada. Para decidir, importa menos lo profesional que parece y más comprobar quién pide qué.</p>
+    <aside class="ya-caido" aria-labelledby="h-ya">
+      <h2 id="h-ya">¿Ya has caído? Haz esto ahora</h2>
+      <ol>
+        <li><b>Llama a tu banco</b> al teléfono que aparece en tu tarjeta o en su app, nunca al del mensaje. Hazlo si diste una contraseña o un código, si autorizaste una aplicación, si enviaste dinero o si instalaste algo y no estás seguro de qué era. Cuéntale qué entregaste y pide que bloqueen lo necesario.</li>
+        <li><b>Recupera la cuenta afectada:</b> entra desde su app o escribiendo tú la dirección. Cambia la contraseña y cierra las sesiones abiertas.</li>
+        <li><b>Si instalaste algo:</b> desconecta el equipo de Internet y sigue <a href="#clave-9">la clave 9</a>.</li>
+      </ol>
+      <p>Después guarda capturas del mensaje y <a href="/articulos/acoso/donde-pedir-ayuda.html">busca ayuda en tu país</a>. No te culpes: estos engaños están hechos para funcionar.</p>
+    </aside>
+    <details class="indice-claves">
+      <summary>Ver las diez claves</summary>
+      <ol>
+        <li><a href="#clave-1">El engaño busca conseguir una acción</a></li>
+        <li><a href="#clave-2">La apariencia no acredita al remitente</a></li>
+        <li><a href="#clave-3">La urgencia reduce tu margen</a></li>
+        <li><a href="#clave-4">Mira la petición antes del enlace</a></li>
+        <li><a href="#clave-5">Comprueba el destino por otra vía</a></li>
+        <li><a href="#clave-6">Los mensajes dirigidos aprovechan contexto</a></li>
+        <li><a href="#clave-7">Una conversación conocida puede estar comprometida</a></li>
+        <li><a href="#clave-8">El canal puede cambiar durante el engaño</a></li>
+        <li><a href="#clave-9">Responde según lo que entregaste</a></li>
+        <li><a href="#clave-10">Elige la ruta por los hechos</a></li>
+      </ol>
+    </details>
+    <p>Lo que importa no es lo profesional que parece un mensaje, sino quién te pide qué.</p>
     <ol class="claves">
-      <li><h2>El engaño busca conseguir una acción</h2><p>El phishing utiliza mensajes o páginas que intentan parecer de una persona o entidad fiable para llevarte a actuar. Puede buscar credenciales, datos financieros o acceso al equipo. No se reconoce únicamente por faltas de ortografía: un mensaje correcto también puede engañar. Antes de responder, identifica la acción solicitada y qué entregaría. Esa pregunta sirve aunque no sepas nombrar la variante técnica que estás viendo.</p></li>
-      <li><h2>La apariencia no acredita al remitente</h2><p>Un nombre visible, un logotipo y un tono profesional se pueden imitar. Comprueba la petición desde una aplicación o contacto que ya conozcas, sin responder dentro del mensaje dudoso. Una dirección parecida tampoco demuestra que pertenezca a la entidad esperada. Si no puedes confirmar el origen, no completes la acción por cortesía ni por miedo a perder una oportunidad; conserva la duda hasta comprobarla por un canal independiente.</p></li>
-      <li><h2>La urgencia reduce tu margen</h2><p>Amenazas de bloqueo, premios con plazo y solicitudes de secreto pueden intentar impedir que consultes a otra persona. Son motivos para pausar, no un diagnóstico infalible de fraude. Una necesidad real puede ser urgente, pero todavía tienes que comprobar la identidad de quien te contacta. Cierra el mensaje y entra por la vía habitual del servicio para verificar si existe el problema antes de entregar datos o autorizar cambios.</p></li>
-      <li><h2>Mira la petición antes del enlace</h2><p>Distingue recibir un mensaje, abrir una página, introducir una contraseña, autorizar una conexión e instalar un archivo. No son acciones equivalentes y su respuesta tampoco lo es. Leer una alerta no demuestra que una cuenta esté comprometida. Anota qué llegaste a hacer si la petición resulta sospechosa. Esa descripción permite elegir medidas proporcionadas y evita tratar cualquier contacto como una infección completa del dispositivo sin evidencia.</p></li>
-      <li><h2>Comprueba el destino por otra vía</h2><p>Abre la aplicación del servicio o escribe su dirección conocida en lugar de utilizar el enlace recibido. Si necesitas contactar, busca el canal en documentación que ya tengas o en su sitio oficial comprobado. HTTPS cifra una conexión, pero no convierte una web de un impostor en la entidad esperada. No pruebes una página dudosa introduciendo datos reales para averiguar si después muestra una pantalla que parezca legítima.</p></li>
-      <li><h2>Los mensajes dirigidos aprovechan contexto</h2><p>El engaño puede dirigirse a una persona concreta usando su trabajo, relaciones o información pública. Se habla de spear phishing para selección dirigida y de whaling cuando apunta a responsables relevantes; el fraude de correo empresarial puede imitar instrucciones de trabajo o pagos. Son descripciones que pueden solaparse. Que conozcan tu nombre o una tarea reciente no demuestra identidad: confirma una petición sensible con el responsable por una vía conocida.</p></li>
-      <li><h2>Una conversación conocida puede estar comprometida</h2><p>Un mensaje puede copiar uno anterior o llegar desde una cuenta a la que otra persona consiguió acceso. Por eso el historial de conversación no acredita automáticamente una nueva petición de dinero, códigos o documentos. Si cambia la instrucción habitual, verifica por otro medio sin utilizar los datos nuevos que propone el propio mensaje. No necesitas demostrar cómo se obtuvo la cuenta para detener una operación que todavía no has podido confirmar.</p></li>
-      <li><h2>El canal puede cambiar durante el engaño</h2><p>Una petición puede empezar en correo, continuar en una llamada y terminar en una página o aplicación. Cambiar de canal no confirma legitimidad cuando la misma persona dirige todos los pasos. Vishing, smishing y quishing describen usos de voz, SMS y códigos QR con comprobaciones propias. Mantén la pregunta central sobre identidad y acción, y vuelve a un canal elegido por ti antes de aceptar el siguiente paso.</p></li>
-      <li><h2>Responde según lo que entregaste</h2><p>Si compartiste una contraseña, revisa acceso y sesiones desde un dispositivo fiable. Si autorizaste una aplicación, consulta las conexiones de la cuenta; cambiar la clave puede no retirar esa autorización. Si hubo pago, contacta cuanto antes al proveedor financiero por su canal habitual. Si instalaste algo, sigue la revisión oficial del sistema. No se garantiza recuperar cualquier perjuicio ni existe un único trámite válido para todos los países.</p></li>
-      <li><h2>Elige la ruta por los hechos</h2><p>Utiliza la tabla según lo que hiciste y lo que puedes comprobar. Reportar un mensaje al servicio no equivale a presentar denuncia formal ante autoridades. Si necesitas esa vía, confirma requisitos y canales del territorio antes de enviar datos. No te culpes por un engaño: ahora sirve registrar acciones, limitar exposición y pedir ayuda fiable, sin entregar más información a quien promete resolver el problema dentro del mismo contacto sospechoso.</p><div class="scroll" tabindex="0" role="region" aria-label="Tabla, se puede desplazar"><table><thead><tr><th scope="col">Qué necesitas</th><th scope="col">Dónde empezar</th></tr></thead><tbody><tr><td>Solo recibiste el mensaje</td><td>Verificar por vía independiente</td></tr><tr><td>Entregaste una contraseña</td><td>Recuperación y sesiones</td></tr><tr><td>Autorizaste una aplicación</td><td>Conexiones de la cuenta</td></tr><tr><td>Pagaste o instalaste</td><td>Proveedor financiero o ayuda del sistema</td></tr></tbody></table></div></li>
+      <li id="clave-1"><h2>El engaño busca conseguir una acción</h2><p>El phishing utiliza mensajes o páginas que intentan parecer de una persona o entidad fiable para llevarte a actuar. Puede buscar credenciales, datos financieros o acceso al equipo. No se reconoce únicamente por faltas de ortografía: un mensaje correcto también puede engañar. Antes de responder, identifica la acción solicitada y qué entregaría. Esa pregunta sirve aunque no sepas nombrar la variante técnica que estás viendo.</p></li>
+      <li id="clave-2"><h2>La apariencia no acredita al remitente</h2><p>Un nombre visible, un logotipo y un tono profesional se pueden imitar. Comprueba la petición desde una aplicación o contacto que ya conozcas, sin responder dentro del mensaje dudoso. Una dirección parecida tampoco demuestra que pertenezca a la entidad esperada. Si no puedes confirmar el origen, no completes la acción por cortesía ni por miedo a perder una oportunidad; conserva la duda hasta comprobarla por un canal independiente.</p></li>
+      <li id="clave-3"><h2>La urgencia reduce tu margen</h2><p>Amenazas de bloqueo, premios con plazo y solicitudes de secreto pueden intentar impedir que consultes a otra persona. Son motivos para pausar, no un diagnóstico infalible de fraude. Una necesidad real puede ser urgente, pero todavía tienes que comprobar la identidad de quien te contacta. Cierra el mensaje y entra por la vía habitual del servicio para verificar si existe el problema antes de entregar datos o autorizar cambios.</p></li>
+      <li id="clave-4"><h2>Mira la petición antes del enlace</h2><p>Distingue recibir un mensaje, abrir una página, introducir una contraseña, autorizar una conexión e instalar un archivo. No son acciones equivalentes y su respuesta tampoco lo es. Leer una alerta no demuestra que una cuenta esté comprometida. Anota qué llegaste a hacer si la petición resulta sospechosa. Esa descripción permite elegir medidas proporcionadas y evita tratar cualquier contacto como una infección completa del dispositivo sin evidencia.</p></li>
+      <li id="clave-5"><h2>Comprueba el destino por otra vía</h2><p>Abre la aplicación del servicio o escribe su dirección conocida en lugar de utilizar el enlace recibido. Si necesitas contactar, busca el canal en documentación que ya tengas o en su sitio oficial comprobado. HTTPS cifra una conexión, pero no convierte una web de un impostor en la entidad esperada. No pruebes una página dudosa introduciendo datos reales para averiguar si después muestra una pantalla que parezca legítima.</p></li>
+      <li id="clave-6"><h2>Los mensajes dirigidos aprovechan contexto</h2><p>El engaño puede ir dirigido a ti, usando tu trabajo, tus contactos o lo que publicas. Que sepan tu nombre o algo reciente de tu vida no demuestra quiénes son: confirma cualquier petición importante con esa persona por una vía que ya conozcas.</p></li>
+      <li id="clave-7"><h2>Una conversación conocida puede estar comprometida</h2><p>Un mensaje puede copiar uno anterior o llegar desde una cuenta a la que otra persona consiguió acceso. Por eso el historial de conversación no acredita automáticamente una nueva petición de dinero, códigos o documentos. Si cambia la instrucción habitual, verifica por otro medio sin utilizar los datos nuevos que propone el propio mensaje. No necesitas demostrar cómo se obtuvo la cuenta para detener una operación que todavía no has podido confirmar.</p></li>
+      <li id="clave-8"><h2>El canal puede cambiar durante el engaño</h2><p>Una petición puede empezar en correo, continuar en una llamada y terminar en una página o aplicación. Cambiar de canal no confirma legitimidad cuando la misma persona dirige todos los pasos. Vishing, smishing y quishing describen usos de voz, SMS y códigos QR con comprobaciones propias. Mantén la pregunta central sobre identidad y acción, y vuelve a un canal elegido por ti antes de aceptar el siguiente paso.</p></li>
+      <li id="clave-9"><h2>Responde según lo que entregaste</h2><p>Si compartiste una contraseña, revisa acceso y sesiones desde un dispositivo fiable. Si autorizaste una aplicación, consulta las conexiones de la cuenta; cambiar la clave puede no retirar esa autorización. Si hubo pago, contacta cuanto antes al proveedor financiero por su canal habitual. Si instalaste algo, sigue la revisión oficial del sistema. No se garantiza recuperar cualquier perjuicio ni existe un único trámite válido para todos los países.</p></li>
+      <li id="clave-10"><h2>Elige la ruta por los hechos</h2><p>Utiliza la tabla según lo que hiciste y lo que puedes comprobar. Reportar un mensaje al servicio no equivale a presentar denuncia formal ante autoridades. Si necesitas esa vía, confirma requisitos y canales del territorio antes de enviar datos. No te culpes por un engaño: ahora sirve registrar acciones, limitar exposición y pedir ayuda fiable, sin entregar más información a quien promete resolver el problema dentro del mismo contacto sospechoso.</p><div class="scroll" tabindex="0" role="region" aria-label="Tabla, se puede desplazar"><table><thead><tr><th scope="col">¿Qué ha sucedido?</th><th scope="col">Cómo reaccionar</th></tr></thead><tbody><tr><td>Solo recibiste el mensaje</td><td>No respondas. Si dudas, entra en el servicio desde su app.</td></tr><tr><td>Diste una contraseña</td><td><b>Llama a tu banco.</b> Después cámbiala y <a href="https://support.google.com/accounts/answer/3067630?hl=es" rel="noopener">cierra las sesiones abiertas</a>.</td></tr><tr><td>Compartiste un código por SMS</td><td><b>Llama a tu banco ya.</b> Después entra en la cuenta, cambia la contraseña y revisa la verificación en dos pasos.</td></tr><tr><td>Autorizaste una aplicación</td><td><b>Llama a tu banco.</b> Después quita su acceso en la lista de aplicaciones conectadas de tu cuenta.</td></tr><tr><td>Pagaste o enviaste dinero</td><td><b>Llama a tu banco ya.</b> Después, <a href="/articulos/acoso/donde-pedir-ayuda.html">denuncia en tu país</a>.</td></tr><tr><td>Instalaste algo</td><td><b>Si no estás seguro de qué era, llama a tu banco.</b> Después desconecta el equipo de Internet y revísalo con la protección del sistema.</td></tr></tbody></table></div></li>
     </ol>
     <div class="cierre stack">
       <h2>Por dónde empezar</h2>
@@ -66,18 +92,18 @@
     </section>
     <nav class="rel" aria-label="Relacionado">
       <span class="tag">Sigue leyendo</span>
-      <a href="/articulos/contrasenas/identificadores-y-contrasenas.html">Identificadores y contraseñas</a><a href="/articulos/contrasenas/de-la-contrasena-a-la-passkey.html">De contraseña a passkey</a><a href="/articulos/privacidad/proteger-tu-identidad.html">Protege tu identidad</a><a href="/generador.html">Generador de contraseñas</a>
+      <a href="/articulos/fraudes/smishing-mensajes-fraudulentos.html">SMS fraudulentos y smishing</a><a href="/articulos/fraudes/ingenieria-social.html">Técnicas de ingeniería social</a><a href="/articulos/fraudes/quishing-codigos-qr.html">Códigos QR fraudulentos</a><a href="/articulos/fraudes/suplantacion-identidad.html">Si suplantan tu identidad</a>
     </nav>
     <nav class="sig" aria-label="Siguiente en esta sección"><span class="tag">Siguiente en Fraudes y engaños · 1 de 6</span><a class="s" href="/articulos/fraudes/vishing-llamadas-fraudulentas.html">Diez claves sobre llamadas fraudulentas y vishing</a><p>La pantalla y una voz conocida no bastan para identificar una llamada. Comprueba las peticiones de dinero, códigos o control del equipo antes de actuar. <a href="/articulos/fraudes/">Ver las 6 guías</a>.</p></nav>
   </article>
   </main>
   <footer>
     <span>Diez Claves · 2026</span>
-    <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
+    
     <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
     <a href="/aviso-legal.html">Aviso legal</a>
     <a href="/privacidad.html">Privacidad</a>
-  </footer>
+  <a class="sello" href="https://gofiodesign.eu" rel="noopener"><img src="/assets/gofio-monograma-ambar.svg" width="40" height="40" alt="" loading="lazy"><span>Un proyecto de <b>Gofio Design</b></span></a></footer>
 </div>
 </body>
 </html>

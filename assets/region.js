@@ -22,7 +22,8 @@
     bo: { nombre: "Bolivia", tienda: "bo", corto: "Bolivia" },
     hn: { nombre: "Honduras", tienda: "us", corto: "Honduras" },
     cu: { nombre: "Cuba", tienda: "us", corto: "Cuba" },
-    us: { nombre: "Estados Unidos", tienda: "us", corto: "EE. UU." }
+    us: { nombre: "Estados Unidos", tienda: "us", corto: "EE. UU." },
+    gq: { nombre: "Guinea Ecuatorial", tienda: "es", corto: "Guinea Ecuatorial" }
   };
   const TIENDAS = {
     es: { nombre: "Amazon España", url: t => "https://www.amazon.es/s?k=" + t, tag: "" },
@@ -45,6 +46,7 @@
     let tz = ""; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch(e){}
     const langs = (navigator.languages || [navigator.language || ""]).map(l => l.toLowerCase());
     if (tz === "Atlantic/Canary") return "ic";
+    if (tz === "Africa/Malabo") return "gq";
     if (/^America\/(Mexico|Cancun|Merida|Monterrey|Chihuahua|Tijuana|Hermosillo|Mazatlan|Matamoros|Ojinaga|Bahia_Banderas)/.test(tz)) return "mx";
     if (/^America\/(Santiago|Punta_Arenas)|^Pacific\/Easter/.test(tz)) return "cl";
     if (/^America\/(Argentina|Buenos_Aires|Cordoba|Mendoza)/.test(tz)) return "ar";
@@ -88,7 +90,18 @@
     const r = sugerida || regionActual();
     tarjeta = document.createElement("section");
     tarjeta.className = "region-card"; tarjeta.setAttribute("role", "region"); tarjeta.setAttribute("aria-label", "Elegir región");
-    const opciones = Object.entries(REGIONES).map(([k, v]) => `<option value="${k}"${k === r ? " selected" : ""}>${v.nombre}</option>`).join("");
+    // por continente y subcontinente; dentro de cada grupo, orden alfabético
+    const GRUPOS = [
+      ["África", ["ic", "gq"]],
+      ["América del Norte", ["mx", "us"]],
+      ["América Central", ["cr", "sv", "gt", "hn", "ni", "pa"]],
+      ["Caribe", ["cu", "pr", "do"]],
+      ["América del Sur", ["ar", "bo", "cl", "co", "ec", "py", "pe", "uy"]],
+      ["Europa", ["es"]]
+    ];
+    const opc = k => `<option value="${k}"${k === r ? " selected" : ""}>${REGIONES[k].nombre}</option>`;
+    const orden = l => l.slice().sort((x, y) => REGIONES[x].nombre.localeCompare(REGIONES[y].nombre, "es"));
+    const opciones = GRUPOS.map(([g, l]) => `<optgroup label="${g}">${orden(l).map(opc).join("")}</optgroup>`).join("");
     tarjeta.innerHTML = `
       <p class="region-t">${motivo === "auto" ? "Creemos que nos visitas desde" : "¿Desde dónde nos visitas?"}</p>
       <label class="region-sel"><span class="sr">Región</span><select id="region-select">${opciones}</select></label>
@@ -117,7 +130,7 @@
       b.addEventListener("click", () => abrir(regionActual(), "manual")); nav.appendChild(b); }
     const foot = document.querySelector("footer");
     if (foot){ const b = document.createElement("button"); b.type = "button"; b.className = "region-link";
-      b.innerHTML = 'Región: <span data-region-nombre></span> · cambiar'; b.addEventListener("click", () => abrir(regionActual(), "manual")); foot.appendChild(b); }
+      b.innerHTML = 'Región: <span data-region-nombre></span> · cambiar'; b.addEventListener("click", () => abrir(regionActual(), "manual")); foot.insertBefore(b, foot.querySelector(".sello")); }
   }
 
   // «He visto un error»: el correo se monta al pulsar, a partir de trozos, para que los robots no lo lean en el HTML
@@ -130,7 +143,7 @@
       const asunto = "He visto un error en " + document.title.replace(/ · Diez Claves$/, "");
       const cuerpo = "Página: " + location.href + "\n\nQué he visto:\n";
       location.href = "mailto:" + correo() + "?subject=" + encodeURIComponent(asunto) + "&body=" + encodeURIComponent(cuerpo); });
-    foot.appendChild(a);
+    foot.insertBefore(a, foot.querySelector(".sello"));
   }
   // país de entrada: ?pais=mx en cualquier URL fija la región para toda la visita y se quita de la barra de direcciones
   function paisDeEntrada(){
@@ -144,9 +157,9 @@
     montarControles(); montarError();
     const guardada = leer();
     if (guardada){ aplicar(guardada); const dest = paginaDe(guardada); if (dest && dest !== location.pathname && document.body.dataset.variantesAuto === "1") location.replace(dest); return; }
-    aplicar("es");
-    const d = deducir();
-    if (d && d !== "es") abrir(d, "auto");
+    // sin región guardada: se aplica la que se deduce de la zona horaria, sin preguntar ni tapar nada;
+    // la tarjeta solo se abre cuando la persona pulsa para cambiarla
+    aplicar(deducir() || "es");
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", inicio); else inicio();
 })();

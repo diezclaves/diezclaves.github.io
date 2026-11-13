@@ -3,16 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
-<meta name="description" content="Diez Claves: herramientas gratuitas de seguridad digital en español, para cualquier persona. Generador y medidor de contraseñas que funcionan en tu navegador, sin registro y sin enviar nada.">
+<meta name="description" content="Guías y herramientas gratuitas para proteger tus cuentas, cuidar tu privacidad y reconocer estafas. Seguridad digital en español, paso a paso.">
 <link rel="canonical" href="https://diezclaves.com/">
-<meta name="theme-color" content="#131a2b">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
+<link rel="preload" href="/assets/fonts/shantell-sans-800-latin.woff2" as="font" type="font/woff2" crossorigin>
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://diezclaves.com/">
 <meta property="og:site_name" content="Diez Claves">
-<meta property="og:title" content="Diez Claves · Seguridad digital para cualquiera">
-<meta property="og:description" content="Herramientas de seguridad digital en español. Funcionan en tu navegador, sin registro y sin enviar nada.">
+<meta property="og:title" content="Diez Claves · Seguridad digital en español">
+<meta property="og:description" content="Aprende a proteger tus cuentas y tus datos con guías claras y herramientas gratuitas. Sin registro. Tus contraseñas se quedan en tu navegador.">
 <meta property="og:image" content="https://diezclaves.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -23,94 +25,266 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/assets/manifest.webmanifest">
 <link rel="stylesheet" href="/assets/base.css">
+<script src="/assets/tema.js"></script>
 <script src="/assets/region.js" defer></script>
-<title>Diez Claves · Seguridad digital en español para cualquiera</title>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"Diez Claves","url":"https://diezclaves.com/","inLanguage":"es","description":"Herramientas de seguridad digital en español, para cualquier persona."},{"@type":"Organization","name":"Diez Claves","url":"https://diezclaves.com/","logo":"https://diezclaves.com/assets/icon-512.png","parentOrganization":{"@type":"Organization","name":"Gofio Design","url":"https://gofiodesign.eu"}}]}</script>
+<title>Diez Claves · Seguridad digital en español</title>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"Diez Claves","url":"https://diezclaves.com/","inLanguage":"es","description":"Guías y herramientas gratuitas de seguridad digital en español."},{"@type":"Organization","name":"Diez Claves","url":"https://diezclaves.com/","logo":"https://diezclaves.com/assets/icon-512.png","parentOrganization":{"@type":"Organization","name":"Gofio Design","url":"https://gofiodesign.eu"}}]}</script>
 <style>
-.hero{display:flex;flex-direction:column;gap:10px}
-.hero h1{font-size:clamp(44px,12vw,76px);line-height:.95;letter-spacing:-.03em}
-.mark{border-radius:14px;box-shadow:0 0 0 1px var(--line)}
-.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
-.cta a{font:600 16px var(--body);text-decoration:none;border-radius:10px;padding:12px 18px;min-height:44px;display:inline-flex;align-items:center;gap:8px}
-.cta .p{background:var(--slab);color:var(--slab-ink)}
-.cta .s{border:1px solid var(--line);color:var(--ink)}
-.slab dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px 24px;margin:0}
-.slab dt{font:700 16px var(--display);color:var(--accent-on-slab)}
-.slab dd{margin:4px 0 0;font-size:15px;color:var(--slab-muted)}
+/* portada: titular rotulado, servilleta y dudas en viñetas */
+.portada{display:grid;gap:22px 48px;grid-template-columns:minmax(0,1fr);grid-template-areas:"hero" "urgente" "dudas" "servilleta"}
+.hero{grid-area:hero;display:flex;flex-direction:column;gap:14px;padding-top:6px}
+.hero h1{font-size:clamp(38px,10.5vw,74px);line-height:1.02;letter-spacing:-.02em;max-width:13ch}
+.hero .lede{font-weight:600}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;margin-top:4px}
+.servilleta .cta a{flex:1 1 220px;justify-content:space-between;font-size:17px;padding:12px 14px 12px 18px}
+/* dos botones con recuadro: al pasar el ratón se rellenan con su rotulador y aparece la flecha */
+.cta .p,.cta .s{font:800 18px/1.15 var(--display);text-decoration:none;color:var(--ink);background:var(--surface);border:var(--stroke) solid var(--line);border-radius:var(--wob-1);padding:13px 18px 13px 22px;min-height:52px;display:inline-flex;align-items:center;gap:10px}
+.cta .s{border-radius:var(--wob-2)}
+.cta .p{--hl:var(--hl-1)}
+.cta .s{--hl:var(--hl-2)}
+.cta svg{flex:none;opacity:0;transform:translateX(-8px)}
+.cta .p:hover,.cta .s:hover,.cta .p:focus-visible,.cta .s:focus-visible{background:var(--hl);color:var(--on-hl);border-color:var(--on-hl)}
+.cta a:hover svg,.cta a:focus-visible svg{opacity:1;transform:none}
+.cta a:active{transform:translate(1px,2px)}
+@media (prefers-reduced-motion: no-preference){ .cta a{transition:background-color .15s,transform .15s cubic-bezier(.2,.8,.2,1)} .cta svg{transition:opacity .18s,transform .22s cubic-bezier(.16,1,.3,1)} }
+.dudas{grid-area:dudas;display:flex;flex-direction:column;gap:12px;position:relative}
+.dudas h2{font-size:clamp(24px,6vw,30px);display:flex;align-items:flex-end;gap:10px}
+.dudas h2 svg{flex:none;margin-bottom:-14px}
+.vinetas{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.vinetas a{display:block;height:100%;min-height:76px;padding:12px 12px 12px 14px;border:var(--stroke) solid var(--line);border-radius:var(--wob-1);background:var(--surface);color:var(--ink);text-decoration:none;font-weight:700;font-size:16px;line-height:1.3;transition:transform .2s cubic-bezier(.2,.8,.2,1)}
+.vinetas li:nth-child(4n+2) a{border-radius:var(--wob-2)}
+.vinetas li:nth-child(4n+3) a{border-radius:var(--wob-3)}
+.vinetas a span{background:linear-gradient(transparent 4%,var(--hl) 4% 54%,transparent 54%) .14em 0/100% 100% no-repeat,linear-gradient(transparent 44%,var(--hl) 44% 97%,transparent 97%) 0 0/100% 100% no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.vinetas a:hover{background:var(--hl);color:var(--on-hl);border-color:var(--on-hl);transform:rotate(-1deg)}
+@media (prefers-color-scheme: dark){ :root:not([data-theme]) .vinetas a span{background:none;text-decoration:underline;text-decoration-color:var(--hl);text-decoration-thickness:4px;text-underline-offset:5px} :root:not([data-theme]) .vinetas a:hover span{text-decoration-color:var(--on-hl)} }
+:root[data-theme="dark"] .vinetas a span{background:none;text-decoration:underline;text-decoration-color:var(--hl);text-decoration-thickness:4px;text-underline-offset:5px} :root[data-theme="dark"] .vinetas a:hover span{text-decoration-color:var(--on-hl)}
+.servilleta{grid-area:servilleta;position:relative;border:var(--stroke) dashed var(--line);border-radius:var(--wob-3);padding:22px 20px 20px;display:flex;flex-direction:column;gap:12px;transform:rotate(.6deg)}
+.servilleta h2{font-size:20px}
+.servilleta .frase{font:600 clamp(19px,4.8vw,24px)/1.35 var(--mono);background:var(--slab);color:var(--slab-ink);border-radius:var(--wob-2);padding:16px 16px;overflow-wrap:normal}
+.servilleta .frase b{color:var(--accent-on-slab);font-weight:700}
+.servilleta .notas{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:16px}
+.servilleta .notas li{display:flex;gap:10px;align-items:flex-start}
+.servilleta .notas svg{flex:none;margin-top:3px}
+.servilleta .aviso{font-size:14px;color:var(--muted)}
+.slab dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px 28px;margin:0}
+.slab dt{font:800 18px var(--display);color:var(--accent-on-slab)}
+.slab dd{margin:4px 0 0;font-size:16px;color:var(--slab-muted)}
+@media (min-width:860px){
+  .portada{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-areas:"hero servilleta" "urgente urgente" "dudas dudas";align-items:start}
+  .servilleta{margin-top:28px}
+  .vinetas{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .vinetas a{min-height:96px;font-size:17px}
+}
+@media (prefers-reduced-motion: no-preference){
+  .flecha path{stroke-dasharray:140;stroke-dashoffset:140;animation:trazo .9s .3s cubic-bezier(.16,1,.3,1) forwards}
+  @keyframes trazo{to{stroke-dashoffset:0}}
+}
+.pronto b{color:var(--ink)}
+.contenido{display:flex;flex-direction:column;gap:36px}
+/* ajustes tras la crítica del 13-11 */
+main.contenido:focus{outline:none}
+.servilleta .frase{text-wrap:balance}
+.cab a{min-height:44px;display:inline-flex;align-items:center}
+
+/* «¿Qué te trae por aquí?»: sin subrayado; el borde lleva el color y al pasar el ratón la caja se rellena de ese mismo color */
+.vinetas a span,:root[data-theme] .vinetas a span{background:none;text-decoration:none}
+@media (prefers-color-scheme: dark){ :root:not([data-theme]) .vinetas a span{background:none;text-decoration:none} }
+.vinetas a{border:4px solid var(--hl)}
+.vinetas a:hover,.vinetas a:focus-visible{background:var(--hl);color:var(--on-hl);border-color:var(--on-hl)}
+
+/* cada paso con su forma: caja, círculo y giro distintos */
+.camino ol.ruta li:nth-child(1){border-radius:255px 18px 225px 12px/12px 225px 18px 255px;--giro:-1.2deg}
+.camino ol.ruta li:nth-child(1)::before{border-radius:50% 45% 52% 48%/48% 52% 45% 50%}
+.camino ol.ruta li:nth-child(2){border-radius:16px 240px 20px 200px/220px 14px 250px 18px;--giro:.9deg}
+.camino ol.ruta li:nth-child(2)::before{border-radius:58% 42% 47% 53%/44% 56% 50% 50%}
+.camino ol.ruta li:nth-child(3){border-radius:230px 26px 180px 10px/18px 190px 12px 240px;--giro:-.6deg}
+.camino ol.ruta li:nth-child(3)::before{border-radius:44% 56% 60% 40%/52% 40% 60% 48%}
+.camino ol.ruta li:nth-child(4){border-radius:12px 200px 30px 260px/260px 22px 200px 12px;--giro:1.3deg}
+.camino ol.ruta li:nth-child(4)::before{border-radius:52% 48% 40% 60%/58% 50% 50% 42%}
+.camino ol.ruta li:nth-child(5){border-radius:200px 12px 260px 24px/24px 260px 12px 190px;--giro:-.9deg}
+.camino ol.ruta li:nth-child(5)::before{border-radius:47% 53% 56% 44%/40% 58% 42% 60%}
+.camino ol.ruta li:nth-child(6){border-radius:28px 260px 14px 210px/200px 30px 240px 16px;--giro:.7deg}
+.camino ol.ruta li:nth-child(6)::before{border-radius:60% 40% 50% 50%/50% 45% 55% 50%}
+.camino ol.ruta li:hover,.camino ol.ruta li:focus-within{transform:rotate(var(--giro,0deg))}
+.camino ol.ruta a::before{border-radius:inherit}
+
+/* al rellenarse, círculos y subrayados pasan a papel blanco */
+.camino ol.ruta li:hover::before,.camino ol.ruta li:focus-within::before{background:#fff}
+.vinetas a:hover span,.vinetas a:focus-visible span,:root[data-theme] .vinetas a:hover span,:root[data-theme] .vinetas a:focus-visible span{background:none;color:var(--on-hl);text-decoration:none}
+@media (prefers-color-scheme: dark){ :root:not([data-theme]) .vinetas a:hover span{background:none;color:var(--on-hl);text-decoration:none} }
+/* las secciones a las que se salta no muestran marco */
+.dudas:focus,.dudas:focus-visible,.urgente:focus,.urgente:focus-visible{outline:none;box-shadow:none}
+
+/* pasos y «Lo último»: toda la fila es el enlace y se rellena con su rotulador */
+.camino ol.ruta a::before,.ultimo .lista a::before{content:"";position:absolute;inset:0;border-radius:var(--wob-1)}
+.camino ol.ruta li:hover,.camino ol.ruta li:focus-within,.ultimo .lista li:hover,.ultimo .lista li:focus-within{background:var(--hl)}
+.camino ol.ruta li:hover a,.camino ol.ruta li:focus-within a,.ultimo .lista li:hover a,.ultimo .lista li:focus-within a{background:var(--hl);color:var(--on-hl)}
+.camino ol.ruta li:hover p,.camino ol.ruta li:focus-within p,.ultimo .lista li:hover p,.ultimo .lista li:focus-within p{background:var(--hl);color:var(--on-hl)}
+.camino ol.ruta li:hover::after,.camino ol.ruta li:focus-within::after{border-color:var(--on-hl)}
+
+/* «¿No sabes por dónde empezar?»: camino dibujado */
+.camino h2{font-size:clamp(28px,7vw,42px);line-height:1.08}
+.camino ol.ruta{grid-template-columns:minmax(0,1fr);gap:0}
+.camino ol.ruta li{position:relative;grid-template-columns:60px minmax(0,1fr);gap:4px 16px;padding:10px 12px 28px;border:none;border-radius:var(--wob-1)}
+.camino ol.ruta li::before{width:56px;height:56px;font-size:27px;color:var(--on-hl);background:var(--hl);border-color:var(--on-hl);transform:rotate(-4deg);position:relative;z-index:1}
+.camino ol.ruta li:nth-child(3n+2)::before{transform:rotate(3deg)}
+.camino ol.ruta li:nth-child(3n)::before{transform:rotate(-2deg)}
+.camino ol.ruta li::after{content:"";position:absolute;left:39px;top:70px;bottom:4px;border-left:3px dashed var(--line)}
+.camino ol.ruta li:last-child{padding-bottom:12px}
+.camino ol.ruta li:last-child::after{display:none}
+.camino ol.ruta a{font-size:clamp(20px,5.2vw,24px);line-height:1.2;padding-top:12px}
+.camino ol.ruta p{max-width:52ch}
+@media (min-width:860px){
+  .camino ol.ruta{grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 28px}
+  .camino ol.ruta li,.camino ol.ruta li:last-child{grid-template-columns:minmax(0,1fr);align-content:start;padding:12px}
+  .camino ol.ruta li::before{grid-row:auto;margin-bottom:10px}
+  .camino ol.ruta li::after{left:84px;right:-20px;top:40px;bottom:auto;border-left:0;border-top:3px dashed var(--line)}
+  .camino ol.ruta li:nth-child(3n)::after{display:none}
+  .camino ol.ruta a{padding-top:0}
+}
+/* «Lo último»: más tranquilo, a juego con el índice de temas */
+.ultimo .lista li{position:relative;border-top:0;border-bottom:2px dashed var(--line);padding:14px 12px}
+.ultimo .lista a{font-size:19px;display:inline}
+.ultimo .lista a::after{content:"\00a0→" / "";font:800 18px/1 var(--display);white-space:nowrap}
+@media (min-width:860px){ .ultimo .lista li:nth-child(-n+2){border-top:2px dashed var(--line)} }
+.ultimo .lista li:first-child{border-top:2px dashed var(--line)}
+
+/* «95 guías en 9 temas»: índice de recetario */
+.temas .cab h2{font-size:clamp(30px,7.4vw,46px);line-height:1.05}
+.indice{grid-template-columns:minmax(0,1fr);gap:0 56px}
+.indice li{border-bottom:2px dashed var(--line)}
+.indice li:first-child{border-top:2px dashed var(--line)}
+.indice a,.indice li:nth-child(n) a{grid-template-columns:auto minmax(28px,1fr) auto;grid-template-areas:"nombre puntos n" "d d d";align-items:end;gap:8px 10px;padding:18px 14px 16px;border:0;border-radius:var(--wob-1);background:none;height:auto}
+.indice a::before{content:"";grid-area:puntos;align-self:end;margin-bottom:.5em;border-bottom:4px dotted var(--line)}
+.indice b{grid-area:nombre;font-size:clamp(23px,6vw,31px);line-height:1.15;max-width:15ch}
+.indice .n,.indice li:nth-child(n) .n{grid-area:n;grid-row:auto;min-width:0;height:auto;padding:6px 10px 5px;font-size:24px;display:inline-flex;align-items:baseline;gap:4px;transform:rotate(-3deg)}
+.indice li:nth-child(even) .n{transform:rotate(2.5deg)}
+.indice .n small{font:700 13px/1 var(--body)}
+.indice .d{grid-area:d;max-width:58ch}
+.indice li:nth-child(n) a:hover{background:var(--hl);color:var(--on-hl);transform:none}
+.indice li:nth-child(n) a:hover::before{border-color:var(--on-hl)}
+.indice a:hover .n{transform:rotate(0deg) scale(1.06)}
+@media (min-width:860px){
+  .indice{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .indice li:nth-child(2){border-top:2px dashed var(--line)}
+  .indice b{max-width:none}
+}
+@media (prefers-reduced-motion: no-preference){ .indice .n{transition:transform .2s cubic-bezier(.2,.8,.2,1)} }
+
+/* carril «¿Te acaba de pasar?» */
+.urgente{grid-area:urgente;border:3px solid var(--line);border-radius:var(--wob-2);background:var(--surface);padding:16px 18px 6px;display:flex;flex-direction:column;gap:4px}
+.urgente:focus{outline:none}
+.urgente h2{font-size:clamp(22px,5.6vw,26px)}
+.urgente h2 span{background:linear-gradient(transparent 4%,var(--hl-p) 4% 54%,transparent 54%) .14em 0/100% 100% no-repeat,linear-gradient(transparent 44%,var(--hl-p) 44% 97%,transparent 97%) 0 0/100% 100% no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.urgente ul{list-style:none;margin:0;padding:0;display:grid}
+.urgente li+li{border-top:2px dashed var(--line)}
+.urgente a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;align-items:center;min-height:56px;padding:12px 6px;color:var(--ink);text-decoration:none;border-radius:var(--wob-1)}
+.urgente a b{font-size:17px;font-weight:800;line-height:1.3}
+.urgente a small{grid-column:1;font-size:15px;line-height:1.45;color:var(--muted)}
+.urgente a::after{content:"→";grid-column:2;grid-row:1 / 3;font:800 22px/1 var(--display)}
+.urgente li:nth-child(1){--hl:var(--hl-1)}
+.urgente li:nth-child(2){--hl:var(--hl-4)}
+.urgente li:nth-child(3){--hl:var(--hl-8)}
+.urgente li:nth-child(4){--hl:var(--hl-5)}
+.urgente a:hover{background:var(--hl);color:var(--on-hl)}
+.urgente a:hover small{color:inherit}
+@media (prefers-color-scheme: dark){ :root:not([data-theme]) .urgente h2 span{background:none;text-decoration:underline;text-decoration-color:var(--hl-p);text-decoration-thickness:4px;text-underline-offset:5px} }
+:root[data-theme="dark"] .urgente h2 span{background:none;text-decoration:underline;text-decoration-color:var(--hl-p);text-decoration-thickness:4px;text-underline-offset:5px}
+@media (min-width:860px){
+  .urgente{padding:18px 22px 10px}
+  .urgente ul{grid-template-columns:repeat(4,minmax(0,1fr));gap:0 18px}
+  .urgente li+li{border-top:0;border-left:2px dashed var(--line);padding-left:18px}
+  .urgente a{align-items:start;align-content:start;height:100%}
+}
+
+.dudas:focus{outline:none}
+/* índice de temas: que la etiqueta «N guías» no se salga en pantallas estrechas */
+.indice a,.indice li:nth-child(n) a{grid-template-columns:minmax(0,auto) minmax(12px,1fr) max-content}
+.indice .n,.indice li:nth-child(n) .n{white-space:nowrap}
+@media (max-width:359px){ .indice .n,.indice li:nth-child(n) .n{font-size:20px;padding:5px 8px 4px} .indice .n small{font-size:12px} }
+@media (min-width:860px){ .indice b{max-width:none;font-size:27px} }
 </style>
 </head>
 <body>
-<a class="skip" href="#herramientas">Saltar a las herramientas</a>
+<a class="skip" href="#contenido">Saltar al contenido</a>
 <div class="wrap ancha">
   <header class="stack">
-    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/" aria-current="page"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="/generador.html">Generador</a><a href="/medidor.html">Medidor</a><a href="/articulos/">Artículos</a></nav>
-    <div class="hero">
-      <h1><span>Diez</span> Claves</h1>
-      <p class="lede">Seguridad digital en español, para cualquier persona.</p>
-      <p class="muted">Herramientas gratuitas que funcionan dentro de tu navegador. No hay que registrarse y lo que escribes no sale de tu dispositivo.</p>
-      <div class="cta">
-        <a class="p" href="/generador.html">Generar una contraseña →</a>
-        <a class="s" href="/medidor.html">Medir la mía</a>
-      </div>
-    </div>
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/" aria-current="page"><svg class="llave" viewBox="0 0 40 100" width="27" height="66" aria-hidden="true"><path d="M6 5.5C14 3.6 27 3.4 34.6 5.2c1.6 9.4 1.5 22.6.2 31.6C26 38.6 13.6 38.4 5.3 36.9 3.9 27 4.2 15 6 5.5z" style="fill:var(--hl-y);stroke:currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M13 31V17.5L27 31V17.5M12.5 12.4c2.3-2.6 4.6-2.6 7 0s4.7 2.6 7.5-.2" style="fill:none;stroke:var(--on-hl)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 38.5V95M20 70h9.5v6M20 83h7" style="fill:none;stroke:currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="marca">Diez Claves<span class="lema">Recetas con <b class="ene">ñ</b></span></span></a><a href="/articulos/">Artículos</a><a href="/herramientas.html">Herramientas</a></nav>
   </header>
 
-  <section class="stack" aria-labelledby="h-que">
-    <h2 id="h-que">¿Qué necesitas ahora?</h2>
-    <ul class="chips"><li><a href="/articulos/dispositivos/si-te-roban-el-movil.html">Me han robado el móvil</a></li><li><a href="/generador.html">Necesito una contraseña</a></li><li><a href="/medidor.html">¿Es segura mi contraseña?</a></li><li><a href="/articulos/amenazas/virus-programas-maliciosos.html">Creo que tengo un virus</a></li><li><a href="/articulos/amenazas/ransomware-secuestro-archivos.html">Mis archivos no se abren</a></li><li><a href="/articulos/tramites/">Hacer trámites por Internet</a></li><li><a href="/articulos/privacidad/navegar-con-privacidad.html">Que no me rastreen</a></li><li><a href="/articulos/conexion/vpn-wifi-publico.html">Conectarme a un wifi público</a></li><li><a href="/articulos/dispositivos/proteger-tu-movil.html">Revisar mi móvil</a></li><li><a href="/articulos/acoso/donde-pedir-ayuda.html">Me acosan o amenazan en la red</a></li></ul>
+  <main id="contenido" class="contenido" tabindex="-1">
+  <div class="portada">
+    <div class="hero">
+      <h1>Seguridad digital, <mark>en español</mark>.</h1>
+      <p class="lede">Guías claras para proteger tus cuentas, cuidar tu privacidad y decidir cómo usas la tecnología.</p>
+      <p class="muted">También puedes crear y comprobar contraseñas gratis, sin registrarte. Todo se hace en tu navegador: lo que escribes se queda en tu dispositivo.</p>
+    </div>
+
+    <section class="urgente" id="urgente" aria-labelledby="h-urg" tabindex="-1">
+      <h2 id="h-urg"><span>¿Necesitas ayuda ahora?</span> Empieza aquí</h2>
+      <ul>
+        <li><a href="/articulos/dispositivos/si-te-roban-el-movil.html"><b>Me han robado el móvil</b><small>Qué bloquear primero y a quién avisar.</small></a></li>
+        <li><a href="/articulos/fraudes/reconocer-phishing.html"><b>He caído en un engaño</b><small>Qué hacer si has dado datos, compartido un código o enviado dinero.</small></a></li>
+        <li><a href="/articulos/fraudes/suplantacion-identidad.html"><b>Alguien se hace pasar por mí</b><small>Cómo proteger tus cuentas y avisar a tus contactos.</small></a></li>
+        <li><a href="/articulos/acoso/donde-pedir-ayuda.html"><b>Me acosan o amenazan</b><small>A quién acudir en tu país.</small></a></li>
+      </ul>
+    </section>
+
+    <section class="dudas" id="que-necesitas" aria-labelledby="h-que" tabindex="-1">
+      <h2 id="h-que">¿Qué te trae por aquí?<svg class="flecha" width="56" height="40" viewBox="0 0 56 40" aria-hidden="true"><path d="M4 5c16 1 32 9 40 27m0 0-10-3m10 3 2-10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></h2>
+      <ul class="vinetas"><li><a href="/articulos/fraudes/smishing-mensajes-fraudulentos.html"><span>No sé si este SMS es auténtico</span></a></li><li><a href="/generador.html"><span>Necesito una contraseña</span></a></li><li><a href="/medidor.html"><span>¿Es segura mi contraseña?</span></a></li><li><a href="/articulos/amenazas/virus-programas-maliciosos.html"><span>Creo que tengo un virus</span></a></li><li><a href="/articulos/amenazas/ransomware-secuestro-archivos.html"><span>Mis archivos no se abren</span></a></li><li><a href="/articulos/tramites/"><span>Hacer trámites por Internet</span></a></li><li><a href="/articulos/privacidad/navegar-con-privacidad.html"><span>Quiero más privacidad</span></a></li><li><a href="/articulos/conexion/vpn-wifi-publico.html"><span>Conectarme a un wifi público</span></a></li></ul>
+    </section>
+
+
+    <aside class="servilleta" aria-labelledby="h-serv">
+      <h2 id="h-serv">Una contraseña con palabras al azar</h2>
+      <p class="frase" aria-label="Ejemplo: ñandú, pirámide, cosecha, útil">ñandú·<wbr>pirámide·<wbr>cosecha·<wbr>útil</p>
+      <ul class="notas">
+        <li><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10.5l4.5 4.5L17 4" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Varias palabras al azar forman una contraseña larga y más fácil de recordar.</li>
+        <li><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10.5l4.5 4.5L17 4" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Puedes incluir ñ y tildes si el servicio las acepta.</li>
+        <li><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10.5l4.5 4.5L17 4" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>El generador la crea en tu navegador, sin enviarla a ningún servidor.</li>
+      </ul>
+      <p class="aviso">Esta es solo una muestra. Genera una propia y usa una distinta en cada cuenta.</p>
+      <div class="cta">
+        <a class="p" href="/herramientas.html">Ir a las herramientas<svg width="22" height="16" viewBox="0 0 22 16" aria-hidden="true"><path d="M2 8.5c6-.6 11-.4 17-.2m0 0-5-5m5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </aside>
+  </div>
+
+  <section class="stack camino" aria-labelledby="h-ruta">
+    <h2 id="h-ruta">¿No sabes por dónde empezar?</h2>
+    <ol class="ruta"><li><a href="/articulos/contrasenas/elegir-gestor-de-contrasenas.html">Elegir un gestor de contraseñas</a><p>Qué hace un gestor, cómo elegir uno y cómo guardar tus contraseñas con una clave maestra.</p></li><li><a href="/articulos/contrasenas/de-la-contrasena-a-la-passkey.html">Conocer las formas de acceder a tus cuentas</a><p>Contraseñas, verificación en dos pasos y claves de acceso (passkeys): para qué sirve cada opción y cuál puedes activar en tus cuentas.</p></li><li><a href="/articulos/dispositivos/proteger-tu-movil.html">Proteger tu móvil</a><p>Empieza por el bloqueo, las actualizaciones y las cuentas de tu móvil. Diez ajustes para proteger tus datos sin instalar aplicaciones de más.</p></li><li><a href="/articulos/privacidad/navegar-con-privacidad.html">Navegar con más privacidad</a><p>Cada visita a una página deja información sobre ti. Cómo reducir el rastreo, proteger tus datos y ajustar el navegador que ya tienes.</p></li><li><a href="/articulos/conexion/vpn.html">Entender y usar una VPN</a><p>Una VPN cifra parte del recorrido de tu conexión y oculta tu IP a las páginas. Cuándo te protege, qué límites tiene y si de verdad la necesitas.</p></li><li><a href="/articulos/amenazas/virus-programas-maliciosos.html">Virus y programas maliciosos</a><p>Virus, troyanos y ransomware no significan lo mismo. Entiende los nombres y comprueba de dónde viene un aviso antes de decidir qué hacer con tu equipo.</p></li></ol>
   </section>
 
-  <section class="stack" aria-labelledby="h-temas">
+  <section class="stack temas" aria-labelledby="h-temas">
     <div class="cab"><h2 id="h-temas">95 guías en 9 temas</h2><a href="/articulos/">Ver todas →</a></div>
-    <ul class="secciones"><li><a href="/articulos/contrasenas/"><span class="n">5</span><b>Contraseñas y cuentas</b><span class="d">Cómo crear y guardar contraseñas, qué son las passkeys y por qué roban las cuentas.</span></a></li><li><a href="/articulos/dispositivos/"><span class="n">22</span><b>Móvil y dispositivos</b><span class="d">Tu móvil, tu ordenador y tu router: qué saben, qué guardan, qué comparten y cómo depender menos de Google.</span></a></li><li><a href="/articulos/privacidad/"><span class="n">7</span><b>Privacidad al navegar</b><span class="d">Navegadores, cookies, huella digital y modo incógnito: qué ven las páginas y cómo limitarlo.</span></a></li><li><a href="/articulos/conexion/"><span class="n">18</span><b>Conexión: DNS, VPN y Tor</b><span class="d">Qué ve tu operador y tu wifi, y qué cambian el DNS, una VPN, Tor o Tails.</span></a></li><li><a href="/articulos/amenazas/"><span class="n">8</span><b>Programas maliciosos</b><span class="d">Virus, troyanos, ransomware y compañía: qué es cada amenaza y qué hacer si te toca.</span></a></li><li><a href="/articulos/fraudes/"><span class="n">6</span><b>Fraudes y engaños</b><span class="d">Correos, llamadas, SMS y códigos QR falsos: cómo reconocer el engaño y qué hacer si ya has picado.</span></a></li><li><a href="/articulos/redes-sociales/"><span class="n">2</span><b>Redes sociales</b><span class="d">Por qué ves lo que ves y quién empuja ciertos mensajes: algoritmos, recomendaciones y cuentas automatizadas.</span></a></li><li><a href="/articulos/acoso/"><span class="n">6</span><b>Abusos y acoso</b><span class="d">Acoso, odio, racismo y abuso a menores en la red: cómo proteger, a quién acudir y qué no hacer.</span></a></li><li><a href="/articulos/tramites/"><span class="n">21</span><b>Identidad digital y trámites</b><span class="d">Certificado digital, DNI electrónico e identidad digital en cada país hispanohablante y en Estados Unidos.</span></a></li></ul>
+    <ul class="secciones indice"><li><a href="/articulos/contrasenas/"><span class="n">5<small> guías</small></span><b>Contraseñas y cuentas</b><span class="d">Cómo crear y guardar contraseñas, qué son las claves de acceso (passkeys) y cómo proteger tus cuentas.</span></a></li><li><a href="/articulos/dispositivos/"><span class="n">22<small> guías</small></span><b>Móvil y dispositivos</b><span class="d">Cómo proteger tu móvil y tu ordenador, revisar qué datos comparten y reducir tu dependencia de Google.</span></a></li><li><a href="/articulos/privacidad/"><span class="n">7<small> guías</small></span><b>Privacidad al navegar</b><span class="d">Navegadores, cookies, huella digital y modo incógnito: qué ven las páginas y cómo limitarlo.</span></a></li><li><a href="/articulos/conexion/"><span class="n">18<small> guías</small></span><b>Conexión: DNS, VPN y Tor</b><span class="d">Cómo funciona tu conexión, quién puede ver tu actividad y para qué sirven el DNS, las VPN y Tor.</span></a></li><li><a href="/articulos/amenazas/"><span class="n">8<small> guías</small></span><b>Programas maliciosos</b><span class="d">Cómo reconocer los programas que pueden dañar tu equipo, robar datos o bloquear tus archivos, y qué hacer en cada caso.</span></a></li><li><a href="/articulos/fraudes/"><span class="n">6<small> guías</small></span><b>Fraudes y engaños</b><span class="d">Correos, llamadas, SMS y códigos QR falsos: cómo reconocer un engaño y qué hacer si has caído.</span></a></li><li><a href="/articulos/redes-sociales/"><span class="n">2<small> guías</small></span><b>Redes sociales</b><span class="d">Cómo se elige lo que aparece en tus redes y qué puedes controlar en las recomendaciones.</span></a></li><li><a href="/articulos/acoso/"><span class="n">6<small> guías</small></span><b>Abusos y acoso</b><span class="d">Cómo actuar ante el acoso, las amenazas y los abusos en Internet, y dónde pedir ayuda.</span></a></li><li><a href="/articulos/tramites/"><span class="n">21<small> guías</small></span><b>Identidad digital y trámites</b><span class="d">Certificado digital, DNI electrónico e identidad digital en cada país hispanohablante y en Estados Unidos.</span></a></li></ul>
   </section>
 
-  <section class="stack" aria-labelledby="h-ruta">
-    <h2 id="h-ruta">Si empiezas de cero, en este orden</h2>
-    <ol class="ruta"><li><a href="/articulos/contrasenas/elegir-gestor-de-contrasenas.html">Elegir gestor de contraseñas</a><p>Para qué sirve un gestor, cómo elegir la clave maestra, si vale el del navegador, Bitwarden, KeePassXC, Proton Pass o 1Password, y cómo pasar las contraseñas sin sufrir.</p></li><li><a href="/articulos/contrasenas/de-la-contrasena-a-la-passkey.html">Entender cómo entramos hoy en las cuentas</a><p>De la contraseña de 1961 a la passkey de 2022: qué fallo arregla cada sistema de acceso, qué protege cada uno y cuál activar en cada cuenta.</p></li><li><a href="/articulos/dispositivos/proteger-tu-movil.html">Proteger tu móvil</a><p>Empieza por el bloqueo, las actualizaciones y las cuentas de tu móvil. Diez ajustes para proteger tus datos sin instalar aplicaciones de más.</p></li><li><a href="/articulos/privacidad/navegar-con-privacidad.html">Navegar con más privacidad</a><p>Cada visita a una página deja información sobre ti. Cómo reducir el rastreo, proteger tus datos y ajustar el navegador que ya tienes.</p></li><li><a href="/articulos/conexion/vpn.html">Entender y usar una VPN</a><p>Una VPN cifra parte del recorrido de tu conexión y oculta tu IP a las páginas. Cuándo te protege, qué límites tiene y si de verdad la necesitas.</p></li><li><a href="/articulos/amenazas/virus-programas-maliciosos.html">Virus y programas maliciosos</a><p>Virus, troyanos y ransomware no significan lo mismo. Entiende los nombres y comprueba de dónde viene un aviso antes de decidir qué hacer con tu equipo.</p></li></ol>
-  </section>
-
-  <section class="stack" aria-labelledby="h-nov">
+  <section class="stack ultimo" aria-labelledby="h-nov">
     <div class="cab"><h2 id="h-nov">Lo último</h2><a href="/articulos/">Todas las guías →</a></div>
-    <ul class="lista"><li data-q="diez claves para proteger tu móvil empieza por el bloqueo, las actualizaciones y las cuentas de tu móvil. diez ajustes para proteger tus datos sin instalar aplicaciones de más."><a href="/articulos/dispositivos/proteger-tu-movil.html">Proteger tu móvil</a><p>Empieza por el bloqueo, las actualizaciones y las cuentas de tu móvil. Diez ajustes para proteger tus datos sin instalar aplicaciones de más.</p></li><li data-q="diez claves para navegar con privacidad en el móvil revisa el navegador del móvil, sus permisos y lo que sincronizas. protecciones útiles para visitar páginas con menos seguimiento y sin falsas promesas."><a href="/articulos/privacidad/navegar-privacidad-movil.html">Navegar con privacidad en el móvil</a><p>Revisa el navegador del móvil, sus permisos y lo que sincronizas. Protecciones útiles para visitar páginas con menos seguimiento y sin falsas promesas.</p></li><li data-q="diez claves para utilizar dns privado en el móvil puedes proteger las consultas de nombres de tu móvil sin confundirlas con toda tu conexión. aprende qué cambiar, qué comprobar y cómo volver atrás."><a href="/articulos/conexion/dns-privado-movil.html">Utilizar DNS privado en el móvil</a><p>Puedes proteger las consultas de nombres de tu móvil sin confundirlas con toda tu conexión. Aprende qué cambiar, qué comprobar y cómo volver atrás.</p></li><li data-q="diez claves sobre virus y programas maliciosos virus, troyanos y ransomware no significan lo mismo. entiende los nombres y comprueba de dónde viene un aviso antes de decidir qué hacer con tu equipo."><a href="/articulos/amenazas/virus-programas-maliciosos.html">Virus y programas maliciosos</a><p>Virus, troyanos y ransomware no significan lo mismo. Entiende los nombres y comprueba de dónde viene un aviso antes de decidir qué hacer con tu equipo.</p></li><li data-q="diez claves para reconocer el phishing un mensaje convincente puede pedirte datos, dinero o acceso. aprende a comprobar la petición por otra vía y a responder según lo que hayas hecho."><a href="/articulos/fraudes/reconocer-phishing.html">Reconocer el phishing</a><p>Un mensaje convincente puede pedirte datos, dinero o acceso. Aprende a comprobar la petición por otra vía y a responder según lo que hayas hecho.</p></li><li data-q="diez claves sobre algoritmos en redes sociales lo que ves en una red depende de varias decisiones de selección. entiende las recomendaciones y utiliza sus controles sin esperar un reinicio mágico."><a href="/articulos/redes-sociales/algoritmos-redes-sociales.html">Algoritmos en redes sociales</a><p>Lo que ves en una red depende de varias decisiones de selección. Entiende las recomendaciones y utiliza sus controles sin esperar un reinicio mágico.</p></li><li data-q="dónde pedir ayuda ante abusos en internet, por país teléfonos y canales oficiales para pedir ayuda ante acoso, abuso, odio o un menor en peligro, por país. solo lo confirmado en fuentes oficiales."><a href="/articulos/acoso/donde-pedir-ayuda.html">Dónde pedir ayuda ante abusos en Internet, por país</a><p>Teléfonos y canales oficiales para pedir ayuda ante acoso, abuso, odio o un menor en peligro, por país. Solo lo confirmado en fuentes oficiales.</p></li><li data-q="diez claves sobre los permisos de tus apps revisa qué aplicaciones pueden usar tu cámara, tus contactos o tus fotos. aprende a limitar permisos en android y iphone sin desactivar todo."><a href="/articulos/dispositivos/permisos-aplicaciones-movil.html">Los permisos de tus apps</a><p>Revisa qué aplicaciones pueden usar tu cámara, tus contactos o tus fotos. Aprende a limitar permisos en Android y iPhone sin desactivar todo.</p></li></ul>
+    <ul class="lista"><li data-q="diez claves para navegar con privacidad en el móvil revisa el navegador del móvil, sus permisos y lo que sincronizas. protecciones útiles para visitar páginas con menos seguimiento y sin falsas promesas."><a href="/articulos/privacidad/navegar-privacidad-movil.html">Navegar con privacidad en el móvil</a><p>Revisa el navegador del móvil, sus permisos y lo que sincronizas. Protecciones útiles para visitar páginas con menos seguimiento y sin falsas promesas.</p></li><li data-q="diez claves para utilizar dns privado en el móvil puedes proteger las consultas de nombres de tu móvil sin confundirlas con toda tu conexión. aprende qué cambiar, qué comprobar y cómo volver atrás."><a href="/articulos/conexion/dns-privado-movil.html">Utilizar DNS privado en el móvil</a><p>Puedes proteger las consultas de nombres de tu móvil sin confundirlas con toda tu conexión. Aprende qué cambiar, qué comprobar y cómo volver atrás.</p></li><li data-q="diez claves sobre algoritmos en redes sociales lo que ves en una red depende de varias decisiones de selección. entiende las recomendaciones y utiliza sus controles sin esperar un reinicio mágico."><a href="/articulos/redes-sociales/algoritmos-redes-sociales.html">Algoritmos en redes sociales</a><p>Lo que ves en una red depende de varias decisiones de selección. Entiende las recomendaciones y utiliza sus controles sin esperar un reinicio mágico.</p></li><li data-q="diez claves sobre los permisos de tus apps revisa qué aplicaciones pueden usar tu cámara, tus contactos o tus fotos. aprende a limitar permisos en android y iphone sin desactivar todo."><a href="/articulos/dispositivos/permisos-aplicaciones-movil.html">Los permisos de tus apps</a><p>Revisa qué aplicaciones pueden usar tu cámara, tus contactos o tus fotos. Aprende a limitar permisos en Android y iPhone sin desactivar todo.</p></li></ul>
   </section>
-
-  <main id="herramientas" class="stack">
-    <h2>Herramientas</h2>
-    <ul class="tools">
-      <li>
-        <a class="t" href="/generador.html">Generador de contraseñas</a>
-        <p>Frases de palabras y contraseñas con ñ, tildes y diéresis. Te dice cuánto protege cada una y cuánto tardarían en romperla. Guárdalo en favoritos para tenerlo a mano.</p>
-      </li>
-      <li>
-        <a class="t" href="/medidor.html">Medidor de contraseñas</a>
-        <p>Escribe una y verás sus bits, sus fallos (palabras, años, secuencias) y cuánto aguantaría según quién ataque y cómo la guarde el servicio.</p>
-      </li>
-      <li>
-        <span class="tag">En preparación</span>
-        <b>¿Es una estafa este SMS?</b>
-        <p>Señales para reconocer un mensaje o un enlace sospechoso antes de pulsar.</p>
-      </li>
-    </ul>
-  </main>
 
 
   <section class="slab" aria-labelledby="h-como">
     <h2 id="h-como">Cómo trabajamos</h2>
     <dl>
-      <div><dt>Sin terceros</dt><dd>Las páginas no cargan nada de fuera: ni analítica, ni fuentes, ni anuncios. Lo que escribes se queda en tu navegador.</dd></div>
-      <div><dt>Para cualquiera</dt><dd>Lenguaje llano, letra grande, y todo se puede usar con teclado y con lector de pantalla.</dd></div>
-      <div><dt>Código a la vista</dt><dd>Todo lo que hace esta web se puede leer en <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">su repositorio</a>.</dd></div>
+      <div><dt>Sin terceros</dt><dd>No usamos servicios externos para medir tus visitas ni mostrar anuncios. Las contraseñas que generas o compruebas se quedan en tu navegador.</dd></div>
+      <div><dt>Para cualquiera</dt><dd>Textos claros, letra grande y navegación con teclado y lector de pantalla.</dd></div>
+      <div><dt>Código a la vista</dt><dd>Puedes consultar cómo funciona esta web en <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">su repositorio</a>.</dd></div>
     </dl>
   </section>
 
+  </main>
+
   <footer>
     <span>Diez Claves · 2026</span>
-    <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
+    
     <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
     <a href="/aviso-legal.html">Aviso legal</a>
     <a href="/privacidad.html">Privacidad</a>
-  </footer>
+  <a class="sello" href="https://gofiodesign.eu" rel="noopener"><img src="/assets/gofio-monograma-ambar.svg" width="40" height="40" alt="" loading="lazy"><span>Un proyecto de <b>Gofio Design</b></span></a></footer>
 </div>
 </body>
 </html>

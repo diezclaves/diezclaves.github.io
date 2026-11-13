@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Cada visita a una página deja información sobre ti. Cómo reducir el rastreo, proteger tus datos y ajustar el navegador que ya tienes.">
 <link rel="canonical" href="https://diezclaves.com/articulos/privacidad/navegar-con-privacidad.html">
-<meta name="theme-color" content="#131a2b">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://diezclaves.com/articulos/privacidad/navegar-con-privacidad.html">
 <meta property="og:site_name" content="Diez Claves">
@@ -22,6 +23,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/assets/manifest.webmanifest">
 <link rel="stylesheet" href="/assets/base.css">
+<script src="/assets/tema.js"></script>
 <script src="/assets/region.js" defer></script>
 <title>Diez claves para navegar con más privacidad · Diez Claves</title>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Diez claves para navegar con más privacidad", "description": "Cada visita a una página deja información sobre ti. Cómo reducir el rastreo, proteger tus datos y ajustar el navegador que ya tienes.", "inLanguage": "es", "datePublished": "2026-11-11", "dateModified": "2026-11-11", "author": {"@type": "Organization", "name": "Diez Claves", "url": "https://diezclaves.com/"}, "publisher": {"@type": "Organization", "name": "Diez Claves", "logo": {"@type": "ImageObject", "url": "https://diezclaves.com/assets/icon-512.png"}}, "mainEntityOfPage": "https://diezclaves.com/articulos/privacidad/navegar-con-privacidad.html", "image": "https://diezclaves.com/assets/og.png"}, {"@type": "ItemList", "name": "Diez claves para navegar con más privacidad", "numberOfItems": 10, "itemListOrder": "https://schema.org/ItemListOrderAscending", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Tu navegador cuenta más de lo que parece"}, {"@type": "ListItem", "position": 2, "name": "Elige un navegador que limite el rastreo"}, {"@type": "ListItem", "position": 3, "name": "No aceptes todas las cookies por costumbre"}, {"@type": "ListItem", "position": 4, "name": "Revisa quién puede acceder a tu cámara y tu ubicación"}, {"@type": "ListItem", "position": 5, "name": "Usa HTTPS siempre que puedas"}, {"@type": "ListItem", "position": 6, "name": "Revisa los ajustes de tu buscador"}, {"@type": "ListItem", "position": 7, "name": "Separa tus actividades"}, {"@type": "ListItem", "position": 8, "name": "Instala solo las extensiones necesarias"}, {"@type": "ListItem", "position": 9, "name": "No confundas privacidad con anonimato"}, {"@type": "ListItem", "position": 10, "name": "Empieza con cinco ajustes concretos"}]}]}</script>
@@ -30,7 +32,7 @@
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <div class="wrap">
   <header class="stack">
-    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="/generador.html">Generador</a><a href="/medidor.html">Medidor</a><a href="/articulos/" aria-current="page">Artículos</a></nav>
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg class="llave" viewBox="0 0 40 100" width="27" height="66" aria-hidden="true"><path d="M6 5.5C14 3.6 27 3.4 34.6 5.2c1.6 9.4 1.5 22.6.2 31.6C26 38.6 13.6 38.4 5.3 36.9 3.9 27 4.2 15 6 5.5z" style="fill:var(--hl-y);stroke:currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M13 31V17.5L27 31V17.5M12.5 12.4c2.3-2.6 4.6-2.6 7 0s4.7 2.6 7.5-.2" style="fill:none;stroke:var(--on-hl)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 38.5V95M20 70h9.5v6M20 83h7" style="fill:none;stroke:currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="marca">Diez Claves<span class="lema">Recetas con <b class="ene">ñ</b></span><span class="desc">Seguridad digital en español</span></span></a><a href="/articulos/" aria-current="page">Artículos</a><a href="/herramientas.html">Herramientas</a></nav>
   </header>
   <main id="contenido">
   <article>
@@ -39,18 +41,33 @@
       <h1>Diez claves para navegar <span>con más privacidad</span></h1>
       <p class="lede muted">Cada visita a una página deja información sobre ti. Cómo reducir el rastreo, proteger tus datos y ajustar el navegador que ya tienes.</p>
     </header>
+    <details class="indice-claves">
+      <summary>Ver las diez claves</summary>
+      <ol>
+        <li><a href="#clave-1">Tu navegador cuenta más de lo que parece</a></li>
+        <li><a href="#clave-2">Elige un navegador que limite el rastreo</a></li>
+        <li><a href="#clave-3">No aceptes todas las cookies por costumbre</a></li>
+        <li><a href="#clave-4">Revisa quién puede acceder a tu cámara y tu ubicación</a></li>
+        <li><a href="#clave-5">Usa HTTPS siempre que puedas</a></li>
+        <li><a href="#clave-6">Revisa los ajustes de tu buscador</a></li>
+        <li><a href="#clave-7">Separa tus actividades</a></li>
+        <li><a href="#clave-8">Instala solo las extensiones necesarias</a></li>
+        <li><a href="#clave-9">No confundas privacidad con anonimato</a></li>
+        <li><a href="#clave-10">Empieza con cinco ajustes concretos</a></li>
+      </ol>
+    </details>
     <p>Visitar una página parece sencillo: escribes una dirección, consultas lo que necesitas y cierras la pestaña. Pero en esa visita intervienen empresas de publicidad, servicios de análisis y otras tecnologías que recogen información sobre lo que haces. No necesitas desaparecer de Internet: basta con saber qué datos compartes, quién los recibe y qué puedes hacer para reducirlos.</p>
     <ol class="claves">
-      <li><h2>Tu navegador cuenta más de lo que parece</h2><p>Al cargar una página, el navegador envía lo necesario para conectarse y mostrarla: tu dirección IP (que permite una ubicación aproximada), el idioma, el tamaño de pantalla y ciertas capacidades técnicas. Combinando esos datos, algunas empresas intentan reconocer tu navegador en visitas posteriores: la «huella digital del navegador». No significa que cualquier página sepa tu nombre, pero sí que puede distinguirte de otras personas.</p></li>
-      <li><h2>Elige un navegador que limite el rastreo</h2><p>No todos protegen igual frente al seguimiento publicitario. Firefox incluye protección contra rastreadores y limita el seguimiento entre sitios; otros ofrecen herramientas parecidas con configuraciones y políticas distintas. Antes de cambiar, comprueba si el tuyo permite bloquear rastreadores conocidos, limitar cookies de terceros y controlar permisos. Y recuerda: un navegador que bloquea publicidad no es un navegador anónimo.</p></li>
-      <li><h2>No aceptes todas las cookies por costumbre</h2><p>Las cookies son pequeños datos que una página guarda en tu navegador. Unas mantienen la sesión o recuerdan el idioma; otras sirven para reconocer tus visitas y seguirte entre páginas. Cuando aparezca el aviso, mira si puedes rechazar las que no sean necesarias, y configura el navegador para limitar las de terceros y borrar los datos de los sitios cada cierto tiempo. Rechazarlas reduce algunas formas de seguimiento; no todas.</p></li>
-      <li><h2>Revisa quién puede acceder a tu cámara y tu ubicación</h2><p>Una página puede pedir cámara, micrófono, ubicación o notificaciones. Algunos permisos tienen sentido (una videollamada necesita la cámara); otros no hacen falta para lo que quieres. Abre los ajustes de privacidad del navegador, retira los permisos que ya no uses y, cuando sea posible, obliga a que las páginas te lo pidan cada vez. Conceder un permiso una vez no obliga a mantenerlo.</p></li>
-      <li><h2>Usa HTTPS siempre que puedas</h2><p>Con <code>https://</code>, la conexión entre tu navegador y la página va cifrada, y a otras personas que observen la red les cuesta leer o modificar lo que envías. Pero HTTPS no significa que la página sea honrada: un sitio fraudulento también puede tener candado. Activa en el navegador la opción de usar siempre conexiones seguras y mira la dirección antes de escribir contraseñas o datos personales.</p></li>
-      <li><h2>Revisa los ajustes de tu buscador</h2><p>Los buscadores recopilan tus consultas, sobre todo si usas una cuenta personal. Mira las opciones de historial de búsquedas, personalización de resultados y actividad asociada a la cuenta. Puedes usar buscadores con un tratamiento más limitado de los datos, leyendo antes sus políticas, y separar las búsquedas personales de las del trabajo o los estudios. Cambiar de buscador reduce parte del seguimiento, no todo lo que compartes al navegar.</p></li>
-      <li><h2>Separa tus actividades</h2><p>Usar la misma cuenta para todo facilita que acciones distintas queden asociadas a una sola identidad. Puedes crear perfiles del navegador para trabajo, estudios y uso personal; algunos permiten contenedores que aíslan las sesiones de ciertos sitios. Separar perfiles no cambia tu IP ni impide todas las técnicas de seguimiento, pero ordena las cuentas y es muy útil si compartes ordenador.</p></li>
-      <li><h2>Instala solo las extensiones necesarias</h2><p>Añaden funciones útiles (bloquear rastreadores, gestionar contraseñas), pero piden permiso para leer o modificar las páginas que visitas. Antes de instalar una, mira quién la desarrolla, qué permisos pide y si sigue recibiendo actualizaciones. No acumules extensiones que hacen lo mismo: cuantas más, más componentes con acceso a tu navegación. Para muchas personas basta con las protecciones integradas y, como mucho, una herramienta clara.</p></li>
-      <li><h2>No confundas privacidad con anonimato</h2><p>Navegar con menos rastreadores no impide que te identifiquen. Si entras en una red social con tu cuenta, la plataforma sabe quién eres; si escribes tu nombre en un formulario, lo estás dando. Una VPN oculta tu IP a las páginas, pero no evita que una sesión iniciada te identifique; Tor Browser busca más anonimato, con sus propios límites. La privacidad es controlar mejor tus datos; el anonimato, dificultar que una actividad se relacione contigo. Son objetivos distintos.</p></li>
-      <li><h2>Empieza con cinco ajustes concretos</h2><div class="scroll" tabindex="0" role="region" aria-label="Tabla, se puede desplazar"><table><thead><tr><th scope="col">Qué necesitas</th><th scope="col">Dónde empezar</th></tr></thead><tbody><tr><td>Reducir el seguimiento</td><td>Ajustes de privacidad del navegador</td></tr><tr><td>Limitar las cookies</td><td>Configuración de cookies y datos de sitios</td></tr><tr><td>Proteger la conexión</td><td>Activar conexiones HTTPS siempre</td></tr><tr><td>Controlar cámara y ubicación</td><td>Permisos de las páginas</td></tr><tr><td>Reducir riesgos</td><td>Revisar extensiones y actualizaciones</td></tr></tbody></table></div><p>Comprueba después que las páginas que usas siguen funcionando. Si alguna falla, mira qué protección interfiere antes de desactivarla del todo.</p></li>
+      <li id="clave-1"><h2>Tu navegador cuenta más de lo que parece</h2><p>Al cargar una página, el navegador envía lo necesario para conectarse y mostrarla: tu dirección IP (que permite una ubicación aproximada), el idioma, el tamaño de pantalla y ciertas capacidades técnicas. Combinando esos datos, algunas empresas intentan reconocer tu navegador en visitas posteriores: la «huella digital del navegador». No significa que cualquier página sepa tu nombre, pero sí que puede distinguirte de otras personas.</p></li>
+      <li id="clave-2"><h2>Elige un navegador que limite el rastreo</h2><p>No todos protegen igual frente al seguimiento publicitario. Firefox incluye protección contra rastreadores y limita el seguimiento entre sitios; otros ofrecen herramientas parecidas con configuraciones y políticas distintas. Antes de cambiar, comprueba si el tuyo permite bloquear rastreadores conocidos, limitar cookies de terceros y controlar permisos. Y recuerda: un navegador que bloquea publicidad no es un navegador anónimo.</p></li>
+      <li id="clave-3"><h2>No aceptes todas las cookies por costumbre</h2><p>Las cookies son pequeños datos que una página guarda en tu navegador. Unas mantienen la sesión o recuerdan el idioma; otras sirven para reconocer tus visitas y seguirte entre páginas. Cuando aparezca el aviso, mira si puedes rechazar las que no sean necesarias, y configura el navegador para limitar las de terceros y borrar los datos de los sitios cada cierto tiempo. Rechazarlas reduce algunas formas de seguimiento; no todas.</p></li>
+      <li id="clave-4"><h2>Revisa quién puede acceder a tu cámara y tu ubicación</h2><p>Una página puede pedir cámara, micrófono, ubicación o notificaciones. Algunos permisos tienen sentido (una videollamada necesita la cámara); otros no hacen falta para lo que quieres. Abre los ajustes de privacidad del navegador, retira los permisos que ya no uses y, cuando sea posible, obliga a que las páginas te lo pidan cada vez. Conceder un permiso una vez no obliga a mantenerlo.</p></li>
+      <li id="clave-5"><h2>Usa HTTPS siempre que puedas</h2><p>Con <code>https://</code>, la conexión entre tu navegador y la página va cifrada, y a otras personas que observen la red les cuesta leer o modificar lo que envías. Pero HTTPS no significa que la página sea honrada: un sitio fraudulento también puede tener candado. Activa en el navegador la opción de usar siempre conexiones seguras y mira la dirección antes de escribir contraseñas o datos personales.</p></li>
+      <li id="clave-6"><h2>Revisa los ajustes de tu buscador</h2><p>Los buscadores recopilan tus consultas, sobre todo si usas una cuenta personal. Mira las opciones de historial de búsquedas, personalización de resultados y actividad asociada a la cuenta. Puedes usar buscadores con un tratamiento más limitado de los datos, leyendo antes sus políticas, y separar las búsquedas personales de las del trabajo o los estudios. Cambiar de buscador reduce parte del seguimiento, no todo lo que compartes al navegar.</p></li>
+      <li id="clave-7"><h2>Separa tus actividades</h2><p>Usar la misma cuenta para todo facilita que acciones distintas queden asociadas a una sola identidad. Puedes crear perfiles del navegador para trabajo, estudios y uso personal; algunos permiten contenedores que aíslan las sesiones de ciertos sitios. Separar perfiles no cambia tu IP ni impide todas las técnicas de seguimiento, pero ordena las cuentas y es muy útil si compartes ordenador.</p></li>
+      <li id="clave-8"><h2>Instala solo las extensiones necesarias</h2><p>Añaden funciones útiles (bloquear rastreadores, gestionar contraseñas), pero piden permiso para leer o modificar las páginas que visitas. Antes de instalar una, mira quién la desarrolla, qué permisos pide y si sigue recibiendo actualizaciones. No acumules extensiones que hacen lo mismo: cuantas más, más componentes con acceso a tu navegación. Para muchas personas basta con las protecciones integradas y, como mucho, una herramienta clara.</p></li>
+      <li id="clave-9"><h2>No confundas privacidad con anonimato</h2><p>Navegar con menos rastreadores no impide que te identifiquen. Si entras en una red social con tu cuenta, la plataforma sabe quién eres; si escribes tu nombre en un formulario, lo estás dando. Una VPN oculta tu IP a las páginas, pero no evita que una sesión iniciada te identifique; Tor Browser busca más anonimato, con sus propios límites. La privacidad es controlar mejor tus datos; el anonimato, dificultar que una actividad se relacione contigo. Son objetivos distintos.</p></li>
+      <li id="clave-10"><h2>Empieza con cinco ajustes concretos</h2><div class="scroll" tabindex="0" role="region" aria-label="Tabla, se puede desplazar"><table><thead><tr><th scope="col">Qué necesitas</th><th scope="col">Dónde empezar</th></tr></thead><tbody><tr><td>Reducir el seguimiento</td><td>Ajustes de privacidad del navegador</td></tr><tr><td>Limitar las cookies</td><td>Configuración de cookies y datos de sitios</td></tr><tr><td>Proteger la conexión</td><td>Activar conexiones HTTPS siempre</td></tr><tr><td>Controlar cámara y ubicación</td><td>Permisos de las páginas</td></tr><tr><td>Reducir riesgos</td><td>Revisar extensiones y actualizaciones</td></tr></tbody></table></div><p>Comprueba después que las páginas que usas siguen funcionando. Si alguna falla, mira qué protección interfiere antes de desactivarla del todo.</p></li>
     </ol>
     <div class="cierre stack">
       <h2>Por dónde empezar</h2>
@@ -59,18 +76,18 @@
     </div>
     <nav class="rel" aria-label="Relacionado">
       <span class="tag">Sigue leyendo</span>
-      <a href="/articulos/privacidad/modo-incognito.html">Diez claves sobre el modo incógnito</a><a href="/articulos/conexion/que-es-el-dns.html">Diez claves para entender qué es el DNS</a><a href="/articulos/conexion/vpn.html">Diez claves para entender y usar una VPN</a>
+      <a href="/articulos/privacidad/navegar-privacidad-movil.html">Navegar con privacidad en el móvil</a><a href="/articulos/privacidad/proteger-tu-identidad.html">Proteger tu identidad al navegar</a><a href="/articulos/privacidad/huella-digital-navegador.html">Tu huella digital en Internet</a><a href="/articulos/dispositivos/limitar-rastreo-publicitario-movil.html">Limitar el rastreo publicitario</a>
     </nav>
     <nav class="sig" aria-label="Siguiente en esta sección"><span class="tag">Siguiente en Privacidad al navegar · 1 de 7</span><a class="s" href="/articulos/privacidad/elegir-navegador-privado.html">Diez claves para elegir un navegador privado</a><p>No todos los navegadores protegen igual. Cómo comparar sus funciones, evitar el rastreo y elegir el que de verdad necesitas. <a href="/articulos/privacidad/">Ver las 7 guías</a>.</p></nav>
   </article>
   </main>
   <footer>
     <span>Diez Claves · 2026</span>
-    <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
+    
     <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
     <a href="/aviso-legal.html">Aviso legal</a>
     <a href="/privacidad.html">Privacidad</a>
-  </footer>
+  <a class="sello" href="https://gofiodesign.eu" rel="noopener"><img src="/assets/gofio-monograma-ambar.svg" width="40" height="40" alt="" loading="lazy"><span>Un proyecto de <b>Gofio Design</b></span></a></footer>
 </div>
 </body>
 </html>

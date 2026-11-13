@@ -1,0 +1,1412 @@
+{
+  "_leeme": [
+    "Productos de «Para ponerlo en práctica» y guías de «Sigue leyendo», por artículo (clave = slug del archivo).",
+    "productos: hasta 3. Campos: nombre, texto, tipo (gratis | pago | incluido), y opcionalmente busca (búsqueda en la tienda de la región) o url (enlace directo), y afiliado (true si el enlace lleva comisión).",
+    "Regla de la casa: si hay algo de pago, al menos una alternativa gratuita o ya incluida junto a ello.",
+    "relacionados: opcional, lista de slugs para fijar «Sigue leyendo» a mano; si falta, se calcula por parecido.",
+    "Después de editar: node scripts/articulos.js"
+  ],
+  "abuso-sexual-infantil-red": {
+    "intro": "La protección de un menor no debe convertirse en un reclamo comercial. No hace falta comprar un producto para pedir ayuda.",
+    "productos": [
+      {
+        "nombre": "Controles familiares incluidos",
+        "texto": "Pueden apoyar acuerdos de uso con acompañamiento; sus opciones gratuitas no sustituyen la escucha, la protección ni la intervención especializada.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "abusos-en-internet": {
+    "intro": "Pedir ayuda no exige comprar un producto ni contratar un servicio de retirada.",
+    "productos": [
+      {
+        "nombre": "Almacenamiento privado protegido",
+        "texto": "Puede servir para conservar contexto permitido; empieza por medios que ya tengas y no guardes material de abuso sexual infantil.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "ciberacoso-escolar": {
+    "intro": "Pedir apoyo al centro y utilizar controles incluidos no requiere comprar un producto.",
+    "productos": [
+      {
+        "nombre": "Controles familiares incluidos",
+        "texto": "Pueden apoyar acuerdos de privacidad y uso; sus opciones gratuitas no sustituyen la escucha ni una respuesta educativa al acoso.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "incitacion-odio-internet": {
+    "intro": "No necesitas comprar una herramienta para dejar de difundir o pedir apoyo.",
+    "productos": [
+      {
+        "nombre": "Controles de privacidad incluidos",
+        "texto": "Pueden limitar exposición y mensajes; utiliza sus opciones gratuitas sin tratarlas como sustituto de ayuda profesional o protección urgente.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "racismo-en-internet": {
+    "intro": "La orientación y los controles del servicio permiten empezar sin contratar una herramienta.",
+    "productos": [
+      {
+        "nombre": "Almacenamiento privado protegido",
+        "texto": "Puede conservar referencias permitidas para una gestión; utiliza medios disponibles y minimiza los datos. No hace falta comprar un detector de racismo.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "botnets-equipos-controlados": {
+    "intro": "Revisa primero actualizaciones y asistencia del operador o fabricante.",
+    "productos": [
+      {
+        "nombre": "Router con soporte vigente",
+        "texto": "Solo si el actual no puede mantenerse y has comprobado requisitos; cambiarlo sin corregir la configuración no resuelve todos los riesgos.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "capturadores-teclado": {
+    "intro": "Revisa las opciones incluidas y gratuitas del sistema y de tus cuentas.",
+    "productos": [
+      {
+        "nombre": "Gestor de contraseñas",
+        "texto": "Ayuda a mantener credenciales distintas; hay alternativas gratuitas y no sanea el dispositivo.",
+        "tipo": "",
+        "afiliado": false
+      },
+      {
+        "nombre": "Segundo factor",
+        "texto": "Utiliza las opciones gratuitas admitidas por el servicio antes de comprar una llave física.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "gusanos-informaticos": {
+    "intro": "Empieza por actualizaciones y protección incluidas en el sistema.",
+    "productos": [
+      {
+        "nombre": "Copia separada de archivos",
+        "texto": "Útil para recuperación; usa almacenamiento disponible protegido y evita conectarlo por rutina a un equipo sospechoso.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "honeypots": {
+    "intro": "No necesitas comprar ni desplegar un señuelo para proteger tus dispositivos.",
+    "productos": [
+      {
+        "nombre": "Entorno de formación supervisado",
+        "texto": "Solo si quieres aprender su operación; empieza por informes y documentación públicos gratuitos.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "mineria-no-autorizada": {
+    "intro": "Las herramientas de diagnóstico incluidas permiten empezar sin comprar nada.",
+    "productos": [
+      {
+        "nombre": "Asistencia técnica identificable",
+        "texto": "Útil si no puedes explicar una detección o consumo persistente; consulta antes la ayuda gratuita del fabricante y evita servicios ofrecidos por avisos inesperados.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "ransomware-secuestro-archivos": {
+    "intro": "Las instrucciones y herramientas de No More Ransom pueden consultarse sin comprar un descifrador.",
+    "productos": [
+      {
+        "nombre": "Copia separada con recuperación documentada",
+        "texto": "Útil antes de un incidente; aprovecha almacenamiento disponible y comprueba la restauración. No garantiza resolver una filtración.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "troyanos-falsas-aplicaciones": {
+    "intro": "Comprueba primero la protección incluida en tu sistema, sin descargar un limpiador desconocido.",
+    "productos": [
+      {
+        "nombre": "Protección antimalware mantenida",
+        "texto": "Útil si tu sistema necesita cobertura adicional documentada; revisa antes la opción integrada y gratuita.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "virus-programas-maliciosos": {
+    "intro": "Revisa primero la protección incluida y sus actualizaciones.",
+    "productos": [
+      {
+        "nombre": "Copia adicional de datos",
+        "texto": "Ayuda a recuperar archivos; puede hacerse con almacenamiento que ya tengas, separado y protegido. No sustituye la revisión del equipo.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "cambiar-dns": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Router con soporte de DNS cifrado",
+        "texto": "Útil para gestionar toda la red. Antes de comprar, mira si el que ya tienes lo admite: con el router del operador suele bastar para probar en un dispositivo.",
+        "tipo": "",
+        "busca": "router wifi 6 dns over https",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "dns-bloqueo-rastreadores": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Raspberry Pi para montar Pi-hole",
+        "texto": "Solo si quieres filtros propios para toda la casa y te apetece administrarlos. Pi-hole es gratuito y también corre en un ordenador viejo o en un NAS que ya tengas; para probar un DNS público con filtros no necesitas comprar nada.",
+        "tipo": "",
+        "busca": "raspberry pi kit",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "dns-privado-movil": {
+    "intro": "El ajuste incluido en Android permite empezar sin comprar nada.",
+    "productos": [
+      {
+        "nombre": "Servicio de DNS con política documentada",
+        "texto": "Sirve para elegir resolución o filtrado; compara primero las modalidades gratuitas y sus límites.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "elegir-vpn-privada": {
+    "intro": "Comparar las condiciones y activar las protecciones del navegador no requiere comprar nada.",
+    "productos": [
+      {
+        "nombre": "Servicio VPN con documentación pública y condiciones comprensibles",
+        "texto": "Tiene sentido si resuelve la necesidad que has definido; cuando el objetivo es proteger el contenido web durante el trayecto, la alternativa gratuita es HTTPS en un navegador actualizado.",
+        "tipo": "",
+        "afiliado": false
+      },
+      {
+        "nombre": "Gestor de contraseñas",
+        "texto": "Puede ayudarte a guardar una clave distinta para la cuenta del servicio; revisa primero el que ya incluye tu dispositivo o una opción gratuita que cubra tus necesidades.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "intermediario-malicioso-mitm": {
+    "intro": "Mantener navegador y sistema y atender sus avisos permite empezar sin comprar nada.",
+    "productos": [
+      {
+        "nombre": "Servicio de VPN documentado",
+        "texto": "Solo si su alcance responde a una necesidad concreta; compara opciones gratuitas y recuerda que no verifica páginas ni repara el dispositivo.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "que-es-el-dns": {
+    "intro": "",
+    "productos": [],
+    "relacionados": []
+  },
+  "redes-p2p": {
+    "intro": "La descarga directa oficial puede evitar instalar otro programa.",
+    "productos": [
+      {
+        "nombre": "Cliente P2P mantenido",
+        "texto": "Tiene sentido para intercambios que hayas elegido; existen opciones gratuitas y debes revisar su documentación, origen y actualizaciones.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "sitios-onion": {
+    "intro": "",
+    "productos": [],
+    "relacionados": []
+  },
+  "tails-usb": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Memoria USB de 16 GB o más",
+        "texto": "Es lo único que hace falta comprar, si no tienes una suelta. Comprueba los requisitos oficiales (capacidad y tipo) antes de elegirla; una segunda sirve para copias o para separar actividades, pero no es imprescindible.",
+        "tipo": "",
+        "busca": "memoria usb 3.0 16gb",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "tor-android": {
+    "intro": "Tor Browser es gratuito y no exige contratar una VPN para utilizarlo.",
+    "productos": [
+      {
+        "nombre": "Dispositivo Android con actualizaciones",
+        "texto": "Si tu móvil sigue mantenido no necesitas comprar otro solo para instalar el navegador.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "tor-browser": {
+    "intro": "",
+    "productos": [],
+    "relacionados": []
+  },
+  "vpn-de-viaje": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Router 4G/5G de bolsillo",
+        "texto": "Con una SIM local tienes tu propia red en el destino, sin depender del wifi del hotel.",
+        "tipo": "",
+        "busca": "router 4g portatil",
+        "afiliado": false
+      },
+      {
+        "nombre": "Batería externa",
+        "texto": "La VPN gasta algo más de batería, y el móvil es tu llave para el banco y el doble factor.",
+        "tipo": "",
+        "busca": "bateria externa usb c 20000",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "vpn-en-casa": {
+    "intro": "No necesitas comprar nada para revisar las claves del router, sus actualizaciones o los ajustes del navegador.",
+    "productos": [
+      {
+        "nombre": "Router con actualizaciones y funciones de acceso remoto documentadas",
+        "texto": "Solo tiene sentido sustituir el actual si carece de soporte o de una función que realmente necesitas; comprueba primero el equipo que ya tienes y las opciones de tu operador.",
+        "tipo": "",
+        "afiliado": false
+      },
+      {
+        "nombre": "Servicio VPN comercial",
+        "texto": "Puede servir si has decidido salir por otra red; para proteger el contenido de las páginas, la alternativa gratuita es usar HTTPS y mantener el navegador actualizado.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "vpn-movil": {
+    "intro": "La conexión que facilite tu organización puede bastar para acceder a su red.",
+    "productos": [
+      {
+        "nombre": "Servicio de VPN con ayuda para tu sistema",
+        "texto": "Tiene sentido si necesitas su punto de salida; compara condiciones y opciones gratuitas sin asumir que siempre necesitas contratarlo.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "vpn-teletrabajo": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Llave de seguridad FIDO2",
+        "texto": "El doble factor resistente al phishing. Si tu empresa las admite, es la mejor opción para la VPN y el correo del trabajo.",
+        "tipo": "",
+        "busca": "llave seguridad fido2 usb c nfc",
+        "afiliado": false
+      },
+      {
+        "nombre": "Filtro de privacidad para portátil",
+        "texto": "Para trabajar con documentos de la empresa fuera de casa.",
+        "tipo": "",
+        "busca": "filtro privacidad pantalla portatil",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "vpn-tor-tails": {
+    "intro": "",
+    "productos": [],
+    "relacionados": []
+  },
+  "vpn-wifi-publico": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Filtro de privacidad para portátil",
+        "texto": "En una cafetería, el riesgo más común no es la red: es quien lee tu pantalla desde la mesa de al lado.",
+        "tipo": "",
+        "busca": "filtro privacidad pantalla portatil",
+        "afiliado": false
+      },
+      {
+        "nombre": "Router 4G/5G de bolsillo",
+        "texto": "Tu propia red con una tarjeta de datos, para quien viaja mucho. Gratis y sin comprar nada: compartir datos desde el móvil.",
+        "tipo": "",
+        "busca": "router 4g portatil",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "vpn": {
+    "intro": "",
+    "productos": [],
+    "relacionados": []
+  },
+  "cuanto-tarda-descifrar-contrasena": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Llave de seguridad FIDO2",
+        "texto": "El doble factor que hace irrelevante el tiempo de descifrado: sin la llave, la contraseña no sirve.",
+        "tipo": "",
+        "busca": "llave seguridad fido2 usb c nfc",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "de-la-contrasena-a-la-passkey": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Llave de seguridad FIDO2 (USB-C y NFC)",
+        "texto": "Vale para el ordenador y para el móvil. Es el doble factor que resiste a las webs falsas. Compra dos.",
+        "tipo": "",
+        "busca": "llave seguridad fido2 usb c nfc",
+        "afiliado": false
+      },
+      {
+        "nombre": "Lector de DNI electrónico",
+        "texto": "Si vas a usar el DNIe para la administración desde el ordenador. Los móviles con NFC no lo necesitan.",
+        "tipo": "",
+        "busca": "lector dni electronico usb",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "elegir-gestor-de-contrasenas": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Llave de seguridad FIDO2",
+        "texto": "El mejor doble factor para el gestor. Dos: una en uso y otra guardada.",
+        "tipo": "",
+        "busca": "llave seguridad fido2 usb c nfc",
+        "afiliado": false
+      },
+      {
+        "nombre": "Libreta en papel para la clave maestra",
+        "texto": "La clave maestra y los códigos de recuperación, en casa, en un cajón. Nunca en una nota del móvil.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      },
+      {
+        "nombre": "Memoria USB cifrada",
+        "texto": "Para la copia de seguridad del archivo de KeePassXC o de la exportación del gestor, fuera del ordenador.",
+        "tipo": "",
+        "busca": "memoria usb cifrada",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "ene-y-tildes-en-contrasenas": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Teclado en español para portátil",
+        "texto": "Si trabajas con un portátil comprado fuera y las teclas no coinciden, un teclado externo con ñ evita errores al escribir contraseñas.",
+        "tipo": "",
+        "busca": "teclado español portatil usb",
+        "afiliado": false
+      },
+      {
+        "nombre": "Pegatinas de teclado en español",
+        "texto": "La solución barata para el mismo problema: cambian la serigrafía, no el teclado.",
+        "tipo": "",
+        "busca": "pegatinas teclado español",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "identificadores-y-contrasenas": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Libreta de contraseñas en papel",
+        "texto": "Para la frase de recuperación y los códigos de emergencia, no para el día a día. En un cajón de casa es más segura que en una nota del móvil.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      },
+      {
+        "nombre": "Llave de seguridad FIDO2",
+        "texto": "El doble factor que no se puede desviar con un duplicado de SIM. Compra dos y guarda una de repuesto.",
+        "tipo": "",
+        "busca": "llave seguridad fido2 usb nfc",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "claves-de-dispositivos": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Filtro de privacidad para la pantalla",
+        "texto": "Para trabajar en el tren o en una cafetería sin que lean lo que escribes. Elige el tamaño exacto de tu pantalla.",
+        "tipo": "",
+        "busca": "filtro privacidad pantalla portatil",
+        "afiliado": false
+      },
+      {
+        "nombre": "Router con WPA3",
+        "texto": "Solo si el tuyo es muy antiguo y no admite WPA2 con contraseña propia; la mayoría de los de los operadores sirven.",
+        "tipo": "",
+        "busca": "router wifi 6 wpa3",
+        "afiliado": false
+      },
+      {
+        "nombre": "Cable de seguridad para portátil",
+        "texto": "Para despachos compartidos y bibliotecas. No sustituye al cifrado del disco: evita el robo, no la lectura.",
+        "tipo": "",
+        "busca": "candado cable seguridad portatil",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "comparar-sistemas-android-alternativos": {
+    "intro": "Puedes evaluar documentación y ajustar tu sistema actual sin comprar nada.",
+    "productos": [
+      {
+        "nombre": "Almacenamiento de respaldo",
+        "texto": "Necesario si vas a preparar una migración; utiliza primero espacio protegido que ya tengas. No hace falta contratar un servicio para comparar proyectos.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "copias-seguridad-privadas": {
+    "intro": "Empieza por las opciones incluidas en tu sistema y comprueba su cobertura.",
+    "productos": [
+      {
+        "nombre": "Unidad externa",
+        "texto": "Permite conservar una copia separada; utiliza primero almacenamiento que ya tengas y protege sus datos.",
+        "tipo": "",
+        "afiliado": false
+      },
+      {
+        "nombre": "Gestor de contraseñas",
+        "texto": "Ayuda a guardar el secreto del respaldo; hay opciones gratuitas, y debes prever su recuperación sin el móvil.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "elegir-aplicaciones-codigo-abierto": {
+    "intro": "El código abierto no obliga a pagar ni garantiza que todos los servicios asociados sean gratuitos.",
+    "productos": [
+      {
+        "nombre": "Aplicación abierta con exportación documentada",
+        "texto": "Útil para conservar una salida de tus datos; prueba su modalidad gratuita y comprueba qué funciones quedarían fuera.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "entender-degoogling": {
+    "intro": "No necesitas comprar nada para aclarar el objetivo y revisar dependencias.",
+    "productos": [
+      {
+        "nombre": "Aplicación con formatos exportables",
+        "texto": "Puede darte una salida práctica; compara las opciones gratuitas y su mantenimiento antes de cambiar.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "entender-grapheneos": {
+    "intro": "No necesitas comprar un móvil para leer la documentación y evaluar si el cambio te conviene.",
+    "productos": [
+      {
+        "nombre": "Dispositivo compatible con soporte vigente",
+        "texto": "Solo procede si decides instalar y tu equipo no cumple los requisitos; antes valora seguir usando tu sistema actualizado.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "filtros-de-pantalla": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Filtro de privacidad para portátil",
+        "texto": "Mide el ancho y el alto de la zona visible y la relación de aspecto antes de elegir; la diagonal sola no basta.",
+        "tipo": "",
+        "busca": "filtro privacidad pantalla portatil",
+        "afiliado": false
+      },
+      {
+        "nombre": "Protector de pantalla con privacidad para móvil",
+        "texto": "Busca el de tu modelo exacto y comprueba que no tape sensores ni el lector de huellas.",
+        "tipo": "",
+        "busca": "protector pantalla privacidad movil",
+        "afiliado": false
+      },
+      {
+        "nombre": "Filtro mate antirreflejos para monitor",
+        "texto": "Solo si recolocar la pantalla no basta. Si trabajas con color, pruébalo antes.",
+        "tipo": "",
+        "busca": "filtro antirreflejos monitor mate",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "instalar-aplicaciones-seguridad": {
+    "intro": "Comprobar el origen y leer los avisos no cuesta dinero; una aplicación de pago tampoco queda verificada solo por su precio.",
+    "productos": [
+      {
+        "nombre": "Aplicación con soporte y tratamiento de datos documentados",
+        "texto": "Tiene sentido si resuelve tu tarea con accesos proporcionados; prueba antes las funciones incluidas del sistema o una alternativa gratuita que puedas evaluar con los mismos criterios.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "instalar-grapheneos": {
+    "intro": "La documentación y el instalador oficial permiten preparar el proceso sin contratar asistencia.",
+    "productos": [
+      {
+        "nombre": "Cable de datos adecuado",
+        "texto": "Útil si el actual falla o solo carga; prueba primero un cable compatible que ya tengas.",
+        "tipo": "",
+        "afiliado": false
+      },
+      {
+        "nombre": "Almacenamiento de respaldo",
+        "texto": "Guarda copias antes del borrado; aprovecha una unidad protegida disponible.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "limitar-rastreo-publicitario-movil": {
+    "intro": "Empieza por los ajustes incluidos del sistema, del navegador y de las cuentas; no cuestan dinero.",
+    "productos": [
+      {
+        "nombre": "Bloqueador de contenido compatible con tu navegador",
+        "texto": "Puede reducir recursos publicitarios y rastreadores conocidos en las páginas; prueba primero las protecciones incluidas y revisa sus límites, permisos y excepciones antes de añadirlo.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "movil-compatible-grapheneos": {
+    "intro": "Reutiliza un equipo compatible y mantenido si ya lo tienes.",
+    "productos": [
+      {
+        "nombre": "Móvil con soporte vigente y desbloqueo permitido",
+        "texto": "Solo tiene sentido comprar si tu equipo no sirve y has confirmado los requisitos; no hay modelos ni precios recomendados aquí.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "movil-segundo-plano": {
+    "intro": "Las herramientas incluidas de batería, datos y privacidad bastan para empezar; no necesitas un limpiador de procesos.",
+    "productos": [
+      {
+        "nombre": "Aplicación de diagnóstico con documentación clara",
+        "texto": "Solo tiene sentido para una pregunta que el sistema no responda; comprueba primero sus herramientas gratuitas y qué acceso pediría la nueva aplicación antes de instalarla.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "permisos-aplicaciones-movil": {
+    "intro": "Puedes hacer esta revisión con los ajustes incluidos, sin instalar un limpiador ni una aplicación de permisos.",
+    "productos": [
+      {
+        "nombre": "Aplicación con acceso limitado a archivos o fotografías",
+        "texto": "Si necesitas una herramienta nueva, comprueba que permita trabajar con los elementos elegidos; antes de pagar, prueba las funciones incluidas en el sistema o una alternativa gratuita documentada.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "proteger-fotos-archivos-movil": {
+    "intro": "Puedes empezar con los controles y las opciones de copia que ya tengas; comprueba su alcance antes de pagar por más espacio.",
+    "productos": [
+      {
+        "nombre": "Unidad externa compatible",
+        "texto": "Puede servir para conservar una copia adicional fuera del móvil; si ya tienes un ordenador con espacio, valora primero una copia allí y protege el acceso a ese equipo.",
+        "tipo": "",
+        "afiliado": false
+      },
+      {
+        "nombre": "Servicio de almacenamiento con recuperación documentada",
+        "texto": "Tiene sentido si necesitas acceder desde varios dispositivos; prueba primero el espacio disponible y una recuperación pequeña, sin asumir que sincronizar evita cualquier pérdida.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "proteger-mensajes-llamadas": {
+    "intro": "Revisar el chat, sus sesiones y las notificaciones no requiere pagar por un servicio nuevo.",
+    "productos": [
+      {
+        "nombre": "Aplicación de mensajería con cifrado documentado para mensajes y llamadas",
+        "texto": "Tiene sentido si cubre la conversación que necesitáis; existen opciones gratuitas, así que comprobad condiciones y facilidad de uso antes de contratar otra herramienta.",
+        "tipo": "",
+        "afiliado": false
+      },
+      {
+        "nombre": "Gestor de contraseñas con espacio para información de recuperación",
+        "texto": "Puede ayudarte a guardar datos de acceso cuando el servicio lo indique; revisa primero la opción que ya utilizas y sus funciones gratuitas.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "proteger-tu-movil": {
+    "intro": "Los ajustes de bloqueo, notificaciones y permisos ya están en tu móvil; empieza por ellos.",
+    "productos": [
+      {
+        "nombre": "Gestor de contraseñas",
+        "texto": "Ayuda a conservar una clave distinta para la cuenta principal; comprueba primero el gestor incluido en tu sistema o una opción gratuita que cubra tus necesidades.",
+        "tipo": "",
+        "afiliado": false
+      },
+      {
+        "nombre": "Soporte de almacenamiento externo compatible",
+        "texto": "Puede servir para una copia adicional de archivos; antes de comprarlo, valora una copia en el ordenador que ya tienes y comprueba cómo protegerla.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "proteger-ubicacion-movil": {
+    "intro": "Los permisos y las opciones de compartir ubicación se pueden revisar sin comprar nada.",
+    "productos": [
+      {
+        "nombre": "Editor de imágenes con gestión de metadatos",
+        "texto": "Puede servir para preparar archivos antes de enviarlos; prueba primero las opciones de tu galería y comprueba el resultado, porque recortar o cambiar la ubicación visible no garantiza eliminar todos los datos del archivo.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "rastreadores-aplicaciones-movil": {
+    "intro": "Leer las políticas y consultar informes públicos no requiere comprar una herramienta de seguimiento.",
+    "productos": [
+      {
+        "nombre": "Herramienta de análisis con método y límites publicados",
+        "texto": "Puede ayudar a responder una pregunta concreta sobre una versión; empieza por los informes públicos gratuitos y los controles del sistema antes de instalar algo que solicite observar toda tu actividad.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "rastros-en-tu-ordenador": {
+    "intro": "",
+    "productos": [],
+    "relacionados": []
+  },
+  "reducir-dependencia-google": {
+    "intro": "No necesitas comprar un móvil para cambiar de buscador o probar otra aplicación.",
+    "productos": [
+      {
+        "nombre": "Almacenamiento de respaldo",
+        "texto": "Útil para conservar exportaciones; empieza por espacio local protegido que ya tengas.",
+        "tipo": "",
+        "afiliado": false
+      },
+      {
+        "nombre": "Servicio alternativo con exportación",
+        "texto": "Compara primero su modalidad gratuita y sus límites de recuperación.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "si-te-roban-el-movil": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Funda con cordón para el móvil",
+        "texto": "Contra el tirón en la calle y el olvido en el bar. Es la medida más barata contra el robo más habitual.",
+        "tipo": "",
+        "busca": "funda movil con cordon",
+        "afiliado": false
+      },
+      {
+        "nombre": "Localizador Bluetooth (AirTag o similar)",
+        "texto": "Para la cartera o la mochila; el teléfono ya se localiza solo si tienes activado «Buscar mi dispositivo».",
+        "tipo": "",
+        "busca": "localizador bluetooth airtag",
+        "afiliado": false
+      },
+      {
+        "nombre": "Libreta en papel para el IMEI y los códigos de recuperación",
+        "texto": "Con el móvil robado, lo que necesitas está precisamente en el móvil. Tenlo en casa, en papel.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "vivir-sin-servicios-google": {
+    "intro": "Prueba primero las funciones gratuitas de tus herramientas actuales.",
+    "productos": [
+      {
+        "nombre": "Servicio de correo con recuperación documentada",
+        "texto": "Útil si necesitas una cuenta principal independiente; revisa las modalidades gratuitas y la exportación.",
+        "tipo": "",
+        "afiliado": false
+      },
+      {
+        "nombre": "Unidad de respaldo",
+        "texto": "Guarda una copia protegida; aprovecha almacenamiento que ya tengas.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "ingenieria-social": {
+    "intro": "No necesitas una aplicación para detener una petición y comprobarla.",
+    "productos": [
+      {
+        "nombre": "Gestor de contraseñas",
+        "texto": "Puede apoyar el uso de credenciales distintas; hay opciones gratuitas, pero no verifica personas ni sustituye la comprobación independiente.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "quishing-codigos-qr": {
+    "intro": "La cámara o lector incluido suele permitir empezar; no necesitas comprar un lector para verificar la identidad del responsable.",
+    "productos": [
+      {
+        "nombre": "Lector con vista previa",
+        "texto": "Solo si tu equipo carece de ella y necesitas esa función; busca opciones gratuitas mantenidas y revisa permisos.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "reconocer-phishing": {
+    "intro": "Los controles gratuitos de la cuenta y una comprobación independiente son el primer paso.",
+    "productos": [
+      {
+        "nombre": "Gestor de contraseñas",
+        "texto": "Ayuda a mantener claves distintas; hay opciones gratuitas y no verifica cualquier petición.",
+        "tipo": "",
+        "afiliado": false
+      },
+      {
+        "nombre": "Segundo factor",
+        "texto": "Usa primero las opciones incluidas del servicio, con su recuperación preparada.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "smishing-mensajes-fraudulentos": {
+    "intro": "Utiliza primero bloqueo, reporte y protección incluidos en tu sistema.",
+    "productos": [
+      {
+        "nombre": "Filtro de mensajes",
+        "texto": "Puede reducir contactos no deseados; consulta las opciones gratuitas antes de contratar otro y revisa qué datos procesa.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "suplantacion-identidad": {
+    "intro": "Empieza por recuperación, reportes y alertas incluidos sin coste del servicio.",
+    "productos": [
+      {
+        "nombre": "Gestor de contraseñas",
+        "texto": "Ayuda a proteger cuentas con claves distintas; hay opciones gratuitas. No necesitas contratar un servicio de identidad para usar las vías oficiales de reclamación.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "vishing-llamadas-fraudulentas": {
+    "intro": "No necesitas comprar una aplicación para colgar y verificar una llamada.",
+    "productos": [
+      {
+        "nombre": "Filtro de llamadas",
+        "texto": "Puede reducir contactos molestos; prueba primero las funciones gratuitas del móvil y del operador, sin tratar su etiqueta como prueba de identidad.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "cookies-y-rastreadores": {
+    "intro": "",
+    "productos": [],
+    "relacionados": []
+  },
+  "elegir-navegador-privado": {
+    "intro": "",
+    "productos": [],
+    "relacionados": []
+  },
+  "huella-digital-navegador": {
+    "intro": "",
+    "productos": [],
+    "relacionados": []
+  },
+  "modo-incognito": {
+    "intro": "",
+    "productos": [],
+    "relacionados": []
+  },
+  "navegar-con-privacidad": {
+    "intro": "",
+    "productos": [],
+    "relacionados": []
+  },
+  "navegar-privacidad-movil": {
+    "intro": "Las protecciones incluidas en el navegador son el primer paso y no requieren una suscripción.",
+    "productos": [
+      {
+        "nombre": "Navegador con actualizaciones y controles de privacidad documentados",
+        "texto": "Permite revisar permisos y seguimiento con un alcance conocido; compara primero opciones gratuitas antes de pagar por funciones adicionales.",
+        "tipo": "",
+        "afiliado": false
+      },
+      {
+        "nombre": "Bloqueador de contenido compatible",
+        "texto": "Puede ser útil para una necesidad que el navegador no cubra por sí solo; revisa antes la protección incluida y no instales un complemento de ordenador suponiendo que funcionará igual en el móvil.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "proteger-tu-identidad": {
+    "intro": "",
+    "productos": [],
+    "relacionados": []
+  },
+  "algoritmos-redes-sociales": {
+    "intro": "Los controles incluidos y la lectura directa de fuentes permiten empezar gratis.",
+    "productos": [
+      {
+        "nombre": "Lector de fuentes o marcadores",
+        "texto": "Útil para elegir qué consultar cuando el sitio lo permita; usa primero las opciones gratuitas del navegador. No necesitas una herramienta de «reinicio del algoritmo».",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "granjas-bots-redes-sociales": {
+    "intro": "No necesitas pagar un detector para contrastar una fuente o dejar de difundir un mensaje.",
+    "productos": [
+      {
+        "nombre": "Herramienta de análisis con método público",
+        "texto": "Solo si entiendes sus límites; empieza por normas, informes y controles gratuitos de la plataforma.",
+        "tipo": "",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "clave-certificado-digital-canarias": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Lector de DNI electrónico por USB",
+        "texto": "Para usar el chip del DNI en el ordenador: acreditarte ante la FNMT, firmar con AutoFirma y entrar en las sedes sin instalar certificado. Elige uno con USB-C si tu portátil no tiene puerto clásico.",
+        "tipo": "",
+        "busca": "lector dni electronico usb",
+        "afiliado": false
+      },
+      {
+        "nombre": "Lector de tarjetas inteligentes USB-C",
+        "texto": "Lo mismo, en formato pequeño para llevar en el bolso. Cualquier lector compatible con tarjetas inteligentes (PC/SC) sirve; no hace falta que ponga «DNI».",
+        "tipo": "",
+        "busca": "lector tarjetas inteligentes usb c",
+        "afiliado": false
+      },
+      {
+        "nombre": "Libreta en papel para el PIN y la contraseña del certificado",
+        "texto": "El PIN del DNIe y la contraseña del archivo exportado no se recuperan por internet. En un cajón de casa están más seguros que en una nota del móvil.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "clave-certificado-digital-dnie": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Lector de DNI electrónico por USB",
+        "texto": "Para usar el chip del DNI en el ordenador: acreditarte ante la FNMT, firmar con AutoFirma y entrar en las sedes sin instalar certificado. Elige uno con USB-C si tu portátil no tiene puerto clásico.",
+        "tipo": "",
+        "busca": "lector dni electronico usb",
+        "afiliado": false
+      },
+      {
+        "nombre": "Lector de tarjetas inteligentes USB-C",
+        "texto": "Lo mismo, en formato pequeño para llevar en el bolso. Cualquier lector compatible con tarjetas inteligentes (PC/SC) sirve; no hace falta que ponga «DNI».",
+        "tipo": "",
+        "busca": "lector tarjetas inteligentes usb c",
+        "afiliado": false
+      },
+      {
+        "nombre": "Libreta en papel para el PIN y la contraseña del certificado",
+        "texto": "El PIN del DNIe y la contraseña del archivo exportado no se recuperan por internet. En un cajón de casa están más seguros que en una nota del móvil.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "identidad-digital-argentina": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Llave de seguridad FIDO2",
+        "texto": "El segundo factor que resiste a las páginas falsas. Compra dos y guarda una.",
+        "tipo": "",
+        "busca": "llave seguridad fido2 usb c nfc",
+        "afiliado": false
+      },
+      {
+        "nombre": "Libreta en papel",
+        "texto": "Para el PIN, los códigos de activación y las contraseñas de firma: en casa, en un cajón, no en una nota del celular.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "identidad-digital-bolivia": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Memoria USB cifrada",
+        "texto": "Para la copia de seguridad del archivo del certificado, fuera de la computadora y protegida con contraseña.",
+        "tipo": "",
+        "busca": "memoria usb cifrada",
+        "afiliado": false
+      },
+      {
+        "nombre": "Libreta en papel",
+        "texto": "Para las contraseñas de firma y los códigos: en casa, en un cajón, no en una nota del celular.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "identidad-digital-chile": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Lector de tarjetas inteligentes",
+        "texto": "Solo si tu prestador de firma avanzada te entrega un certificado en tarjeta; muchos ya firman desde el celular sin lector.",
+        "tipo": "",
+        "busca": "lector tarjetas inteligentes usb",
+        "afiliado": false
+      },
+      {
+        "nombre": "Libreta en papel",
+        "texto": "Para el código de activación, la contraseña de ClaveÚnica y los datos de la FEA: en casa, no en una nota del celular.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "identidad-digital-colombia": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Libreta en papel",
+        "texto": "Para el PIN, los códigos de activación y las contraseñas de firma: en casa, en un cajón, no en una nota del celular.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      },
+      {
+        "nombre": "Llave de seguridad FIDO2",
+        "texto": "El segundo factor que resiste a las páginas falsas. Compra dos y guarda una.",
+        "tipo": "",
+        "busca": "llave seguridad fido2 usb c nfc",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "identidad-digital-costa-rica": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Lector de tarjetas inteligentes USB",
+        "texto": "Solo si tu certificado va en tarjeta con chip; muchas modalidades ya firman desde el celular sin lector.",
+        "tipo": "",
+        "busca": "lector tarjetas inteligentes usb",
+        "afiliado": false
+      },
+      {
+        "nombre": "Libreta en papel",
+        "texto": "Para el PIN, los códigos de activación y las contraseñas de firma: en casa, en un cajón, no en una nota del celular.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "identidad-digital-cuba": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Libreta en papel",
+        "texto": "Para las contraseñas y los códigos: en casa, en un cajón, no en una nota del celular.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "identidad-digital-ecuador": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Memoria USB cifrada",
+        "texto": "Para la copia de seguridad del archivo del certificado, fuera de la computadora y protegida con contraseña.",
+        "tipo": "",
+        "busca": "memoria usb cifrada",
+        "afiliado": false
+      },
+      {
+        "nombre": "Libreta en papel",
+        "texto": "Para el PIN, los códigos y las contraseñas de firma: en casa, en un cajón, no en una nota del celular.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "identidad-digital-el-salvador": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Llave de seguridad FIDO2",
+        "texto": "El segundo factor que resiste a las páginas falsas. Compra dos y guarda una.",
+        "tipo": "",
+        "busca": "llave seguridad fido2 usb c nfc",
+        "afiliado": false
+      },
+      {
+        "nombre": "Libreta en papel",
+        "texto": "Para las contraseñas de firma y los códigos: en casa, en un cajón, no en una nota del celular.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "identidad-digital-estados-unidos": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Llave de seguridad FIDO2",
+        "texto": "Login.gov la admite como segundo factor y es la única que resiste a las páginas falsas. Compra dos.",
+        "tipo": "",
+        "busca": "llave seguridad fido2 usb c nfc",
+        "afiliado": false
+      },
+      {
+        "nombre": "Lector de tarjetas inteligentes",
+        "texto": "Solo si tu trabajo te exige una tarjeta PIV o CAC; para el público general no hace falta.",
+        "tipo": "",
+        "busca": "lector tarjetas inteligentes usb",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "identidad-digital-guatemala": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Llave de seguridad FIDO2",
+        "texto": "El segundo factor que resiste a las páginas falsas. Compra dos y guarda una.",
+        "tipo": "",
+        "busca": "llave seguridad fido2 usb c nfc",
+        "afiliado": false
+      },
+      {
+        "nombre": "Libreta en papel",
+        "texto": "Para el PIN, los códigos y las contraseñas de firma: en casa, en un cajón, no en una nota del celular.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "identidad-digital-honduras": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Funda con cordón para el celular",
+        "texto": "Si el DNI va en el teléfono, perder el teléfono pesa más. Contra el tirón y el olvido.",
+        "tipo": "",
+        "busca": "funda movil con cordon",
+        "afiliado": false
+      },
+      {
+        "nombre": "Libreta en papel",
+        "texto": "Para las contraseñas y los códigos: en casa, en un cajón, no en una nota del celular.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "identidad-digital-mexico": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Memoria USB cifrada",
+        "texto": "Para la copia de seguridad de los archivos.cer y.key de tu e.firma, fuera de la computadora y protegida con contraseña.",
+        "tipo": "",
+        "busca": "memoria usb cifrada",
+        "afiliado": false
+      },
+      {
+        "nombre": "Libreta en papel",
+        "texto": "La contraseña de la clave privada no la conoce el SAT: si la pierdes, vuelves a la oficina. Apúntala en casa.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "identidad-digital-nicaragua": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Llave de seguridad FIDO2",
+        "texto": "El segundo factor que resiste a las páginas falsas. Compra dos y guarda una.",
+        "tipo": "",
+        "busca": "llave seguridad fido2 usb c nfc",
+        "afiliado": false
+      },
+      {
+        "nombre": "Libreta en papel",
+        "texto": "Para las contraseñas de firma y los códigos: en casa, en un cajón, no en una nota del celular.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "identidad-digital-panama": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Lector de tarjetas inteligentes USB",
+        "texto": "Solo si tu certificado va en tarjeta con chip; muchas modalidades ya firman desde el celular sin lector.",
+        "tipo": "",
+        "busca": "lector tarjetas inteligentes usb",
+        "afiliado": false
+      },
+      {
+        "nombre": "Libreta en papel",
+        "texto": "Para el PIN, los códigos de activación y las contraseñas de firma: en casa, en un cajón, no en una nota del celular.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "identidad-digital-paraguay": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Llave de seguridad FIDO2",
+        "texto": "El segundo factor que resiste a las páginas falsas. Compra dos y guarda una.",
+        "tipo": "",
+        "busca": "llave seguridad fido2 usb c nfc",
+        "afiliado": false
+      },
+      {
+        "nombre": "Libreta en papel",
+        "texto": "Para el PIN, los códigos y las contraseñas de firma: en casa, en un cajón, no en una nota del celular.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "identidad-digital-peru": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Lector de tarjetas inteligentes USB",
+        "texto": "Para usar los certificados del chip del documento en la computadora. Cualquier lector compatible (ISO 7816) sirve.",
+        "tipo": "",
+        "busca": "lector tarjetas inteligentes usb",
+        "afiliado": false
+      },
+      {
+        "nombre": "Libreta en papel",
+        "texto": "Para el PIN, los códigos y las contraseñas de firma: en casa, en un cajón, no en una nota del celular.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "identidad-digital-puerto-rico": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Llave de seguridad FIDO2",
+        "texto": "El segundo factor que resiste a las páginas falsas. Compra dos y guarda una.",
+        "tipo": "",
+        "busca": "llave seguridad fido2 usb c nfc",
+        "afiliado": false
+      },
+      {
+        "nombre": "Libreta en papel",
+        "texto": "Para el PIN, los códigos de activación y las contraseñas de firma: en casa, en un cajón, no en una nota del celular.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "identidad-digital-republica-dominicana": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Memoria USB cifrada",
+        "texto": "Para la copia de seguridad de los archivos del certificado, fuera de la computadora y protegida con contraseña.",
+        "tipo": "",
+        "busca": "memoria usb cifrada",
+        "afiliado": false
+      },
+      {
+        "nombre": "Libreta en papel",
+        "texto": "Para el PIN, los códigos de activación y las contraseñas de firma: en casa, en un cajón, no en una nota del celular.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  },
+  "identidad-digital-uruguay": {
+    "intro": "",
+    "productos": [
+      {
+        "nombre": "Lector de tarjetas inteligentes USB",
+        "texto": "Para usar el certificado de la cédula con chip en la computadora. Cualquier lector compatible con tarjetas inteligentes sirve.",
+        "tipo": "",
+        "busca": "lector tarjetas inteligentes usb",
+        "afiliado": false
+      },
+      {
+        "nombre": "Libreta en papel",
+        "texto": "Para el PIN de la cédula y la contraseña de gub.uy: en casa, en un cajón.",
+        "tipo": "",
+        "busca": "libreta contraseñas papel",
+        "afiliado": false
+      }
+    ],
+    "relacionados": []
+  }
+}

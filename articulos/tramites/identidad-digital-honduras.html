@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Cómo instalar BIEN, obtener el DNI Biométrico Digital, qué documentos admite, qué validez tiene, cómo funcionan la biometría y el QR, y por qué la firma con certificado va por otro camino.">
 <link rel="canonical" href="https://diezclaves.com/articulos/tramites/identidad-digital-honduras.html">
-<meta name="theme-color" content="#131a2b">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://diezclaves.com/articulos/tramites/identidad-digital-honduras.html">
 <meta property="og:site_name" content="Diez Claves">
@@ -22,6 +23,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/assets/manifest.webmanifest">
 <link rel="stylesheet" href="/assets/base.css">
+<script src="/assets/tema.js"></script>
 <script src="/assets/region.js" defer></script>
 <title>Diez claves para tu identidad digital en Honduras: BIEN y el DNI en el celular · Diez Claves</title>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Diez claves para tu identidad digital en Honduras: BIEN y el DNI en el celular", "description": "Cómo instalar BIEN, obtener el DNI Biométrico Digital, qué documentos admite, qué validez tiene, cómo funcionan la biometría y el QR, y por qué la firma con certificado va por otro camino.", "inLanguage": "es", "datePublished": "2026-11-11", "dateModified": "2026-11-11", "author": {"@type": "Organization", "name": "Diez Claves", "url": "https://diezclaves.com/"}, "publisher": {"@type": "Organization", "name": "Diez Claves", "logo": {"@type": "ImageObject", "url": "https://diezclaves.com/assets/icon-512.png"}}, "mainEntityOfPage": "https://diezclaves.com/articulos/tramites/identidad-digital-honduras.html", "image": "https://diezclaves.com/assets/og.png"}, {"@type": "ItemList", "name": "Diez claves para tu identidad digital en Honduras: BIEN y el DNI en el celular", "numberOfItems": 10, "itemListOrder": "https://schema.org/ItemListOrderAscending", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "BIEN, DNI digital y firma: no son lo mismo"}, {"@type": "ListItem", "position": 2, "name": "Qué es BIEN"}, {"@type": "ListItem", "position": 3, "name": "Instalarla y configurarla"}, {"@type": "ListItem", "position": 4, "name": "Obtener el DNI Biométrico Digital"}, {"@type": "ListItem", "position": 5, "name": "Qué documentos caben en BIEN"}, {"@type": "ListItem", "position": 6, "name": "Qué validez tiene el DNI digital"}, {"@type": "ListItem", "position": 7, "name": "Biometría y QR"}, {"@type": "ListItem", "position": 8, "name": "Sí hay certificados de firma, por otra vía"}, {"@type": "ListItem", "position": 9, "name": "Sin NFC, sin token; y cómo protegerte"}, {"@type": "ListItem", "position": 10, "name": "Qué sistema para cada trámite"}]}]}</script>
@@ -30,7 +32,7 @@
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <div class="wrap">
   <header class="stack">
-    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="/generador.html">Generador</a><a href="/medidor.html">Medidor</a><a href="/articulos/" aria-current="page">Artículos</a></nav>
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg class="llave" viewBox="0 0 40 100" width="27" height="66" aria-hidden="true"><path d="M6 5.5C14 3.6 27 3.4 34.6 5.2c1.6 9.4 1.5 22.6.2 31.6C26 38.6 13.6 38.4 5.3 36.9 3.9 27 4.2 15 6 5.5z" style="fill:var(--hl-y);stroke:currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M13 31V17.5L27 31V17.5M12.5 12.4c2.3-2.6 4.6-2.6 7 0s4.7 2.6 7.5-.2" style="fill:none;stroke:var(--on-hl)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 38.5V95M20 70h9.5v6M20 83h7" style="fill:none;stroke:currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="marca">Diez Claves<span class="lema">Recetas con <b class="ene">ñ</b></span><span class="desc">Seguridad digital en español</span></span></a><a href="/articulos/" aria-current="page">Artículos</a><a href="/herramientas.html">Herramientas</a></nav>
   </header>
   <main id="contenido">
   <article>
@@ -40,19 +42,34 @@
       <p class="lede muted">Cómo instalar BIEN, obtener el DNI Biométrico Digital, qué documentos admite, qué validez tiene, cómo funcionan la biometría y el QR, y por qué la firma con certificado va por otro camino.</p>
       <p class="meta">Versión para Honduras. También: <a href="/articulos/tramites/clave-certificado-digital-dnie.html">España</a> · <a href="/articulos/tramites/clave-certificado-digital-canarias.html">Canarias</a> · <a href="/articulos/tramites/identidad-digital-mexico.html">México</a> · <a href="/articulos/tramites/identidad-digital-guatemala.html">Guatemala</a> · <a href="/articulos/tramites/identidad-digital-el-salvador.html">El Salvador</a> · <a href="/articulos/tramites/identidad-digital-nicaragua.html">Nicaragua</a> · <a href="/articulos/tramites/identidad-digital-costa-rica.html">Costa Rica</a> · <a href="/articulos/tramites/identidad-digital-panama.html">Panamá</a> · <a href="/articulos/tramites/identidad-digital-cuba.html">Cuba</a> · <a href="/articulos/tramites/identidad-digital-republica-dominicana.html">R. Dominicana</a> · <a href="/articulos/tramites/identidad-digital-puerto-rico.html">Puerto Rico</a> · <a href="/articulos/tramites/identidad-digital-colombia.html">Colombia</a> · <a href="/articulos/tramites/identidad-digital-ecuador.html">Ecuador</a> · <a href="/articulos/tramites/identidad-digital-peru.html">Perú</a> · <a href="/articulos/tramites/identidad-digital-bolivia.html">Bolivia</a> · <a href="/articulos/tramites/identidad-digital-chile.html">Chile</a> · <a href="/articulos/tramites/identidad-digital-argentina.html">Argentina</a> · <a href="/articulos/tramites/identidad-digital-paraguay.html">Paraguay</a> · <a href="/articulos/tramites/identidad-digital-uruguay.html">Uruguay</a> · <a href="/articulos/tramites/identidad-digital-estados-unidos.html">Estados Unidos</a>.</p>
     </header>
+    <details class="indice-claves">
+      <summary>Ver las diez claves</summary>
+      <ol>
+        <li><a href="#clave-1">BIEN, DNI digital y firma: no son lo mismo</a></li>
+        <li><a href="#clave-2">Qué es BIEN</a></li>
+        <li><a href="#clave-3">Instalarla y configurarla</a></li>
+        <li><a href="#clave-4">Obtener el DNI Biométrico Digital</a></li>
+        <li><a href="#clave-5">Qué documentos caben en BIEN</a></li>
+        <li><a href="#clave-6">Qué validez tiene el DNI digital</a></li>
+        <li><a href="#clave-7">Biometría y QR</a></li>
+        <li><a href="#clave-8">Sí hay certificados de firma, por otra vía</a></li>
+        <li><a href="#clave-9">Sin NFC, sin token; y cómo protegerte</a></li>
+        <li><a href="#clave-10">Qué sistema para cada trámite</a></li>
+      </ol>
+    </details>
     <p>Honduras ya tiene una billetera digital oficial para llevar el DNI en el celular. Pero tener el DNI digital no es tener un certificado para firmar, y conviene saber qué hace cada cosa.</p>
 
     <ol class="claves">
-      <li><h2>BIEN, DNI digital y firma: no son lo mismo</h2><p><strong>BIEN</strong> (Billetera Electrónica Nacional) es la app oficial para guardar y presentar credenciales; el <strong>DNI Biométrico Digital (DNIB)</strong> es la versión verificable del DNI dentro de BIEN; la <strong>firma electrónica</strong> y los <strong>certificados digitales</strong> van por otro camino. Tener el DNI en el celular no te da un certificado para firmar contratos.</p></li>
-      <li><h2>Qué es BIEN</h2><p>Una app gratuita impulsada por la DIGER, para Android y iPhone, que incorpora credenciales de instituciones oficiales. El 20 de julio de 2026 el Gobierno anunció el reconocimiento legal del DNI digital de BIEN, por resolución del Registro Nacional de las Personas publicada en La Gaceta. No es una billetera financiera: sirve para documentos.</p></li>
-      <li><h2>Instalarla y configurarla</h2><p>Desde <a href="https://diger.gob.hn/identidad-digital" rel="noopener">diger.gob.hn/identidad-digital</a> a Google Play o App Store: número de teléfono, contraseña, proveedor de identidad, datos y verificación facial con la cámara frontal. Requisitos documentados: Android 8.0 o superior, iOS 17.6 o superior, cámara frontal en buen estado.</p></li>
-      <li><h2>Obtener el DNI Biométrico Digital</h2><p>En BIEN: cuenta, el RNP como proveedor, número de DNI, verificación biométrica, prueba de vida, comprobación de datos y activación. Es gratuito. Si tus datos no coinciden con los registros, hay que corregirlos ante el RNP.</p></li>
-      <li><h2>Qué documentos caben en BIEN</h2><p>Documentados: DNI Biométrico Digital, licencia de conducir, permiso de portación de armas para titulares autorizados y boleta de revisión vehicular; depende de cada institución emisora. Está prevista la integración del carné de residencia para personas extranjeras, pero la documentación oficial no es uniforme sobre si ya está disponible: compruébalo en la app.</p></li>
-      <li><h2>Qué validez tiene el DNI digital</h2><p>Reconocimiento legal desde julio de 2026, con comprobación criptográfica y códigos QR verificables. Aun así, conservá el documento físico para los procedimientos que lo exijan, y comprobá aparte su aceptación en viajes internacionales y gestiones consulares. Una captura de pantalla no es la credencial dinámica.</p></li>
-      <li><h2>Biometría y QR</h2><p>BIEN usa reconocimiento facial con detección de vida para frenar suplantaciones con fotos o vídeos. Activada la credencial, se presenta con un QR protegido criptográficamente que el receptor verifica con medios compatibles. La app prevé medidas para que nadie acceda a las credenciales si perdés el dispositivo.</p></li>
-      <li><h2>Sí hay certificados de firma, por otra vía</h2><p>Honduras tiene marco jurídico de firmas electrónicas; el Instituto de la Propiedad participa en la autorización de prestadores y la Secretaría de Finanzas documenta el uso gradual de la Firma Electrónica Avanzada (FIEL) en sus procedimientos. Para un certificado personal: identificar el trámite, confirmar que acepta firma avanzada, consultar prestadores reconocidos, requisitos, costos, documentos, acreditación, activación y plataforma compatible. BIEN no lo emite.</p></li>
-      <li><h2>Sin NFC, sin token; y cómo protegerte</h2><p>Para el DNI digital en BIEN no hace falta lector NFC ni dispositivo USB. Algunos servicios de firma sí pueden exigir certificados o dispositivos; confirmalo con la entidad destinataria antes de comprar. Y: BIEN solo de tiendas oficiales, contraseñas sin compartir, PIN o biometría en el teléfono, nada de códigos ni capturas de documentos a terceros, sistema al día, credenciales activas revisadas, errores reportados al emisor, bloqueo si se pierde el dispositivo.</p></li>
-      <li><h2>Qué sistema para cada trámite</h2><div class="scroll" tabindex="0" role="region" aria-label="Tabla, se puede desplazar"><table>
+      <li id="clave-1"><h2>BIEN, DNI digital y firma: no son lo mismo</h2><p><strong>BIEN</strong> (Billetera Electrónica Nacional) es la app oficial para guardar y presentar credenciales; el <strong>DNI Biométrico Digital (DNIB)</strong> es la versión verificable del DNI dentro de BIEN; la <strong>firma electrónica</strong> y los <strong>certificados digitales</strong> van por otro camino. Tener el DNI en el celular no te da un certificado para firmar contratos.</p></li>
+      <li id="clave-2"><h2>Qué es BIEN</h2><p>Una app gratuita impulsada por la DIGER, para Android y iPhone, que incorpora credenciales de instituciones oficiales. El 20 de julio de 2026 el Gobierno anunció el reconocimiento legal del DNI digital de BIEN, por resolución del Registro Nacional de las Personas publicada en La Gaceta. No es una billetera financiera: sirve para documentos.</p></li>
+      <li id="clave-3"><h2>Instalarla y configurarla</h2><p>Desde <a href="https://diger.gob.hn/identidad-digital" rel="noopener">diger.gob.hn/identidad-digital</a> a Google Play o App Store: número de teléfono, contraseña, proveedor de identidad, datos y verificación facial con la cámara frontal. Requisitos documentados: Android 8.0 o superior, iOS 17.6 o superior, cámara frontal en buen estado.</p></li>
+      <li id="clave-4"><h2>Obtener el DNI Biométrico Digital</h2><p>En BIEN: cuenta, el RNP como proveedor, número de DNI, verificación biométrica, prueba de vida, comprobación de datos y activación. Es gratuito. Si tus datos no coinciden con los registros, hay que corregirlos ante el RNP.</p></li>
+      <li id="clave-5"><h2>Qué documentos caben en BIEN</h2><p>Documentados: DNI Biométrico Digital, licencia de conducir, permiso de portación de armas para titulares autorizados y boleta de revisión vehicular; depende de cada institución emisora. Está prevista la integración del carné de residencia para personas extranjeras, pero la documentación oficial no es uniforme sobre si ya está disponible: compruébalo en la app.</p></li>
+      <li id="clave-6"><h2>Qué validez tiene el DNI digital</h2><p>Reconocimiento legal desde julio de 2026, con comprobación criptográfica y códigos QR verificables. Aun así, conservá el documento físico para los procedimientos que lo exijan, y comprobá aparte su aceptación en viajes internacionales y gestiones consulares. Una captura de pantalla no es la credencial dinámica.</p></li>
+      <li id="clave-7"><h2>Biometría y QR</h2><p>BIEN usa reconocimiento facial con detección de vida para frenar suplantaciones con fotos o vídeos. Activada la credencial, se presenta con un QR protegido criptográficamente que el receptor verifica con medios compatibles. La app prevé medidas para que nadie acceda a las credenciales si perdés el dispositivo.</p></li>
+      <li id="clave-8"><h2>Sí hay certificados de firma, por otra vía</h2><p>Honduras tiene marco jurídico de firmas electrónicas; el Instituto de la Propiedad participa en la autorización de prestadores y la Secretaría de Finanzas documenta el uso gradual de la Firma Electrónica Avanzada (FIEL) en sus procedimientos. Para un certificado personal: identificar el trámite, confirmar que acepta firma avanzada, consultar prestadores reconocidos, requisitos, costos, documentos, acreditación, activación y plataforma compatible. BIEN no lo emite.</p></li>
+      <li id="clave-9"><h2>Sin NFC, sin token; y cómo protegerte</h2><p>Para el DNI digital en BIEN no hace falta lector NFC ni dispositivo USB. Algunos servicios de firma sí pueden exigir certificados o dispositivos; confirmalo con la entidad destinataria antes de comprar. Y: BIEN solo de tiendas oficiales, contraseñas sin compartir, PIN o biometría en el teléfono, nada de códigos ni capturas de documentos a terceros, sistema al día, credenciales activas revisadas, errores reportados al emisor, bloqueo si se pierde el dispositivo.</p></li>
+      <li id="clave-10"><h2>Qué sistema para cada trámite</h2><div class="scroll" tabindex="0" role="region" aria-label="Tabla, se puede desplazar"><table>
       <thead><tr><th scope="col">Necesitás…</th><th scope="col">Herramienta</th></tr></thead>
       <tbody>
         <tr><td>Llevar el DNI en el celular</td><td>BIEN</td></tr>
@@ -72,25 +89,24 @@
     <section class="prods" aria-labelledby="h-prods">
       <h2 id="h-prods">Para ponerlo en práctica</h2>
       <ul>
-      <li><a data-busca="funda movil con cordon" href="https://www.amazon.es/s?k=funda+movil+con+cordon" rel="noopener">Funda con cordón para el celular</a><p>Si el DNI va en el teléfono, perder el teléfono pesa más. Contra el tirón y el olvido.</p></li>
-      <li><a data-busca="libreta contraseñas papel" href="https://www.amazon.es/s?k=libreta+contraseñas+papel" rel="noopener">Libreta en papel</a><p>Para las contraseñas y los códigos: en casa, en un cajón, no en una nota del celular.</p></li>
+      <li><a data-busca="funda movil con cordon" href="https://www.amazon.es/s?k=funda+movil+con+cordon" rel="noopener">Funda con cordón para el celular</a><p>Si el DNI va en el teléfono, perder el teléfono pesa más. Contra el tirón y el olvido.</p></li><li><a data-busca="libreta contraseñas papel" href="https://www.amazon.es/s?k=libreta+contrase%C3%B1as+papel" rel="noopener">Libreta en papel</a><p>Para las contraseñas y los códigos: en casa, en un cajón, no en una nota del celular.</p></li>
       </ul>
       <p class="aviso">Enlaces a <span data-tienda-nombre>Amazon España</span> según tu región. Diez Claves no tiene por ahora acuerdo de afiliación con ninguna tienda; cuando lo tenga, lo dirá aquí. Las alternativas gratuitas van siempre junto a las de pago.</p>
     </section>
     <nav class="rel" aria-label="Relacionado">
       <span class="tag">Sigue leyendo</span>
-      <a href="/articulos/tramites/identidad-digital-guatemala.html">La guía para Guatemala</a><a href="/articulos/tramites/identidad-digital-el-salvador.html">La guía para El Salvador</a>
+      <a href="/articulos/dispositivos/entender-grapheneos.html">Entender GrapheneOS</a><a href="/articulos/conexion/tails-usb.html">Usar Tails desde un USB</a><a href="/articulos/privacidad/proteger-tu-identidad.html">Proteger tu identidad al navegar</a><a href="/articulos/dispositivos/filtros-de-pantalla.html">Filtros de pantalla</a>
     </nav>
     <nav class="sig" aria-label="Siguiente en esta sección"><span class="tag">Siguiente en Identidad digital y trámites · 6 de 21</span><a class="s" href="/articulos/tramites/identidad-digital-nicaragua.html">Diez claves para tu identidad digital en Nicaragua</a><p>La Ley 729 de Firma Electrónica, la diferencia entre firma electrónica y certificada, la DGTEC, cómo obtener un certificado con un proveedor autorizado y qué no hace falta comprar. <a href="/articulos/tramites/">Ver las 21 guías</a>.</p></nav>
   </article>
   </main>
   <footer>
     <span>Diez Claves · 2026</span>
-    <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
+    
     <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
     <a href="/aviso-legal.html">Aviso legal</a>
     <a href="/privacidad.html">Privacidad</a>
-  </footer>
+  <a class="sello" href="https://gofiodesign.eu" rel="noopener"><img src="/assets/gofio-monograma-ambar.svg" width="40" height="40" alt="" loading="lazy"><span>Un proyecto de <b>Gofio Design</b></span></a></footer>
 </div>
 </body>
 </html>

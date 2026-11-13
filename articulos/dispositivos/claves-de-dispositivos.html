@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Qué contraseña protege de verdad cada aparato de casa: el PIN del móvil, la SIM, el cifrado del disco, las dos claves del router y las cámaras.">
 <link rel="canonical" href="https://diezclaves.com/articulos/dispositivos/claves-de-dispositivos.html">
-<meta name="theme-color" content="#131a2b">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://diezclaves.com/articulos/dispositivos/claves-de-dispositivos.html">
 <meta property="og:site_name" content="Diez Claves">
@@ -22,6 +23,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/assets/manifest.webmanifest">
 <link rel="stylesheet" href="/assets/base.css">
+<script src="/assets/tema.js"></script>
 <script src="/assets/region.js" defer></script>
 <title>Diez claves para proteger tu móvil, tu ordenador y tu router · Diez Claves</title>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Diez claves para proteger tu móvil, tu ordenador y tu router", "description": "Qué contraseña protege de verdad cada aparato de casa: el PIN del móvil, la SIM, el cifrado del disco, las dos claves del router y las cámaras.", "inLanguage": "es", "datePublished": "2026-11-11", "dateModified": "2026-11-11", "author": {"@type": "Organization", "name": "Diez Claves", "url": "https://diezclaves.com/"}, "publisher": {"@type": "Organization", "name": "Diez Claves", "logo": {"@type": "ImageObject", "url": "https://diezclaves.com/assets/icon-512.png"}}, "mainEntityOfPage": "https://diezclaves.com/articulos/dispositivos/claves-de-dispositivos.html", "image": "https://diezclaves.com/assets/og.png"}, {"@type": "ItemList", "name": "Diez claves para proteger tu móvil, tu ordenador y tu router", "numberOfItems": 10, "itemListOrder": "https://schema.org/ItemListOrderAscending", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "El PIN manda; la huella y la cara solo abren"}, {"@type": "ListItem", "position": 2, "name": "Seis cifras como mínimo, y nada de patrón"}, {"@type": "ListItem", "position": 3, "name": "Tapa el PIN como en el cajero"}, {"@type": "ListItem", "position": 4, "name": "La SIM tiene su propio PIN: déjalo activado"}, {"@type": "ListItem", "position": 5, "name": "La contraseña de sesión no protege tus archivos"}, {"@type": "ListItem", "position": 6, "name": "Lo que sí los protege es el cifrado del disco"}, {"@type": "ListItem", "position": 7, "name": "El router tiene dos contraseñas y las dos vienen de fábrica"}, {"@type": "ListItem", "position": 8, "name": "Apaga WPS y crea una red de invitados"}, {"@type": "ListItem", "position": 9, "name": "Cámaras, timbres, teles y consolas también tienen cuenta"}, {"@type": "ListItem", "position": 10, "name": "Ningún PIN repetido entre tarjeta, móvil y alarma"}]}]}</script>
@@ -30,7 +32,7 @@
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <div class="wrap">
   <header class="stack">
-    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="/generador.html">Generador</a><a href="/medidor.html">Medidor</a><a href="/articulos/" aria-current="page">Artículos</a></nav>
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg class="llave" viewBox="0 0 40 100" width="27" height="66" aria-hidden="true"><path d="M6 5.5C14 3.6 27 3.4 34.6 5.2c1.6 9.4 1.5 22.6.2 31.6C26 38.6 13.6 38.4 5.3 36.9 3.9 27 4.2 15 6 5.5z" style="fill:var(--hl-y);stroke:currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M13 31V17.5L27 31V17.5M12.5 12.4c2.3-2.6 4.6-2.6 7 0s4.7 2.6 7.5-.2" style="fill:none;stroke:var(--on-hl)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 38.5V95M20 70h9.5v6M20 83h7" style="fill:none;stroke:currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="marca">Diez Claves<span class="lema">Recetas con <b class="ene">ñ</b></span><span class="desc">Seguridad digital en español</span></span></a><a href="/articulos/" aria-current="page">Artículos</a><a href="/herramientas.html">Herramientas</a></nav>
   </header>
   <main id="contenido">
   <article>
@@ -39,19 +41,34 @@
       <h1>Diez claves para proteger <span>tu móvil, tu ordenador y tu router</span></h1>
       <p class="lede muted">Qué contraseña protege de verdad cada aparato de casa: el PIN del móvil, la SIM, el cifrado del disco, las dos claves del router y las cámaras.</p>
     </header>
+    <details class="indice-claves">
+      <summary>Ver las diez claves</summary>
+      <ol>
+        <li><a href="#clave-1">El PIN manda; la huella y la cara solo abren</a></li>
+        <li><a href="#clave-2">Seis cifras como mínimo, y nada de patrón</a></li>
+        <li><a href="#clave-3">Tapa el PIN como en el cajero</a></li>
+        <li><a href="#clave-4">La SIM tiene su propio PIN: déjalo activado</a></li>
+        <li><a href="#clave-5">La contraseña de sesión no protege tus archivos</a></li>
+        <li><a href="#clave-6">Lo que sí los protege es el cifrado del disco</a></li>
+        <li><a href="#clave-7">El router tiene dos contraseñas y las dos vienen de fábrica</a></li>
+        <li><a href="#clave-8">Apaga WPS y crea una red de invitados</a></li>
+        <li><a href="#clave-9">Cámaras, timbres, teles y consolas también tienen cuenta</a></li>
+        <li><a href="#clave-10">Ningún PIN repetido entre tarjeta, móvil y alarma</a></li>
+      </ol>
+    </details>
     <p>Hablamos mucho de las contraseñas de las webs y poco de las que protegen lo que tenemos en la mano. Y son más importantes: quien desbloquea tu móvil tiene tu correo, tu banco, tus fotos y la posibilidad de cambiar todas las demás contraseñas desde «he olvidado mi contraseña».</p>
 
     <ol class="claves">
-      <li><h2>El PIN manda; la huella y la cara solo abren</h2><p>La huella o la cara desbloquean el móvil casi siempre, pero no son la clave: son un atajo. La clave es el PIN, el patrón o la contraseña que te pide al encender, tras varios fallos o cuando lleva horas sin usarse. Con ella se cifran los datos: sin ella, un móvil apagado es un ladrillo incluso para quien lo desmonte.</p></li>
-      <li><h2>Seis cifras como mínimo, y nada de patrón</h2><p>Un PIN de cuatro cifras son 10.000 combinaciones. El teléfono frena los intentos, pero contra móviles robados se usan herramientas que aprovechan fallos para probar más rápido. Seis cifras es el mínimo razonable; una contraseña con letras, mejor. El patrón es el más débil de los tres: casi todo el mundo empieza en una esquina, usa pocos puntos, deja la marca en la pantalla y se ve desde lejos.</p></li>
-      <li><h2>Tapa el PIN como en el cajero</h2><p>Hay robos en los que primero observan el PIN en un bar y luego cogen el teléfono. Con el PIN y el móvil, el ladrón cambia la contraseña de tu cuenta de Apple o Google y te deja fuera. Escríbelo tapando el teclado, y activa en los ajustes la protección extra que iOS y Android piden para cambiar datos de la cuenta fuera de casa. Y que el móvil se bloquee solo en menos de un minuto, no a los cinco.</p></li>
-      <li><h2>La SIM tiene su propio PIN: déjalo activado</h2><p>Mucha gente lo desactiva el primer día para no escribirlo. Con tu SIM en otro teléfono, alguien recibe tus SMS, incluidos los códigos del banco y los de «recuperar contraseña». El PIN de la SIM es independiente del PIN del móvil y viene de fábrica con un valor típico (1234, 0000). Cámbialo y déjalo activado; solo lo pide al encender.</p></li>
-      <li><h2>La contraseña de sesión no protege tus archivos</h2><p>Sorprende a muchos: la contraseña con la que entras en Windows o en el Mac impide usar tu sesión, pero no impide leer el disco. Quien se lleve el portátil puede sacar el disco, o arrancar desde un USB, y copiar todos tus documentos sin saberla.</p></li>
-      <li><h2>Lo que sí los protege es el cifrado del disco</h2><p>En Windows se llama BitLocker (en las ediciones Home, «cifrado de dispositivo», y no siempre está activado); en Mac, FileVault; en Linux suele ofrecerse al instalar. Comprueba que está activo y guarda la clave de recuperación en papel: si olvidas la contraseña o el equipo falla, es la única forma de recuperar los datos. Con el disco cifrado, la contraseña de sesión sí importa: una frase de tres o cuatro palabras es cómoda de teclear y muy fuerte.</p></li>
-      <li><h2>El router tiene dos contraseñas y las dos vienen de fábrica</h2><p>La <strong>clave del wifi</strong> es la que das a las visitas: usa WPA2 o WPA3 y cambia la de la pegatina, porque las de fábrica de algunos operadores siguen patrones conocidos. La <strong>contraseña de administración</strong> abre el panel del router en el navegador; suele ser <code>admin</code>/<code>admin</code> y casi nadie la cambia. Con ella se puede redirigir tu navegación a webs falsas sin que lo notes.</p></li>
-      <li><h2>Apaga WPS y crea una red de invitados</h2><p>El botón de emparejar (WPS) tiene fallos conocidos; desactívalo. Y crea una red de invitados, separada de los ordenadores, para visitas y para los cacharros conectados: enchufes, bombillas, la tele. Si uno de ellos se compromete, no llega a tus archivos.</p></li>
-      <li><h2>Cámaras, timbres, teles y consolas también tienen cuenta</h2><p>Cada aparato conectado tiene detrás una cuenta con una contraseña que se escribió una vez con el mando y no se volvió a tocar. Las cámaras y los timbres con cámara son el caso serio: con la contraseña de fábrica, cualquiera puede verlas desde internet. Cambia la de cada aparato que mire o escuche. Donde hay que teclear con el mando, una <a href="/generador.html">frase de palabras</a> es más fácil de escribir y más fuerte que un revoltijo de símbolos.</p></li>
-      <li><h2>Ningún PIN repetido entre tarjeta, móvil y alarma</h2><p>La tarjeta bancaria, la alarma de casa y la cerradura con teclado son PIN que no van en un aparato tuyo, pero se roban igual. No uses el mismo en dos sitios ni una fecha, y no apuntes el de la tarjeta en la cartera donde va la tarjeta. En las cerraduras con teclado, los cuatro números desgastados cantan la combinación.</p></li>
+      <li id="clave-1"><h2>El PIN manda; la huella y la cara solo abren</h2><p>La huella o la cara desbloquean el móvil casi siempre, pero no son la clave: son un atajo. La clave es el PIN, el patrón o la contraseña que te pide al encender, tras varios fallos o cuando lleva horas sin usarse. Con ella se cifran los datos: sin ella, un móvil apagado es un ladrillo incluso para quien lo desmonte.</p></li>
+      <li id="clave-2"><h2>Seis cifras como mínimo, y nada de patrón</h2><p>Un PIN de cuatro cifras son 10.000 combinaciones. El teléfono frena los intentos, pero contra móviles robados se usan herramientas que aprovechan fallos para probar más rápido. Seis cifras es el mínimo razonable; una contraseña con letras, mejor. El patrón es el más débil de los tres: casi todo el mundo empieza en una esquina, usa pocos puntos, deja la marca en la pantalla y se ve desde lejos.</p></li>
+      <li id="clave-3"><h2>Tapa el PIN como en el cajero</h2><p>Hay robos en los que primero observan el PIN en un bar y luego cogen el teléfono. Con el PIN y el móvil, el ladrón cambia la contraseña de tu cuenta de Apple o Google y te deja fuera. Escríbelo tapando el teclado, y activa en los ajustes la protección extra que iOS y Android piden para cambiar datos de la cuenta fuera de casa. Y que el móvil se bloquee solo en menos de un minuto, no a los cinco.</p></li>
+      <li id="clave-4"><h2>La SIM tiene su propio PIN: déjalo activado</h2><p>Mucha gente lo desactiva el primer día para no escribirlo. Con tu SIM en otro teléfono, alguien recibe tus SMS, incluidos los códigos del banco y los de «recuperar contraseña». El PIN de la SIM es independiente del PIN del móvil y viene de fábrica con un valor típico (1234, 0000). Cámbialo y déjalo activado; solo lo pide al encender.</p></li>
+      <li id="clave-5"><h2>La contraseña de sesión no protege tus archivos</h2><p>Sorprende a muchos: la contraseña con la que entras en Windows o en el Mac impide usar tu sesión, pero no impide leer el disco. Quien se lleve el portátil puede sacar el disco, o arrancar desde un USB, y copiar todos tus documentos sin saberla.</p></li>
+      <li id="clave-6"><h2>Lo que sí los protege es el cifrado del disco</h2><p>En Windows se llama BitLocker (en las ediciones Home, «cifrado de dispositivo», y no siempre está activado); en Mac, FileVault; en Linux suele ofrecerse al instalar. Comprueba que está activo y guarda la clave de recuperación en papel: si olvidas la contraseña o el equipo falla, es la única forma de recuperar los datos. Con el disco cifrado, la contraseña de sesión sí importa: una frase de tres o cuatro palabras es cómoda de teclear y muy fuerte.</p></li>
+      <li id="clave-7"><h2>El router tiene dos contraseñas y las dos vienen de fábrica</h2><p>La <strong>clave del wifi</strong> es la que das a las visitas: usa WPA2 o WPA3 y cambia la de la pegatina, porque las de fábrica de algunos operadores siguen patrones conocidos. La <strong>contraseña de administración</strong> abre el panel del router en el navegador; suele ser <code>admin</code>/<code>admin</code> y casi nadie la cambia. Con ella se puede redirigir tu navegación a webs falsas sin que lo notes.</p></li>
+      <li id="clave-8"><h2>Apaga WPS y crea una red de invitados</h2><p>El botón de emparejar (WPS) tiene fallos conocidos; desactívalo. Y crea una red de invitados, separada de los ordenadores, para visitas y para los cacharros conectados: enchufes, bombillas, la tele. Si uno de ellos se compromete, no llega a tus archivos.</p></li>
+      <li id="clave-9"><h2>Cámaras, timbres, teles y consolas también tienen cuenta</h2><p>Cada aparato conectado tiene detrás una cuenta con una contraseña que se escribió una vez con el mando y no se volvió a tocar. Las cámaras y los timbres con cámara son el caso serio: con la contraseña de fábrica, cualquiera puede verlas desde internet. Cambia la de cada aparato que mire o escuche. Donde hay que teclear con el mando, una <a href="/generador.html">frase de palabras</a> es más fácil de escribir y más fuerte que un revoltijo de símbolos.</p></li>
+      <li id="clave-10"><h2>Ningún PIN repetido entre tarjeta, móvil y alarma</h2><p>La tarjeta bancaria, la alarma de casa y la cerradura con teclado son PIN que no van en un aparato tuyo, pero se roban igual. No uses el mismo en dos sitios ni una fecha, y no apuntes el de la tarjeta en la cartera donde va la tarjeta. En las cerraduras con teclado, los cuatro números desgastados cantan la combinación.</p></li>
     </ol>
     <div class="cierre stack">
       <h2>Por dónde empezar hoy</h2>
@@ -61,26 +78,24 @@
     <section class="prods" aria-labelledby="h-prods">
       <h2 id="h-prods">Para ponerlo en práctica</h2>
       <ul>
-      <li><a data-busca="filtro privacidad pantalla portatil" href="https://www.amazon.es/s?k=filtro+privacidad+pantalla+portatil" rel="noopener">Filtro de privacidad para la pantalla</a><p>Para trabajar en el tren o en una cafetería sin que lean lo que escribes. Elige el tamaño exacto de tu pantalla.</p></li>
-      <li><a data-busca="router wifi 6 wpa3" href="https://www.amazon.es/s?k=router+wifi+6+wpa3" rel="noopener">Router con WPA3</a><p>Solo si el tuyo es muy antiguo y no admite WPA2 con contraseña propia; la mayoría de los de los operadores sirven.</p></li>
-      <li><a data-busca="candado cable seguridad portatil" href="https://www.amazon.es/s?k=candado+cable+seguridad+portatil" rel="noopener">Cable de seguridad para portátil</a><p>Para despachos compartidos y bibliotecas. No sustituye al cifrado del disco: evita el robo, no la lectura.</p></li>
+      <li><a data-busca="filtro privacidad pantalla portatil" href="https://www.amazon.es/s?k=filtro+privacidad+pantalla+portatil" rel="noopener">Filtro de privacidad para la pantalla</a><p>Para trabajar en el tren o en una cafetería sin que lean lo que escribes. Elige el tamaño exacto de tu pantalla.</p></li><li><a data-busca="router wifi 6 wpa3" href="https://www.amazon.es/s?k=router+wifi+6+wpa3" rel="noopener">Router con WPA3</a><p>Solo si el tuyo es muy antiguo y no admite WPA2 con contraseña propia; la mayoría de los de los operadores sirven.</p></li><li><a data-busca="candado cable seguridad portatil" href="https://www.amazon.es/s?k=candado+cable+seguridad+portatil" rel="noopener">Cable de seguridad para portátil</a><p>Para despachos compartidos y bibliotecas. No sustituye al cifrado del disco: evita el robo, no la lectura.</p></li>
       </ul>
       <p class="aviso">Enlaces a <span data-tienda-nombre>Amazon España</span> según tu región. Diez Claves no tiene por ahora acuerdo de afiliación con ninguna tienda; cuando lo tenga, lo dirá aquí. Las alternativas gratuitas van siempre junto a las de pago.</p>
     </section>
     <nav class="rel" aria-label="Relacionado">
       <span class="tag">Sigue leyendo</span>
-      <a href="/articulos/dispositivos/si-te-roban-el-movil.html">Diez claves si te roban el móvil</a><a href="/articulos/contrasenas/identificadores-y-contrasenas.html">Diez claves sobre tu correo y tu usuario</a><a href="/generador.html">Generador de contraseñas</a>
+      <a href="/articulos/dispositivos/si-te-roban-el-movil.html">Si te roban el móvil</a><a href="/articulos/dispositivos/rastros-en-tu-ordenador.html">Los rastros que dejas en tu ordenador</a><a href="/articulos/tramites/clave-certificado-digital-dnie.html">Conseguir tu certificado digital, con el móvil, con NFC o con el DNIe</a><a href="/articulos/conexion/vpn-en-casa.html">Usar una VPN en casa</a><a href="/generador.html">Generador de contraseñas</a>
     </nav>
     <nav class="sig" aria-label="Siguiente en esta sección"><span class="tag">Siguiente en Móvil y dispositivos · 3 de 22</span><a class="s" href="/articulos/dispositivos/permisos-aplicaciones-movil.html">Diez claves sobre los permisos de tus apps</a><p>Revisa qué aplicaciones pueden usar tu cámara, tus contactos o tus fotos. Aprende a limitar permisos en Android y iPhone sin desactivar todo. <a href="/articulos/dispositivos/">Ver las 22 guías</a>.</p></nav>
   </article>
   </main>
   <footer>
     <span>Diez Claves · 2026</span>
-    <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
+    
     <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
     <a href="/aviso-legal.html">Aviso legal</a>
     <a href="/privacidad.html">Privacidad</a>
-  </footer>
+  <a class="sello" href="https://gofiodesign.eu" rel="noopener"><img src="/assets/gofio-monograma-ambar.svg" width="40" height="40" alt="" loading="lazy"><span>Un proyecto de <b>Gofio Design</b></span></a></footer>
 </div>
 </body>
 </html>
