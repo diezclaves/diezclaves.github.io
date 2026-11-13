@@ -59,3 +59,7 @@ Los dos bloques del final de cada guía se generan con `node scripts/articulos.j
   - `busca`: términos de búsqueda en la tienda de la región (Amazon según el país, con el código de afiliado de `assets/region.js`), o `url` para un enlace directo;
   - `afiliado: true` si el enlace lleva comisión. Entonces el aviso de la guía lo dice y el enlace lleva `rel="sponsored"`.
 - Regla de la casa: si hay algo de pago, al menos una alternativa gratuita o incluida al lado. `node scripts/articulos.js --pendientes` lista las guías con menos de tres productos, sin tipo o sin alternativa gratuita.
+
+## Imágenes para compartir
+
+Cada guía tiene su imagen para compartir (`assets/og/<slug>.png`), con su título y el color de su tema. Cada sección tiene la suya (`assets/og/seccion-<seccion>.png`), y el resto de páginas usa la general (`assets/og.png`). Se generan con `node scripts/og.js` a partir de `scripts/og-plantilla.html`, con el servidor local en marcha y Chrome instalado. El script también pone `og:image` y `og:image:alt` en cada página. Sin opciones, solo crea las que faltan; con `--todas`, las vuelve a hacer todas, por ejemplo después de cambiar un título o la plantilla.
