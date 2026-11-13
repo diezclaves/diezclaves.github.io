@@ -47,3 +47,15 @@ Cualquier URL admite `?pais=<código>`, por ejemplo `?pais=mx`. Al entrar, `regi
 ## Portada, índice y secciones
 
 La portada, el índice de artículos, las páginas de sección y el bloque «Siguiente en esta sección» de cada artículo se generan a partir de la lista de secciones. Después de publicar artículos nuevos, hay que volver a generarlos para que aparezcan en todas partes.
+
+## «Sigue leyendo» y «Para ponerlo en práctica»
+
+Los dos bloques del final de cada guía se generan con `node scripts/articulos.js`, que reescribe el HTML de las 94 guías de diez claves. Hay que volver a ejecutarlo después de publicar una guía o de editar los datos.
+
+- **Sigue leyendo:** cuatro guías parecidas por su título, entradilla y títulos de las claves, con algo de preferencia por la misma sección. Nunca repite la guía de «Siguiente en esta sección» ni las versiones por país de la misma guía, y las guías de un país solo aparecen dentro de su sección. Las guías que hablan mucho de contraseñas añaden el generador. Para fijarlas a mano, se pone una lista de slugs en `relacionados`. Para ver qué saldría y con qué puntuación: `node scripts/articulos.js --ver <slug>`.
+- **Para ponerlo en práctica:** hasta tres productos por guía en `datos/practica.json`. Cada uno lleva:
+  - `nombre` y `texto`;
+  - `tipo`: `gratis`, `pago` o `incluido` (ya viene con el móvil o el servicio). Sin tipo, no se muestra etiqueta;
+  - `busca`: términos de búsqueda en la tienda de la región (Amazon según el país, con el código de afiliado de `assets/region.js`), o `url` para un enlace directo;
+  - `afiliado: true` si el enlace lleva comisión. Entonces el aviso de la guía lo dice y el enlace lleva `rel="sponsored"`.
+- Regla de la casa: si hay algo de pago, al menos una alternativa gratuita o incluida al lado. `node scripts/articulos.js --pendientes` lista las guías con menos de tres productos, sin tipo o sin alternativa gratuita.

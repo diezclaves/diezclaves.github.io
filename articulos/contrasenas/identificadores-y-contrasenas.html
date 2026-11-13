@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Por qué el usuario importa tanto como la contraseña: filtraciones, relleno de credenciales, el correo como llave maestra, el duplicado de SIM y los botones de «iniciar sesión con».">
 <link rel="canonical" href="https://diezclaves.com/articulos/contrasenas/identificadores-y-contrasenas.html">
-<meta name="theme-color" content="#131a2b">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://diezclaves.com/articulos/contrasenas/identificadores-y-contrasenas.html">
 <meta property="og:site_name" content="Diez Claves">
@@ -22,6 +23,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/assets/manifest.webmanifest">
 <link rel="stylesheet" href="/assets/base.css">
+<script src="/assets/tema.js"></script>
 <script src="/assets/region.js" defer></script>
 <title>Diez claves sobre tu correo, tu usuario y por qué los roban · Diez Claves</title>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Diez claves sobre tu correo, tu usuario y por qué los roban", "description": "Por qué el usuario importa tanto como la contraseña: filtraciones, relleno de credenciales, el correo como llave maestra, el duplicado de SIM y los botones de «iniciar sesión con».", "inLanguage": "es", "datePublished": "2026-11-11", "dateModified": "2026-11-11", "author": {"@type": "Organization", "name": "Diez Claves", "url": "https://diezclaves.com/"}, "publisher": {"@type": "Organization", "name": "Diez Claves", "logo": {"@type": "ImageObject", "url": "https://diezclaves.com/assets/icon-512.png"}}, "mainEntityOfPage": "https://diezclaves.com/articulos/contrasenas/identificadores-y-contrasenas.html", "image": "https://diezclaves.com/assets/og.png"}, {"@type": "ItemList", "name": "Diez claves sobre tu correo, tu usuario y por qué los roban", "numberOfItems": 10, "itemListOrder": "https://schema.org/ItemListOrderAscending", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Entrar en un sitio son dos cosas: decir quién eres y demostrarlo"}, {"@type": "ListItem", "position": 2, "name": "Tu correo se convirtió en el usuario universal"}, {"@type": "ListItem", "position": 3, "name": "Las filtraciones se prueban en todas partes"}, {"@type": "ListItem", "position": 4, "name": "Una contraseña distinta por servicio lo desactiva"}, {"@type": "ListItem", "position": 5, "name": "La cuenta de correo es la llave maestra"}, {"@type": "ListItem", "position": 6, "name": "El teléfono no es tan tuyo como parece"}, {"@type": "ListItem", "position": 7, "name": "El DNI es un identificador, nunca un secreto"}, {"@type": "ListItem", "position": 8, "name": "«Iniciar sesión con Google» pone todos los huevos en una cesta"}, {"@type": "ListItem", "position": 9, "name": "Los alias de correo devuelven un usuario distinto a cada sitio"}, {"@type": "ListItem", "position": 10, "name": "Tu nombre público no debería ser tu usuario privado"}]}]}</script>
@@ -30,7 +32,7 @@
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <div class="wrap">
   <header class="stack">
-    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="/generador.html">Generador</a><a href="/medidor.html">Medidor</a><a href="/articulos/" aria-current="page">Artículos</a></nav>
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg class="llave" viewBox="0 0 40 100" width="27" height="66" aria-hidden="true"><path d="M6 5.5C14 3.6 27 3.4 34.6 5.2c1.6 9.4 1.5 22.6.2 31.6C26 38.6 13.6 38.4 5.3 36.9 3.9 27 4.2 15 6 5.5z" style="fill:var(--hl-y);stroke:currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M13 31V17.5L27 31V17.5M12.5 12.4c2.3-2.6 4.6-2.6 7 0s4.7 2.6 7.5-.2" style="fill:none;stroke:var(--on-hl)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 38.5V95M20 70h9.5v6M20 83h7" style="fill:none;stroke:currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="marca">Diez Claves<span class="lema">Recetas con <b class="ene">ñ</b></span><span class="desc">Seguridad digital en español</span></span></a><a href="/articulos/" aria-current="page">Artículos</a><a href="/herramientas.html">Herramientas</a></nav>
   </header>
   <main id="contenido">
   <article>
@@ -39,19 +41,34 @@
       <h1>Diez claves sobre tu correo, tu usuario <span>y por qué los roban</span></h1>
       <p class="lede muted">Por qué el usuario importa tanto como la contraseña: filtraciones, relleno de credenciales, el correo como llave maestra, el duplicado de SIM y los botones de «iniciar sesión con».</p>
     </header>
+    <details class="indice-claves">
+      <summary>Ver las diez claves</summary>
+      <ol>
+        <li><a href="#clave-1">Entrar en un sitio son dos cosas: decir quién eres y demostrarlo</a></li>
+        <li><a href="#clave-2">Tu correo se convirtió en el usuario universal</a></li>
+        <li><a href="#clave-3">Las filtraciones se prueban en todas partes</a></li>
+        <li><a href="#clave-4">Una contraseña distinta por servicio lo desactiva</a></li>
+        <li><a href="#clave-5">La cuenta de correo es la llave maestra</a></li>
+        <li><a href="#clave-6">El teléfono no es tan tuyo como parece</a></li>
+        <li><a href="#clave-7">El DNI es un identificador, nunca un secreto</a></li>
+        <li><a href="#clave-8">«Iniciar sesión con Google» pone todos los huevos en una cesta</a></li>
+        <li><a href="#clave-9">Los alias de correo devuelven un usuario distinto a cada sitio</a></li>
+        <li><a href="#clave-10">Tu nombre público no debería ser tu usuario privado</a></li>
+      </ol>
+    </details>
     <p>Para entrar en cualquier sitio hacen falta dos cosas: decir quién eres y demostrarlo. Estas diez claves van de la primera, la que casi nadie protege.</p>
 
     <ol class="claves">
-      <li><h2>Entrar en un sitio son dos cosas: decir quién eres y demostrarlo</h2><p>El identificador (el usuario) y la contraseña. Nos preocupamos solo de la segunda, pero la mayoría de los robos de cuentas empiezan por la primera: el atacante ya sabe tu correo y, a menudo, una contraseña que usaste alguna vez.</p></li>
-      <li><h2>Tu correo se convirtió en el usuario universal</h2><p>Hace años cada web te pedía un nombre de usuario. Hoy casi todas usan tu dirección de correo. Es cómodo, y tiene un coste: la misma dirección, pública y fácil de adivinar, es tu identificador en el banco, en la tienda, en el médico y en el foro de hace diez años. Quien la conozca sabe por dónde empezar en todos ellos.</p></li>
-      <li><h2>Las filtraciones se prueban en todas partes</h2><p>Cada vez que una web sufre una filtración, aparecen listas con millones de pares de correo y contraseña. Los atacantes las prueban de forma automática en otros servicios, a miles por minuto. Se llama relleno de credenciales y funciona porque mucha gente repite contraseña. No hace falta adivinar nada: basta con probar lo que ya se sabe.</p></li>
-      <li><h2>Una contraseña distinta por servicio lo desactiva</h2><p>Si una se filtra, el par correo-contraseña robado no abre ninguna otra puerta. Un gestor de contraseñas existe para esto: él las recuerda todas, tú recuerdas solo la suya. Es la medida que más protege de toda esta lista.</p></li>
-      <li><h2>La cuenta de correo es la llave maestra</h2><p>Es donde llegan los enlaces de «he olvidado mi contraseña». Quien controle tu correo puede restablecer la contraseña de casi cualquier servicio, y además leerte. Dale una contraseña larga y única (una <a href="/generador.html">frase de cuatro o cinco palabras</a>), doble factor con app o llave, y revisa de vez en cuando qué dispositivos y aplicaciones tienen acceso.</p></li>
-      <li><h2>El teléfono no es tan tuyo como parece</h2><p>Muchos servicios aceptan el número de móvil como usuario o lo usan para recuperar la cuenta. En el fraude del duplicado de SIM, alguien convence a la operadora, con datos tuyos sacados de otras filtraciones, de que le envíe una SIM nueva con tu número. Desde ese momento tus SMS llegan a su teléfono, incluidos los códigos del banco. Por eso el SMS es el doble factor más flojo.</p></li>
-      <li><h2>El DNI es un identificador, nunca un secreto</h2><p>Bancos, administraciones y mutuas lo usan como usuario, y tiene sentido para ellos. Pero el DNI está en contratos, formularios y fotocopias de medio país. Trátalo como lo que es y nunca lo uses como parte de una contraseña ni de un PIN. Lo mismo vale para la fecha de nacimiento.</p></li>
-      <li><h2>«Iniciar sesión con Google» pone todos los huevos en una cesta</h2><p>Esos botones evitan crear otra cuenta más: la web se fía de que Google o Apple ya han comprobado quién eres. Menos contraseñas que gestionar, y la cuenta grande suele estar mejor protegida que la pequeña. El riesgo: si pierdes esa cuenta, pierdes todas; si la roban, las roban todas. Una razón más para blindarla como la del correo, que a menudo es la misma.</p></li>
-      <li><h2>Los alias de correo devuelven un usuario distinto a cada sitio</h2><p>Apple y algunos gestores ofrecen direcciones intermedias, una por servicio, que reenvían a la tuya. Si una se filtra o empieza a recibir spam, se apaga y la real sigue limpia. Es la forma de recuperar lo que se perdió cuando el correo se convirtió en usuario universal.</p></li>
-      <li><h2>Tu nombre público no debería ser tu usuario privado</h2><p>En redes y foros el nombre de usuario es público por naturaleza, y está bien. Lo que conviene evitar es que ese mismo nombre sea el usuario del banco o del correo. Si alguien ve <code>@juanlp82</code> en un foro, no debería poder deducir tu usuario en otros sitios ni, peor, tu dirección de correo.</p></li>
+      <li id="clave-1"><h2>Entrar en un sitio son dos cosas: decir quién eres y demostrarlo</h2><p>El identificador (el usuario) y la contraseña. Nos preocupamos solo de la segunda, pero la mayoría de los robos de cuentas empiezan por la primera: el atacante ya sabe tu correo y, a menudo, una contraseña que usaste alguna vez.</p></li>
+      <li id="clave-2"><h2>Tu correo se convirtió en el usuario universal</h2><p>Hace años cada web te pedía un nombre de usuario. Hoy casi todas usan tu dirección de correo. Es cómodo, y tiene un coste: la misma dirección, pública y fácil de adivinar, es tu identificador en el banco, en la tienda, en el médico y en el foro de hace diez años. Quien la conozca sabe por dónde empezar en todos ellos.</p></li>
+      <li id="clave-3"><h2>Las filtraciones se prueban en todas partes</h2><p>Cada vez que una web sufre una filtración, aparecen listas con millones de pares de correo y contraseña. Los atacantes las prueban de forma automática en otros servicios, a miles por minuto. Se llama relleno de credenciales y funciona porque mucha gente repite contraseña. No hace falta adivinar nada: basta con probar lo que ya se sabe.</p></li>
+      <li id="clave-4"><h2>Una contraseña distinta por servicio lo desactiva</h2><p>Si una se filtra, el par correo-contraseña robado no abre ninguna otra puerta. Un gestor de contraseñas existe para esto: él las recuerda todas, tú recuerdas solo la suya. Es la medida que más protege de toda esta lista.</p></li>
+      <li id="clave-5"><h2>La cuenta de correo es la llave maestra</h2><p>Es donde llegan los enlaces de «he olvidado mi contraseña». Quien controle tu correo puede restablecer la contraseña de casi cualquier servicio, y además leerte. Dale una contraseña larga y única (una <a href="/generador.html">frase de cuatro o cinco palabras</a>), doble factor con app o llave, y revisa de vez en cuando qué dispositivos y aplicaciones tienen acceso.</p></li>
+      <li id="clave-6"><h2>El teléfono no es tan tuyo como parece</h2><p>Muchos servicios aceptan el número de móvil como usuario o lo usan para recuperar la cuenta. En el fraude del duplicado de SIM, alguien convence a la operadora, con datos tuyos sacados de otras filtraciones, de que le envíe una SIM nueva con tu número. Desde ese momento tus SMS llegan a su teléfono, incluidos los códigos del banco. Por eso el SMS es el doble factor más flojo.</p></li>
+      <li id="clave-7"><h2>El DNI es un identificador, nunca un secreto</h2><p>Bancos, administraciones y mutuas lo usan como usuario, y tiene sentido para ellos. Pero el DNI está en contratos, formularios y fotocopias de medio país. Trátalo como lo que es y nunca lo uses como parte de una contraseña ni de un PIN. Lo mismo vale para la fecha de nacimiento.</p></li>
+      <li id="clave-8"><h2>«Iniciar sesión con Google» pone todos los huevos en una cesta</h2><p>Esos botones evitan crear otra cuenta más: la web se fía de que Google o Apple ya han comprobado quién eres. Menos contraseñas que gestionar, y la cuenta grande suele estar mejor protegida que la pequeña. El riesgo: si pierdes esa cuenta, pierdes todas; si la roban, las roban todas. Una razón más para blindarla como la del correo, que a menudo es la misma.</p></li>
+      <li id="clave-9"><h2>Los alias de correo devuelven un usuario distinto a cada sitio</h2><p>Apple y algunos gestores ofrecen direcciones intermedias, una por servicio, que reenvían a la tuya. Si una se filtra o empieza a recibir spam, se apaga y la real sigue limpia. Es la forma de recuperar lo que se perdió cuando el correo se convirtió en usuario universal.</p></li>
+      <li id="clave-10"><h2>Tu nombre público no debería ser tu usuario privado</h2><p>En redes y foros el nombre de usuario es público por naturaleza, y está bien. Lo que conviene evitar es que ese mismo nombre sea el usuario del banco o del correo. Si alguien ve <code>@juanlp82</code> en un foro, no debería poder deducir tu usuario en otros sitios ni, peor, tu dirección de correo.</p></li>
     </ol>
     <div class="cierre stack">
       <h2>Qué hacer esta semana</h2>
@@ -60,25 +77,24 @@
     <section class="prods" aria-labelledby="h-prods">
       <h2 id="h-prods">Para ponerlo en práctica</h2>
       <ul>
-      <li><a data-busca="libreta contraseñas papel" href="https://www.amazon.es/s?k=libreta+contraseñas+papel" rel="noopener">Libreta de contraseñas en papel</a><p>Para la frase de recuperación y los códigos de emergencia, no para el día a día. En un cajón de casa es más segura que en una nota del móvil.</p></li>
-      <li><a data-busca="llave seguridad fido2 usb nfc" href="https://www.amazon.es/s?k=llave+seguridad+fido2+usb+nfc" rel="noopener">Llave de seguridad FIDO2</a><p>El doble factor que no se puede desviar con un duplicado de SIM. Compra dos y guarda una de repuesto.</p></li>
+      <li><a data-busca="libreta contraseñas papel" href="https://www.amazon.es/s?k=libreta+contrase%C3%B1as+papel" rel="noopener">Libreta de contraseñas en papel</a><p>Para la frase de recuperación y los códigos de emergencia, no para el día a día. En un cajón de casa es más segura que en una nota del móvil.</p></li><li><a data-busca="llave seguridad fido2 usb nfc" href="https://www.amazon.es/s?k=llave+seguridad+fido2+usb+nfc" rel="noopener">Llave de seguridad FIDO2</a><p>El doble factor que no se puede desviar con un duplicado de SIM. Compra dos y guarda una de repuesto.</p></li>
       </ul>
       <p class="aviso">Enlaces a <span data-tienda-nombre>Amazon España</span> según tu región. Diez Claves no tiene por ahora acuerdo de afiliación con ninguna tienda; cuando lo tenga, lo dirá aquí. Las alternativas gratuitas van siempre junto a las de pago.</p>
     </section>
     <nav class="rel" aria-label="Relacionado">
       <span class="tag">Sigue leyendo</span>
-      <a href="/articulos/contrasenas/elegir-gestor-de-contrasenas.html">Diez claves para elegir gestor de contraseñas</a><a href="/articulos/contrasenas/de-la-contrasena-a-la-passkey.html">Diez claves para entender cómo entramos hoy en las cuentas</a><a href="/generador.html">Generador de contraseñas</a>
+      <a href="/articulos/contrasenas/elegir-gestor-de-contrasenas.html">Elegir gestor de contraseñas</a><a href="/articulos/dispositivos/si-te-roban-el-movil.html">Si te roban el móvil</a><a href="/articulos/contrasenas/ene-y-tildes-en-contrasenas.html">La ñ y las tildes en las contraseñas</a><a href="/articulos/contrasenas/cuanto-tarda-descifrar-contrasena.html">Cuánto tarda en descifrarse una contraseña</a>
     </nav>
     <nav class="sig" aria-label="Siguiente en esta sección"><span class="tag">Siguiente en Contraseñas y cuentas · 4 de 5</span><a class="s" href="/articulos/contrasenas/de-la-contrasena-a-la-passkey.html">Diez claves para entender cómo entramos hoy en las cuentas</a><p>De la contraseña de 1961 a la passkey de 2022: qué fallo arregla cada sistema de acceso, qué protege cada uno y cuál activar en cada cuenta. <a href="/articulos/contrasenas/">Ver las 5 guías</a>.</p></nav>
   </article>
   </main>
   <footer>
     <span>Diez Claves · 2026</span>
-    <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
+    
     <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
     <a href="/aviso-legal.html">Aviso legal</a>
     <a href="/privacidad.html">Privacidad</a>
-  </footer>
+  <a class="sello" href="https://gofiodesign.eu" rel="noopener"><img src="/assets/gofio-monograma-ambar.svg" width="40" height="40" alt="" loading="lazy"><span>Un proyecto de <b>Gofio Design</b></span></a></footer>
 </div>
 </body>
 </html>

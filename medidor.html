@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Medidor de contraseñas en español: cuántos bits tiene, qué fallos tiene y cuánto tardarían en romperla según el atacante y cómo la guarde el servicio. Sin enviar nada.">
 <link rel="canonical" href="https://diezclaves.com/medidor.html">
-<meta name="theme-color" content="#131a2b">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://diezclaves.com/medidor.html">
 <meta property="og:site_name" content="Diez Claves">
@@ -22,48 +23,77 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/assets/manifest.webmanifest">
 <link rel="stylesheet" href="/assets/base.css">
+<script src="/assets/tema.js"></script>
 <script src="/assets/region.js" defer></script>
 <title>Medidor de contraseñas · ¿Cuánto aguanta la tuya? · Diez Claves</title>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Medidor de contraseñas","url":"https://diezclaves.com/medidor.html","description":"Analiza una contraseña en el navegador: bits de entropía, fallos habituales y tiempo de ruptura según el atacante y el almacenamiento.","applicationCategory":"SecurityApplication","operatingSystem":"Cualquiera, en el navegador","inLanguage":"es","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"Diez Claves","url":"https://diezclaves.com/"}}</script>
 <style>
-.field{display:flex;flex-direction:column;gap:8px}
-.field label{font-weight:600}
-.in{display:flex;gap:8px;align-items:stretch}
-.in input{flex:1;min-width:0;font:18px var(--mono);padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.06);color:var(--slab-ink)}
-.in input::placeholder{color:var(--slab-muted)}
+/* Medidor · mundo fanzine. Colores y fuentes en /assets/base.css.
+   El análisis va sobre papel, en un recuadro de rotulador, como en el generador. */
+main#contenido{gap:30px}
+h1.med{font-size:clamp(34px,9vw,60px);line-height:1.05;max-width:none}
+:root h1.med b.ene{display:inline-block;font-size:1.55em;line-height:.9;color:var(--on-hl);background:var(--hl-y);border:3px solid var(--on-hl);border-radius:var(--wob-1);padding:.06em .1em .02em;margin:0 .03em;transform:rotate(-5deg) translateY(.06em);text-decoration:none}
+.sub{font:800 clamp(20px,5vw,26px)/1.3 var(--display);margin:0}
+.sub span{color:var(--on-hl);background:var(--hl-p);padding:0 .15em;border-radius:var(--wob-3);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+/* la hoja de análisis */
+.slab{--slab-ink:var(--ink);--slab-muted:var(--muted);background:var(--surface);color:var(--ink);border:3px solid var(--line);border-radius:var(--wob-2);padding:22px 20px;gap:18px;position:relative}
+.slab::before{content:"";position:absolute;left:24px;top:-11px;width:58px;height:18px;background:var(--hl-y);border:1.5px solid var(--on-hl);transform:rotate(-4deg);border-radius:2px}
+.field{display:flex;flex-direction:column;gap:10px}
+.field label{font:800 20px var(--display)}
+.in{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch}
+.in input{flex:1 1 220px;min-width:0;font:600 20px var(--mono);padding:12px 16px;min-height:56px;border-radius:var(--wob-1);border:3px solid var(--line);background:var(--surface);color:var(--ink)}
+.in input::placeholder{color:var(--muted);opacity:1}
+.in input:focus-visible{outline:3px solid var(--ink);outline-offset:3px;box-shadow:0 0 0 7px var(--hl-t)}
 .in button{flex:none}
-.hint{font-size:14px;color:var(--slab-muted)}
-.res{display:flex;flex-direction:column;gap:14px}
-.meter{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:14px;color:var(--slab-muted)}
-.bar{flex:1 1 160px;height:8px;border-radius:4px;background:rgba(255,255,255,.14);overflow:hidden}
-.bar div{height:100%;width:0;background:var(--accent-on-slab);border-radius:4px;transition:width .2s}
-.meter strong{color:var(--slab-ink);font-size:22px;font-family:var(--display);font-variant-numeric:tabular-nums}
-.nivel{font-weight:700;color:var(--slab-ink)}
-.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:15px}
-.checks li{display:flex;gap:10px;align-items:flex-start}
-.checks li::before{content:"✓";font-family:var(--mono);font-weight:700;color:var(--ok);flex:none;width:1.2em}
-.checks li[data-k="mal"]::before{content:"✕";color:#ff8a80}
-.checks li[data-k="ojo"]::before{content:"!";color:var(--accent-on-slab)}
-.checks code{font-family:var(--mono);background:rgba(255,255,255,.1);padding:1px 6px;border-radius:5px}
-.tabla{overflow-x:auto}
-.tabla:focus-visible{outline:3px solid var(--accent-on-slab);outline-offset:2px}
-table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
-th,td{text-align:left;padding:8px 10px;border-bottom:1px solid rgba(255,255,255,.12);white-space:nowrap}
-th{font-weight:600;color:var(--slab-muted);font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+.slab .btn.ghost{color:var(--ink);border-color:var(--line);background:var(--surface)}
+.slab .btn.ghost:hover{background:var(--hl-y);color:var(--on-hl);border-color:var(--on-hl)}
+.slab .btn.ghost[aria-pressed="true"]{background:var(--hl-p);color:var(--on-hl);border-color:var(--on-hl)}
+.hint{font-size:15px;color:var(--muted)}
+.res{display:flex;flex-direction:column;gap:16px;border-top:1.5px dashed var(--hair);padding-top:16px}
+
+/* barra de fuerza */
+.meter{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:16px;color:var(--muted)}
+.bar{flex:1 1 180px;height:20px;border:var(--stroke) solid var(--line);border-radius:var(--wob-3);background:var(--surface);overflow:hidden;padding:2px}
+.bar div{height:100%;width:0;background:var(--hl-y);border-radius:var(--wob-1);box-shadow:inset 0 0 0 1.5px var(--on-hl);transition:width .3s cubic-bezier(.16,1,.3,1)}
+.meter strong{color:var(--ink);font:800 26px var(--display);font-variant-numeric:tabular-nums}
+.nivel{font:800 18px var(--display);color:var(--ink)}
+
+/* comprobaciones: un punto de subrayador con un trazo dibujado */
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:16px}
+.checks li{display:flex;gap:12px;align-items:flex-start}
+.checks li::before{content:"";flex:none;width:26px;height:26px;margin-top:-1px;border:2px solid var(--on-hl);border-radius:var(--wob-1);background:var(--hl-t) center/16px 16px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M3 10.5l4.5 4.5L17 4' fill='none' stroke='%23161616' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.checks li[data-k="ojo"]::before{background-color:var(--hl-y);border-radius:var(--wob-2);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 3.5v8' fill='none' stroke='%23161616' stroke-width='3.2' stroke-linecap='round'/%3E%3Ccircle cx='10' cy='16' r='1.9' fill='%23161616'/%3E%3C/svg%3E")}
+.checks li[data-k="mal"]::before{background-color:var(--hl-p);border-radius:var(--wob-3);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M4.5 4.5l11 11M15.5 4.5l-11 11' fill='none' stroke='%23161616' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E")}
+.checks code{font:600 .95em var(--mono);background:var(--hl-y);color:var(--on-hl);padding:1px 6px;border-radius:4px;border:0}
+
+/* tabla de tiempos */
+.tabla{overflow-x:auto;border:var(--stroke) solid var(--line);border-radius:var(--wob-3);padding:6px 10px}
+.tabla:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+table{border-collapse:collapse;width:100%;font-size:16px;font-variant-numeric:tabular-nums}
+caption{font-size:15px;color:var(--muted)}
+th,td{text-align:left;padding:10px 10px;border-bottom:1.5px dashed var(--hair);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+th{font:800 15px var(--display);color:var(--ink);border-bottom:var(--stroke) solid var(--line)}
 td:first-child{white-space:normal;min-width:160px}
-td small{display:block;color:var(--slab-muted);font-size:12px}
-.notes{display:flex;flex-direction:column;gap:10px;font-size:15px;color:var(--muted)}
-.notes h2{color:var(--ink)}
-.notes ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;max-width:65ch}
+td small{display:block;color:var(--muted);font-size:14px}
+
+/* notas */
+.notes{display:flex;flex-direction:column;gap:12px;font-size:16px;color:var(--muted)}
+.notes h2{color:var(--ink);margin-top:10px}
+.notes h2:first-child{margin-top:0}
+.notes ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;max-width:65ch}
 .notes strong{color:var(--ink)}
+@media (prefers-reduced-motion: reduce){ .bar div{transition:none} }
 </style>
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al medidor</a>
 <div class="wrap">
   <header class="stack">
-    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="/generador.html">Generador</a><a href="/medidor.html" aria-current="page">Medidor</a><a href="/articulos/">Artículos</a></nav>
-    <h1>Medidor de contraseñas: <span>¿cuánto aguanta la tuya?</span></h1>
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg class="llave" viewBox="0 0 40 100" width="27" height="66" aria-hidden="true"><path d="M6 5.5C14 3.6 27 3.4 34.6 5.2c1.6 9.4 1.5 22.6.2 31.6C26 38.6 13.6 38.4 5.3 36.9 3.9 27 4.2 15 6 5.5z" style="fill:var(--hl-y);stroke:currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M13 31V17.5L27 31V17.5M12.5 12.4c2.3-2.6 4.6-2.6 7 0s4.7 2.6 7.5-.2" style="fill:none;stroke:var(--on-hl)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 38.5V95M20 70h9.5v6M20 83h7" style="fill:none;stroke:currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="marca">Diez Claves<span class="lema">Recetas con <b class="ene">ñ</b></span><span class="desc">Seguridad digital en español</span></span></a><a href="/articulos/">Artículos</a><a href="/herramientas.html" aria-current="page">Herramientas</a></nav>
+    <h1 class="med">Medidor de contrase<b class="ene">Ñ</b>as</h1>
+    <p class="sub"><span>¿Cuánto aguanta la tuya?</span></p>
   </header>
 
   <main id="contenido" class="stack">
@@ -122,11 +152,11 @@ td small{display:block;color:var(--slab-muted);font-size:12px}
 
   <footer>
     <span>Diez Claves · 2026</span>
-    <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
+    
     <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
     <a href="/aviso-legal.html">Aviso legal</a>
     <a href="/privacidad.html">Privacidad</a>
-  </footer>
+  <a class="sello" href="https://gofiodesign.eu" rel="noopener"><img src="/assets/gofio-monograma-ambar.svg" width="40" height="40" alt="" loading="lazy"><span>Un proyecto de <b>Gofio Design</b></span></a></footer>
 </div>
 <script src="/assets/diccionario.js"></script>
 <script>

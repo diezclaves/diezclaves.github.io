@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="De la contraseña de 1961 a la passkey de 2022: qué fallo arregla cada sistema de acceso, qué protege cada uno y cuál activar en cada cuenta.">
 <link rel="canonical" href="https://diezclaves.com/articulos/contrasenas/de-la-contrasena-a-la-passkey.html">
-<meta name="theme-color" content="#131a2b">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://diezclaves.com/articulos/contrasenas/de-la-contrasena-a-la-passkey.html">
 <meta property="og:site_name" content="Diez Claves">
@@ -22,6 +23,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/assets/manifest.webmanifest">
 <link rel="stylesheet" href="/assets/base.css">
+<script src="/assets/tema.js"></script>
 <script src="/assets/region.js" defer></script>
 <title>Diez claves para entender cómo entramos hoy en las cuentas: de la contraseña a la passkey · Diez Claves</title>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Diez claves para entender cómo entramos hoy en las cuentas: de la contraseña a la passkey", "description": "De la contraseña de 1961 a la passkey de 2022: qué fallo arregla cada sistema de acceso, qué protege cada uno y cuál activar en cada cuenta.", "inLanguage": "es", "datePublished": "2026-11-11", "dateModified": "2026-11-11", "author": {"@type": "Organization", "name": "Diez Claves", "url": "https://diezclaves.com/"}, "publisher": {"@type": "Organization", "name": "Diez Claves", "logo": {"@type": "ImageObject", "url": "https://diezclaves.com/assets/icon-512.png"}}, "mainEntityOfPage": "https://diezclaves.com/articulos/contrasenas/de-la-contrasena-a-la-passkey.html", "image": "https://diezclaves.com/assets/og.png"}, {"@type": "ItemList", "name": "Diez claves para entender cómo entramos hoy en las cuentas: de la contraseña a la passkey", "numberOfItems": 10, "itemListOrder": "https://schema.org/ItemListOrderAscending", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "1961: algo que sabes"}, {"@type": "ListItem", "position": 2, "name": "Años setenta: no guardar la contraseña, sino una huella de ella"}, {"@type": "ListItem", "position": 3, "name": "Algo que tienes: el doble factor"}, {"@type": "ListItem", "position": 4, "name": "El SMS fue el primero y es el más flojo"}, {"@type": "ListItem", "position": 5, "name": "2011: apps de códigos (TOTP)"}, {"@type": "ListItem", "position": 6, "name": "Las notificaciones y la fatiga"}, {"@type": "ListItem", "position": 7, "name": "2014-2019: la llave física que no se deja engañar"}, {"@type": "ListItem", "position": 8, "name": "2022: la passkey, la llave está en tu móvil"}, {"@type": "ListItem", "position": 9, "name": "El otro camino: que una sola cuenta responda por ti"}, {"@type": "ListItem", "position": 10, "name": "Qué protege cada uno, en una tabla"}]}]}</script>
@@ -30,7 +32,7 @@
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <div class="wrap">
   <header class="stack">
-    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="/generador.html">Generador</a><a href="/medidor.html">Medidor</a><a href="/articulos/" aria-current="page">Artículos</a></nav>
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg class="llave" viewBox="0 0 40 100" width="27" height="66" aria-hidden="true"><path d="M6 5.5C14 3.6 27 3.4 34.6 5.2c1.6 9.4 1.5 22.6.2 31.6C26 38.6 13.6 38.4 5.3 36.9 3.9 27 4.2 15 6 5.5z" style="fill:var(--hl-y);stroke:currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M13 31V17.5L27 31V17.5M12.5 12.4c2.3-2.6 4.6-2.6 7 0s4.7 2.6 7.5-.2" style="fill:none;stroke:var(--on-hl)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 38.5V95M20 70h9.5v6M20 83h7" style="fill:none;stroke:currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="marca">Diez Claves<span class="lema">Recetas con <b class="ene">ñ</b></span><span class="desc">Seguridad digital en español</span></span></a><a href="/articulos/" aria-current="page">Artículos</a><a href="/herramientas.html">Herramientas</a></nav>
   </header>
   <main id="contenido">
   <article>
@@ -39,19 +41,34 @@
       <h1>Diez claves para entender <span>cómo entramos hoy en las cuentas</span></h1>
       <p class="lede muted">De la contraseña de 1961 a la passkey de 2022: qué fallo arregla cada sistema de acceso, qué protege cada uno y cuál activar en cada cuenta.</p>
     </header>
+    <details class="indice-claves">
+      <summary>Ver las diez claves</summary>
+      <ol>
+        <li><a href="#clave-1">1961: algo que sabes</a></li>
+        <li><a href="#clave-2">Años setenta: no guardar la contraseña, sino una huella de ella</a></li>
+        <li><a href="#clave-3">Algo que tienes: el doble factor</a></li>
+        <li><a href="#clave-4">El SMS fue el primero y es el más flojo</a></li>
+        <li><a href="#clave-5">2011: apps de códigos (TOTP)</a></li>
+        <li><a href="#clave-6">Las notificaciones y la fatiga</a></li>
+        <li><a href="#clave-7">2014-2019: la llave física que no se deja engañar</a></li>
+        <li><a href="#clave-8">2022: la passkey, la llave está en tu móvil</a></li>
+        <li><a href="#clave-9">El otro camino: que una sola cuenta responda por ti</a></li>
+        <li><a href="#clave-10">Qué protege cada uno, en una tabla</a></li>
+      </ol>
+    </details>
     <p>Las contraseñas tienen más de sesenta años y siguen aquí, pero ya no están solas. Cada capa nueva apareció para tapar un fallo de la anterior. Entender ese recorrido es la mejor forma de saber qué activar en cada cuenta y por qué.</p>
 
     <ol class="claves">
-      <li><h2>1961: algo que sabes</h2><p>Las primeras contraseñas informáticas se usaron en un ordenador compartido del MIT para que cada persona tuviera sus propios archivos. El primer robo llegó enseguida: un usuario imprimió el archivo donde estaban todas. Desde entonces el problema es el mismo: la contraseña se guarda en algún sitio, y ese sitio se puede robar.</p></li>
-      <li><h2>Años setenta: no guardar la contraseña, sino una huella de ella</h2><p>Un <em>hash</em> es una huella matemática de la que no se puede volver atrás, con una «sal» aleatoria por usuario para que dos contraseñas iguales no se parezcan en la base de datos. Hoy los algoritmos buenos (bcrypt, Argon2) son además lentos a propósito. El <a href="/medidor.html">medidor</a> muestra la diferencia: la misma contraseña aguanta siglos o segundos según cómo la guarde el servicio.</p></li>
-      <li><h2>Algo que tienes: el doble factor</h2><p>Ningún hash arregla que la contraseña se adivine, se repita o se entregue a una web falsa. El doble factor añade un aparato: las empresas usaban desde los ochenta llaveros con un número cambiante; la versión para todos llegó con el código por SMS.</p></li>
-      <li><h2>El SMS fue el primero y es el más flojo</h2><p>Viaja por una red pensada en los años noventa, se puede desviar con un duplicado de SIM y se le puede pedir a la víctima con un simple «dinos el código que te acaba de llegar». Mejor que nada; peor que todo lo que vino después.</p></li>
-      <li><h2>2011: apps de códigos (TOTP)</h2><p>Google Authenticator, Aegis, Ente Auth y otras usan un estándar abierto: la app y el servicio comparten un secreto y generan el mismo número de seis cifras cada 30 segundos, sin red. Ya no se puede desviar, pero sigue siendo un número que una persona puede teclear en una web falsa.</p></li>
-      <li><h2>Las notificaciones y la fatiga</h2><p>«¿Estás intentando entrar? Sí / No» es más cómodo, con un fallo propio: si te llegan veinte seguidas a las tres de la mañana, acabas pulsando «sí» para que paren. Se ha usado en ataques reales contra empresas.</p></li>
-      <li><h2>2014-2019: la llave física que no se deja engañar</h2><p>Las llaves FIDO (YubiKey, Nitrokey) firman el inicio de sesión con una clave que nunca sale de ellas, y en la firma va el nombre del sitio. Si estás en una web que imita a tu banco, la firma no sirve aunque no hayas notado la diferencia. Es la primera defensa que vence al phishing por diseño, no por atención del usuario. El estándar empezó como U2F en 2014 y los navegadores lo adoptaron como WebAuthn en 2019.</p></li>
-      <li><h2>2022: la passkey, la llave está en tu móvil</h2><p>Es lo mismo que la llave física, pero guardada en el teléfono, el ordenador o el gestor, y protegida por el bloqueo del aparato. No hay nada que teclear ni recordar, no se puede filtrar porque el servicio solo guarda la parte pública, y no funciona en una web falsa. Apple, Google y Microsoft las adoptaron a la vez en 2022. Sus límites: no todos los servicios las ofrecen aún y, si pierdes todos tus aparatos, necesitas otra vía de entrada.</p></li>
-      <li><h2>El otro camino: que una sola cuenta responda por ti</h2><p>El inicio de sesión único: «Iniciar sesión con Google / Apple», sobre estándares abiertos (OAuth, OpenID Connect). En España, Cl@ve, el certificado digital y el DNI electrónico son la versión pública para todas las administraciones. Menos contraseñas y una cuenta central mejor vigilada, a cambio de un único punto de fallo que hay que proteger con lo mejor que haya.</p></li>
-      <li><h2>Qué protege cada uno, en una tabla</h2><div class="scroll" tabindex="0" role="region" aria-label="Tabla, se puede desplazar"><table>
+      <li id="clave-1"><h2>1961: algo que sabes</h2><p>Las primeras contraseñas informáticas se usaron en un ordenador compartido del MIT para que cada persona tuviera sus propios archivos. El primer robo llegó enseguida: un usuario imprimió el archivo donde estaban todas. Desde entonces el problema es el mismo: la contraseña se guarda en algún sitio, y ese sitio se puede robar.</p></li>
+      <li id="clave-2"><h2>Años setenta: no guardar la contraseña, sino una huella de ella</h2><p>Un <em>hash</em> es una huella matemática de la que no se puede volver atrás, con una «sal» aleatoria por usuario para que dos contraseñas iguales no se parezcan en la base de datos. Hoy los algoritmos buenos (bcrypt, Argon2) son además lentos a propósito. El <a href="/medidor.html">medidor</a> muestra la diferencia: la misma contraseña aguanta siglos o segundos según cómo la guarde el servicio.</p></li>
+      <li id="clave-3"><h2>Algo que tienes: el doble factor</h2><p>Ningún hash arregla que la contraseña se adivine, se repita o se entregue a una web falsa. El doble factor añade un aparato: las empresas usaban desde los ochenta llaveros con un número cambiante; la versión para todos llegó con el código por SMS.</p></li>
+      <li id="clave-4"><h2>El SMS fue el primero y es el más flojo</h2><p>Viaja por una red pensada en los años noventa, se puede desviar con un duplicado de SIM y se le puede pedir a la víctima con un simple «dinos el código que te acaba de llegar». Mejor que nada; peor que todo lo que vino después.</p></li>
+      <li id="clave-5"><h2>2011: apps de códigos (TOTP)</h2><p>Google Authenticator, Aegis, Ente Auth y otras usan un estándar abierto: la app y el servicio comparten un secreto y generan el mismo número de seis cifras cada 30 segundos, sin red. Ya no se puede desviar, pero sigue siendo un número que una persona puede teclear en una web falsa.</p></li>
+      <li id="clave-6"><h2>Las notificaciones y la fatiga</h2><p>«¿Estás intentando entrar? Sí / No» es más cómodo, con un fallo propio: si te llegan veinte seguidas a las tres de la mañana, acabas pulsando «sí» para que paren. Se ha usado en ataques reales contra empresas.</p></li>
+      <li id="clave-7"><h2>2014-2019: la llave física que no se deja engañar</h2><p>Las llaves FIDO (YubiKey, Nitrokey) firman el inicio de sesión con una clave que nunca sale de ellas, y en la firma va el nombre del sitio. Si estás en una web que imita a tu banco, la firma no sirve aunque no hayas notado la diferencia. Es la primera defensa que vence al phishing por diseño, no por atención del usuario. El estándar empezó como U2F en 2014 y los navegadores lo adoptaron como WebAuthn en 2019.</p></li>
+      <li id="clave-8"><h2>2022: la passkey, la llave está en tu móvil</h2><p>Es lo mismo que la llave física, pero guardada en el teléfono, el ordenador o el gestor, y protegida por el bloqueo del aparato. No hay nada que teclear ni recordar, no se puede filtrar porque el servicio solo guarda la parte pública, y no funciona en una web falsa. Apple, Google y Microsoft las adoptaron a la vez en 2022. Sus límites: no todos los servicios las ofrecen aún y, si pierdes todos tus aparatos, necesitas otra vía de entrada.</p></li>
+      <li id="clave-9"><h2>El otro camino: que una sola cuenta responda por ti</h2><p>El inicio de sesión único: «Iniciar sesión con Google / Apple», sobre estándares abiertos (OAuth, OpenID Connect). En España, Cl@ve, el certificado digital y el DNI electrónico son la versión pública para todas las administraciones. Menos contraseñas y una cuenta central mejor vigilada, a cambio de un único punto de fallo que hay que proteger con lo mejor que haya.</p></li>
+      <li id="clave-10"><h2>Qué protege cada uno, en una tabla</h2><div class="scroll" tabindex="0" role="region" aria-label="Tabla, se puede desplazar"><table>
       <thead><tr><th scope="col">Sistema</th><th scope="col">Contraseña filtrada</th><th scope="col">Web falsa</th><th scope="col">Duplicado de SIM</th><th scope="col">Pierdes el aparato</th></tr></thead>
       <tbody>
         <tr><td>Solo contraseña</td><td>No</td><td>No</td><td>No le afecta</td><td>No le afecta</td></tr>
@@ -71,25 +88,24 @@
     <section class="prods" aria-labelledby="h-prods">
       <h2 id="h-prods">Para ponerlo en práctica</h2>
       <ul>
-      <li><a data-busca="llave seguridad fido2 usb c nfc" href="https://www.amazon.es/s?k=llave+seguridad+fido2+usb+c+nfc" rel="noopener">Llave de seguridad FIDO2 (USB-C y NFC)</a><p>Vale para el ordenador y para el móvil. Es el doble factor que resiste a las webs falsas. Compra dos.</p></li>
-      <li><a data-busca="lector dni electronico usb" href="https://www.amazon.es/s?k=lector+dni+electronico+usb" rel="noopener">Lector de DNI electrónico</a><p>Si vas a usar el DNIe para la administración desde el ordenador. Los móviles con NFC no lo necesitan.</p></li>
+      <li><a data-busca="llave seguridad fido2 usb c nfc" href="https://www.amazon.es/s?k=llave+seguridad+fido2+usb+c+nfc" rel="noopener">Llave de seguridad FIDO2 (USB-C y NFC)</a><p>Vale para el ordenador y para el móvil. Es el doble factor que resiste a las webs falsas. Compra dos.</p></li><li><a data-busca="lector dni electronico usb" href="https://www.amazon.es/s?k=lector+dni+electronico+usb" rel="noopener">Lector de DNI electrónico</a><p>Si vas a usar el DNIe para la administración desde el ordenador. Los móviles con NFC no lo necesitan.</p></li>
       </ul>
       <p class="aviso">Enlaces a <span data-tienda-nombre>Amazon España</span> según tu región. Diez Claves no tiene por ahora acuerdo de afiliación con ninguna tienda; cuando lo tenga, lo dirá aquí. Las alternativas gratuitas van siempre junto a las de pago.</p>
     </section>
     <nav class="rel" aria-label="Relacionado">
       <span class="tag">Sigue leyendo</span>
-      <a href="/articulos/contrasenas/identificadores-y-contrasenas.html">Diez claves sobre tu correo y tu usuario</a><a href="/articulos/tramites/clave-certificado-digital-dnie.html">Diez claves para usar Cl@ve, el certificado digital y el DNIe</a><a href="/medidor.html">Medidor de contraseñas</a>
+      <a href="/articulos/contrasenas/elegir-gestor-de-contrasenas.html">Elegir gestor de contraseñas</a><a href="/articulos/contrasenas/identificadores-y-contrasenas.html">Tu correo, tu usuario y por qué los roban</a><a href="/articulos/contrasenas/cuanto-tarda-descifrar-contrasena.html">Cuánto tarda en descifrarse una contraseña</a><a href="/articulos/dispositivos/si-te-roban-el-movil.html">Si te roban el móvil</a>
     </nav>
     <nav class="sig" aria-label="Siguiente en esta sección"><span class="tag">Siguiente en Contraseñas y cuentas · 5 de 5</span><a class="s" href="/articulos/contrasenas/ene-y-tildes-en-contrasenas.html">Diez claves sobre la ñ y las tildes en las contraseñas</a><p>¿Se puede poner la ñ en una contraseña? Sí, y conviene: por qué protegen más, cuándo dan problemas, qué servicios las rechazan y cómo probarlas sin sustos. <a href="/articulos/contrasenas/">Ver las 5 guías</a>.</p></nav>
   </article>
   </main>
   <footer>
     <span>Diez Claves · 2026</span>
-    <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
+    
     <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
     <a href="/aviso-legal.html">Aviso legal</a>
     <a href="/privacidad.html">Privacidad</a>
-  </footer>
+  <a class="sello" href="https://gofiodesign.eu" rel="noopener"><img src="/assets/gofio-monograma-ambar.svg" width="40" height="40" alt="" loading="lazy"><span>Un proyecto de <b>Gofio Design</b></span></a></footer>
 </div>
 </body>
 </html>

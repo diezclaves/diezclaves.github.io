@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Cómo crear la Identidad Electrónica desde el celular, llevar la cédula y la licencia en Portal Paraguay, mostrarlas con QR, activar la verificación en dos pasos y cuándo hace falta un certificado de firma.">
 <link rel="canonical" href="https://diezclaves.com/articulos/tramites/identidad-digital-paraguay.html">
-<meta name="theme-color" content="#131a2b">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://diezclaves.com/articulos/tramites/identidad-digital-paraguay.html">
 <meta property="og:site_name" content="Diez Claves">
@@ -22,6 +23,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/assets/manifest.webmanifest">
 <link rel="stylesheet" href="/assets/base.css">
+<script src="/assets/tema.js"></script>
 <script src="/assets/region.js" defer></script>
 <title>Diez claves para tu identidad digital en Paraguay: Identidad Electrónica y Portal Paraguay · Diez Claves</title>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Diez claves para tu identidad digital en Paraguay: Identidad Electrónica y Portal Paraguay", "description": "Cómo crear la Identidad Electrónica desde el celular, llevar la cédula y la licencia en Portal Paraguay, mostrarlas con QR, activar la verificación en dos pasos y cuándo hace falta un certificado de firma.", "inLanguage": "es", "datePublished": "2026-11-11", "dateModified": "2026-11-11", "author": {"@type": "Organization", "name": "Diez Claves", "url": "https://diezclaves.com/"}, "publisher": {"@type": "Organization", "name": "Diez Claves", "logo": {"@type": "ImageObject", "url": "https://diezclaves.com/assets/icon-512.png"}}, "mainEntityOfPage": "https://diezclaves.com/articulos/tramites/identidad-digital-paraguay.html", "image": "https://diezclaves.com/assets/og.png"}, {"@type": "ItemList", "name": "Diez claves para tu identidad digital en Paraguay: Identidad Electrónica y Portal Paraguay", "numberOfItems": 10, "itemListOrder": "https://schema.org/ItemListOrderAscending", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Identidad Electrónica y certificado de firma no son lo mismo"}, {"@type": "ListItem", "position": 2, "name": "Quién puede tenerla"}, {"@type": "ListItem", "position": 3, "name": "Crearla desde el celular"}, {"@type": "ListItem", "position": 4, "name": "Portal Paraguay: tus documentos en el teléfono"}, {"@type": "ListItem", "position": 5, "name": "Mostrar la cédula con un código QR"}, {"@type": "ListItem", "position": 6, "name": "¿Pueden rechazarte el documento digital?"}, {"@type": "ListItem", "position": 7, "name": "Verificación en dos pasos por SMS"}, {"@type": "ListItem", "position": 8, "name": "Sí existe un certificado para firmar"}, {"@type": "ListItem", "position": 9, "name": "Ni NFC ni lector para la Identidad Electrónica"}, {"@type": "ListItem", "position": 10, "name": "Qué herramienta para cada trámite"}]}]}</script>
@@ -30,7 +32,7 @@
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <div class="wrap">
   <header class="stack">
-    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#131a2b"/><circle cx="22" cy="32" r="9.5" fill="none" stroke="#ffb84a" stroke-width="6"/><path d="M31 32h23M43 32v10M52 32v8" fill="none" stroke="#ffb84a" stroke-width="6" stroke-linecap="round"/></svg>Diez Claves</a><a href="/generador.html">Generador</a><a href="/medidor.html">Medidor</a><a href="/articulos/" aria-current="page">Artículos</a></nav>
+    <nav class="by" aria-label="Diez Claves"><a class="brand" href="/"><svg class="llave" viewBox="0 0 40 100" width="27" height="66" aria-hidden="true"><path d="M6 5.5C14 3.6 27 3.4 34.6 5.2c1.6 9.4 1.5 22.6.2 31.6C26 38.6 13.6 38.4 5.3 36.9 3.9 27 4.2 15 6 5.5z" style="fill:var(--hl-y);stroke:currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M13 31V17.5L27 31V17.5M12.5 12.4c2.3-2.6 4.6-2.6 7 0s4.7 2.6 7.5-.2" style="fill:none;stroke:var(--on-hl)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 38.5V95M20 70h9.5v6M20 83h7" style="fill:none;stroke:currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="marca">Diez Claves<span class="lema">Recetas con <b class="ene">ñ</b></span><span class="desc">Seguridad digital en español</span></span></a><a href="/articulos/" aria-current="page">Artículos</a><a href="/herramientas.html">Herramientas</a></nav>
   </header>
   <main id="contenido">
   <article>
@@ -40,19 +42,34 @@
       <p class="lede muted">Cómo crear la Identidad Electrónica desde el celular, llevar la cédula y la licencia en Portal Paraguay, mostrarlas con QR, activar la verificación en dos pasos y cuándo hace falta un certificado de firma.</p>
       <p class="meta">Versión para Paraguay. También: <a href="/articulos/tramites/clave-certificado-digital-dnie.html">España</a> · <a href="/articulos/tramites/clave-certificado-digital-canarias.html">Canarias</a> · <a href="/articulos/tramites/identidad-digital-mexico.html">México</a> · <a href="/articulos/tramites/identidad-digital-guatemala.html">Guatemala</a> · <a href="/articulos/tramites/identidad-digital-el-salvador.html">El Salvador</a> · <a href="/articulos/tramites/identidad-digital-honduras.html">Honduras</a> · <a href="/articulos/tramites/identidad-digital-nicaragua.html">Nicaragua</a> · <a href="/articulos/tramites/identidad-digital-costa-rica.html">Costa Rica</a> · <a href="/articulos/tramites/identidad-digital-panama.html">Panamá</a> · <a href="/articulos/tramites/identidad-digital-cuba.html">Cuba</a> · <a href="/articulos/tramites/identidad-digital-republica-dominicana.html">R. Dominicana</a> · <a href="/articulos/tramites/identidad-digital-puerto-rico.html">Puerto Rico</a> · <a href="/articulos/tramites/identidad-digital-colombia.html">Colombia</a> · <a href="/articulos/tramites/identidad-digital-ecuador.html">Ecuador</a> · <a href="/articulos/tramites/identidad-digital-peru.html">Perú</a> · <a href="/articulos/tramites/identidad-digital-bolivia.html">Bolivia</a> · <a href="/articulos/tramites/identidad-digital-chile.html">Chile</a> · <a href="/articulos/tramites/identidad-digital-argentina.html">Argentina</a> · <a href="/articulos/tramites/identidad-digital-uruguay.html">Uruguay</a> · <a href="/articulos/tramites/identidad-digital-estados-unidos.html">Estados Unidos</a>.</p>
     </header>
+    <details class="indice-claves">
+      <summary>Ver las diez claves</summary>
+      <ol>
+        <li><a href="#clave-1">Identidad Electrónica y certificado de firma no son lo mismo</a></li>
+        <li><a href="#clave-2">Quién puede tenerla</a></li>
+        <li><a href="#clave-3">Crearla desde el celular</a></li>
+        <li><a href="#clave-4">Portal Paraguay: tus documentos en el teléfono</a></li>
+        <li><a href="#clave-5">Mostrar la cédula con un código QR</a></li>
+        <li><a href="#clave-6">¿Pueden rechazarte el documento digital?</a></li>
+        <li><a href="#clave-7">Verificación en dos pasos por SMS</a></li>
+        <li><a href="#clave-8">Sí existe un certificado para firmar</a></li>
+        <li><a href="#clave-9">Ni NFC ni lector para la Identidad Electrónica</a></li>
+        <li><a href="#clave-10">Qué herramienta para cada trámite</a></li>
+      </ol>
+    </details>
     <p>Podés llevar la cédula, la licencia y los papeles del vehículo en el celular, con validez legal dentro del país. La puerta es la Identidad Electrónica; la firma con certificado es otro camino.</p>
 
     <ol class="claves">
-      <li><h2>Identidad Electrónica y certificado de firma no son lo mismo</h2><p>La <strong>Identidad Electrónica</strong> es el sistema de identificación del MITIC: tu número de cédula, una contraseña y los mecanismos de seguridad del sistema, para entrar en los servicios del Estado y en los documentos digitales de Portal Paraguay. El <strong>certificado cualificado de firma electrónica</strong> es otra cosa, con prestadores y requisitos propios.</p></li>
-      <li><h2>Quién puede tenerla</h2><p>Personas de 18 años o más con cédula paraguaya vigente, un correo personal e información verificable en las bases oficiales. Las personas extranjeras con cédula paraguaya vigente también. No se exige nacionalidad en todos los casos, pero sí el documento admitido. Es gratuita.</p></li>
-      <li><h2>Crearla desde el celular</h2><p>En <a href="https://www.paraguay.gov.py/" rel="noopener">paraguay.gov.py</a>, «Crear tu Identidad Electrónica»: número de cédula, datos, correo, foto del frente y del dorso de la cédula, una selfie con el documento cerca del rostro, envío y activación. Fotos nítidas, sin reflejos ni objetos que tapen la cara. Si el sistema no verifica solo, puede pedir comprobaciones adicionales.</p></li>
-      <li><h2>Portal Paraguay: tus documentos en el teléfono</h2><p>Con la Identidad Electrónica creada, la app Portal Paraguay (Android y iPhone) muestra la cédula de identidad, la cédula verde del vehículo, la licencia de conducir y la habilitación vehicular cuando están integradas. La Ley 7177/2023 reconoce la validez de esos documentos de portación obligatoria en formato digital dentro del país.</p></li>
-      <li><h2>Mostrar la cédula con un código QR</h2><p>En la app: sesión, sección de documentos, la credencial, generar el documento digital y mostrar el QR para que la autoridad lo compruebe. <strong>El QR vale cinco minutos</strong>; después hay que generarlo de nuevo. Una captura de pantalla no es una credencial verificable.</p></li>
-      <li><h2>¿Pueden rechazarte el documento digital?</h2><p>Dentro de Paraguay las autoridades deben admitir el formato digital conforme a la Ley 7177/2023; si lo rechazan sin motivo, el MITIC tiene canales de consulta y reclamo. Pero la validez nacional no sirve para viajar: para cruzar fronteras mandan los requisitos del país de destino y de migraciones.</p></li>
-      <li><h2>Verificación en dos pasos por SMS</h2><p>El MITIC anunció en mayo de 2026 la verificación en dos pasos obligatoria por SMS. Se configura desde el portal web (no desde la app): sesión, configuración de seguridad, autenticación en dos pasos, celular, código SMS y activación. No compartas los códigos con nadie, aunque diga ser de una institución pública.</p></li>
-      <li><h2>Sí existe un certificado para firmar</h2><p>La Ley 6822/2021 regula los servicios de confianza y las firmas electrónicas; la firma cualificada equivale a la manuscrita en las condiciones de la ley. Para obtener un certificado cualificado: identificá el documento, comprobá si exige firma cualificada, consultá los prestadores cualificados autorizados, revisá requisitos, elegí modalidad, acreditá tu identidad, pagá si corresponde, activá y configurá. Costo y procedimiento dependen del prestador.</p></li>
-      <li><h2>Ni NFC ni lector para la Identidad Electrónica</h2><p>Para crearla y usar los documentos de Portal Paraguay no hace falta comprar lector USB ni NFC: la identificación se hace con las fotos del documento y del solicitante. Algunos certificados de firma sí pueden exigir dispositivos criptográficos, pero no hay un procedimiento oficial que emita un certificado cualificado acercando la cédula al celular. Antes de comprar nada, mirá qué pide el prestador.</p></li>
-      <li><h2>Qué herramienta para cada trámite</h2><div class="scroll" tabindex="0" role="region" aria-label="Tabla, se puede desplazar"><table>
+      <li id="clave-1"><h2>Identidad Electrónica y certificado de firma no son lo mismo</h2><p>La <strong>Identidad Electrónica</strong> es el sistema de identificación del MITIC: tu número de cédula, una contraseña y los mecanismos de seguridad del sistema, para entrar en los servicios del Estado y en los documentos digitales de Portal Paraguay. El <strong>certificado cualificado de firma electrónica</strong> es otra cosa, con prestadores y requisitos propios.</p></li>
+      <li id="clave-2"><h2>Quién puede tenerla</h2><p>Personas de 18 años o más con cédula paraguaya vigente, un correo personal e información verificable en las bases oficiales. Las personas extranjeras con cédula paraguaya vigente también. No se exige nacionalidad en todos los casos, pero sí el documento admitido. Es gratuita.</p></li>
+      <li id="clave-3"><h2>Crearla desde el celular</h2><p>En <a href="https://www.paraguay.gov.py/" rel="noopener">paraguay.gov.py</a>, «Crear tu Identidad Electrónica»: número de cédula, datos, correo, foto del frente y del dorso de la cédula, una selfie con el documento cerca del rostro, envío y activación. Fotos nítidas, sin reflejos ni objetos que tapen la cara. Si el sistema no verifica solo, puede pedir comprobaciones adicionales.</p></li>
+      <li id="clave-4"><h2>Portal Paraguay: tus documentos en el teléfono</h2><p>Con la Identidad Electrónica creada, la app Portal Paraguay (Android y iPhone) muestra la cédula de identidad, la cédula verde del vehículo, la licencia de conducir y la habilitación vehicular cuando están integradas. La Ley 7177/2023 reconoce la validez de esos documentos de portación obligatoria en formato digital dentro del país.</p></li>
+      <li id="clave-5"><h2>Mostrar la cédula con un código QR</h2><p>En la app: sesión, sección de documentos, la credencial, generar el documento digital y mostrar el QR para que la autoridad lo compruebe. <strong>El QR vale cinco minutos</strong>; después hay que generarlo de nuevo. Una captura de pantalla no es una credencial verificable.</p></li>
+      <li id="clave-6"><h2>¿Pueden rechazarte el documento digital?</h2><p>Dentro de Paraguay las autoridades deben admitir el formato digital conforme a la Ley 7177/2023; si lo rechazan sin motivo, el MITIC tiene canales de consulta y reclamo. Pero la validez nacional no sirve para viajar: para cruzar fronteras mandan los requisitos del país de destino y de migraciones.</p></li>
+      <li id="clave-7"><h2>Verificación en dos pasos por SMS</h2><p>El MITIC anunció en mayo de 2026 la verificación en dos pasos obligatoria por SMS. Se configura desde el portal web (no desde la app): sesión, configuración de seguridad, autenticación en dos pasos, celular, código SMS y activación. No compartas los códigos con nadie, aunque diga ser de una institución pública.</p></li>
+      <li id="clave-8"><h2>Sí existe un certificado para firmar</h2><p>La Ley 6822/2021 regula los servicios de confianza y las firmas electrónicas; la firma cualificada equivale a la manuscrita en las condiciones de la ley. Para obtener un certificado cualificado: identificá el documento, comprobá si exige firma cualificada, consultá los prestadores cualificados autorizados, revisá requisitos, elegí modalidad, acreditá tu identidad, pagá si corresponde, activá y configurá. Costo y procedimiento dependen del prestador.</p></li>
+      <li id="clave-9"><h2>Ni NFC ni lector para la Identidad Electrónica</h2><p>Para crearla y usar los documentos de Portal Paraguay no hace falta comprar lector USB ni NFC: la identificación se hace con las fotos del documento y del solicitante. Algunos certificados de firma sí pueden exigir dispositivos criptográficos, pero no hay un procedimiento oficial que emita un certificado cualificado acercando la cédula al celular. Antes de comprar nada, mirá qué pide el prestador.</p></li>
+      <li id="clave-10"><h2>Qué herramienta para cada trámite</h2><div class="scroll" tabindex="0" role="region" aria-label="Tabla, se puede desplazar"><table>
       <thead><tr><th scope="col">Necesitás…</th><th scope="col">Sistema</th></tr></thead>
       <tbody>
         <tr><td>Identidad de acceso al Estado</td><td>Identidad Electrónica</td></tr>
@@ -72,25 +89,24 @@
     <section class="prods" aria-labelledby="h-prods">
       <h2 id="h-prods">Para ponerlo en práctica</h2>
       <ul>
-      <li><a data-busca="llave seguridad fido2 usb c nfc" href="https://www.amazon.es/s?k=llave+seguridad+fido2+usb+c+nfc" rel="noopener">Llave de seguridad FIDO2</a><p>El segundo factor que resiste a las páginas falsas. Compra dos y guarda una.</p></li>
-      <li><a data-busca="libreta contraseñas papel" href="https://www.amazon.es/s?k=libreta+contraseñas+papel" rel="noopener">Libreta en papel</a><p>Para el PIN, los códigos y las contraseñas de firma: en casa, en un cajón, no en una nota del celular.</p></li>
+      <li><a data-busca="llave seguridad fido2 usb c nfc" href="https://www.amazon.es/s?k=llave+seguridad+fido2+usb+c+nfc" rel="noopener">Llave de seguridad FIDO2</a><p>El segundo factor que resiste a las páginas falsas. Compra dos y guarda una.</p></li><li><a data-busca="libreta contraseñas papel" href="https://www.amazon.es/s?k=libreta+contrase%C3%B1as+papel" rel="noopener">Libreta en papel</a><p>Para el PIN, los códigos y las contraseñas de firma: en casa, en un cajón, no en una nota del celular.</p></li>
       </ul>
       <p class="aviso">Enlaces a <span data-tienda-nombre>Amazon España</span> según tu región. Diez Claves no tiene por ahora acuerdo de afiliación con ninguna tienda; cuando lo tenga, lo dirá aquí. Las alternativas gratuitas van siempre junto a las de pago.</p>
     </section>
     <nav class="rel" aria-label="Relacionado">
       <span class="tag">Sigue leyendo</span>
-      <a href="/articulos/tramites/identidad-digital-argentina.html">La guía para Argentina</a><a href="/articulos/tramites/identidad-digital-uruguay.html">La guía para Uruguay</a>
+      <a href="/articulos/dispositivos/instalar-grapheneos.html">Instalar GrapheneOS</a><a href="/articulos/contrasenas/elegir-gestor-de-contrasenas.html">Elegir gestor de contraseñas</a><a href="/articulos/dispositivos/elegir-aplicaciones-codigo-abierto.html">Elegir apps de código abierto</a><a href="/articulos/fraudes/smishing-mensajes-fraudulentos.html">SMS fraudulentos y smishing</a>
     </nav>
     <nav class="sig" aria-label="Siguiente en esta sección"><span class="tag">Siguiente en Identidad digital y trámites · 19 de 21</span><a class="s" href="/articulos/tramites/identidad-digital-uruguay.html">Diez claves para tu identidad digital en Uruguay: cédula, gub.uy y TuID</a><p>Usuario gub.uy y sus tres niveles, el certificado de la cédula con chip y el lector, el estado del NFC, TuID de Antel y Abitab, y qué sistema usar en cada trámite. <a href="/articulos/tramites/">Ver las 21 guías</a>.</p></nav>
   </article>
   </main>
   <footer>
     <span>Diez Claves · 2026</span>
-    <a href="https://gofiodesign.eu" rel="noopener">Gofio Design</a>
+    
     <a href="https://github.com/diezclaves/diezclaves.github.io" rel="noopener">Código en GitHub</a>
     <a href="/aviso-legal.html">Aviso legal</a>
     <a href="/privacidad.html">Privacidad</a>
-  </footer>
+  <a class="sello" href="https://gofiodesign.eu" rel="noopener"><img src="/assets/gofio-monograma-ambar.svg" width="40" height="40" alt="" loading="lazy"><span>Un proyecto de <b>Gofio Design</b></span></a></footer>
 </div>
 </body>
 </html>

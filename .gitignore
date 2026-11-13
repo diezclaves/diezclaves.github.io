@@ -1,2 +1,14 @@
 # Registros de conversación: se guardan en local, no se publican
 .chats/
+
+# Skills y hooks de los asistentes de código: se instalan en local, no se publican
+.agents/
+.claude/
+.codex/
+.github/agents/
+.github/hooks/
+.github/skills/
+skills-lock.json
+
+# Capturas y críticas de diseño hechas en local
+.impeccable/
