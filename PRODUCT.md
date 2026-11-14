@@ -51,7 +51,7 @@ Seguridad digital explicada en español llano, con variantes por país (tratamie
 
 ## Evidence on Hand
 
-- 95 guías publicadas en 9 secciones, más 19 guías de identidad digital por país.
+- 96 guías publicadas en 9 secciones, más 19 guías de identidad digital por país.
 - Generador y medidor de contraseñas funcionando; diccionario de RLA-ES (LibreOffice) en `assets/diccionario.js`.
 - Una única imagen genérica para compartir (`assets/og.png`); todavía no hay imagen por artículo.
 - No hay testimonios, cifras de uso, opiniones de lectores ni acuerdos de afiliación: no se deben inventar.

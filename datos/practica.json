@@ -1408,5 +1408,21 @@
       }
     ],
     "relacionados": []
+  },
+  "falsos-tecnicos-microsoft": {
+    "intro": "No necesitas comprar nada para colgar a un falso técnico. La protección integrada de Windows y las actualizaciones al día son el punto de partida.",
+    "productos": [
+      {
+        "nombre": "Seguridad de Windows",
+        "texto": "Viene incluida en el sistema. Úsala para un análisis completo si dudas del estado del equipo, en lugar de seguir las indicaciones de quien te llama.",
+        "tipo": "incluido",
+        "afiliado": false
+      }
+    ],
+    "relacionados": [
+      "vishing-llamadas-fraudulentas",
+      "reconocer-phishing",
+      "ingenieria-social"
+    ]
   }
 }
