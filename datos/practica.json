@@ -1010,31 +1010,12 @@
     "relacionados": []
   },
   "clave-certificado-digital-dnie": {
-    "intro": "",
-    "productos": [
-      {
-        "nombre": "Lector de DNI electrónico por USB",
-        "texto": "Para usar el chip del DNI en el ordenador: acreditarte ante la FNMT, firmar con AutoFirma y entrar en las sedes sin instalar certificado. Elige uno con USB-C si tu portátil no tiene puerto clásico.",
-        "tipo": "",
-        "busca": "lector dni electronico usb",
-        "afiliado": false
-      },
-      {
-        "nombre": "Lector de tarjetas inteligentes USB-C",
-        "texto": "Lo mismo, en formato pequeño para llevar en el bolso. Cualquier lector compatible con tarjetas inteligentes (PC/SC) sirve; no hace falta que ponga «DNI».",
-        "tipo": "",
-        "busca": "lector tarjetas inteligentes usb c",
-        "afiliado": false
-      },
-      {
-        "nombre": "Libreta en papel para el PIN y la contraseña del certificado",
-        "texto": "El PIN del DNIe y la contraseña del archivo exportado no se recuperan por internet. En un cajón de casa están más seguros que en una nota del móvil.",
-        "tipo": "",
-        "busca": "libreta contraseñas papel",
-        "afiliado": false
-      }
-    ],
-    "relacionados": []
+    "productos": [],
+    "relacionados": [
+      "obtener-certificado-digital-fnmt",
+      "usar-dni-electronico",
+      "obtener-usar-clave"
+    ]
   },
   "identidad-digital-argentina": {
     "intro": "",
@@ -1423,6 +1404,30 @@
       "vishing-llamadas-fraudulentas",
       "reconocer-phishing",
       "ingenieria-social"
+    ]
+  },
+  "obtener-certificado-digital-fnmt": {
+    "productos": [],
+    "relacionados": [
+      "clave-certificado-digital-dnie",
+      "usar-dni-electronico",
+      "obtener-usar-clave"
+    ]
+  },
+  "usar-dni-electronico": {
+    "productos": [],
+    "relacionados": [
+      "clave-certificado-digital-dnie",
+      "obtener-certificado-digital-fnmt",
+      "obtener-usar-clave"
+    ]
+  },
+  "obtener-usar-clave": {
+    "productos": [],
+    "relacionados": [
+      "clave-certificado-digital-dnie",
+      "obtener-certificado-digital-fnmt",
+      "usar-dni-electronico"
     ]
   }
 }

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://diezclaves.com/</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://diezclaves.com/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://diezclaves.com/herramientas.html</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://diezclaves.com/generador.html</loc><lastmod>2026-11-11</lastmod></url>
   <url><loc>https://diezclaves.com/medidor.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://diezclaves.com/articulos/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://diezclaves.com/articulos/contrasenas/ene-y-tildes-en-contrasenas.html</loc><lastmod>2026-11-11</lastmod></url>
   <url><loc>https://diezclaves.com/articulos/dispositivos/si-te-roban-el-movil.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/clave-certificado-digital-dnie.html</loc><lastmod>2026-11-11</lastmod></url>
+  <url><loc>https://diezclaves.com/articulos/tramites/clave-certificado-digital-dnie.html</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://diezclaves.com/articulos/contrasenas/elegir-gestor-de-contrasenas.html</loc><lastmod>2026-11-11</lastmod></url>
   <url><loc>https://diezclaves.com/articulos/contrasenas/cuanto-tarda-descifrar-contrasena.html</loc><lastmod>2026-11-11</lastmod></url>
   <url><loc>https://diezclaves.com/articulos/dispositivos/claves-de-dispositivos.html</loc><lastmod>2026-11-11</lastmod></url>
@@ -89,7 +89,7 @@
   <url><loc>https://diezclaves.com/articulos/privacidad/</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://diezclaves.com/articulos/conexion/</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://diezclaves.com/articulos/amenazas/</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://diezclaves.com/articulos/tramites/</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://diezclaves.com/articulos/tramites/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://diezclaves.com/articulos/conexion/vpn-en-casa.html</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://diezclaves.com/articulos/conexion/elegir-vpn-privada.html</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://diezclaves.com/articulos/conexion/intermediario-malicioso-mitm.html</loc><lastmod>2026-11-12</lastmod></url>
@@ -112,4 +112,7 @@
   <url><loc>https://diezclaves.com/articulos/acoso/ciberacoso-escolar.html</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://diezclaves.com/articulos/acoso/incitacion-odio-internet.html</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://diezclaves.com/articulos/acoso/racismo-en-internet.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://diezclaves.com/articulos/tramites/obtener-certificado-digital-fnmt.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://diezclaves.com/articulos/tramites/usar-dni-electronico.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://diezclaves.com/articulos/tramites/obtener-usar-clave.html</loc><lastmod>2026-11-23</lastmod></url>
 </urlset>

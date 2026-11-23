@@ -1,0 +1,11 @@
+{
+  "fecha_consulta": "2026-11-23",
+  "nota": "Las capturas de las apps son demostraciones publicadas por FNMT y Cl@ve. La captura web procede de una consulta pública sin datos personales. Los derechos corresponden a sus titulares.",
+  "archivos": {
+    "fnmt-app-inicio.webp": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/43/7d/1f/437d1f18-7975-7c76-6463-a38c2c24c125/29ecb68e-d36d-4124-bdd2-647fe778dd75_Simulator_Screenshot_-_iPhone_11_Pro_Max_-_2023-10-25_at_21.13.47.png/300x650bb.webp",
+    "fnmt-app-vias.webp": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/82/67/e5/8267e54f-ec9c-e2a7-8639-3ec6afac4609/43a1c61b-0c99-47be-87b2-b98556c94aa8_Simulator_Screenshot_-_iPhone_11_Pro_Max_-_2023-10-25_at_21.13.56.png/300x650bb.webp",
+    "clave-app-inicio.png": "https://clave.gob.es/registro/como-puedo-registrarme/registro-basico-internet-videoidentificacion-automatica/_jcr_content/root/container/containerSpace/vertical_menu/vertical-menu-container/card_container_copy/card_generic/img.coreimg.png/1769082729216/app-clave-01-v3.png",
+    "clave-app-registro.png": "https://clave.gob.es/registro/como-puedo-registrarme/registro-basico-internet-videoidentificacion-automatica/_jcr_content/root/container/containerSpace/vertical_menu/vertical-menu-container/card_container_copy/card_generic_copy/img.coreimg.png/1769082738969/app-clave-03-v3.png",
+    "fnmt-web-vias.png": "https://www.sede.fnmt.gob.es/certificados/persona-fisica/certificado-con-dispositivo-movil"
+  }
+}

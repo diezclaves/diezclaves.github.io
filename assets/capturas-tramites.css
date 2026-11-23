@@ -1,0 +1,9 @@
+/* Capturas de demostración oficiales: el texto del procedimiento sigue en HTML. */
+.capturas-tramite{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:24px 0}
+.captura-tramite{margin:0;min-width:0}
+.captura-tramite>a{display:block;width:fit-content;max-width:100%;margin:0 auto}
+.captura-tramite img{display:block;width:100%;max-width:300px;height:auto;border:1px solid var(--line);border-radius:12px;background:#fff}
+.captura-tramite figcaption{margin-top:12px;font-size:.9rem;line-height:1.5;max-width:40ch}
+@media(max-width:560px){.capturas-tramite{grid-template-columns:1fr;gap:28px}.captura-tramite figcaption{margin-inline:auto}}
+
+.captura-oficial{margin:8px 0;max-width:100%}.captura-oficial summary{cursor:pointer;text-decoration:underline;text-underline-offset:3px}.captura-web{margin-top:16px}.captura-web img{max-width:100%;border-radius:0}.captura-web figcaption{max-width:64ch}
