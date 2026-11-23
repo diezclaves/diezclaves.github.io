@@ -913,7 +913,12 @@
   "cookies-y-rastreadores": {
     "intro": "",
     "productos": [],
-    "relacionados": []
+    "relacionados": [
+      "huella-digital-navegador",
+      "navegar-con-privacidad",
+      "navegar-privacidad-movil",
+      "dns-bloqueo-rastreadores"
+    ]
   },
   "elegir-navegador-privado": {
     "intro": "",
