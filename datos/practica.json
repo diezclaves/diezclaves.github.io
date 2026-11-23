@@ -28,7 +28,11 @@
         "afiliado": false
       }
     ],
-    "relacionados": []
+    "relacionados": [
+      "ciberacoso-escolar",
+      "suplantacion-identidad",
+      "proteger-tu-identidad"
+    ]
   },
   "ciberacoso-escolar": {
     "intro": "Pedir apoyo al centro y utilizar controles incluidos no requiere comprar un producto.",
@@ -40,7 +44,11 @@
         "afiliado": false
       }
     ],
-    "relacionados": []
+    "relacionados": [
+      "abusos-en-internet",
+      "abuso-sexual-infantil-red",
+      "suplantacion-identidad"
+    ]
   },
   "incitacion-odio-internet": {
     "intro": "No necesitas comprar una herramienta para dejar de difundir o pedir apoyo.",
@@ -118,7 +126,11 @@
         "afiliado": false
       }
     ],
-    "relacionados": []
+    "relacionados": [
+      "botnets-equipos-controlados",
+      "mineria-no-autorizada",
+      "intermediario-malicioso-mitm"
+    ]
   },
   "mineria-no-autorizada": {
     "intro": "Las herramientas de diagnóstico incluidas permiten empezar sin comprar nada.",
@@ -466,7 +478,11 @@
         "afiliado": false
       }
     ],
-    "relacionados": []
+    "relacionados": [
+      "elegir-gestor-de-contrasenas",
+      "de-la-contrasena-a-la-passkey",
+      "cuanto-tarda-descifrar-contrasena"
+    ]
   },
   "identificadores-y-contrasenas": {
     "intro": "",
@@ -567,7 +583,12 @@
         "afiliado": false
       }
     ],
-    "relacionados": []
+    "relacionados": [
+      "reducir-dependencia-google",
+      "vivir-sin-servicios-google",
+      "comparar-sistemas-android-alternativos",
+      "copias-seguridad-privadas"
+    ]
   },
   "entender-grapheneos": {
     "intro": "No necesitas comprar un móvil para leer la documentación y evaluar si el cambio te conviene.",
@@ -672,7 +693,12 @@
         "afiliado": false
       }
     ],
-    "relacionados": []
+    "relacionados": [
+      "permisos-aplicaciones-movil",
+      "rastreadores-aplicaciones-movil",
+      "proteger-tu-movil",
+      "copias-seguridad-privadas"
+    ]
   },
   "permisos-aplicaciones-movil": {
     "intro": "Puedes hacer esta revisión con los ajustes incluidos, sin instalar un limpiador ni una aplicación de permisos.",
@@ -702,7 +728,12 @@
         "afiliado": false
       }
     ],
-    "relacionados": []
+    "relacionados": [
+      "permisos-aplicaciones-movil",
+      "copias-seguridad-privadas",
+      "proteger-ubicacion-movil",
+      "proteger-tu-identidad"
+    ]
   },
   "proteger-mensajes-llamadas": {
     "intro": "Revisar el chat, sus sesiones y las notificaciones no requiere pagar por un servicio nuevo.",
@@ -961,7 +992,12 @@
   "proteger-tu-identidad": {
     "intro": "",
     "productos": [],
-    "relacionados": []
+    "relacionados": [
+      "suplantacion-identidad",
+      "elegir-gestor-de-contrasenas",
+      "proteger-fotos-archivos-movil",
+      "abusos-en-internet"
+    ]
   },
   "algoritmos-redes-sociales": {
     "intro": "Los controles incluidos y la lectura directa de fuentes permiten empezar gratis.",
@@ -985,7 +1021,11 @@
         "afiliado": false
       }
     ],
-    "relacionados": []
+    "relacionados": [
+      "botnets-equipos-controlados",
+      "algoritmos-redes-sociales",
+      "suplantacion-identidad"
+    ]
   },
   "clave-certificado-digital-canarias": {
     "intro": "",
@@ -1060,7 +1100,11 @@
         "afiliado": false
       }
     ],
-    "relacionados": []
+    "relacionados": [
+      "proteger-tu-identidad",
+      "instalar-aplicaciones-seguridad",
+      "proteger-mensajes-llamadas"
+    ]
   },
   "identidad-digital-chile": {
     "intro": "",
@@ -1133,7 +1177,11 @@
         "afiliado": false
       }
     ],
-    "relacionados": []
+    "relacionados": [
+      "proteger-tu-identidad",
+      "instalar-aplicaciones-seguridad",
+      "proteger-mensajes-llamadas"
+    ]
   },
   "identidad-digital-ecuador": {
     "intro": "",
@@ -1213,7 +1261,11 @@
         "afiliado": false
       }
     ],
-    "relacionados": []
+    "relacionados": [
+      "proteger-tu-identidad",
+      "reconocer-phishing",
+      "elegir-gestor-de-contrasenas"
+    ]
   },
   "identidad-digital-honduras": {
     "intro": "",
